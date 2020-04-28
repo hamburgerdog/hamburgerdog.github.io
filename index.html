@@ -30,13 +30,6 @@ description:
           {% endfor%}
         {% endif %}
       </li>
-      <li class="fadeInUp animated">
-      {% if site.tags.size>0 %}
-          {% for tag in site.tags %}
-          <a href="tags.html#{{ tag[0] }}" class="tag">{{ tag[0]}}</a>
-          {% endfor %}
-      {% endif %}
-      </li>
     </ul>
 </main>
 {% include footer.html %}

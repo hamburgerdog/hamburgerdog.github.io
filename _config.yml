@@ -1,8 +1,8 @@
 # Site settings 配置站点
-title: 'your awesome title'
-description: 'your web description'
-keywords: 'your web keywords, another keywords'
-url: 'https://hamburger.github.io' # your host
+title: 'Hamburger-burgerham :D'
+description: 'HELLO HAMBUGGER'
+keywords: 'hamburger_text'
+url: 'https://hamburgerdog.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
@@ -14,18 +14,18 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
 
 # 博主
 author: true
-name: 'your awesome name'
-NickName: 'your awesome nickname'
-webtitle: 'your awesome webtitle'
-bio: 'your awesome bio'
+name: 'oneShowWuJian'
+NickName: 'Hambuger'
+webtitle: 'just awesome webtitle'
+bio: 'welcome to my web'
 about: true
-aboutyou: 'your introduction'
+aboutyou: 'a boy who study program'
 portraits: '/assets/profile.jpeg' # your portraits image file path
 
 # SNS
 SNS: true
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
-  mail: 'mailto:abc@gmail.com'
+  mail: 'mailto:Xjun9911@gmail.com'
   weixin: '' # 你的微信二维码存放的地址
   qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: ''
@@ -46,7 +46,7 @@ paginatepath: ['page:num']
 
 # since
 footer:
-  since: 2018
+  since: 2020
 
 # Markdown
 markdown: kramdown
@@ -66,7 +66,7 @@ friends:
 disqus: false
 disqus_url: '' # https://abc.disqus.com/embed.js
 # 来必力评论
-livere: true
+livere: false
 livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
 # Gitment评论 OAuth Application
 Gitment: false
@@ -80,7 +80,7 @@ social-share: true
 social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
 
 # 百度统计 在baidu-url里填写自己相关的url代码
-baidu: true
+baidu: false
 baidu-url: ''
 # 谷歌分析 在google-ID里填写自己在谷歌分析获得的追踪ID
 google: false

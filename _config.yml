@@ -2,11 +2,11 @@
 title: 'Hamburger-burgerham :D'
 description: 'HELLO HAMBUGGER'
 keywords: 'hamburger_text'
-url: 'https://hamburgerdog.github.io/about.html' # your host
+url: 'https://hamburgerdog.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
-  首页: '/about.html'
+#  首页: '/'
 #  标签: '/tags.html'
 #  时间线: '/timeline.html'
 #  关于博主: '/about.html'
@@ -16,10 +16,10 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
 author: true
 name: 'oneShowWuJian'
 NickName: 'Hambuger'
-webtitle: 'A awesome webtitle'
+webtitle: 'booble'
 bio: 'welcome to my web'
 about: true
-aboutyou: 'a boy who study program'
+aboutyou: '想努力多写代码的大二男孩，没事多来找我'
 portraits: '/assets/profile.jpeg' # your portraits image file path
 
 # SNS

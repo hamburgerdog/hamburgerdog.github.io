@@ -6,17 +6,17 @@ url: 'https://hamburgerdog.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
-  首页: '/'
-  标签: '/tags.html'
-  时间线: '/timeline.html'
-  关于博主: '/about.html'
-  友情链接: '/friendLink.html'
+  首页: '/about.html'
+#  标签: '/tags.html'
+#  时间线: '/timeline.html'
+#  关于博主: '/about.html'
+#  友情链接: '/friendLink.html'
 
 # 博主
 author: true
 name: 'oneShowWuJian'
 NickName: 'Hambuger'
-webtitle: 'just awesome webtitle'
+webtitle: 'A awesome webtitle'
 bio: 'welcome to my web'
 about: true
 aboutyou: 'a boy who study program'
@@ -33,15 +33,15 @@ SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagr
   weibo: ''
   instagram: ''
   Twitter: ''
-  Dribbble: ''
-  Facebook: ''
-  Google: ''
-  zhihu: ''
-  juejin: ''
-  twitch: ''
+#  Dribbble: ''
+#  Facebook: ''
+#  Google: ''
+#  zhihu: ''
+#  juejin: ''
+#  twitch: ''
 
 # 分页
-paginate: 2
+paginate: 1
 paginatepath: ['page:num']
 
 # since

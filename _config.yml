@@ -16,8 +16,8 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
 author: true
 name: 'oneShowWuJian'
 NickName: 'Hambuger'
-webtitle: 'booble'
-bio: 'welcome to my web'
+webtitle: 'aboutMe'
+bio: 'call me by your name'
 about: true
 aboutyou: '想努力多写代码的大二男孩，没事多来找我'
 portraits: '/assets/profile.jpeg' # your portraits image file path
@@ -26,7 +26,7 @@ portraits: '/assets/profile.jpeg' # your portraits image file path
 SNS: true
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
   mail: 'mailto:Xjun9911@gmail.com'
-  weixin: '' # 你的微信二维码存放的地址
+  weixin: 'assets/wechat.jpg' # 你的微信二维码存放的地址
   qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: 'https://github.com/hamburgerdog'
   Codepen: 'https://codepen.io/'

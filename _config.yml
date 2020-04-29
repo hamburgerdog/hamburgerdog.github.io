@@ -27,7 +27,7 @@ SNS: true
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
   mail: 'mailto:JosiahHong@qq.com'
 #  weixin: 'assets/wechat.jpg' # 你的微信二维码存放的地址
-  qq: '838980000' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  qq: '404.html' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: 'https://github.com/hamburgerdog'
   Codepen: 'https://codepen.io/'
   weibo: 'https://www.weibo.com/'

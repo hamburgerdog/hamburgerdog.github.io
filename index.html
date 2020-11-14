@@ -1,35 +1,19 @@
 ---
 layout: default
-title: sulnteres的主页
+title: xjosiah的主页
 page-title: Welcome
 home-title: Let time to my deep love man.
-description:
+description:  欢迎来到 xjosiah 的个人博客<br><br>下面是相关文章请阅读
 ---
 
 {% include header.html %}
 {% include boot.html %}
 <main>
     {% include title.html %}
-    <ul class="ex-list">
-        <li class="fadeInUp animated">
-        {% if site.author %}
-          <div class="portraits"><img src="{{ site.portraits }}" alt=""></div>
-          <span id="yourname">{{ site.name }}</span>
-          <span id="yourbio">{{ site.bio }}</span>
-          {% if site.about %}
-            <span id="aboutyou" style="text-align:center;color:#666">{{ site.aboutyou }}</span>
-          {% endif %}
-        {% endif %}
-        {% if site.SNS %}
-          {% for sns-icon in site.SNS-icon %}
-            <a href="{{ sns-icon[1] }}" title="{{ sns-icon[0] }}">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-{{ sns-icon[0] }}"></use>
-              </svg>
-            </a>
-          {% endfor%}
-        {% endif %}
-      </li>
+    <ul class="post-list">
+      {% include posts_paginator.html %}
     </ul>
 </main>
+{% include pageNav.html %}
+{% include comment.html %}
 {% include footer.html %}

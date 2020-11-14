@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-14T18:08:16+08:00</updated><id>http://localhost:4000/</id><title type="html">Hamburger-burgerham :D</title><subtitle>HELLO HAMBUGGER</subtitle><author><name>true</name></author><entry><title type="html">疫情对软件开发的工作模式的影响</title><link href="http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering.html" rel="alternate" type="text/html" title="疫情对软件开发的工作模式的影响" /><published>2020-11-14T12:00:00+08:00</published><updated>2020-11-14T12:00:00+08:00</updated><id>http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering</id><content type="html" xml:base="http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering.html">&lt;h1 id=&quot;浅析-疫情对软件开发的工作模式的影响&quot;&gt;浅析-疫情对软件开发的工作模式的影响&lt;/h1&gt;
+
+&lt;h2 id=&quot;作者&quot;&gt;作者&lt;/h2&gt;
+
+&lt;p&gt;网络工程	xjosiah&lt;/p&gt;
+
+&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;
+
+&lt;p&gt;本篇文章通过对两个互联网软件公司Twitter和Gitlab在疫情期间的远程开发模型进行浅析，讨论了远程开发模型的前景，以及疫情对软件开发的工作模式产生了何种影响，并为如何减轻新冠疫情对公司运营的冲击和如何使软件开发人员能尽快适应远程办公模式提供了一些资料参考。&lt;/p&gt;
+
+&lt;h3 id=&quot;关键词&quot;&gt;关键词&lt;/h3&gt;
+
+&lt;p&gt;新冠疫情下	软件开发	异地办公	家庭工作模型	远程工作模式	地理分离式公司	互联网行业&lt;/p&gt;
+
+&lt;h2 id=&quot;引言&quot;&gt;引言&lt;/h2&gt;
+
+&lt;p&gt;新冠病毒是一场全人类的战役，它的肆虐给我们人类带来了的一场重大健康危机，同时也深刻地影响了我们人类的生活，特别是在还看不到疫情平息曙光的当下，我们更应该做好打持久战的准备，这意味着我们的生产方式、生活习惯和观念要都要因此做出相应的改变。本篇文章将通过浅析著名社交网站Twitter在疫情横行的当下实现让员工“居家办公”的例子，并结合疫情下其他的一些流行的开源项目如Gitlab的远程开发经验来简明分析疫情对软件开发方式产生了哪些的影响，从这些改变中积累一些能为我们所用的知识，如怎样更好地利用互联网来协作开发、如何更有效地进行团队沟通等，使得我们能尽可能平稳地度过疫情给我们带来的冲击。&lt;/p&gt;
+
+&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
+
+&lt;p&gt;新冠疫情来势汹汹，而预防疫情最好的方式之一是带口罩和尽量避免人群聚集，但在传统的工作模式下，办公室就俨然变成了一个孕育疫情的温床：人群密集、流通性不好、人和人之间面对面地沟通十分频繁。因此一种被称为家庭工作（work from home model）的模式也就应运而生了，而著名的互联网社交软件公司Twitter就是在疫情发生后最早应用这种工作模式的公司之一，并且其宣布他们不会成为最早重新返回传统办公室工作模式的公司之一。&lt;/p&gt;
+
+&lt;p&gt;家庭工作模式，顾名思义其最大的特点就是在一定的安全控制下，利用互联网技术提供一个虚拟的工作场所，允许员工在远程接受管理并进行相关项目的工作，在疫情下，这种工作方式可以能最大程度地保障员工的生命健康，并且能继续维持公司的正常运转，这将为员工和企业带来巨大的优势，家庭工作模式在防疫的同时还给我们带来了一些额外的惊喜，让我们的比以往多了更多的选择。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;现在的我们可以多一些考虑如何无国界地进行工作了。在不受地域限制的情况下，企业可以扩大范围来招纳最优秀的员工。摆脱地域限制在很多行业都很有价值，一些大公司在地理位置上往往都会聚集在一起，从而耗尽本来就已经很紧张的资源，这样会造成房价虚高、员工生活压力大等问题，此外，员工工作环境可以进一步地得到提高，间接地提升产品开发的质量，在疫情下，这些因素要比以往任何时候都显得更为重要。家庭工作模式也为成千上万无法参加传统工作环境的人带来了机会，从而为企业提供了更多的积极进取且合格的人才，在之前，他们可能会因为住在农村或偏远地区而丧失了工作的机会。传统的办公模式其实是不适合特殊人群的，对于必须经常搬家的军人配偶、行动不便或者拥有健康问题的人群采用家庭工作可能是一种理想的工作方案，在帮助这些特殊人群来建立稳固的职业生涯的时候，企业往往还能收获到很多渴望学习和成长的优秀员工所带来的额外收益。&lt;/li&gt;
+  &lt;li&gt;家庭工作模式往往可以提高公司产品的质量。根据Global Workplace Analytics 的研究发现，实现采用居家工作的企业会享受到很多由员工高满意度和高忠诚度所带来的好处，95％的雇主表示远程办公对员工保留率有很大影响，在采用了家庭办公模式的公司中有46％的公司职员的流失数量下降了。此外Global Workplace Analytics 引用了一些大公司的研究表明，居家办公的员工生产率比办公室员工高15％至45％。简而言之，经验丰富的员工对他们的工作的满意程度会转化为更高的产品质量，在当今的客户体验优先的服务行业中，这尤其重要，在这类行业中，不断增长的客户期望和不断增加的技术复杂性要求企业员工具有更多的技能和适应不断变化的需求的能力，通过这些研究我们可以发现居家办公的员工更加自由，比以往有了更高的自觉性，这将有助于员工为其负责的客户解决更多困难和复杂问题。&lt;/li&gt;
+  &lt;li&gt;家庭工作模式可以减少员工的适应时间，加快员工投入正式生产的速度。公司可以将入职培训从教室的转移到员工家中的电脑桌面上，虚拟教室不受空间限制的限制，培训人员可以在任何地方进行演示，从而可以更贴近工作环境的来随时培训新员工。甚至我们可以通过高度参与的多媒体课程使培训更加互动，让员工实践和指导学习的结合，在进行许多动手实践活动时，管理员、教练、项目团队负责人和技术人员的培训团队还能进一步地提供持续的培训和帮助，在培训时就进一步做到了模拟正式工作时的状态。&lt;/li&gt;
+  &lt;li&gt;在需求激增的同时，迅速提高服务响应速度而又不影响质量的能力是在家工作模型最有价值的优势之一。在一些大型活动引起公司销量波动的时候，这种工作模式可以短期的制定一个高质量的客户服务计划，这对于我们是否能在当今瞬息万变、竞争激烈的市场中取胜而言是至关重要的，由于培训时间短，公司还可以进一步考虑招收一些临时应急员工来缓解需求激增的压力&lt;/li&gt;
+  &lt;li&gt;在家办公的模式还可以实现全天候覆盖的产品服务体验。由于客户在任何时间、白天或晚上都希望获得产品附带的服务，因此，公司需要为客户服务中心配备值班员工，以满足 24/7/365 服务的需求，这在需求激增的旺季等高峰时段尤为重要。在家工作的员工可以轻松满足这一需求，员工无需担心在值班时间如何兼顾好照顾孩子、老人等日常琐事，也不必担忧深夜通勤到办公室的安全问题。实际上，许多员工更喜欢晚班和周末班，这完全取决于他们自己如何制定工作/生活平衡的个人计划，从公司运营的角度来看，这也节省了因全天候值班而带来的用于维护物理办公设施的成本。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2020-11-14-Final_Assignment_for_Software_Engineerin.assets/image-20201114111411455.png&quot; alt=&quot;image-20201114111411455&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;了解完家庭工作模式的详情后，我们结合Twitter的相关经验来进一步讨论如何实现员工能平顺地从传统工作模式过渡到远程办公模式。Twitter在2020年3月1号就暂停了所有非关键性的商务旅行和活动，并搭建了一个网站来专门为大众提供关于新型冠状病毒的最新情况，致力于在新冠病毒全球疫情爆发的时候帮助人们找到公开的与防疫相关的权威信息。3月2号，Twitter开始鼓励员工选择居家工作的方式来减少大规模传播新冠病毒的可能性，这标志着Twitter开始了对家庭工作模式的进一步探索，就如他们在网站中所写的一样：“尽管这对我们来说是一个巨大的改变，但我们已经朝着越来越分散的、越来越远程的工作方向发展。Twitter是一家全球服务公司，我们致力于使任何地方的任何人都可以在Twitter上工作。” 到了3月11号，也就是鼓励员工居家办公的九天之后，Twitter开始在全球范围内强制要求员工采用家庭工作模式，这是一个极具意义的改变，也是自疫情以来这家公司迈出的前所未有的一步，这项措施不仅可以很好地保证员工的安全，还是对当地社区、弱势群体和一直奋战在防疫第一线的医护人员的一种无条件的支持。&lt;/p&gt;
+
+&lt;p&gt;在强制要求员工居家办公后，Twitter做出了很多努力来减少采用这种工作模式所带来的影响：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;向部分员工、承包商和供应商支付一定的补助和赔偿，很有人文情怀地照顾到了那些无法在家庭里开展工作的员工，使他们不至于失去生活的资金来源。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;为所有员工提供了额外的福利，减少他们因临时切换到居家工作而导致生活困难的可能性。所有员工（包括小时工）都将获得其家庭办公室设置费用的报销，并且通过与供应商的合作，还可以确保公司的承包商也能满足其在家工作的需求。在听取了员工的反馈后，Twitter又扩大了政策范围，使报销包括了各类家庭办公设备，例如书桌，课桌椅和符合人体工学的椅子等，还允许员工报销在家里工作时产生的流量费用。&lt;/li&gt;
+  &lt;li&gt;引入了一个名叫#FlockTalk的程序，这个程序会在员工陷入困难时期急需他人的帮助的时候被激活，员工通过这个程序可以在社区里分享他们正在面对的事情，程序背后是Twitter的专业团队来负责管理的，他们认为工作场所的健康状况和员工的心理健康状况之间存在直接的关联，借此来减轻疫情对员工心理的不良影响。&lt;/li&gt;
+  &lt;li&gt;提供各种居家办公的指南说明来帮助员工继续完成日常工作，同时又积极地向公众公开这些资料，因为在这种特殊的时期，分享见解和学习非常重要，Twitter希望其不仅能帮助到自己的员工，还能让公司员工之外的其他人能更轻松地过渡到远程工作的模式。这里列举指南中几条有比较重要且实用的建议：
+    &lt;ul&gt;
+      &lt;li&gt;家庭工作模式不会改变日常的工作，而只是意味着你将在不同的环境中进行工作，还要继续保证拥有一个舒服的工作环境、坚持记录好每天的工作内容和及时地和项目伙伴进行沟通以确保项目开发的进程顺畅。&lt;/li&gt;
+      &lt;li&gt;跟进项目伙伴，管理好分布式团队，项目经理应当为团队中的每个人（无论身在何处）提供一致且舒适的员工体验。要把握好管理的三个主要支柱：战略、成长和关怀，在团队完全处于分布式状态时，具体的改变其实并不多，这三个重要支柱依旧适用。&lt;/li&gt;
+      &lt;li&gt;Twitter上的所有会议和面试都将通过网络视频进行。完全虚拟的对话有其好处，这是将员工融入远程工作文化的理想之举，而对于那些将在远程工作的候选人来说，这也是一个很好的机会来积累与其他团队伙伴进行远程交互的经验。&lt;/li&gt;
+      &lt;li&gt;Twitter还共享了跨时区工作的指南，利用协作工具（各类社交通话软件，版本控制软件和分布式开发服务框架等）保持联系，并提供了人机工程学技巧，使得员工无论在家还是在旅途中都可以进行日常工作。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;根据Twitter的首席人力资源官 Jennifer Christie 的在2020年5月12号的报告，经过几个月的尝试，Twitter已经证明了其可以对分布在任何地方进行工作的员工提供很好的支持，在管理的权限下放后依旧不会影响公司的正常运作，当前他们可以迅速地对疫情下的各种情况作出响应，这已经变成了他们所具有的一种独特优势了。同时，如果员工很好地适应了居家工作的角色和状态，并希望能一直采用家庭办公的工作模式的话，那Twitter将允许员工永久地居家工作，当然，在他们想重回办公室的时候也是不会被阻止的。在接下来的几个月里，公司会在确保安全的情况下做好预防措施再重启办公室，但员工何时重回办公室完全取决于自己的抉择，重启办公室后也不会立刻回归到之前的模式，而是谨慎的、有意的、逐步进行改变的。除了极少数的情况外，各种商务旅行和面对面交流的公司活动都将不再被允许。&lt;/p&gt;
+
+&lt;p&gt;在 Jennifer Christie 提出的这些措施中，我们可以看到Twitter对员工和社区的健康是考虑得十分的周到，一家有责任感的公司会时刻把员工的生命健康放在第一顺位，这无论是在何种情况下都是进行任何工作的必要前提。特别是在科技蓬勃发展的当下，采用家庭办公这类远程开发的工作模式已经不再是一件技术难题，在公司层面更应该关心的是如何让员工融入到居家工作的环境中去，这也就要求了一家具有责任感的公司必须做到以员工为本，在制定政策的时候要深切地考虑到每一位员工在转变工作模式后需要面临的各种问题并及时给予员工帮助，就如同Twitter所做的一般，为员工提供一些额外的经济补贴、适当的人文关怀、各种技术上的帮助和详尽的办公指南，这些措施的最终目的都是让员工在采用家庭工作模式后尽可能地不受到额外的困扰，真正地体现“家庭工作模式只是意味着你将在不同的环境中进行工作”这一原则，根据Global Workplace Analytics数据显示，2017年中国远程办公规模达60亿元，2012-2017年的年均复合增速达到95.52%，相关智库基于此数据预测2020年全年我国的远程办公市场规模有望达到448.5亿元，约为2017年市场规模的7.5倍，这表明居家办公的工作模式在疫情的刺激下会逐渐的成为一种新趋势，可以预见的是越来越多的公司会在全球疫情形势不明朗的情况下，开始考虑采用家庭工作模式来很好地规避健康风险，避免由疫情传播造成公司运转失效瘫痪。&lt;/p&gt;
+
+&lt;p&gt;除了Twitter之外，还有一个著名的开源项目Gitlab也完全采用了家庭工作这种模式，而且比Twitter更特殊的是，这家公司在创立之初就一直沿用了这种模式来进行工作。从2011年只有2个人的初创组合开始，到2020年发展成世界上最大的采用远程开发的公司，GitLab在65个国家拥有超过1200名团队成员，每一个团队成员都是远程的，在世界任何地方都没有中央总部和公司所属的办公室，GitLab在最近4年内经历了50倍的增长，在2020年达到了1亿美元ARR收入的大关，目前，GitLab的估值为27.5亿美元，迄今已融资4.26亿美元。Gitlab是自新冠疫情爆发以来为数不多还能取得如此卓越成果的团队之一，而这家公司依靠的就是一套完善的家庭工作制度来取得这些令人瞩目的成就的。
+&lt;img src=&quot;/assets/2020-11-14-Final_Assignment_for_Software_Engineerin.assets/image-20201114110727364.png&quot; alt=&quot;image-20201114110727364&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gitlab始终认为有效的沟通是一个公司稳定的地基，于是他们将员工手册开源后公布在了网上，任何人都能看到这家公司的办事准则，GitLab的员工手册涵盖了公司价值观、内部沟通指南、开发流程、写作风格指南，以及如何请假、如何报销等工作的方方面面，这份文档已经变成如何实现远程开发办公的范本资料了。就如同Gitlab工作手册中描述的一般，GitLab需要始终确保沟通方式适用于一个成长型团队，并且能够简化不同国家中新员工的入职程序。同时由于Gitlab是一家地理分离式公司，显而易见员工们不能转个头就询问同事一些事情，因此需要有一个针对各类问题的共识，让大家随时随地都能访问。另外，结果导向、公开透明、效率和协作是Gitlab非常重要的行为方式，因此一份开源公司手册对于Gitlab来说非常适合，实际上这份手册就是一个知识共享许可。这意味着大家都可以随意复制和使用这份手册，没有必要重复造轮子。尽管将员工手册开源出来并不是一个常规的方式，但Gitlab也希望有更多的人能接受这个理念，大家既能很方便地学习到Gitlab掌握的知识，也能看到手册的历史版本和编辑日志，看到Gitlab是如何实现当前的想法的，实际上公司是处在一个变化的状态中，人员流动、流程变更等等事项都意味着Gitlab需要经常更新工作指南来反应团队当前的状态。员工手册的更新同步于公司状态的变化，而通过与之关联的合并请求就能轻易地了解这个变化是如何产生的，如果员工手册不开放而且难以访问时（比如需要使用内网 VPN 登录查看），这份手册往往会变得陈旧且形同虚设。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2020-11-14-Final_Assignment_for_Software_Engineerin.assets/image-20201114115850753.png&quot; alt=&quot;image-20201114115850753&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在疫情期间，Gitlab还发起了一个针对远程工作的调查，其研究的方法是对3,000名21岁及以上的专业人员进行了采访，这些受访者在2020年1月30日至2020年2月10日期间都进行了远程办公或者有机会选择远程办公，并且其工作的内容主要以数字产品为主，目的是为了探索远程工作的未来，为完善一个更实用的家庭工作模式做出贡献。根据这份调查报告我们可以了解到很多要点：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;采用所有人都采用家庭工作模式是最纯粹的远程工作形式，这可以让每个团队成员都处于公平竞争的环境中。有43%的远程工作者认为，在一个所有员工都是远程工作的公司中工作是很重要的。目前，超过1/4的受访者属于全远程组织，他们没有固定的办公室，同一接受异步工作流程，每个员工都在自己的本土时区工作。另外有12%的受访者属于全远程工作，但还是处在公司规定的时区同步进行工作。&lt;/li&gt;
+  &lt;li&gt;在远程工作的模式下每个人都能做出一定贡献。当每个人都有能力推动组织前进时，远程团队的真正力量就会被释放出来。56%的远程工作者表示，公司里的每个人都可以对流程、价值观和公司方向做出贡献，50%的远程工作者还默认共享文件，仅在万不得已的情况下才会依赖会议。&lt;/li&gt;
+  &lt;li&gt;远程工作者并不都是新时代下长期进行旅行的游牧民族。调查结果显示，38%的人认为没有通勤时间是远程工作中最重要的好处，他们可以把这些时间用来陪伴家人（43%）、工作（35%）、休息（36%）和锻炼（34%）。远程工作的员工们发现自己整体上更有生产力（52%）和效率（48%），74%的远程工作者认为他们的公司是可以让员工依照自己的价值观来生活的。此外，与传统观念不同的是，52%的远程工作者实际上减少了旅行。调查表明远程工作的另一个好处使员工能够专注于家庭的同时而不必放弃自己的事业，34%的人认为能够照顾家庭是远程工作的首要好处，调查还发现，为了代替通勤，43%的人能够花更多的时间与家人相处，而55%的受访者有18岁以下的孩子。&lt;/li&gt;
+  &lt;li&gt;47%的人表示，在家工作时如何提高专注力是首要挑战，现在的“家庭工作模式”这个词已经不在局限于居家了，团队成员可以在任何他们能达到最佳工作效率的地方工作。&lt;/li&gt;
+  &lt;li&gt;近半数受访者认为自己很幸运能够在远程工作，他们对在这种工作模式下的体验评价前四名分别是很实用、受到了重视、觉得自己很聪明和感到自豪，只有不到10%的受访者联想到 “孤独”、”疲惫 “和 “被误解”。&lt;/li&gt;
+  &lt;li&gt;远程≠孤独，人与人之间的互动是有温度的，这在远程环境中也是一样重要的。82%的远程工作者表示，他们的公司支持通过活动、峰会、见面会等方式进行在网络上举行面对面的聚会，同时，66%的受访者表示其已经与远程工作的社区建立了联系。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这些要点为我们展示一个新的蓝图，远程办公是对于员工而言也是有很多好处的。在新冠疫情的威胁下，人群聚集引起的潜在健康危机已经远远大于转变工作模式带来的阵痛，尤其是在互联网企业，面对面的传统工作模式显得愈发不重要了，远程工作模式已经越来越融入到我们的世界之中了。员工在这种工作模式下可以体验到比以往更多的人文关怀，生命健康也得到了更多的保障，还能拥有更多时间来陪伴家人和自我学习进步，从而获得更多由工作带来的成就感和实现自己的人生价值，对于公司而言也是双赢的，在远程工作模式下，既避免了健康危机，又增强了员工的归宿感。&lt;/p&gt;
+
+&lt;p&gt;在疫情期间，家庭工作这种远程工作模型已经率先在互联网行业得到了推广使用，从小众非主流开始走入到大众的视野之中，潜移默化地改变了软件开发的工作方式，各类异步开发工具、版本控制软件和网络社区都在这个特殊的时期发挥起了积极的影响。如Twitter这种受疫情影响临时从传统工作模式转化到家庭工作模式的公司也成功做到了双赢的情况，这证明了家庭工作模式在软件开发行业的推广使用其实是轻便的，不需要进行太多重构，是可以在短时间内就得到实现的，而Gitlab这种完全远程办公的公司，也从侧面证明了远程办公模式和传统工作模式都是可以正常应付日常工作的，相比与传统的工作模式，远程办公模式还能让员工有了更多自主选择的空间并节省了很多用于通勤的时间成本花销。从长期来看，这种工作模式会逐步地推广到越来越多的互联网公司，在减轻疫情影响的同时保证了公司还能照常运转，这都是值得我们这些即将从事软件开发或者已经是资深开发的人认真学习理解的。&lt;/p&gt;
+
+&lt;h2 id=&quot;结束语&quot;&gt;结束语&lt;/h2&gt;
+
+&lt;p&gt;在短短11周的课程之后，在课堂上我通过老师学习到了很多关于软件工程的知识，写这篇结课小论文时，又通过查找和整理资料更深入地了解到远程开发模型的概念和实现方法，我很开心能有这些的收获，同时我必须要真诚地感谢老师对我们的细心教导和照顾，这一学期能过和老师共同度过这一门课我感到十分的愉快！&lt;/p&gt;
+
+&lt;h2 id=&quot;参考文献&quot;&gt;参考文献&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.twitter.com/en_us/topics/company/2020/covid-19.html&quot;&gt;Coronavirus: Staying safe and informed on Twitter By Twitter Inc. Friday, 3 April 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.twitter.com/en_us/topics/company/2020/keeping-our-employees-and-partners-safe-during-coronavirus.html&quot;&gt;Keeping our employees and partners safe during #coronavirus By Jennifer Christie&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://globalworkplaceanalytics.com.statscrop.com/&quot;&gt;Global Workplace Analytics Web&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.iyiou.com/intelligence/report698.html&quot;&gt;亿欧智库《2020远程办公研究报告》&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://about.gitlab.com/remote-work-report/&quot;&gt;The Remote Work Report by GitLab: The Future of Work is Remote&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.inc.com/cameron-albert-deitch/2018-inc5000-gitlab.html&quot;&gt;How This Startup Made $10.5 Million in Revenue With Every Single Employee Working From Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://link.jianshu.com/?t=http://link.zhihu.com/?target=https%3A//about.gitlab.com/handbook/&quot;&gt;Gitlab Team Handbook&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>true</name></author><category term="软件工程" /><category term="小论文" /><category term="学习" /><summary type="html">浅析-疫情对软件开发的工作模式的影响</summary></entry><entry><title type="html">Linux操作系统原理与应用笔记</title><link href="http://localhost:4000/2020/11/08/linux_note.html" rel="alternate" type="text/html" title="Linux操作系统原理与应用笔记" /><published>2020-11-08T08:00:00+08:00</published><updated>2020-11-08T08:00:00+08:00</updated><id>http://localhost:4000/2020/11/08/linux_note</id><content type="html" xml:base="http://localhost:4000/2020/11/08/linux_note.html">&lt;h1 id=&quot;linux操作系统原理与应用笔记&quot;&gt;Linux操作系统原理与应用笔记&lt;/h1&gt;
+
+&lt;h2 id=&quot;第一章-概述&quot;&gt;第一章 概述&lt;/h2&gt;
+
+&lt;h3 id=&quot;linux内核的技术特点&quot;&gt;linux内核的技术特点&lt;/h3&gt;
+
+&lt;p&gt;以实用性和效率为出发点，内核设计成==单内核结构==，整体上把内核作为一个大过程来实现，内核其实就函数和数据结构的集合，其与微内核相比可扩展性和可移植性较低，但与微内核不同，在与文件管理、设备驱动、虚拟内存管理、进程管理等其他上层模块之间不需要有较高的通信开销，==模块之间可以直接调用相关的函数==。（整体的概念）&lt;/p&gt;
+
+&lt;h3 id=&quot;linux内核中链表的实现及应用&quot;&gt;linux内核中链表的实现及应用&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;​	双链表通过前趋和后继两个指针域就可以从两个方向循环双链表，如果打乱前趋后继的依赖关系，就可以构成&lt;strong&gt;“二叉树”&lt;/strong&gt;、“循环链表”，设计更多的指针域还可以构成各种复杂的树状数据结构，如果减少一个指针域，还可以进一步设计成&lt;strong&gt;“栈”和“队列”&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;链表的定义&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mydata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;特点：list域隐藏了链表的指针特性，且一个结构中可以有多个list域&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;链表的操作&lt;/strong&gt;
+链表头初始化操作为：把前趋后继都指向自己，后续添加操作就是形成一个==循环链表==，内核代码&lt;code class=&quot;highlighter-rouge&quot;&gt;list.h&lt;/code&gt;中定义了两个宏来定义链表头：&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define LIST_HEAD_INIT(name){&amp;amp;(name),&amp;amp;(name)}
+#define LIST_HEAD(name) struct list_head name = LIST_HEAD_INIT(name)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;添加节点的具体操作&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//	链表的添加节点&lt;/span&gt;
+  
+&lt;span class=&quot;cm&quot;&gt;/*
+*	静态内联函数 inline说明该函数对编译程序是可见的
+*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__list_add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+&lt;span class=&quot;c1&quot;&gt;//	在链表头尾添加节点&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;list_add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;__list_add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+&lt;span class=&quot;c1&quot;&gt;//	在链表头节点后插入new节点&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;list_add_tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;__list_add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;__list_add&lt;/code&gt;这个内部函数，可以看成是==在两个节点(prev节点和next节点)中插入一个新的节点==，这个设计十分巧妙，只要对其进行相应的封装就可以实现多种功能，如&lt;code class=&quot;highlighter-rouge&quot;&gt;list_add&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;list_add_tail&lt;/code&gt; 这两个函数就可看出，一个是在head节点和后继节点间插入新节点，一个是在head节点和前趋节点间插入，可以用来分别实现&lt;strong&gt;一个栈和一个队列&lt;/strong&gt;。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;关键字inline必须与函数定义体放在一起才能使函数成为内联，inline函数一般放在头文件中使用&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;循环链表操作&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//	每次只找出节点在链表中的偏移位置，还需要list_entry来找出节点的起始地址&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define list_for_each(pos,head)\
+	for(pos=(head)-&amp;gt;next; pos!=(head); pos=pos-&amp;gt;next)
+&lt;/span&gt;  
+&lt;span class=&quot;cm&quot;&gt;/*
+*	(char *)(ptr)-(unsigned long)(&amp;amp;((type *)0)-&amp;gt;member)
+*	ptr指向的是某一结构list域的绝对地址，type是某一结构，member是type结构中的某一域
+* __返回值__ type *
+*/&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define list_entry(ptr,type,member)\
+	((type *)((char *)(ptr)-(unsigned long)(&amp;amp;((type *)0)-&amp;gt;member)))
+&lt;/span&gt;  
+&lt;span class=&quot;c1&quot;&gt;//	安全的遍历节点，在释放节点前先记录下下一个要释放的节点，因为删除节点后&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//	当前被删除的节点的前趋后继是指向内核中两个固定位置的，如果按list_for_each会出错&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define list_for_each_safe(pos,n,head)\
+	for(pos=(head)-&amp;gt;next,n=pos-&amp;gt;next; pos!=(head); pos=n,n=pos-&amp;gt;next)
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__list_del&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;list_del&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;__list_del&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LIST_POSTION1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//	内核地址中的固定地址&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LIST_POSTION2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      
+&lt;span class=&quot;c1&quot;&gt;//	具体代码中的应用&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numlist&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numhead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;INIT_LIST_HEAD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numhead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listnode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//	遍历节点的操作&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;list_for_each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numhead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 	list(prt,type,member)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//	删除所有节点的操作&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;list_for_each_safe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numhead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;list_del&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;kfree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  	&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;具体分析&lt;code class=&quot;highlighter-rouge&quot;&gt;list_entry&lt;/code&gt;:把0地址转换成type类型的指针，获取该结构中member域的指针，也就是为了==得到member在type结构中的偏移量==，而==ptr - member==就得到了type结构的起始地址，也就&lt;strong&gt;获得某一节点的起始地址&lt;/strong&gt;，可以进一步读出type结构中的data域和list域&lt;/p&gt;
+
+    &lt;p&gt;哈希表也是链表的一种衍生，在&lt;code class=&quot;highlighter-rouge&quot;&gt;list.h&lt;/code&gt;中也有相关实现&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第二章-内存寻找&quot;&gt;第二章 内存寻找&lt;/h2&gt;
+&lt;h3 id=&quot;内存寻址&quot;&gt;内存寻址&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;保护模式：这种模式下内存段的范围受到了限制，范围内存时不能直接从段寄存器中获得段的起始地址，而需要经过额外转换和检查（从此不能再随意存取数据段）&lt;/p&gt;
+
+  &lt;p&gt;线性地址：指一段连续的、不分段的，范围从0~4GB的地址空间，一个线性地址就是线性空间的一个绝对地址&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;80386中地址总线和数据总线都是32位，寻址能力达到了4GB，但其为了兼容，还是保留了16位的段寄存器，并采用了在段寄存器基础上的方式来构筑保护机制，即寻址方式为：==段选择符：偏移地址（虚拟地址）==-&amp;gt;线性地址（使用MMU转换）-&amp;gt;物理地址，&lt;strong&gt;段寄存器中存放的是段选择符&lt;/strong&gt;（简单理解为段描述表的索引）。&lt;/p&gt;
+
+&lt;p&gt;16位的段寄存器是明显不足以确定一个基地址，因此段寄存器里存放的段选择符就要发挥作用了，同时在保护模式下，系统中存放有三种类型的描述符表：GDT、IDT（中断描述符表）、LDT，为了加快读取速度还设计了三个寄存器，通过段选择符加描述符表的地址，就可以取得段描述符。&lt;/p&gt;
+
+&lt;p&gt;Linux为了保持可移植性并不真正地使用分段机制，开发人员巧妙地将所有段的基地址设置成0，因此所有的进程都共享了0~4GB的线性空间，这样“偏移量”就等于了“线性地址”，也就是说&lt;strong&gt;虚拟地址就直接等同于了线性地址&lt;/strong&gt;，但这样会让段保护的第一个方法无法发挥作用，且如果线性空间直接映射到物理空间，还会出现进程使用的地址互相覆盖的问题，为此Linux使用了分页机制来解决问题。&lt;/p&gt;
+
+&lt;p&gt;页对应的是物理内存的块，大小都是4KB，通常采用两级页表（页目录和页表）的方法来实现线性地址到物理地址的映射，&lt;strong&gt;32位线性地址&lt;/strong&gt;转换成&lt;strong&gt;物理地址&lt;/strong&gt;的处理方式为：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;最高10位为页目录项的索引，其左移两位后与CR3中的页目录基地址相加可以得到对应的页目录项地址&lt;/li&gt;
+  &lt;li&gt;中间10位为页表项的索引，其左移两位后与从页目录项得到的页表基址相加得到具体的页表项&lt;/li&gt;
+  &lt;li&gt;最低12位为页面偏移地址，从页表项中映射到页面的物理基址，与偏移地址相加就可得到要找的物理地址&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;linux具体实现内存寻址的方式&quot;&gt;Linux具体实现内存寻址的方式&lt;/h3&gt;
+
+&lt;p&gt;目前很多平台都开始使用64位的处理器，Linux为了兼容使用了三级页表的机制，但当前讨论还是通过二级页表的模式为主，其三级页表具体设计为：线性地址（总目录：中间目录：页表：偏移量）。仅支持二级页表的处理器上使用三级页表的模式时，Linux把中间目录当成只有一项，并把其“折叠”到总目录之中，从而适应了二级页表的机制。&lt;/p&gt;
+
+&lt;p&gt;Linux中每一个进程都有自己的页目录和页表集，当进程发生切换时，&lt;strong&gt;Linux把CR3的内容存放到前一个执行进程的PCB中&lt;/strong&gt;，而把下一个要执行的进程的PCB的值装入到CR3中，恢复进程的时候，Linux会先查找PCB中的暂存的内容并恢复到CR3中，从而使分页单元指向正确的页表&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;linux内核初始化页表的代码实现&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;cp&quot;&gt;#define NR_PGT 0x4   												//  需要初始化的页面个数
+&lt;/span&gt;  &lt;span class=&quot;cp&quot;&gt;#define PGD_BASE (unsigned int *)0x1000     //  页目录表映射到物理内存的地址
+&lt;/span&gt;  &lt;span class=&quot;cp&quot;&gt;#define PAGE_OFFSET (unsigned int)0x2000    //	页表的起始地址	
+&lt;/span&gt;
+  &lt;span class=&quot;cp&quot;&gt;#define PTE_PRE 0x01    // 初始化时 页表会装入内存
+&lt;/span&gt;  &lt;span class=&quot;cp&quot;&gt;#define PTE_RW  0x02    // 与U/S位形成硬件保护 
+&lt;/span&gt;  &lt;span class=&quot;cp&quot;&gt;#define PTE_USR 0x04    // Page Write-Through 写透方式
+&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;page_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NR_PGT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 										&lt;span class=&quot;c1&quot;&gt;//  系统初始化时创建4个页表&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PAGE_OFFSET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pgd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PGD_BASE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;//  页目录表存放的物理地址&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pgd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PTE_USR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PTE_RW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PTE_PRE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//  创建四个页目录表项&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;page_offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1000&lt;/span&gt;   												&lt;span class=&quot;c1&quot;&gt;//  每个页目录表的大小为2^12=4KB&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;pgd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PGD_BASE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;c1&quot;&gt;//  页表从物理内存第三个页框开始&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pgt_entry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   
+      &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phy_add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x0000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;//  0x1000000=16MB 初始化了四个页表，每个页表映射了4MB的物理内存地址&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phy_add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pgt_entry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phy_add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PTE_USR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PTE_RW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PTE_PRE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//  页面与物理内存真正形成映射&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;phy_add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      												&lt;span class=&quot;c1&quot;&gt;//  物理块大小和页面大小都是4KB&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;c1&quot;&gt;//  CR0最高位为控制分页位，linux下分页机制的开启是可选的，则段内嵌汇编的作用就是允许分页&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;__asm__&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__volatile__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;movl  %0, %%cr3;&quot;&lt;/span&gt;
+                                  &lt;span class=&quot;s&quot;&gt;&quot;movl   %%cr0, %%eax;&quot;&lt;/span&gt;
+                                  &lt;span class=&quot;s&quot;&gt;&quot;orl    $0x80000000, %%eax;&quot;&lt;/span&gt;
+                                  &lt;span class=&quot;s&quot;&gt;&quot;movl   %%eax, %%cr0;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;r&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pgd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;memory&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%eax&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;第三章-进程&quot;&gt;第三章 进程&lt;/h2&gt;
+
+&lt;h3 id=&quot;linux系统中的进程控制块&quot;&gt;linux系统中的进程控制块&lt;/h3&gt;
+
+&lt;p&gt;linux中对进程的描述结构叫做PCB（task_struct）其是一个相当庞大的结构体，按功能可以分成以下几类&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;状态信息-描述进程的动态变化&lt;/li&gt;
+  &lt;li&gt;链接信息-描述进的亲属关系&lt;/li&gt;
+  &lt;li&gt;各种标识符&lt;/li&gt;
+  &lt;li&gt;进程间通信信息&lt;/li&gt;
+  &lt;li&gt;时间和定时器信息&lt;/li&gt;
+  &lt;li&gt;调度信息&lt;/li&gt;
+  &lt;li&gt;文件系统信息&lt;/li&gt;
+  &lt;li&gt;虚拟内存信息-描述进程编译连接后形成的地址空间&lt;/li&gt;
+  &lt;li&gt;处理器环境信息-进程的执行环境（处理器的各种寄存器及堆栈信息），==体现进程动态变化最主要的场景==&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;系统创建一个新进程的时候就是在内核中为它建立了一个PCB，进程结束的时候又收回PCB，其是内核中频繁读写的数据结构，因此应当常驻内存。&lt;/p&gt;
+
+&lt;p&gt;每当进程从用户态进入内核态后都要使用栈-进程的内核栈，进程一进入内核态，CPU就自动为其设置该进程的内核栈，这个栈位于&lt;strong&gt;内核的数据段&lt;/strong&gt;上，其==&lt;em&gt;内核栈和一个&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_info&lt;/code&gt;结构存放在一起，大小为8KB&lt;/em&gt;==。实际上内核为PCB分配空间的方式是动态的（&lt;strong&gt;确切地说，内核根本不为PCB分配内存&lt;/strong&gt;），而仅仅给内核栈分配8KB的内存，并把一部分让给PCB使用(thread_info)。&lt;/p&gt;
+
+&lt;p&gt;段起始于末端，并朝这个内存区开始的方向增长，从用户态转到内核态以后，&lt;u&gt;进程的内核栈总是空的&lt;/u&gt;，堆栈寄存器ESP直接指向内存区的顶端，只要把数据写入栈中，ESP的值递减。&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_info&lt;/code&gt;与内核栈存放在一起的最大好处是，内存栈很容易从&lt;code class=&quot;highlighter-rouge&quot;&gt;ESP&lt;/code&gt;的值获取到当前CPU上运行的&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_info&lt;/code&gt;结构的地址，因为&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_union&lt;/code&gt;(内核栈和thread_info)结构的长度是8KB，&lt;strong&gt;则内核屏蔽ESP的低13位就得到thread_info结构的基地址&lt;/strong&gt;，通过&lt;code class=&quot;highlighter-rouge&quot;&gt;*task&lt;/code&gt;就可以得到该进程的PCB，&lt;code class=&quot;highlighter-rouge&quot;&gt;PCB&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_info&lt;/code&gt;都有一个域是指向对方的，是一种一一对应的关系，而再定义一个&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_info&lt;/code&gt;结构的原因有两种可能：1.该结构是最频繁被调用的 2.随着linux版本的变化，PCB越来越大，为了节省内核栈的空间，需要把一部分的PCB内容移出内核栈，只保留最频繁被使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_info&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;linux中进程的组织方式&quot;&gt;linux中进程的组织方式&lt;/h3&gt;
+
+&lt;p&gt;内核建立了几个进程链表，双向循环链表的头尾都是&lt;code class=&quot;highlighter-rouge&quot;&gt;init_task&lt;/code&gt;（0号进程的PCB，是预先由编译器静态分配到内核数据段的，在运行过程中保持不变，永远不会被撤销的），系统使用哈希表和链地址法来加速用PID找到相应PCB的过程，并组织好了一个就绪队列和等待队列&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;就绪队列存放处于就绪态和运行态的进程&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;等待队列存放睡眠进程，对中断处理、进程同步和定时用处很大&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//	等待队列的数据结构&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__wait_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//	区分互斥进程和非互斥进程，对于互斥进程值为（WQ_FLAG_EXCLUSIVE）&lt;/span&gt;
+  &lt;span class=&quot;cp&quot;&gt;#define WQ_FLAG_EXCLUSIVE 	0x01	
+&lt;/span&gt;  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;							&lt;span class=&quot;c1&quot;&gt;//	传递给func的参数&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;wait_queue_func_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;			&lt;span class=&quot;c1&quot;&gt;//	用于唤醒进程的函数，需要根据等待的原因归类&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//	用于组成等待队列&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__wait_queue&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wait_queue_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+&lt;span class=&quot;c1&quot;&gt;//	等待队列头结构&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+*	等待队列是由中断处理程序和主要内核函数修改的,因此必须对其双向链表保护,以免对其进行同时访问
+*	所以采用了自旋锁来进行同步
+*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__wait_queue_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spinlock_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;等待队列是由中断处理程序和主要内核函数修改的，因此必须对其双向链表保护，以免对其进行同时访问，所以采用了自旋锁来进行同步&lt;/p&gt;
+
+    &lt;p&gt;等待队列的操作&lt;code class=&quot;highlighter-rouge&quot;&gt;add_wait_queue()&lt;/code&gt;把一个非互斥进程插入到等待队列链表的第一个位置，&lt;code class=&quot;highlighter-rouge&quot;&gt;add_wait_queue_exclusive()&lt;/code&gt;把一个互斥进程插入但等待队列的最后一个位置。让某一个进程去睡眠的最基本操作为：先把当前进程的状态设置成&lt;code class=&quot;highlighter-rouge&quot;&gt;TASK_UNINTERRUPTIBLE&lt;/code&gt;并把它插入到特定的等待队列中，然后调用调度程序，当进程被唤醒的时候会接着执行剩余的指令，同时把进程从等待队列中删除&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//	wake_up()函数&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wake_up&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait_queue_head_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;wait_queue_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//	扫描链表，找等待队列中的所有进程&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;list_for_each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//	curr指向每个等待进程的起始地址&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list_entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait_queue_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/*如果进程已经被唤醒并且进程是互斥的，则循环结束
+     *因为所有的非互斥进程都是在链表的开始位置，而所有的互斥进程都在链表的尾部，所以可以先唤醒非互斥			 *进程再唤醒互斥进程
+     */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TASK_INTERRUPTIBLE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TASK_UNINTERRUPTIBLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;linux进程调度&quot;&gt;linux进程调度&lt;/h3&gt;
+
+&lt;p&gt;linux进程调度是时机：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 进程状态转换的时刻，使用`sleep_on()`、`exit()`时会主动调用调度函数
+ 	2. 当前进程的时间片用完
+ 	3. 设备驱动程序运行时
+ 	4. 从内核态返回到用户态时，从系统调用返回意味着离开内核态，状态转换需要花费一定的时间，在返回到用户态前，系统把在内核态该处理的事应当全部做完。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//	schedule() 函数主框架 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__sched&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;notrace&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__schedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preempt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_struct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;switch_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cpu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  ==1==  
+        找到当前cpu上的就绪队列rq
+        并将正在运行的进程curr保存到prev中  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cpu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smp_processor_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cpu_rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cpu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*
+     * do_exit() calls schedule() with preemption disabled as an exception;
+     * however we must fix that up, otherwise the next task will see an
+     * inconsistent (higher) preempt count.
+     *
+     * It also avoids the below schedule_debug() test from complaining
+     * about this.
+     */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unlikely&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TASK_DEAD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;preempt_enable_no_resched_notrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  如果禁止内核抢占，而又调用了cond_resched就会出错
+     *  这里就是用来捕获该错误的  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;schedule_debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sched_feat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HRTICK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;hrtick_clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  关闭本地中断  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;local_irq_disable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  更新全局状态，
+     *  标识当前CPU发生上下文的切换  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rcu_note_context_switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*
+     * Make sure that signal_pending_state()-&amp;gt;signal_pending() below
+     * can't be reordered with __set_current_state(TASK_INTERRUPTIBLE)
+     * done by the caller to avoid the race with signal_wake_up().
+     */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;smp_mb__before_spinlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/*  锁住该队列  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;raw_spin_lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;lockdep_pin_lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clock_skip_update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* promote REQ to ACT */&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  切换次数记录, 默认认为非主动调度计数(抢占)  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;switch_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nivcsw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*
+     *  scheduler检查prev的状态state和内核抢占表示
+     *  如果prev是不可运行的, 并且在内核态没有被抢占
+     *  
+     *  此时当前进程不是处于运行态, 并且不是被抢占
+     *  此时不能只检查抢占计数
+     *  因为可能某个进程(如网卡轮询)直接调用了schedule
+     *  如果不判断prev-&amp;gt;stat就可能误认为task进程为RUNNING状态
+     *  到达这里，有两种可能，一种是主动schedule, 另外一种是被抢占
+     *  被抢占有两种情况, 一种是时间片到点, 一种是时间片没到点
+     *  时间片到点后, 主要是置当前进程的need_resched标志
+     *  接下来在时钟中断结束后, 会preempt_schedule_irq抢占调度
+     *  
+     *  那么我们正常应该做的是应该将进程prev从就绪队列rq中删除, 
+     *  但是如果当前进程prev有非阻塞等待信号, 
+     *  并且它的状态是TASK_INTERRUPTIBLE
+     *  我们就不应该从就绪队列总删除它 
+     *  而是配置其状态为TASK_RUNNING, 并且把他留在rq中
+
+    /*  如果内核态没有被抢占, 并且内核抢占有效
+        即是否同时满足以下条件：
+        1  该进程处于停止状态
+        2  该进程没有在内核态被抢占 */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preempt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;cm&quot;&gt;/*  如果当前进程有非阻塞等待信号，并且它的状态是TASK_INTERRUPTIBLE  */&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unlikely&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signal_pending_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;cm&quot;&gt;/*  将当前进程的状态设为：TASK_RUNNING  */&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TASK_RUNNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;   &lt;span class=&quot;cm&quot;&gt;/*  否则需要将prev进程从就绪队列中删除*/&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;cm&quot;&gt;/*  将当前进程从runqueue(运行队列)中删除  */&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;deactivate_task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DEQUEUE_SLEEP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+            &lt;span class=&quot;cm&quot;&gt;/*  标识当前进程不在runqueue中  */&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;on_rq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;cm&quot;&gt;/*
+             * If a worker went to sleep, notify and ask workqueue
+             * whether it wants to wake up a task to maintain
+             * concurrency.
+             */&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flags&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PF_WQ_WORKER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_struct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_wakeup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+                &lt;span class=&quot;n&quot;&gt;to_wakeup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wq_worker_sleeping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_wakeup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;try_to_wake_up_local&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_wakeup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;cm&quot;&gt;/*  如果不是被抢占的，就累加主动切换次数  */&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;switch_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvcsw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  如果prev进程仍然在就绪队列上没有被删除  */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task_on_rq_queued&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;update_rq_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;cm&quot;&gt;/*  跟新就绪队列的时钟  */&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  挑选一个优先级最高的任务将其排进队列  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pick_next_task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/*  清除pre的TIF_NEED_RESCHED标志  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;clear_tsk_need_resched&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/*  清楚内核抢占标识  */&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;clear_preempt_need_resched&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clock_skip_update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/*  如果prev和next非同一个进程  */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;likely&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr_switches&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;cm&quot;&gt;/*  队列切换次数更新  */&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;/*  将next标记为队列的curr进程  */&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;++*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;switch_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;/* 进程切换次数更新  */&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;trace_sched_switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preempt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;cm&quot;&gt;/*  进程之间上下文切换    */&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context_switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* unlocks the rq */&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;/*  如果prev和next为同一进程，则不进行进程切换  */&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lockdep_unpin_lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;raw_spin_unlock_irq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;balance_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;STACK_FRAME_NON_STANDARD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__schedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* switch_to() */&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/*转载自： http://blog.csdn.net/gatieme*/&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* 进程地址空间切换详解 */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;kstat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context_swtch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//	统计上下文切换的次数&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mm_struct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mm_struct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldmm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;active_mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//	没有用户空间，表明这为内核线程&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;active_mm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;nexit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;active_mm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldmm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;			&lt;span class=&quot;c1&quot;&gt;//	一般进程则切换到这段用户空间&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;active_mm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;switch_mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldmm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;this_cpu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//	切换出去的是内核线程的处理方式&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;active_mm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mmdrop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldmm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Linux schedule()分析：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;进程需要有自己的地址空间，或者和其他进程借用，如果都没有则出错，且如果&lt;code class=&quot;highlighter-rouge&quot;&gt;schedule()&lt;/code&gt;在中断服务程序内部执行也出错&lt;/li&gt;
+  &lt;li&gt;对当前进程要做相关的处理，应当进入调度程序是，其状态不一定还是&lt;code class=&quot;highlighter-rouge&quot;&gt;TASK_RUNNNING&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进程地址空间切换，如果新进程有自己的用户空间，则&lt;code class=&quot;highlighter-rouge&quot;&gt;switch_mm()&lt;/code&gt;函数会把该进程从内核空间转换到用户空间（加载下一个要执行的进程的页目录）；如果新进程是一个内核线程，无用户空间而在内核空间中运行，则要借用前一个进程的地址空间，因为所有的进程的内核空间都是共享的。如果切换出去的如果是内核线程，则要归还所借用的地址空间，并把mm_struct 中的共享计数减1&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;linux进程创建线程及其创建&quot;&gt;Linux进程创建、线程及其创建&lt;/h3&gt;
+
+&lt;p&gt;Linux创建进程的方式是通过&lt;code class=&quot;highlighter-rouge&quot;&gt;fork()&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;clone()&lt;/code&gt;，然后再调用&lt;code class=&quot;highlighter-rouge&quot;&gt;exec()&lt;/code&gt;，其使用的是写时复制技术（把父子进程的全部资源都设为只读，在父子进程尝试对其进行修改时才将被修改前的全部资源复制给子进程），创建进程的实际花销是为其创建PCB并把父进程的页表拷贝一份，如果进程中包含线程，则所有线程共享这些资源，无须拷贝。子进程一开始处于深度睡眠态，以确保它不会立刻运行，在把进程PCB插入到进程链表和哈希表后才将其设成就绪态，并让其平分父进程剩余的时间片，内核有意让子进程先执行，是为了让子进程使用&lt;code class=&quot;highlighter-rouge&quot;&gt;exec()&lt;/code&gt;去执行其自己的代码，避免父进程操作引起写时复制，提高系统运行速度&lt;/p&gt;
+
+&lt;p&gt;Linux把线程看成一个使用某些共享资源的进程，每个线程有唯一的PCB，一般情况下内核线程会在创建时永远地执行下去，在需要的时候就会被唤醒和执行。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;进程0：内核初始化工作的&lt;code class=&quot;highlighter-rouge&quot;&gt;start_kernel()&lt;/code&gt;创建一个内核线程也就是进程0，其PCB就是&lt;code class=&quot;highlighter-rouge&quot;&gt;init_task&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进程1：也就是init进程，其一开始是一个内核线程，其调用了&lt;code class=&quot;highlighter-rouge&quot;&gt;execve()&lt;/code&gt;装入了用户态下可执行程序init(/sbin/init)，因此init是内核线程启动起来的一个普通进程，也就是用户态下的第一个进程&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;第四章-内存管理&quot;&gt;第四章 内存管理&lt;/h2&gt;
+
+&lt;p&gt;32位平台线性空间固定大小为4GB，其中高地址1GB（0xC000 0000~0xffff ffff）是内核空间，被内核使用并且由所有进程共享，每个用户进程的用户空间为3GB大小，通过分页机制实现各个进程的用户空间私有。&lt;/p&gt;
+
+&lt;p&gt;进程页目录PGB就位于内核空间中，在切换进程的时候需要将CR3指向新进程的PGB，CR3需要物理地址，而PGB在内核中的起始地址是虚地址，这时候需要转换，Linux的内核空间有一个独特设计，即==内核空间连续地占据了每个虚拟空间中最高的1GB，映射到物理内存却总是从最低地址开始的==，因此内核地址到物理地址只需要减去&lt;code class=&quot;highlighter-rouge&quot;&gt;PAGE_OFFSET&lt;/code&gt;就可以了。&lt;/p&gt;
+
+&lt;p&gt;内核地址空间的结构：内核的代码和数据叫做内核映像，Linux内核映像存放于0x0010 0000开始的地方&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;这前1M的空间用于存放于系统硬件相关的代码和数据&lt;/li&gt;
+  &lt;li&gt;内核映像占用0x10 0000到start_mem的空间&lt;/li&gt;
+  &lt;li&gt;Start_mem到end_mem这段区域叫做动态内存，是用户程序和数据使用的内存区&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;进程的用户空间管理&quot;&gt;进程的用户空间管理&lt;/h3&gt;
+
+&lt;p&gt;用户地址空间的结构：用户程序经过编译和链接后形成二进制映像文件，数据段、代码段、堆栈使用的空间都是在建立进程的时候就分配好，都属于必需的基本要求&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;堆栈段：在用户空间顶部，由顶向下延伸&lt;/li&gt;
+  &lt;li&gt;BSS：动态分配的空间&lt;/li&gt;
+  &lt;li&gt;数据段：静态分配的数据空间，&lt;/li&gt;
+  &lt;li&gt;代码段：程序的相关代码&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;每个进程只有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;mm_struct&lt;/code&gt;，其是对整个用户空间的描述，而一个进程的虚拟空间中可能有多个虚拟区间，用&lt;code class=&quot;highlighter-rouge&quot;&gt;vm_area_struct&lt;/code&gt;描述，如堆栈段、数据段……&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mm_struct&lt;/code&gt;	在 &lt;code class=&quot;highlighter-rouge&quot;&gt;task_struct&lt;/code&gt; 可以找到指向该结构的指针，虽然每个进程只有一个虚拟地址空间，但是该空间可以被其他进程所共享，因此需要使用原子类型的操作 &lt;code class=&quot;highlighter-rouge&quot;&gt;atomic_t&lt;/code&gt;(该结构中包含了一个计数器)，&lt;strong&gt;描述了代码段、数据段、参数段已经环境段的起始地址和结束地址&lt;/strong&gt;，==还有指针pgt指向该进程的页目录==&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;&lt;em&gt;进程页表和内核页表的区别&lt;/em&gt;&lt;/strong&gt; - &lt;a href=&quot;https://blog.csdn.net/chuba6693/article/details/100612637&quot;&gt;Linux 内核页表和进程页表&lt;/a&gt;&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;在保护模式下，&lt;strong&gt;从硬件角度看，其运行的基本对象为“进程”(或线程)，而寻址则依赖于“进程页表”&lt;/strong&gt;，在进程调度而进行上下文切换时，会进行页表的切换：即将新进程的pgd(页目录)加载到CR3寄存器中。&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;进程页表中的线性地址包括两个部分：用户态和内核态&lt;/strong&gt;，内核态地址对应的相关页表项，对于所有进程来说都是相同的(因为&lt;strong&gt;内核空间对所有进程来说都是共享的&lt;/strong&gt;)，而这部分页表内容其实就来源于“内核页表”，即每个进程的“进程页表”中内核态地址相关的页表项都是“内核页表”的一个拷贝。&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;内核页表也包括两个部分：线性映射区和vmalloc区&lt;/strong&gt;，“内核页表”由内核自己维护并更新，在&lt;code class=&quot;highlighter-rouge&quot;&gt;vmalloc区&lt;/code&gt;发生&lt;code class=&quot;highlighter-rouge&quot;&gt;page fault&lt;/code&gt;时，将“内核页表”同步到“进程页表”中。&lt;/li&gt;
+        &lt;li&gt;以&lt;code class=&quot;highlighter-rouge&quot;&gt;vmalloc&lt;/code&gt;为例(最常使用)，这部分区域对应的线性地址在内核使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vmalloc&lt;/code&gt;分配内存时，其实就已经分配了相应的物理内存，并做了相应的映射，建立了相应的页表项，但&lt;strong&gt;相关页表项仅写入了“内核页表”，并没有实时更新到“进程页表中”，内核在这里使用了“延迟更新”的策略&lt;/strong&gt;，将“进程页表”真正更新推迟到第一次访问相关线性地址，发生&lt;code class=&quot;highlighter-rouge&quot;&gt;page fault&lt;/code&gt;时，此时在&lt;code class=&quot;highlighter-rouge&quot;&gt;page fault&lt;/code&gt;的处理流程中进行“进程页表”的更新。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vm_area_struct&lt;/code&gt; Linux把虚存区看成是对象，把用户空间划分成一段一段是因为每个虚存区的来源可能不同，有的来自可执行映像，有的来自共享库、动态分配的内存区，不同的区有不同的操作权限和操作方法；&lt;code class=&quot;highlighter-rouge&quot;&gt;vm_area_struct&lt;/code&gt; 可用双向链表和红黑树来组织，有利于快速定位虚存区&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;创建进程的时候，进程用户空间的创建依赖于父进程，所做的工作仅仅是&lt;code class=&quot;highlighter-rouge&quot;&gt;mm_struct&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;vm_area_struct&lt;/code&gt;的创建以及页目录和页表的建立，采用&lt;strong&gt;写时复制&lt;/strong&gt;的方法。Linux并不把进程的可执行映像装入物理内存，只是把它们链接到进程的用户空间，被引用的程序部分会由操作系统装入物理内存，也就是需要使用请页机制&lt;/p&gt;
+
+&lt;h3 id=&quot;请页机制&quot;&gt;请页机制&lt;/h3&gt;
+
+&lt;p&gt;给进程分配新物理页面的确定方式：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如果页面不在内存中，页没有被调入，则内核分配一个新页面并初始化，“请求调页”&lt;/li&gt;
+  &lt;li&gt;如果页面在内存但是只读，则内核分配一个新页面并复制旧页面的内容，“写时复制”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;请求调页：写处理，获取新页面，把页面填为0，把页表置为新页面的物理地址，并设页面为可写和脏；读处理，分配一个零页，零页在内核初始化期间被静态分配并标记为不可写，当进程写该页面的时候才使用写时复制&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;物理内存&quot;&gt;物理内存&lt;/h3&gt;
+
+&lt;p&gt;内核用&lt;code class=&quot;highlighter-rouge&quot;&gt;struct page&lt;/code&gt;结构表示系统中的每一个物理页面，也叫页描述符，这种结构目的在于描述物理内存本身，内核仅用这个数据结构来描述当前时刻在相关物理页中存放的东西。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;伙伴算法&lt;/strong&gt;：Linux把空闲页面分为10块链表，每个链表中的一个块为2的幂次个页面，&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;free_area_struct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//	用于将page链接成一个双向链表&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//	map指向一个位图&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;free_area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;算法过程：如果要求分配的块大小为128个页面，则去块大小为128的链表中找，如果没有则往上找，如果256大小的链表中有空间，则把256个页面平分，高地址的被使用，低地址的加入128的链表中，回收过程则相反，同时要注意相邻的物理页面要进行合并&lt;/p&gt;
+
+&lt;p&gt;Linux中有&lt;code class=&quot;highlighter-rouge&quot;&gt;freepages&lt;/code&gt;结构，来使用内核交换守护进程(&lt;code class=&quot;highlighter-rouge&quot;&gt;kswapd&lt;/code&gt;)保证系统有足够的物理内存，结构中有&lt;code class=&quot;highlighter-rouge&quot;&gt;min|low|high&lt;/code&gt;三条线，各个界限值是通过实际的物理内存大小计算出来的，少于low会开启强交换；少于high会启动后台交换；高于high则什么都不做。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Slab分配机制&lt;/strong&gt;：用于解决内碎片，减少对伙伴算法的调用次数。对于预期频繁使用的内存区可以创建特定大小的专业缓冲区来处理，使用较少的内存区创建通用缓冲区来处理。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;slab缓冲区由一连串的大块slab构成，每个大块中包含了若干个同类型的对象，实际上缓冲区是内存中的一片区域，这片区域划分为多个slab块，每个slab由一个或者多个页面组成，存放的都是同一类型的对象&lt;/li&gt;
+  &lt;li&gt;通用缓冲区，通用缓冲区最小的为32B、64B…..128KB，对通用缓冲区的管理依旧是slab方式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;kmalloc()&lt;/code&gt;用于分配内核中的连续内存&lt;/td&gt;
+        &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vmalloc()&lt;/code&gt;用于分配非连续的内核内存&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;回收机制&quot;&gt;回收机制&lt;/h3&gt;
+
+&lt;p&gt;把页面换出推迟到无法推迟为止，换出页面的时候不需要先将内容写入到磁盘中，如果一个页面从最近一次换入后并没有被写过则它是干净的，可以一直缓冲到必要时才加以回收；写过的脏页面放到磁盘交换区中，但不立即释放，一直推迟到必要时才进行，如果一个页面在释放后又被访问，则重新从磁盘缓冲区读入即可&lt;/p&gt;
+
+&lt;p&gt;内核守护线程&lt;code class=&quot;highlighter-rouge&quot;&gt;kswapd&lt;/code&gt;是有自己的PCB，一样受到内核的调度，由内核设计时规定多久运行一次，&lt;/p&gt;
+
+&lt;h2 id=&quot;第五章-中断和异常&quot;&gt;第五章 中断和异常&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;异常：1. 故障   2. 陷阱 
+		  中断：1.可屏蔽中断（外部，IRQ） 2.非屏蔽中断（计算机内部的硬件故障-缺页）&lt;/p&gt;
+
+  &lt;p&gt;通常我们指的&lt;strong&gt;异常&lt;/strong&gt;是指&lt;em&gt;异常和非屏蔽中断&lt;/em&gt;，&lt;strong&gt;中断&lt;/strong&gt;特指&lt;em&gt;可屏蔽的中断&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Linux中有256个中断向量：&lt;/strong&gt;0-31号对应为异常（异常和非屏蔽中断）向量；32-47号对应中断向量，可屏蔽中断可以通过对中断控制器的编程来改变；48-255号对应软中断，Linux只使用了128号中断（int 0x80）来实现系统调用&lt;/p&gt;
+
+&lt;p&gt;外设可屏蔽中断，&lt;strong&gt;x86通过两片8259A中断控制器来响应15个外中断源&lt;/strong&gt;，每个8259A可管理8个中断源，第二个芯片通过第一个芯片（主片）的2号中断线连接，与中断控制器相连的线称为中断线，&lt;strong&gt;申请一条中断线就是申请一个IRQ或者申请一个中断号&lt;/strong&gt;，IRQ从0开始编号，IRQn的默认中断向量就是n+32。&lt;/p&gt;
+
+&lt;p&gt;对于外部I/O请求的屏蔽可以分成两种&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;CPU内部关中断，则屏蔽所有外部中断&lt;/li&gt;
+  &lt;li&gt;中断控制器内部的中断控制寄存器，其对应芯片的各条中断线，可以屏蔽特定中断线上的中断&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;中断线是可共享的由一个中断处理程序统一处理，而一个中断处理程序又拥有多个对应设备的中断服务例程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;*异常与外部接口没有任何关系，CPU执行一个异常处理程序的时候需要关中断，即屏蔽其他异常和中断，**CPU具有异常锁存的功能**，可以避免异常处理的嵌套，Linux内核必须针对不同的处理器发布的所有异常提供专门的异常处理程序*&lt;/u&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;中断描述符表&quot;&gt;中断描述符表&lt;/h3&gt;
+
+&lt;p&gt;实模式下，0-1KB的内存空间用来存放中断向量表，表项为段地址和偏移量组成；在保护模式下，4字节的表项不足以满足需求，此时表项为：2字节的段地址、4字节的偏移量和2字节反映模式切换的信息，中断向量表也该交为中断描述符表(IDT)，其表项被称为门描述符，中断发生的时候必须先通过这个门再找到相应处理程序。中断描述符表可以存放在内存中任意位置，CPU中有一个IDTR寄存器来找到其位置（48个字节大小，高32位为基地址，低16位为IDT大小）。&lt;/p&gt;
+
+&lt;p&gt;门描述符的类型：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;中断门，请求特权级DPL为0，用户不能访问，且访问时需要关中断，避免中断嵌套，所有中断处理程序都由中断门激活，并全部限制在内核态中&lt;/li&gt;
+  &lt;li&gt;陷阱门，用户不能访问，但访问时不需要关中断&lt;/li&gt;
+  &lt;li&gt;系统门，用户态进程可以通过系统门进入内核态，从而访问陷阱门&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;IDT表项的设置：&lt;/strong&gt;中断描述符表开头的19个陷阱门和系统门，这些中断向量都是被CPU保留用来处理异常的，从32号开始有224个中断门（必须跳过128号向量用于系统调用的向量）&lt;/p&gt;
+
+&lt;h3 id=&quot;中断处理&quot;&gt;中断处理&lt;/h3&gt;
+
+&lt;p&gt;在CPU执行下一条指令前需要进行中断检查，看看是否发生了中断或者异常，如果发生了则&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;确定发生的中断或者异常的向量i&lt;/li&gt;
+  &lt;li&gt;通过IDTR找到IDT，读取第i项&lt;/li&gt;
+  &lt;li&gt;进行有效性检查：
+    &lt;ul&gt;
+      &lt;li&gt;“段”级检查，CPU当前特权级是否比第i项段选择符中描述的特权级大，不允许低特权的进程引起高特权级的中断处理程序&lt;/li&gt;
+      &lt;li&gt;“门”级检查，CPU当前特权级是否比第i个门的特权级相比，如果小于则CPU不能通过，只针对用户程序，而不包括IO产生的中断或者CPU内部的异常&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;是否发生了特权级的变化，如果变化了则说明要进行用户态到内核态的堆栈转换&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;实现共享中断线，需要建立&lt;strong&gt;中断请求队列&lt;/strong&gt;，在Linux中15条中断线对应15个中断处理程序，此时CPU虽然通过中断门能找到对应的中断处理程序，但是具体的中断服务例程还未进入中断请求队列，因此中断不会被处理&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*中断线共享的数据结构*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;irqaction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;irq_handler_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//	指向一个具体的中断服务程序&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//	中断线与IO设备的管理，IRQF_SHARED 允许其他设备共享此中断线&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cpumask_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;					
+  &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;				&lt;span class=&quot;c1&quot;&gt;//	IO设备名&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;						&lt;span class=&quot;c1&quot;&gt;//	主次设备号&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;irqaction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//	共享同一中断线的每个硬件对应的中断服务例程&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;irq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/*注册中断服务程序*/&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request_irq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;irq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;irq_handler_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;irqflags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;devname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//	irq				表示要分配的中断号，可以预先设定或者动态探测&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//	handler		指向处理中断的实际中断服务程序&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//	irqflags	设置中断线可否共享等信息&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//	devname		与中断相关的设备的名字&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//	dev_id		提供唯一的标志信息，以便在删除时能从共享中断线中找到指定的中断服务例程&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;中断服务程序执行时需要关闭中断，因此必须在用来处理最紧迫的事情后就立刻开中断，避免丢失重要的中断，把剩下的事情交由另一部分处理，也就分成了中断服务程序的上下部：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;中断的上半部处理与设备相关的操作：响应中断请求，读取或发送相关数据，这一部分工作很少&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;中断的下半部处理与程序相关的操作&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;中断下半部有两种机制：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;小任务机制，把要推迟执行的函数进行组织，&lt;code class=&quot;highlighter-rouge&quot;&gt;tasklet_struct&lt;/code&gt;结构表示一个独立的小任务，小任务不能睡眠，但在运行时能响应中断，推迟要处理的事情由结构中的&lt;code class=&quot;highlighter-rouge&quot;&gt;tasklet_handler&lt;/code&gt;实现，由小任务封装后交给内核处理，在被调度后尽可能尽早执行&lt;/li&gt;
+  &lt;li&gt;工作队列机制，我们把推后执行的任务称为工作，这些工作以队列结构组成工作队列，而工作者线程（内核线程）就负责执行工作队列中的工作，工作队列机制是允许调度和睡眠的&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;时钟中断&quot;&gt;时钟中断&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;时间硬件分为RTC和OS时钟，RTC为实时时钟，又称CMOS时钟，是PC主板上的一块芯片；OS时钟是操作系统控制的PC主板上的定时&lt;/td&gt;
+        &lt;td&gt;计数芯片产生的，在开机时，操作系统取得RTC中的时间数据来初始化OS时钟，该定时芯片会不断的发送输出脉冲，并连接到中断控制器上，从而不断触发时钟中断，通过时钟中断来维持OS时钟的正常工作，即加1和细微的修正工作。&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;OS时钟和RTC时钟通过BIOS链接，RTC是OS时钟的基准，Linux在内核初始化完成后就会抛弃BIOS&lt;/p&gt;
+
+&lt;p&gt;Linux中为了简化RTC时钟到OS时钟的运算，将时间基准设为1970年1月1号凌晨0点，OS时间其实就是一个计数器，记录RTC时间-时间基准的节拍数，系统实际时间Xtime是通过读取RTC来初始化的，jiffies记录从系统启动至今的节拍数&lt;/p&gt;
+
+&lt;p&gt;时间中断处理程序&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;给节拍数jiffies加1&lt;/li&gt;
+  &lt;li&gt;更新资源消耗的时间，如当前进程所消耗的系统时间和用户时间&lt;/li&gt;
+  &lt;li&gt;执行到期定时器&lt;/li&gt;
+  &lt;li&gt;执行调度函数&lt;/li&gt;
+  &lt;li&gt;根据xtime时间更新墙上时间&lt;/li&gt;
+  &lt;li&gt;计算平均负载值&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;第六章-系统调用&quot;&gt;第六章 系统调用&lt;/h2&gt;
+
+&lt;p&gt;系统调用是用户进程进入内核的接口层，它本身并非内核函数，但它是由内核函数实现的，进入内核后，不同的系统调用会找到各自对应的内核函数，这些内核函数被称为系统调用的“服务例程”。&lt;/p&gt;
+
+&lt;p&gt;用户在调用系统调用的时候回向内核传递一个系统调用号&lt;code class=&quot;highlighter-rouge&quot;&gt;__NR_XXX N&lt;/code&gt;，然后系统调用处理程序通过这个号从系统调用表中找到相应的内核函数执行。系统调用号是linux系统分配的，分配完成后不能有任何改变。&lt;/p&gt;
+
+&lt;p&gt;内核建立一个系统调用表，这个表保存在&lt;code class=&quot;highlighter-rouge&quot;&gt;sys_call_table&lt;/code&gt;数组中，其是一个函数指针数组，每一个函数指针都指向其系统调用的封装例程，有&lt;code class=&quot;highlighter-rouge&quot;&gt;NR_syscalls&lt;/code&gt;个表现，第n个表项包含系统调用号为n的服务例程的地址，但&lt;code class=&quot;highlighter-rouge&quot;&gt;NR_syscalls&lt;/code&gt;只是对可实现的系统调用最大个数进行了限定，并不表示实际已实现的系统调用数。&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ENRTY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys_call_table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_restart_syscall&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_exit&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_fork&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_read&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_write&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_open&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;应用程序是通过软中断的方式来通知系统的，引发一个异常来促使系统切换到内核态去执行异常处理程序，此时的异常处理程序就是系统调用处理程序。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;System_call()&lt;/code&gt;函数&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先把系统调用号和异常处理程序可以用到的CPU寄存器都保存到相应的栈中，通过获得内核栈指针的值并把它取整到8KB的倍数而获得当前进程的PCB地址&lt;/li&gt;
+  &lt;li&gt;对传进来的系统调用号进行检查，如果不小于&lt;code class=&quot;highlighter-rouge&quot;&gt;NR_syscalls&lt;/code&gt;则系统调用处理程序终止&lt;/li&gt;
+  &lt;li&gt;如果系统调用号无效，则返回用户态，并在EAX中存放一个负的返回值&lt;/li&gt;
+  &lt;li&gt;最终，根据EAX中包含的系统调用号找到对应的服务例程，因为系统调用表中每一项占4字节，故EAX中的系统调用号左移两位再加上&lt;code class=&quot;highlighter-rouge&quot;&gt;sys_call_table&lt;/code&gt;的基址就可以获取到相对应的服务例程&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;与普通函数的参数通过活动的程序栈传递不同，&lt;strong&gt;系统调用的参数通常是通过寄存器传递给系统调用处理程序的，然后再拷贝到内核堆栈中&lt;/strong&gt;，所以参数个数不能超过6个且长度不长于32位，但通常也确实存在超过6个参数的调用，这种情况下，需要用一个单独的寄存器指向进程地址空间中这些参数所在的一个内存区即可&lt;/p&gt;
+
+&lt;p&gt;存放系统调用参数所用的6个寄存器分别为&lt;code class=&quot;highlighter-rouge&quot;&gt;EAX、EBX、ECX、EDX、ESI和EDI&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;system_call()&lt;/code&gt;通过&lt;code class=&quot;highlighter-rouge&quot;&gt;SAVE_ALL&lt;/code&gt;宏将其保存到内核态堆栈中。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;封装服务例程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Linux定义了&lt;code class=&quot;highlighter-rouge&quot;&gt;__syscall0&lt;/code&gt;到&lt;code class=&quot;highlighter-rouge&quot;&gt;__syscall5&lt;/code&gt;这六个宏，0~5分别对应参数的个数，严格来说每个宏需要2+2xN个参数，n是系统调用所需的参数（类型和名字）2是系统调用的名字和返回值类型&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__NR_write&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys_write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;__syscall3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-assembly&quot;&gt;write(write的__syscall3宏展开):
+	pushl	%ebx						;	传参
+	movl	8(%esp)	,	%ebx
+	movl	12(%esp),	%ecx
+	movl	16(%esp),	%edx
+	movl	$4,	%eax				;	系统调用号
+	int		$0x80						;	系统调用中断
+	cmpl	$-126,	%eax
+	jbe		.L1
+	negl	%eax
+	movl	%eax,	errno
+	movl	$-1,	%eax
+.L1:	popl %ebx
+	ret
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;第七章-内核中的同步&quot;&gt;第七章 内核中的同步&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;​	内核中很多数据都是共享资源，对这些共享资源的访问必须遵循一定的访问规则&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;内核中造成并发并发执行的原因简单来说有以下几种：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;中断，中断几乎在任何时刻都可异步发生，也就随时打断当前正在执行的代码&lt;/li&gt;
+  &lt;li&gt;内核抢占&lt;/li&gt;
+  &lt;li&gt;睡眠&lt;/li&gt;
+  &lt;li&gt;对称多处理——两个及以上的处理器可以同时执行代码&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果在一段内核代码访问某资源的时候产生了一个中断，且该中断也要访问同一资源，这就存在一个“潜在的错误”；如果在一段内核代码访问一个共享资源时可以被抢占，也一样存在一个“潜在的错误”，&lt;strong&gt;辨认出真正需要共享的数据和相应的临界区（操作共享资源的代码段）才很有挑战性。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;内核同步措施&quot;&gt;内核同步措施&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;原子操作：&lt;/strong&gt;保证指令以原子的方式执行，如加法指令把读取和增加放在一个执行指令完成，这样并发任务就不会同时访问同一个变量，绝不会引发竞争。&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*linux内核提供的atomic_t类型*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;atomic_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;相关的专门函数和宏:
+| 函数            | 说明                            |
+| ————— | ——————————- |
+| ATOMIC_INIT(i)  | 声明一个atomic_t变量并初始化为i |
+| atomic_read(v)  | 返回 &lt;em&gt;v                         |
+| atomic_set(v,i) | 把&lt;/em&gt;v置成i                       |
+| atomic_add(i,v) | 从&lt;em&gt;v加i                         |
+| atomic_sub(i,v) | 从&lt;/em&gt;v减i                         |
+| ………..     |                                 |&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;自旋锁：&lt;/strong&gt;单处理器可以简单的关中断实现，自旋锁只能被一个内核任务持有，如果一个任务请求已被持有的锁则会一直忙循环，等待锁重新可用，可以有效避免多处理器并发执行的内核任务竞争共享资源，但自旋锁不应被持有过长，要长时间持有最好使用信号量&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;信号量：&lt;/strong&gt;即等待队列和睡眠机制，Linux中有&lt;code class=&quot;highlighter-rouge&quot;&gt;down()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;up()&lt;/code&gt;操作，如果信号量不小于0则获得信号锁，任务就进入临界区了，如果信号量小于0则任务挂入等待队列，信号量会睡眠所以不能再中断上下文中使用，且信号量的数据结构中也用有自旋锁，用于避免多处理器并行的错误&lt;/p&gt;
+
+&lt;h2 id=&quot;第八章-文件系统&quot;&gt;第八章 文件系统&lt;/h2&gt;
+
+&lt;p&gt;Linux主要的目录结构(树状结构)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;/bin		二进制可执行命令&lt;/li&gt;
+  &lt;li&gt;/dev     设备特殊文件&lt;/li&gt;
+  &lt;li&gt;/etc      系统管理和配置文件&lt;/li&gt;
+  &lt;li&gt;/home  用户主目录基点&lt;/li&gt;
+  &lt;li&gt;/lib      动态链接共享库&lt;/li&gt;
+  &lt;li&gt;/sbin   系统管理命令&lt;/li&gt;
+  &lt;li&gt;/tmp   公用的临时文件&lt;/li&gt;
+  &lt;li&gt;/root   系统管理员的主目录&lt;/li&gt;
+  &lt;li&gt;/mnt   临时安装其他文件系统的目录&lt;/li&gt;
+  &lt;li&gt;/proc  &lt;strong&gt;虚拟目录，是系统内存的映射，可以直接获取系统信息&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;/var     某些大文件的溢出区&lt;/li&gt;
+  &lt;li&gt;/usr     应用程序和文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;linux文件系统&quot;&gt;linux文件系统&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;索引结点：记录文件信息，描述某文件的大小、权限、位置等关键信息，每个文件或者目录都对应一个索引结点，文件系统把所有索引结点形成一个数组，每一个结点的分配的号码就是数组中的索引号&lt;/li&gt;
+  &lt;li&gt;软连接和硬链接
+    &lt;ul&gt;
+      &lt;li&gt;硬链接是一个物理位置，多个文件名，&lt;strong&gt;不能是目录，必须同一个文件系统&lt;/strong&gt;；&lt;/li&gt;
+      &lt;li&gt;软连接，即符号链接，存放的内容的指向另一个文件的地址，系统自动把对符号链接的操作变成对源文件的操作&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;文件系统：Linux 的标准文件系统是Ext2和Ext3，因此==Linux把Ext2文件系统的磁盘分区作为系统的根文件系统==，其他的文件系统都是安装在根文件系统之下&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;虚拟文件系统&quot;&gt;虚拟文件系统&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;虚拟文件系统即VFS（virtual filesystem switch），一种统一的框架用于虚拟文件系统转换&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;VFS提供一组标准的、抽象的操作以系统调用的方式给用户使用，如用户使用&lt;code class=&quot;highlighter-rouge&quot;&gt;read()&lt;/code&gt;读取文件时，会调用&lt;code class=&quot;highlighter-rouge&quot;&gt;sys_read()&lt;/code&gt;接着又调用&lt;code class=&quot;highlighter-rouge&quot;&gt;vfs_read()&lt;/code&gt;，文件在内核是由一个&lt;code class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt;结构表示的，里面有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;file_opration&lt;/code&gt;结构包含指向各种函数的指针，其是由具体的文件系统自己实现的，从而实现封装操作。&lt;/p&gt;
+
+&lt;p&gt;VFS的四个主要对象为:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;超级块对象&lt;/strong&gt;，是一块包含文件系统信息的数据结构，描述已安装的文件系统&lt;/li&gt;
+  &lt;li&gt;索引结点对象，文件系统对文件属性的描述，索引号可以唯一的标识文件&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;目录项对象&lt;/strong&gt;，目录可以层层嵌套形成文件路径，路径中的每一部分都被称为目录项，如有一个路径为&lt;code class=&quot;highlighter-rouge&quot;&gt;/home/xj/myfile&lt;/code&gt;，其中/为根目录，home,xj,myfile都是目录项，是路径的组成部分&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;文件对象&lt;/strong&gt;，目录属于普通文件，对目录和文件可以实施同样的操作&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;一个超级块对应一个文件系统，系统中可能一类文件系统有多个超级块，所有的超级块对象都以双向循环链表的形式链接在一起，其一起开始是存放于磁盘上，&lt;strong&gt;内核对文件系统进行初始化和注册时会在内存中分配超级块，&lt;/strong&gt;而&lt;code class=&quot;highlighter-rouge&quot;&gt;s_fs_info&lt;/code&gt;就指向具体文件系统的超级块，因为经常被操作会放入内存中。&lt;/p&gt;
+
+&lt;p&gt;文件名是可以随意修改的，但索引结点对文件是唯一的，随着文件的存在而存在，具体文件系统的索引结点是静态地存放于磁盘上的，要使用前必须先调入内存，填写VFS的索引结点，索引结点中存有指向&lt;code class=&quot;highlighter-rouge&quot;&gt;file_opration&lt;/code&gt;的指针。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;目录项对象代表的是逻辑意义上的文件&lt;/strong&gt;，在磁盘上没有对应的映像，一个索引结点可能对应多个目录项对象，一个文件系统中所有目录项结构会被组成哈希表或者一棵树、一个链表，从&lt;strong&gt;为文件访问和文件路径搜索提供可能&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;与进程相关的文件结构&quot;&gt;与进程相关的文件结构&lt;/h3&gt;
+
+&lt;p&gt;系统通过文件描述符（即==用户打开文件表中构建的文件对象指针的数组索引==）来抽象被进程打开的文件，一个进程可以打开多个文件，一个文件可以被多个进程共享，因此&lt;strong&gt;进程通过用户打开文件表来描述所有打开的文件&lt;/strong&gt;，而进程和文件系统的关系通过&lt;code class=&quot;highlighter-rouge&quot;&gt;fs_struct&lt;/code&gt;来描述&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;文件对象，&lt;code class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt;结构主要保存了文件位置，通过其&lt;code class=&quot;highlighter-rouge&quot;&gt;dentry&lt;/code&gt;指针间接地&lt;strong&gt;找到该文件的索引结点&lt;/strong&gt;，其会形成一个双向链表，称为系统打开文件表，因此每个文件对象会存放在下列的一个双向链表中：&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;“未使用”文件对象链表，可以用做文件对面的内存缓冲区&lt;/li&gt;
+      &lt;li&gt;“正在使用”文件对象链表&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用户打开文件表&lt;code class=&quot;highlighter-rouge&quot;&gt;files_struct&lt;/code&gt;：是进程的私有数据，其表项指向的是file结构即文件对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fs_struct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;atomic_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;rwlock_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;umask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dentry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alroot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vfsmount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rootmnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pwdmnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alrootmnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;打开文件要在进程和文件之间建立一种连接，&lt;strong&gt;“文件描述符”就唯一标识着这种连接&lt;/strong&gt;，而文件描述符就指向一个文件的上下文即&lt;code class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt;结构，通过目录项找到索引结点，同时要把&lt;strong&gt;索引结点从磁盘中读入到内存&lt;/strong&gt;。对文件操作时，就必须&lt;strong&gt;通过索引结点去调用具体文件系统提供的函数&lt;/strong&gt;，而基于磁盘的文件系统只需要调用Linux提供的通用函数&lt;code class=&quot;highlighter-rouge&quot;&gt;generic_file_read()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;generic_file_write()&lt;/code&gt;就可以实现相关操作&lt;/p&gt;
+
+&lt;h2 id=&quot;第九章-设备驱动&quot;&gt;第九章 设备驱动&lt;/h2&gt;</content><author><name>true</name></author><category term="linux" /><category term="C" /><category term="学习" /><summary type="html">Linux操作系统原理与应用笔记</summary></entry></feed>

@@ -6,17 +6,17 @@ url: 'https://hamburgerdog.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
-#  首页: '/'
-#  标签: '/tags.html'
-#  时间线: '/timeline.html'
-#  关于博主: '/about.html'
-#  友情链接: '/friendLink.html'
+ 首页: '/'
+ 标签: '/tags.html'
+ 时间线: '/timeline.html'
+ 关于博主: '/about.html'
+ 友情链接: '/friendLink.html'
 
 # 博主
 author: true
 name: 'oneShowWuJiang'
 NickName: 'Hambuger'
-webtitle: 'aboutMe'
+webtitle: 'xjosiah_page'
 bio: '大三在读 | 可以乱开玩笑 | 孤傲挑战者'
 about: true
 aboutyou: '平时写点代码的废青，没事多联系 📲 <br> 愿我航向大海 承载你的信赖 '
@@ -41,7 +41,7 @@ SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagr
 #  twitch: ''
 
 # 分页
-paginate: 1
+paginate: 5
 paginatepath: ['page:num']
 
 # since
@@ -59,15 +59,15 @@ pygmentsTheme: 'default'
 
 # 友情链接
 friends:
-  jekyll: 'https://www.jekyll.com.cn/'
+  网页设计作品展示: 'http://xjosiah.gitee.io/web_page/'
 
 # 评论 最佳体验 在disqus、livere和Gitment之间三选一
 # disqus 评论
 disqus: false
 disqus_url: '' # https://abc.disqus.com/embed.js
 # 来必力评论
-livere: false
-livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
+livere: true
+livere_uid: 'MTAyMC81MTk3Ni8yODQ1Nw==' # MTAyMC8zNDI2OS8xMDgwNg== my:MTAyMC81MTk3Ni8yODQ1Nw=='
 # Gitment评论 OAuth Application
 Gitment: false
 Gitment_owner: ''  # github用户名

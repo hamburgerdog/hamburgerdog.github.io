@@ -147,29 +147,23 @@
 
 
 
-    <section class="post-footer-item comment">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC81MTk3Ni8yODQ1Nw=="></div>
-    </section>
-
-    <!-- 来必力City版安装代码 -->
-    <script type="text/javascript">
-       (function(d, s) {
-           var j, e = d.getElementsByTagName(s)[0];
-
-           if (typeof LivereTower === 'function') { return; }
-
-           j = d.createElement(s);
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           e.parentNode.insertBefore(j, e);
-       })(document, 'script');
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    <!-- City版安装代码已完成 -->
 
 
 
+
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <section class="post-footer-item comment valine">
+    <div id="vcomments"></div>
+  </section>
+  <script>
+      new Valine({
+          el: '#vcomments',
+          appId: 'nyuCPTrEVDOEOSIzIx3vqxsD-9Nh9j0Va',
+          appKey: '25yxQJLkrDqdbicf3FBXtgqE',
+          avatar: 'retro',
+          emojiCDN: 'https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/'
+      })
+  </script>
 
 
 <footer id="bottom">

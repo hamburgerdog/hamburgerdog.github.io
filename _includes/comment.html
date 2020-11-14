@@ -70,3 +70,19 @@ var gitment = new Gitment({
 gitment.render('container')
 </script>
 {% endif %}
+
+{% if site.valine %}
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <section class="post-footer-item comment valine">
+    <div id="vcomments"></div>
+  </section>
+  <script>
+      new Valine({
+          el: '#vcomments',
+          appId: '{{ site.valine-appid }}',
+          appKey: '{{ site.valine-appkey }}',
+          avatar: '{{ site.valine-pic }}',
+          emojiCDN: 'https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/'
+      })
+  </script>
+{% endif %}

@@ -66,7 +66,7 @@ friends:
 disqus: false
 disqus_url: '' # https://abc.disqus.com/embed.js
 # 来必力评论
-livere: true
+livere: false
 livere_uid: 'MTAyMC81MTk3Ni8yODQ1Nw==' # MTAyMC8zNDI2OS8xMDgwNg== my:MTAyMC81MTk3Ni8yODQ1Nw=='
 # Gitment评论 OAuth Application
 Gitment: false
@@ -74,6 +74,13 @@ Gitment_owner: ''  # github用户名
 Gitment_repo: ''  # github博客存放的仓库名
 client_id: ''  # 注册 OAuth Application 后获得的 client_id
 client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
+#leadcloud构建的valine评论
+valine: true
+valine-appid: 'nyuCPTrEVDOEOSIzIx3vqxsD-9Nh9j0Va'
+valine-appkey: '25yxQJLkrDqdbicf3FBXtgqE'
+#gravatar.cat.net 提供的评论头像服务
+valine-pic: 'retro'
+
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
 social-share: true

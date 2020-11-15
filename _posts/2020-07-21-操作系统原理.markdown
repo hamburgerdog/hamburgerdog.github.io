@@ -4,7 +4,7 @@ title:  "操作系统原理"
 date:   2020-07-21 21:47:00 +0800
 tags: 操作系统 linux 学习
 color: rgb(255,210,32)
-cover: '../assets/操作系统原理/test.png'
+cover: '../assets/test.png'
 subtitle: '操作系统原理的读书笔记'
 ---
 

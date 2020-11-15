@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-14T20:45:20+08:00</updated><id>http://localhost:4000/</id><title type="html">Hamburger-burgerham :D</title><subtitle>HELLO HAMBUGGER</subtitle><author><name>true</name></author><entry><title type="html">疫情对软件开发的工作模式的影响</title><link href="http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering.html" rel="alternate" type="text/html" title="疫情对软件开发的工作模式的影响" /><published>2020-11-14T12:00:00+08:00</published><updated>2020-11-14T12:00:00+08:00</updated><id>http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering</id><content type="html" xml:base="http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering.html">&lt;h1 id=&quot;浅析-疫情对软件开发的工作模式的影响&quot;&gt;浅析-疫情对软件开发的工作模式的影响&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-15T11:14:50+08:00</updated><id>http://localhost:4000/</id><title type="html">Hamburger-burgerham :D</title><subtitle>HELLO HAMBUGGER</subtitle><author><name>true</name></author><entry><title type="html">疫情对软件开发的工作模式的影响</title><link href="http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering.html" rel="alternate" type="text/html" title="疫情对软件开发的工作模式的影响" /><published>2020-11-14T12:00:00+08:00</published><updated>2020-11-14T12:00:00+08:00</updated><id>http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering</id><content type="html" xml:base="http://localhost:4000/2020/11/14/Final_Assignment_for_Software_Engineering.html">&lt;h1 id=&quot;浅析-疫情对软件开发的工作模式的影响&quot;&gt;浅析-疫情对软件开发的工作模式的影响&lt;/h1&gt;
 
 &lt;h2 id=&quot;作者&quot;&gt;作者&lt;/h2&gt;
 
@@ -993,4 +993,1127 @@
 
 &lt;p&gt;打开文件要在进程和文件之间建立一种连接，&lt;strong&gt;“文件描述符”就唯一标识着这种连接&lt;/strong&gt;，而文件描述符就指向一个文件的上下文即&lt;code class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt;结构，通过目录项找到索引结点，同时要把&lt;strong&gt;索引结点从磁盘中读入到内存&lt;/strong&gt;。对文件操作时，就必须&lt;strong&gt;通过索引结点去调用具体文件系统提供的函数&lt;/strong&gt;，而基于磁盘的文件系统只需要调用Linux提供的通用函数&lt;code class=&quot;highlighter-rouge&quot;&gt;generic_file_read()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;generic_file_write()&lt;/code&gt;就可以实现相关操作&lt;/p&gt;
 
-&lt;h2 id=&quot;第九章-设备驱动&quot;&gt;第九章 设备驱动&lt;/h2&gt;</content><author><name>true</name></author><category term="linux" /><category term="C" /><category term="学习" /><summary type="html">Linux操作系统原理与应用笔记</summary></entry></feed>
+&lt;h2 id=&quot;第九章-设备驱动&quot;&gt;第九章 设备驱动&lt;/h2&gt;</content><author><name>true</name></author><category term="linux" /><category term="C" /><category term="学习" /><summary type="html">Linux操作系统原理与应用笔记</summary></entry><entry><title type="html">操作系统原理</title><link href="http://localhost:4000/2020/07/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.html" rel="alternate" type="text/html" title="操作系统原理" /><published>2020-07-21T21:47:00+08:00</published><updated>2020-07-21T21:47:00+08:00</updated><id>http://localhost:4000/2020/07/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86</id><content type="html" xml:base="http://localhost:4000/2020/07/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.html">&lt;h1 id=&quot;操作系统原理&quot;&gt;操作系统原理&lt;/h1&gt;
+
+&lt;h2 id=&quot;第一章-操作系统概述-p9&quot;&gt;第一章 操作系统概述 P9&lt;/h2&gt;
+
+&lt;h3 id=&quot;11--操作系统概念&quot;&gt;1.1  操作系统概念&lt;/h3&gt;
+
+&lt;p&gt;操作系统是系统软件，是用户与计算机之间的接口，基本职能是&lt;strong&gt;控制和管理系统内部的各种资源&lt;/strong&gt;，有效地组织多道程序的运行，&lt;strong&gt;扩充硬件功能&lt;/strong&gt;。从&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;作为扩展机器的操作系统&lt;/strong&gt;把硬件细节与程序员隔离开，实际客户是应用程序&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;作为资源管理的操作系统&lt;/strong&gt;的功能是管理系统中的硬件资源和数据、程序等软件资源，控制协调各个程序对这些资源的利用，涉及资源共享的问题。操作系统是计算机系统的资源管理器这种观点占主导地位&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;用户观点：操作系统处于用户和硬件之间，有助于用户使用计算机系统的接口和各种资源&lt;/li&gt;
+  &lt;li&gt;系统观点：操作系统是硬件上第一层软件，管理&lt;em&gt;硬件资源和软件资源&lt;/em&gt;的分配问题，是资源分配者
+（&lt;em&gt;操作系统要对 IO 设备和用户程序加以控制，防止非法操作，这样看操作系统就是控制程序&lt;/em&gt;）&lt;/li&gt;
+  &lt;li&gt;进程管理观点：进程是程序在并发环境中的执行过程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;与操作系统相关的几种主要寄存器: &lt;strong&gt;用户可编程寄存器以及控制与状态寄存器&lt;/strong&gt;。
+&lt;strong&gt;用户可编程寄存器&lt;/strong&gt;是机器语言或者汇编语言可以进行操作的寄存器，如数据、地址、条件码寄存器
+&lt;strong&gt;控制与状态寄存器&lt;/strong&gt;可以被处理器用来控制自身操作，或者被有特权的操作系统例程用来控制相关程序的执行。如PC（程序计数器）、IR（指令）、PSW（程序状态字）寄存器等&lt;/p&gt;
+
+&lt;p&gt;CPU能执行的全部指令集合称作&lt;strong&gt;指令系统或指令集&lt;/strong&gt;，&lt;strong&gt;特权指令&lt;/strong&gt;用于操作系统或者其他系统软件，主要用于系统资源的分配和管理；用户使用的是&lt;strong&gt;非特权指令&lt;/strong&gt;，如算术运算和访管指令。&lt;/p&gt;
+
+&lt;p&gt;CPU运行模式：&lt;strong&gt;内核态和用户态&lt;/strong&gt;（与PSW有关）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;中断和异常&lt;/strong&gt;是实施并发的基础，由硬件和软件结合而成，中断来自CPU外，异常来自CPU内&lt;/p&gt;
+
+&lt;p&gt;系统初启的一般过程：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;硬件检测&lt;/strong&gt;：BIOS加电进行硬件自检，然后读入系统引导区的程序，并将系统控制权交给引导装入程序&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;加载引导程序&lt;/strong&gt;：其不直接引导操作系统，但能根据盘区划分的信息找到活动分区，然后从其中将引导程序读入内存；&lt;strong&gt;运行引导程序&lt;/strong&gt;，从硬盘中读入其他几个软件，由后者&lt;strong&gt;加载内核&lt;/strong&gt;；内核加载完毕后系统跳到setup程序，在实模式下运行，设置系统参数和显示器；&lt;strong&gt;最后进入保护模式&lt;/strong&gt;跳到内核映像开头，&lt;strong&gt;执行内核初始化&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;初始化内核&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;第一个阶段是&lt;strong&gt;CPU本身初始化&lt;/strong&gt;：设置内核页表、启动页面映射机制、建立系统第一个进程、初始化内核的全局变量和静态变量、设置中断向量表等；&lt;/li&gt;
+      &lt;li&gt;第二个阶段是&lt;strong&gt;系统一些基础设施的初始化&lt;/strong&gt;：设置内存边界、初始化内存页面、设置各种处理程序入口地址、定义系统中最大进程数目、创建init内核线程等&lt;/li&gt;
+      &lt;li&gt;第三个阶段是&lt;strong&gt;对上层的初始化&lt;/strong&gt;：初始化外部设备、加载驱动、创建核心线程、初始化文件系统并加载&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;实现用户登录&lt;/strong&gt;：init程序在tty每个端口上都创建一个进程login，用于登录&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;操作系统的构建目标&lt;/strong&gt;：&lt;strong&gt;高效性&lt;/strong&gt;（对软硬件资源合理的调度和分派）、&lt;strong&gt;方便性&lt;/strong&gt;（操作系统对外提供接口，方便用户使用）、&lt;strong&gt;安全性&lt;/strong&gt;（保护信息不被未授权人员使用）、&lt;strong&gt;鲁棒性&lt;/strong&gt;（稳定性、强健性）、&lt;strong&gt;移植性&lt;/strong&gt;（从一个硬件平台到另一个平台时的改动不能过多且要容易实施）&lt;/p&gt;
+
+&lt;p&gt;软件分类：&lt;strong&gt;系统软件&lt;/strong&gt;（操作系统、编译、汇编、链接、数据库、网络程序）、&lt;strong&gt;应用软件&lt;/strong&gt;、&lt;strong&gt;支撑软件&lt;/strong&gt;（辅助软件技术人员从事软件开发的工具）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;操作系统是整个计算机系统的控制管理中心&lt;/strong&gt;，经过软件扩充功能后的机器称为“虚拟机”&lt;/p&gt;
+
+&lt;p&gt;操作系统提供的服务：用户接口、程序执行、IO操作、文件系统管理、出错检测、通信、资源分配、统计、保护。
+操作系统的服务方式是&lt;strong&gt;系统调用和系统程序&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;系统调用：一般处于操作系统核心的最高层，CPU执行用户程序中的系统调用时，处理机的状态会从用户态变成核心态，进入操作系统内部；而过程调用只能在用户态下运行，不能进入核心态，系统调用完成了用户态到核心态的转变。系数调用可以大致分为五类：进程控制、文件管理、设备管理、信息维护和通信&lt;/li&gt;
+  &lt;li&gt;系统程序：系统程序主要指系统程序包（库函数）中提供的大量系统程序。大概分为六大类：文件管理、状态信息、文件修改、程序设计语言的支持、程序装入和执行、通信。最重要的系统程序是命令解释程序，系统程序是对系统调用功能的集成和应用简化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-操作系统的功能&quot;&gt;1.2 操作系统的功能&lt;/h3&gt;
+
+&lt;p&gt;OS应当具有的五大基本功能：存储管理、进程和处理机管理、文件管理、设备管理、用户接口&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;存储管理&lt;/strong&gt;：用户程序在运行之前要装入内存，&lt;strong&gt;内存是所有运行程序的共享资源&lt;/strong&gt;，存储管理的主要功能为：内存分配、地址映射、内存保护和内存扩充&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;内存分配&lt;/strong&gt;：主要任务是为每道程序按某种策略来分配一定的内存空间，并且接收释放的空间&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;地址映射&lt;/strong&gt;：编写程序时不需要考虑程序和数据要存放在内存的什么位置，CPU在执行用户程序的时候要从内存中取出指令或数据，就必须把逻辑地址转换成内存的物理地址，这叫地址映射需要有硬件支持&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;内存保护&lt;/strong&gt;：不同用户的程序都在内存中，必须保证它们在各自的内存空间中活动，不能相互干扰，不能侵犯其他空间，必须建立内存保护机制。可以设置两个界限寄存器（上界地址和下界地址）&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;内存扩充&lt;/strong&gt;：逻辑扩充使用虚拟存储技术，一个程序不是全部放在内存中，其余部分放在磁盘上，以后根据程序执行时的要求和内存情况，随机将所需部分调入内存或回收已分配的内存&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;进程和处理机管理&lt;/strong&gt;：&lt;strong&gt;所有用户程序和系统程序都必须在CPU上运行&lt;/strong&gt;，对它的管理直接影响整个系统的性能，主要包括：&lt;strong&gt;作业和进程调度、进程控制、进程同步和进程通信&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;作业和进程调度：用户的计算任务称为&lt;strong&gt;作业&lt;/strong&gt;，程序的执行过程称作&lt;strong&gt;进程&lt;/strong&gt;，&lt;strong&gt;进程是分配和运行处理机的基本单位。&lt;/strong&gt;首先作业经过&lt;strong&gt;作业调度&lt;/strong&gt;，把一批选中的&lt;strong&gt;作业放入内存并为其分配资源&lt;/strong&gt;，&lt;strong&gt;建立相应的进程&lt;/strong&gt;，然后&lt;strong&gt;进程调度&lt;/strong&gt;按一定的算法从就绪进程中&lt;strong&gt;找出一个合适进程在CPU上运行&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;进程控制：进程是系统活动的主体，进程控制包括创建进程、撤销进程、封锁进程、唤醒进程&lt;/li&gt;
+      &lt;li&gt;进程同步：多个进程在活动过程中彼此彼此会发生相互依赖或制约等关系，为了保证所有进程都能正常活动就必须设置进程同步机制：分为同步和互斥&lt;/li&gt;
+      &lt;li&gt;进程通信：相互合作的进程之间往往需要交换信息，为此系统要提供通信机制&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;文件管理&lt;/strong&gt;：在计算机工作经常要建立文件、打开文件、对文件读写等，所以文件管理功能应该包括：文件存储空间的管理、文件操作的一般管理、目录管理、文件读写管理和存储控制
+    &lt;ul&gt;
+      &lt;li&gt;文件存储空间管理：系统文件和用户文件存放在磁盘上，需要由文件系统对所有文件以及文件的存储空间进行统一管理：为新文件分配必要的外存空间，回收释放的文件空间&lt;/li&gt;
+      &lt;li&gt;文件操作：对文件的创建删除打开关闭等&lt;/li&gt;
+      &lt;li&gt;目录管理：目录文件的组织、实现“按名存储”，目录快速查找和文件共享&lt;/li&gt;
+      &lt;li&gt;文件读写管理和存取控制：按请求从外存读或者写入外存，防止未授权用户破坏&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;设备管理&lt;/strong&gt;：设备的分配和驱动由OS负责，设备管理的主要功能包括缓冲区管理、设备分配、设备驱动和设备无关性
+    &lt;ul&gt;
+      &lt;li&gt;缓冲区管理：解决CPU和外设速度不同的问题&lt;/li&gt;
+      &lt;li&gt;设备分配：根据请求为用户分配设备&lt;/li&gt;
+      &lt;li&gt;设备驱动：实现CPU与通道和外设之间的通信，屏蔽硬件细节&lt;/li&gt;
+      &lt;li&gt;设备无关性：用户写的程序（逻辑设备）和实际使用的物理设备无关，由OS映射到物理设备&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;用户接口&lt;/strong&gt;：OS对外提供的多种服务，使用户方便有效地使用计算机硬件和用户程序
+    &lt;ul&gt;
+      &lt;li&gt;程序接口：也称系统调用，是OS内核和用户程序应用程序的接口，只能在核心态下运行&lt;/li&gt;
+      &lt;li&gt;命令行接口：OS与用户的交互界面，输入命令后程序解释这些命令，交给OS内部程序处理&lt;/li&gt;
+      &lt;li&gt;图形用户接口：用户利用图形界面工具操作计算机&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;13-操作系统的特征&quot;&gt;1.3 操作系统的特征&lt;/h3&gt;
+
+&lt;p&gt;OS特征为:并发、共享、异步性和抽象性&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;并发：微观上单个进程在CPU上执行，进程交替运行，宏观看是并行&lt;/li&gt;
+  &lt;li&gt;共享：资源被多个任务共用，被共享的程序必须是纯码（在执行过程中本身不作任何变化）&lt;/li&gt;
+  &lt;li&gt;异步性：进程执行过程中“走走停停”，但在相同初始数据下总能得到同样结果&lt;/li&gt;
+  &lt;li&gt;抽象性：把复杂的事情简单化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;14操作系统的形成和基本类型&quot;&gt;1.4操作系统的形成和基本类型&lt;/h3&gt;
+
+&lt;p&gt;OS的形成和发展：手工操作阶段、早期批处理阶段（联机批处理，脱机批处理）、多道批处理系统、分时系统、实时系统（后三种是传统意义上OS的基本类型）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多道程序设计&lt;/strong&gt;的基本思想是，在内存中同时存放多道程序，在管理程序的控制下交替地执行&lt;/p&gt;
+
+&lt;p&gt;分时系统的特征和优点：同时性、交互性、独立性、及时性&lt;/p&gt;
+
+&lt;p&gt;实时系统的类型：过程控制、信息查询、事务处理系统，其实现可分为软式硬式两种方式&lt;/p&gt;
+
+&lt;h3 id=&quot;15-操作系统的主要结构&quot;&gt;1.5 操作系统的主要结构&lt;/h3&gt;
+
+&lt;p&gt;OS主要有单体结构、层次结构、虚拟机结构、微内核结构和客户-服务器结构&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;单体结构：OS中有大量模块，模块就是完成一定功能的子程序，是构成软件的基本单位&lt;/li&gt;
+  &lt;li&gt;层次结构：把模块分为若干层，底层不能调用高层&lt;/li&gt;
+  &lt;li&gt;虚拟机结构：最底层是虚拟机监控程序，向上层提供多台虚拟机，虚拟机是裸机硬件的复制品。是通过共享物理机器资源实现的，每台虚拟机可以使用不同的操作系统，在系统调用时陷入自身的操作系统里面，最后的 IO操作由虚拟机监控程序完成&lt;/li&gt;
+  &lt;li&gt;微内核结构：把扩展机器功能向上移，操作系统被分为文件服务、进程服务、终端服务或者内存服务，各个服务器在用户态下运行并不直接访问硬件，客户进程通过微内核访问服务，因此微内核在核心态下实现所有操作系统的基本功能：中断处理、进程管理等&lt;/li&gt;
+  &lt;li&gt;客户-服务器结构：多用于分布式系统，进程如微内核结构分为两类：服务器和客户进程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;16-unix--linux-系统的核心结构&quot;&gt;1.6 UNIX | LINUX 系统的核心结构&lt;/h3&gt;
+
+&lt;p&gt;UNIX是多用户、多进程、多任务的分时系统，其分为三层：靠近硬件的底层是内核即UNIX常驻内存部分，核外中间层是shell层，最高层是应用层&lt;/p&gt;
+
+&lt;p&gt;LINUX和UNIX一样多用户和多任务，从结构上看是采用单体结构的操作系统，所有的内核系统功能都包含在一个大型的内核软件之中
+&lt;img src=&quot;/assets/image-20200701145205951.png&quot; alt=&quot;image-20200701145205951&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;第二章-进程管理--p42&quot;&gt;第二章 进程管理  P42&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-进程概念&quot;&gt;2.1 进程概念&lt;/h3&gt;
+
+&lt;p&gt;进程和程序的区别：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;动态性：程序是静态的，进程是动态的，程序作为一种软件资源长期保留，而进程是程序的一次执行过程，动态的产生和销毁&lt;/li&gt;
+  &lt;li&gt;并发性：进程作为资源申请和调度单位存在，而程序不能作为独立运行的单位并发执行，因为进程不仅包括相应的程序和数据，还有一系列描述其活动的数据结构，能用于CPU调度&lt;/li&gt;
+  &lt;li&gt;非对应性：一个程序可以被多个进程共用，一个进程可以在活动中执行若干程序&lt;/li&gt;
+  &lt;li&gt;异步性：各个进程在并发执行时会产生互相制约关系，导致前进速度不可预测&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;进程的特征：动态性、并发性、调度性、异步性、结构性&lt;/p&gt;
+
+&lt;h3 id=&quot;22-进程状态描述及组织方式&quot;&gt;2.2 进程状态描述及组织方式&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;进程映像：程序、数据集合、栈和&lt;strong&gt;PCB&lt;/strong&gt;（进程控制块）&lt;/td&gt;
+      &lt;td&gt;栈用来保存过程调用和相互传参的踪迹&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;进程控制块PCB：&lt;strong&gt;进程名PID&lt;/strong&gt;、&lt;strong&gt;状态信息&lt;/strong&gt;、特征信息、&lt;strong&gt;优先级&lt;/strong&gt;、通信信息、&lt;strong&gt;现场保护区&lt;/strong&gt;（中断时保存现场环境）、&lt;strong&gt;资源需求&lt;/strong&gt;、实体信息、族系关系、其他。&lt;/li&gt;
+  &lt;li&gt;LINUX中进程控制块为task_struct数据结构，系统维护一个进程向量组task，元素是指向task_struct结构的指针，进程的栈和task_struct数据结构紧密联系
+&lt;img src=&quot;/assets/image-20200701200713657.png&quot; alt=&quot;image-20200701200713657&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;LINUX进程状态：运行态、可中断等待态（可被中断唤醒）、不可中断等待态（只能等待资源满足唤醒）、停止态、僵死态（进程被种子但是进程控制块依然保留着）&lt;/p&gt;
+
+&lt;h3 id=&quot;24-线程概念&quot;&gt;2.4 线程概念&lt;/h3&gt;
+
+&lt;p&gt;在现代操作系统中，进程只作为资源拥有者，负责申请和占有所需的全部资源；而参与调度和运行的是线程，线程是进程执行运算的最小单位，即执行处理机调度的基本单位&lt;/p&gt;
+
+&lt;p&gt;线程的组成：每一个线程用于一个Thread结构（线程控制块）
+&lt;img src=&quot;/assets/image-20200701224653011.png&quot; alt=&quot;image-20200701224653011&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;线程的实现方式 ：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在用户空间实现，管理线程的工作完全由应用程序完成，每个进程有一个私有的线程表，核心只对进程实施管理；&lt;/li&gt;
+  &lt;li&gt;在核心空间实现，核心知道线程的存在并实施管理，线程表和进程表都在核心空间中，线程在创建或者删除一个线程的时候需要使用系统调用，核心可以同时调度同一进程的多个线程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;25-进程间的同步和互斥&quot;&gt;2.5 进程间的同步和互斥&lt;/h3&gt;
+
+&lt;p&gt;进程间的相互关系主要分为：互斥、同步和通信&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;互斥关系中，并发进程对共享资源的竞争，这些资源称为&lt;strong&gt;临界资源&lt;/strong&gt;，访问临界资源的那段程序称为&lt;strong&gt;临界区&lt;/strong&gt;，简称CS区。进程互斥进入临界区前需要申请，执行后需要退出才能执行其他代码，禁止两个或者两个以上的进程同时进入临界区&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;实现互斥的方法&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;硬件方法：关中断（不响应中断），另一种是设置专用机器指令（测试并上锁）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;软件方法：设置软件锁&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一种更通用的方法：信号量即PV操作原语，信号量是一种设施，在进程间发送信号&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;整形信号量：将信号量定义成一个特殊可共享的整形量，有“忙锁”问题&lt;/li&gt;
+      &lt;li&gt;记录型信号量：信号量一般由整形变量和指向PCB的指针组成，信号量的值大于0时表示当前可用的资源数量，小于零则绝对值表示等待使用该资源的进程个数&lt;/li&gt;
+      &lt;li&gt;一般应用还分了二值信号量（类似互斥锁 01的值）和一般信号量
+具体过程：
+&lt;img src=&quot;/assets/image-20200702213402218.png&quot; alt=&quot;image-20200702213402218&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;生产者消费者问题中，应先执行同步信号量P再执行互斥信号量，不能调换顺序不然可能产生死锁&lt;/li&gt;
+      &lt;li&gt;读者写者问题，仅在第一个访问数据库的读者才对信号量w执行P操作，最后一个访问的读者才对信号量W进行V操作，隐含读者优先级高于写者&lt;/li&gt;
+      &lt;li&gt;哲学家进餐问题，解决死锁有三种方法：最多4人拿、均可用才拿、奇拿左偶拿右&lt;/li&gt;
+      &lt;li&gt;理发店问题 P85&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;使用信号量的提示：先确定有几个或者几类进程，确定进程制约关系确定信号量种类，定义信号量含义和初值，编写代码，PV操作要成对出现&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;27-进程通信&quot;&gt;2.7 进程通信&lt;/h3&gt;
+
+&lt;p&gt;互斥和同步机构因交换的信息量少，归结为低级通信，高级进程通信分为三类：共享存储器、管道文件和消息传递&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;共享存储器：在内存中分配一片空间作为共享存储区&lt;/li&gt;
+  &lt;li&gt;管道文件：也称管道线，连接两个命令的一个打开文件，一个命令写，一个命令读&lt;/li&gt;
+  &lt;li&gt;消息传递：以消息为单位在进程间进行数据交换，有直接通信和间接通信两种方式
+    &lt;ul&gt;
+      &lt;li&gt;消息缓冲通信（直接通信）：进程发送信息前先向系统申请缓冲区，缓冲区中写入消息，然后将缓冲区连到接收进程的消息队列中，并通知接收者，接受者在自己占用的内存中指定一个接收消息区，接收消息。&lt;/li&gt;
+      &lt;li&gt;信箱通信：信箱可以存放一定数量的消息，发送进程将消息送入信箱，接收进程从信箱中取出发给自己的消息，有公有信箱（操作系统创建）、共享信箱（某个进程创建，创建者和共享这可以从中取走发给自己的消息）、私有信箱（用户进程创建，创建者可读，其他进程只能发）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;28-linux系统的进程通信&quot;&gt;2.8 linux系统的进程通信&lt;/h3&gt;
+
+&lt;p&gt;信号亦称为软中断，只有父子进程和进程自身可以应用信号机制通信，也并不是专为进程间通信设置，可以用于内核与进程间通信，内核只能发送不能接收
+处理信号的方式：忽略信号、阻塞信号、由进程处理信号、默认由系统处理信号
+检测信号的时间：从系统空间返回用户空间之前，进程刚被唤醒的时候&lt;/p&gt;
+
+&lt;h3 id=&quot;210-死锁&quot;&gt;2.10 死锁&lt;/h3&gt;
+
+&lt;p&gt;产生死锁的根本原因是资源有限且操作不当，
+产生死锁的四个必要条件：互斥条件、不可抢占条件、占有且申请条件、环路等待条件，
+&lt;img src=&quot;/assets/image-20200703212926102.png&quot; alt=&quot;image-20200703212926102&quot; /&gt;
+当死锁发送时四个条件一定是同时满足的，任何一个条件不成立，死锁就不会发生&lt;/p&gt;
+
+&lt;p&gt;对待死锁的策略：忽略死锁、死锁预防、死锁避免、死锁检测与恢复
+&lt;img src=&quot;/assets/image-20200703214200102.png&quot; alt=&quot;image-20200703214200102&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;死锁预防：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;破坏互斥条件：一般不使用，因为某些资源固有属性就是独占性&lt;/li&gt;
+  &lt;li&gt;破坏占用且等待条件：预分配，所有进程开始之前就分配所需全部资源；空手申请，只有进程不占有资源时才可以申请资源&lt;/li&gt;
+  &lt;li&gt;破坏非抢占条件：一个进程在申请资源时会隐性释放申请前已占有的资源，只有当该进程获得所有申请的资源和被剥夺的资源后才能重新启动。&lt;/li&gt;
+  &lt;li&gt;破坏环路等待条件：为资源有序分配序列，确保占用资源时不会形成环路&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;死锁避免：是排除死锁的动态策略，它不限制有关申请资源的命令，而是在实施资源分配前检查，若预测有死锁发生的可能则加以避免。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;银行家算法是死锁避免，允许互斥、占有且申请和不可抢占条件&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;死锁检测：
+对单体资源（所有类型的资源只有一个实体），可以将资源分配图中的资源去掉形成只有边的等待图，系统定期搜索等待图中的环路
+对多体资源，系统检查未完成的进程是否能满足资源请求，不满足则说明有死锁&lt;/p&gt;
+
+&lt;p&gt;死锁恢复：通过抢占资源、回退执行和杀死进程自动从死锁中恢复，或者直接通知系统管理人员&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;抢占式：临时从资源从占用它的进程中剥夺过来&lt;/li&gt;
+  &lt;li&gt;回退执行：系统定期检查进程，出现死锁就让某个占有必要资源的进程回退到前一个检查点，释放占有资源&lt;/li&gt;
+  &lt;li&gt;杀死进程：一次终止一个，终止后要进行死锁检测&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;活锁和饥饿：活锁是忙式等待，饥饿是调度问题&lt;/p&gt;
+
+&lt;h2 id=&quot;第三章-处理机调度-p114&quot;&gt;第三章 处理机调度 P114&lt;/h2&gt;
+
+&lt;p&gt;处理机分配由调度和分派两个功能组成，调度是指组织和维护就绪进程，分派是当CPU空闲就从就绪队列中取出PCB将其运行&lt;/p&gt;
+
+&lt;p&gt;调度级别：高级调度（作业调度）从作业中选出若干个作业分配必要的资源；中级调度，内存紧张时将某些进程从内存中移到外存上；低级调度（进程调度）按一定算法将CPU分派给就绪队列中的某一个进程&lt;/p&gt;
+
+&lt;h3 id=&quot;32-作业调度&quot;&gt;3.2 作业调度&lt;/h3&gt;
+
+&lt;p&gt;作业通常分为：提交、后备、执行和完成四种状态，&lt;/p&gt;
+
+&lt;p&gt;作业调度功能&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;记录系统中各个作业的情况，记录在作业的JCB中&lt;/li&gt;
+  &lt;li&gt;按照某种调度算法从后备作业队列中挑选，决定接纳多少个作业进入内存&lt;/li&gt;
+  &lt;li&gt;为选中的作业分配内存的外设（存储管理和设备管理）&lt;/li&gt;
+  &lt;li&gt;为选中的作业创建进程，放入就绪队列中&lt;/li&gt;
+  &lt;li&gt;作业结束后善后处理，释放JCB&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;进程调度：使就绪进程获得CPU的控制权&lt;/p&gt;
+
+&lt;p&gt;调度算法的性能评价：1、CPU利用率 	2、吞吐量 	3、带权周转时间	4、就绪等待时间	5、响应时间&lt;/p&gt;
+
+&lt;h3 id=&quot;37-实时调度&quot;&gt;3.7 实时调度&lt;/h3&gt;
+
+&lt;p&gt;静态调度：在系统开始之前作出调度决定，必须在知道有关需要完成的工作和截止时间的情况下才能起作用；（优先级谁速率单调的调度算法，优先级和速率呈线性关系，总是运行优先级最高的进程）![image-20200705201308138]/assets理/image-20200705201308138.png)
+动态调度：在运行时做调度决定，不受限制。（最早截止时间优先调度算法，每个进程申请CPU时，表明自己的存放和截止时间等信息，调度程序把所有可运行的进程按截止时间排序，选最紧迫的进程运行）&lt;/p&gt;
+
+&lt;h3 id=&quot;38-linux系统中的进程调度&quot;&gt;3.8 LINUX系统中的进程调度&lt;/h3&gt;
+
+&lt;p&gt;LINUX调度机制主要涉及调度方式、调度策略、调度时机和调度算法&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;调度方式基本采用抢占式优先级的方法&lt;/li&gt;
+  &lt;li&gt;调度策略有FIFO RR OTHER（由进程剩余时间配额设置优先级，由nice命令设置优先级）&lt;/li&gt;
+  &lt;li&gt;调度时机&lt;img src=&quot;/assets/image-20200705153139397.png&quot; alt=&quot;image-20200705153139397&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;调度算法：抢占式优先级算法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;39-中断处理&quot;&gt;3.9 中断处理&lt;/h3&gt;
+
+&lt;p&gt;保存现场时有两种方法：集中式保存，在内存的系统区设置一个中断现场保存栈；分散式保存，在每个进程的PCB中设置一个核心栈&lt;/p&gt;
+
+&lt;p&gt;中断优先级：可能某个时刻有多个中断同时出现，在&lt;strong&gt;硬件设计中断响应&lt;/strong&gt;时，必须按各种中断事件的轻重缓急对线路进程排队，&lt;strong&gt;安排中断响应次序&lt;/strong&gt;；而在软&lt;strong&gt;件中处理中断也要排序&lt;/strong&gt;，可以和响应顺序不同，&lt;strong&gt;高级别中断有打断低级别中断处理程序的权利&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;中断屏蔽：中断请求提出后CPU不响应，常常用来防止同级中断的打扰
+中断禁止：系统不接受中断信号，不会提出中断请求&lt;/p&gt;
+
+&lt;p&gt;系统调用：陷入和捕俘，所有陷入事件有一个总的服务程序：陷入总控程序，在处理系统调用处理的过程中并不自动关闭中断
+&lt;img src=&quot;/assets/image-20200705194459175.png&quot; alt=&quot;image-20200705194459175&quot; /&gt;
+具体过程为：陷入总控程序将参数压入系统栈，调用陷入处理程序trap，程序根据陷入事件的不同类型进行不同的处理，对于非法指令、指令故障、转换无效等事件，转入信号机构处理；对于系统调用使用系统调用函数处理&lt;/p&gt;
+
+&lt;h2 id=&quot;第四章-存储管理---p149&quot;&gt;第四章 存储管理   P149&lt;/h2&gt;
+
+&lt;h3 id=&quot;41-地址空间与重定位&quot;&gt;4.1 地址空间与重定位&lt;/h3&gt;
+
+&lt;p&gt;程序装入内存有三种方式&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;绝对装入：程序中使用的所有地址都是内存绝对地址，程序装入到内存的指定位置&lt;/li&gt;
+  &lt;li&gt;可重定位装入：程序中根据内存当时的使用情况，决定存放到内存的位置，程序使用相对地址&lt;/li&gt;
+  &lt;li&gt;动态运行时装入：装入内存的程序可以换到磁盘，需要时再换入内存中，需要硬件支持&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;静态重定位：由装入程序对目标程序中的指令和数据的地址进行修改，执行过程中不再改动
+动态重定位：在程序执行期间，每次访问内存之前都要进行重定位，靠硬件地址转换机构实现，通常采用一对重定位寄存器，一个存放程序在内存的初始地址（基址寄存器）另一个表示程序的逻辑地址最大范围（限长寄存器），都为特权寄存器&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;UNIX&lt;/td&gt;
+      &lt;td&gt;LINUX 中对内存管理还利用了多道程序对换技术（中级调度），内存中保留多个进程，当内存空间紧张则把某些进程换出到外存中。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;42-分区技术&quot;&gt;4.2 分区技术&lt;/h3&gt;
+
+&lt;p&gt;内存一开始为一大块，各个分区在相应进程进入内存时才建立，大小和进程大小相同，在进程完成后就释放所占分区，系统尝试将其与邻接的空闲分区合并起来，成为一个大分区&lt;/p&gt;
+
+&lt;p&gt;动态分区法常用于记录内存使用情况的数据结构有：空闲分区表和分区链	P159
+分配算法有：最先适应算法、最佳适应算法、循环适应算法和最坏使用算法&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;最先适应：分区表按位置排列，先找到满足的空闲区就直接分配，释放内存时就根据分区表合并上下空闲区，如果无相连空闲区，则新建并插入分区表&lt;/li&gt;
+  &lt;li&gt;最佳适应：以空闲区大小为序，从小到大，同样想找到先分配，划分后有剩余则修改分区大小和重新确定空闲区在表中位置&lt;/li&gt;
+  &lt;li&gt;循环适应：和最先使用一样，但每次找到合适的空闲区后就记录，下次查找空闲区从记录位置的下一个空闲分区开始找&lt;/li&gt;
+  &lt;li&gt;最坏适应：从大到小排，利用划分后剩余的分区来减少碎片&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;采用分区技术需要有硬件保护，通常由一对寄存器分别表示用户进程在内存空间中的上下界&lt;/p&gt;
+
+&lt;h3 id=&quot;43-分页技术&quot;&gt;4.3 分页技术&lt;/h3&gt;
+
+&lt;p&gt;分区和对换技术都要求把一个进程放置在一片连续的内存区域，而分页允许程序存储空间不连续，从而解决外部碎片的问题，提高内存利用率&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;逻辑空间分页、内存空间分块&lt;/strong&gt;，块大小和页面大小相同。分页情况下，系统以块作为单位把内存分给各个进程，&lt;strong&gt;进程的每个页面对应一个内存块&lt;/strong&gt;，为了找到每个页面在内存中对应的物理块，系统为&lt;strong&gt;每一个进程设立了一张页面映射表&lt;/strong&gt;，操作系统通过&lt;strong&gt;建立内存块表&lt;/strong&gt;管理整个内存&lt;/p&gt;
+
+&lt;p&gt;为了解决放置页表带来的存取速度下降的问题，可以设置一个高速联想存储器快表，快表包含键（页号）和值（块号）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;页的共享&lt;/strong&gt;：只有只读的页可以共享，而且通常因为系统分页情况是用户不可见的，会把私有数据和可共享数据混杂到同一个页，不容易实现共享&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;页的保护&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;利用页表本身进行保护：页表基址信息放在进程的PCB中，访问内存要利用页表进行地址转换，各进程在自己的存储空间内活动&lt;/li&gt;
+  &lt;li&gt;设置存储控制位：在页表表现设置存取控制字段，指明块的内容允许何种操作&lt;/li&gt;
+  &lt;li&gt;设置合法标志：非法时表示该页不在该进程的逻辑地址空间中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;页表构造&lt;/strong&gt;（为了节省内存空间，需要动态调入页表）&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;多级页表&lt;/strong&gt;：用来防止一级页表过大，进程只保留部分页表，剩下的页表动态调入到内存中&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;散列页表&lt;/strong&gt;，处理&lt;strong&gt;大于32位地址空间的通用方式&lt;/strong&gt;，表中每一项有一个链表，由页号、对应的内存块号和指向下一个元素的指针组成&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;倒置页表&lt;/strong&gt;，用于64位虚拟地址空间在处理器上的应用，系统中只有一个页表，每个内存块对应唯一的表项，表项由进程标识符和虚拟页号组成，&lt;strong&gt;访问地址时用PID和页号查询块号&lt;/strong&gt;，如果找不到，则此页未调入内存，产生请求调页中断，如果还没有，则地址错误&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;44-分段技术&quot;&gt;4.4 分段技术&lt;/h3&gt;
+
+&lt;p&gt;将用户程序分成若干相对独立的部分，每段从0开始编址，并采用一段连续的地址空间
+程序地址结构：整个进程的地址空间分成多个段，&lt;strong&gt;逻辑地址分成段号S和段内地址d&lt;/strong&gt; ，段的信息的逻辑单位，用于可以知道自己的程序分成几段以及相应的功能&lt;/p&gt;
+
+&lt;p&gt;段表和段表地址寄存器，一个进程的全部段都在该进程的段表中登记，系统还有一个段表地址寄存器，一部分指出段表在内存中的起始地址；另一部分指出段表的长度，主要用于段寻址和越界检测&lt;/p&gt;
+
+&lt;p&gt;段的保护&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;存取控制：在段表中记录本段允许的操作，可读、可写、可读写&lt;/li&gt;
+  &lt;li&gt;段表本身的保护：利用段表地址寄存器判断访问空间&lt;/li&gt;
+  &lt;li&gt;保护环：&lt;img src=&quot;/assets/image-20200706121144806.png&quot; alt=&quot;image-20200706121144806&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;45-段页式结合系统&quot;&gt;4.5 段页式结合系统&lt;/h3&gt;
+
+&lt;p&gt;分页存储管理能提高内存利用率，分段存储可以满足用户需求，两者结合可以“各取所长”&lt;/p&gt;
+
+&lt;p&gt;段页式存储管理的基本原理：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;等分内存：把内存分成大小相等的内存块&lt;/li&gt;
+  &lt;li&gt;进程地址空间采用分段：吧进程的程序和数据分成若干段，每段一个段名&lt;/li&gt;
+  &lt;li&gt;段内分页：把每段分成若干页，页面大小和内存块相同&lt;/li&gt;
+  &lt;li&gt;逻辑地址结构：由段号、段页页号和页内地址组成&lt;/li&gt;
+  &lt;li&gt;内存分配：内存分配单位为块&lt;/li&gt;
+  &lt;li&gt;段表、页表和段表地址寄存器：系统为每个进程建立一个段表，为每一个段建立一个页表。因此段表中不再是段长和内存地址，而是页表长和页表地址&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;实现的具体过程为：&lt;img src=&quot;/assets/image-20200706122333059.png&quot; alt=&quot;image-20200706122333059&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;46-虚拟存储器&quot;&gt;4.6 虚拟存储器&lt;/h3&gt;
+
+&lt;p&gt;虚存特征
+虚拟扩充：不是扩大物理空间，而是扩充逻辑内存容量
+部分装入：进程不是一次性全部装入内存，而是将当前运行需要用到的那部分程序和数据装入内存中
+离散分配：一个进程在内存的部分可能散布在内存的不同地方，避免浪费也为动态调入提供了方便
+多次对换：一个进程运行期间，它所需的全部程序和数据分成多次调入内存&lt;/p&gt;
+
+&lt;h3 id=&quot;47-请求分页&quot;&gt;4.7 请求分页&lt;/h3&gt;
+
+&lt;p&gt;页表结构
+&lt;img src=&quot;/assets/image-20200706143040143.png&quot; alt=&quot;image-20200706143040143&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;抖动是指，如果置换算法不合适，可能出现刚换出的页面又很快被访问，系统大部分时间用在页面调度和传输上，实际效率太低&lt;/p&gt;
+
+&lt;p&gt;页面置换算法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;先进先出、最佳置换、最近最久未使用&lt;/li&gt;
+  &lt;li&gt;第二次机会置换法：查看引用位，被引用过为1则视为刚装入，并把引用位清零，继续寻找引用位为0的页&lt;/li&gt;
+  &lt;li&gt;时钟置换法：是对第二次机会置换法的改进，使用循环链表![image-20200706153036986]/assets理/image-20200706153036986.png)&lt;/li&gt;
+  &lt;li&gt;最近未使用：启动进程时所有页的引用位和修改位都置成0，引用位会定期清0![image-20200706153222897]/assets理/image-20200706153222897.png)
+过程为，从当前指针指向的位置开始查找循环队列（结构和时钟算法一样），先找第一类，不满足则再找第二类，第二类也不满足则把引用位都清0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;48-内存块分配和抖动问题&quot;&gt;4.8 内存块分配和抖动问题&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;内存最少块数：每个进程需要有最少的内存块数，分配的总块数不能超过可用块的总量&lt;/li&gt;
+  &lt;li&gt;内存块分配策略：固定分配，给进程分配的内存块数是固定的，缺页时只能从分给该进程的内存块中进行页面置换；可变分配，如果进程运行持续缺页率较高，则多分内存块&lt;/li&gt;
+  &lt;li&gt;页面置换范围：全局置换，运行一个进程从全部内存中选取淘汰的内存块；局部置换，只能置换分给进程的那一组，全局置换只能和可变分配策略相结合&lt;/li&gt;
+  &lt;li&gt;分配内存块的算法：等分法、比例法（依照进程的地址空间）和优先权法（依照进程的优先级）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;防止抖动的方法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;采用局部置换：当进程出现抖动时，其不能从另外的进程那里获得内存块，使抖动局限在一个小范围，但未解决抖动&lt;/li&gt;
+  &lt;li&gt;挂起某些进程：腾出内存空间给抖动进程使用&lt;/li&gt;
+  &lt;li&gt;采用缺页频度发：如果缺页率太高则给进程更多内存块，控制缺页率&lt;/li&gt;
+  &lt;li&gt;利用工作集：程序往往具有局部性，&lt;strong&gt;时间局部性&lt;/strong&gt;，某条指令刚被执行后，往往很快又被执行（循环顺序）；&lt;strong&gt;空间局部性&lt;/strong&gt;，某个位置被访问，它附近的位置也要被访问（数组结构）
+工作集就是一个进程在某一小段时间内访问页面的集合，工作集大小WSSi 与时间间隔d有关，如果d过小则不能反映工作集缓慢变化，如果d太大则不体现局部的效果
+有公式 $D=\sum^n_{i=1}WSS_i$ ，其中D是系统中全部进程的总请求量，D大于可以的内存块总量m表示将出现抖动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;49-请求分段&quot;&gt;4.9 请求分段&lt;/h3&gt;
+
+&lt;p&gt;段式虚存可以实现动态链接技术，使用&lt;em&gt;间接编址&lt;/em&gt;和&lt;em&gt;链接故障指示&lt;/em&gt;两个硬件设施,间接地址是指存放直接地址的地址,链接故障指示检查时，如果段未链接上，硬件会产生链接中断&lt;img src=&quot;/assets/image-20200706170646674.png&quot; alt=&quot;image-20200706170646674&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;410-linux系统的存储管理技术&quot;&gt;4.10 linux系统的存储管理技术&lt;/h3&gt;
+
+&lt;p&gt;采用了和UNIX一样的&lt;strong&gt;请求分页存储管理&lt;/strong&gt;技术和&lt;strong&gt;对换技术&lt;/strong&gt;。页面置换使用LRU，管理用位图和链表结构&lt;/p&gt;
+
+&lt;h2 id=&quot;第五章-文件系统-p207&quot;&gt;第五章 文件系统 P207&lt;/h2&gt;
+
+&lt;h3 id=&quot;51-文件及其分类&quot;&gt;5.1 文件及其分类&lt;/h3&gt;
+
+&lt;p&gt;文件是从存储设备抽象出来的被命名的相关信息的集合体，通常存放在外存中。&lt;/p&gt;
+
+&lt;p&gt;文件类型按用途分类&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;系统文件：操作系统和其他系统程序信息组成的文件，只能通过系统调用为用户服务&lt;/li&gt;
+  &lt;li&gt;库文件：由标准子程序和常用的应用程序组成的文件，允许用户使用但不能修改&lt;/li&gt;
+  &lt;li&gt;用户文件：由用户保存管理的文件，可以被创建者或者被授权者进行操作&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;按数据形式分类：源文件、目标文件（编译后未链接）、可执行文件（编译链接）
+按存储权限分类：只读文件、读写文件和可执行文件
+按保存时间分类：临时文件和永久文件&lt;/p&gt;
+
+&lt;p&gt;在UNIX和Linux中按文件的内部构造和处理方式分类：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;普通文件：内部没有固定结构，由程序、数据活文本的字符串构成&lt;/li&gt;
+  &lt;li&gt;目录文件：由下属文件的目录项构成的文件，可进行读写等操作&lt;/li&gt;
+  &lt;li&gt;特殊文件：特指各种外部设备，系统把IO设备作为文件对待，进行统一管理![image-20200707103847223]/assets理/image-20200707103847223.png)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;普通文件分为&lt;strong&gt;文本文件&lt;/strong&gt;（ASCII文件）和&lt;strong&gt;二进制文件&lt;/strong&gt;，二进制文件有内部结构，在UNIX和Linux中有五个区，&lt;strong&gt;文件头、正文段、数据段、重定位区和符号表区&lt;/strong&gt;，&lt;strong&gt;文件头结构&lt;/strong&gt;由标志可执行文件特征的&lt;strong&gt;幻数、正文段长度、数据段长度、BSS段长度、符号表的长度和入口单元及各种标志&lt;/strong&gt;组成，重定位时利用重定位区，而符号表用于调试程序&lt;/p&gt;
+
+&lt;p&gt;文件抽象最重要的特性是“按名”管理对象，&lt;strong&gt;用户对文件也是“按名存取”&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;文件系统是OS负责操纵和管理文件的一套系统&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文件管理：创建删除、打开关闭、读写执行一个文件&lt;/li&gt;
+  &lt;li&gt;目录管理：为每个文件建立一个文件目录项，若干文件的目录项构成一个目录文件，根据用户要求创建或者删除目录文件、对用户指定文件进行检索和权限验证、更改工作目录等&lt;/li&gt;
+  &lt;li&gt;文件存储空间管理：对文件的存储空间分配与回收，并为文件逻辑结构与物理地址建立映射&lt;/li&gt;
+  &lt;li&gt;文件的共享和保护：在系统控制下使用户能共享其他用户的文件，防止对文件的未授权访问或破坏&lt;/li&gt;
+  &lt;li&gt;提供方便的接口：为用户提供统一的文件存取方式，实现“按名存取”，OS为用户提供有关文件操作的系统调用，给用户编程使用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;52-文件的逻辑组织和物理组织&quot;&gt;5.2 文件的逻辑组织和物理组织&lt;/h3&gt;
+
+&lt;p&gt;逻辑组织有无结构文件和有结构文件两种&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;无结构文件&lt;/strong&gt;是有一组相关信息组成的有序字符流，OS并不关心文件中存放的内容是什么，其看到的都是一个一个的字节，具体内容由用户级程序解释；&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;有结构文件&lt;/strong&gt;，又称记录型文件，文件是由若干相关记录组成的，每个记录是一组相关的数据集合（具体类似于JSON文件），用于描述一个对象某个方面的属性，如年龄、姓名等。分为&lt;strong&gt;定长和变长记录文件&lt;/strong&gt;两种&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;存取方式分为顺序存取和随机存取，顺序存取严格按照字符流或记录的排序依次存取，随机存取这允许用户随意存取文件中的一个记录
+随机存取基于磁盘的文件存取模式，对于定长记录文件，随机存取把文件视为一系列编号上的块或记录，通常每块的大小是一样的，被操作系统作为最小的定位单位&lt;img src=&quot;/assets/image-20200707112455757.png&quot; alt=&quot;image-20200707112455757&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;文件的物理组织&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;连续文件：把逻辑上连续的文件信息存放在连续编号的物理块中，如定长文件大小为2000，假设一个物理块大小为512，文件需要占用4块&lt;/li&gt;
+  &lt;li&gt;链接文件：逻辑连续的文件分散存放在不同物理块中，为各个物理块设置链接字，指示该文件的下一个物理块，系统维护一个文件分配表，每个文件都在表中独占一项，其中包括了文件名、起始块号和最后块号&lt;/li&gt;
+  &lt;li&gt;索引文件：系统为每一个文件建立索引表，表项指出存放该文件的各个物理块号，索引表也存放在一个盘块中，由文件目录项指出索引盘块地址&lt;/li&gt;
+  &lt;li&gt;多重索引
+&lt;img src=&quot;/assets/image-20200707120150760.png&quot; alt=&quot;image-20200707120150760&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;53-文件控制块和文件目录&quot;&gt;5.3 文件控制块和文件目录&lt;/h3&gt;
+
+&lt;p&gt;文件系统内部给每个文件唯一地设置一个文件控制块，核心利用该结构进行管理时，首先会验证权限&lt;img src=&quot;/assets/image-20200707120759771.png&quot; alt=&quot;image-20200707120759771&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UNIX和Linux中该结构称为 &lt;strong&gt;i 节点&lt;/strong&gt;，i 节点分为&lt;strong&gt;静态和动态&lt;/strong&gt;两种，&lt;strong&gt;静态在磁盘上&lt;/strong&gt;，&lt;strong&gt;动态在内存中&lt;/strong&gt;，每个文件对应一个唯一的静态 i 节点，而&lt;strong&gt;每个打开的文件都有一个对应的动态 i 节点&lt;/strong&gt;，只有动态 i 节点才有节点号，&lt;strong&gt;节点号是唯一的，指向静态 i 节点&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;文件目录是文件控制块的有序集合，完全由目录项组成的文件称为目录文件
+目录结构有：单级目录、二级目录（多了用户目录）、树形目录（多级目录）、非循环图目录（带链接的树形结构）&lt;/p&gt;
+
+&lt;h3 id=&quot;54-文件存储空间管理&quot;&gt;5.4 文件存储空间管理&lt;/h3&gt;
+
+&lt;p&gt;空闲空间管理技术有：空闲空间表法、空闲块链接法、位示图法和空闲块成组链表法&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;空闲块成组链表法：把所有空闲盘块按固定数量分组，如50个空闲块为一组，组中第一块为组长块，第一组的50个空闲块块号放在第二组的组长块中……最后一个块（可能不到50块）放在文件系统超级块中的空闲块号栈里
+&lt;img src=&quot;/assets/image-20200707150841716.png&quot; alt=&quot;image-20200707150841716&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/image-20200707150951550.png&quot; alt=&quot;image-20200707150951550&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;第一个块中的警戒位&lt;img src=&quot;/assets/image-20200707151034622.png&quot; alt=&quot;image-20200707151034622&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;57-linux文件系统&quot;&gt;5.7 linux文件系统&lt;/h3&gt;
+
+&lt;p&gt;每个进程有两个数据结构来描述进程与文件的相关信息，一个是fs_struct 指向两个VFS索引节点，分别是根目录节点和当前目录节点；另一个是files_struct（进程文件描述符表） 保存该进程打开文件的有关信息，其中的指针指向对应的 file 结构（打开文件描述表表）&lt;img src=&quot;/assets/image-20200707174255641.png&quot; alt=&quot;image-20200707174255641&quot; /&gt;
+进程文件描述符表让各个进程掌握它当前使用文件的情况，不要同时打开太多文件，并加速对文件的查找速度
+核心设置打开文件表的原因是，一个文件可以被多个进程打开&lt;/p&gt;
+
+&lt;h2 id=&quot;第六章设备管理-p254&quot;&gt;第六章设备管理 P254&lt;/h2&gt;
+
+&lt;h3 id=&quot;61-设备管理概述&quot;&gt;6.1 设备管理概述&lt;/h3&gt;
+
+&lt;p&gt;设备分类
+按工作特性分为存储设备和输入输出设备两大类，有个别不符合这两类的，如时钟&lt;/p&gt;
+
+&lt;p&gt;按设备使用性质分为独占设备（只能一个进程独占）、共享设备（多个进程同时共用）和虚拟设备（利用某种技术吧独占设备改造成多个进程共用的设备）&lt;/p&gt;
+
+&lt;p&gt;按数据传输方式分为串行设备（二进制位一位一位顺序传送）和并行设备（8位数据同时通过并行线进行传送的设备）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image-20200707230032772.png&quot; alt=&quot;image-20200707230032772&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;设备标识：OS为每台设备分配一个唯一&lt;strong&gt;设备绝对号用于区分和识别设备&lt;/strong&gt;，UNIX和Linux中每个块设备的名字由两部分组成：&lt;strong&gt;主设备号和次设备号&lt;/strong&gt;。
+多道程序环境中，写程序时使用的是主设备号（&lt;strong&gt;设备的类型号&lt;/strong&gt;），而次设备号表示同类设备的&lt;strong&gt;相对序号&lt;/strong&gt;，用户程序只知道使用设备的类型，具体使用哪一台由系统分配，&lt;strong&gt;OS负责进行“地址转换”，将类型号变成设备绝对号&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;io-系统结构主机io系统和微型机io系统&quot;&gt;IO 系统结构：主机IO系统和微型机IO系统&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;主机IO系统&lt;/strong&gt;
+&lt;img src=&quot;/assets/image-20200707230936399.png&quot; alt=&quot;image-20200707230936399&quot; /&gt;
+通道相当于小型处理机，独立执行通道程序，对外部设备的IO操作进行控制，实现内存和外设之间的数据传输，主机委托的IO处理完成后，通道发出中断信号，请求CPU处理使CPU和外设并行效率提升&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;主机IO系统的通道&lt;/strong&gt;三种类型&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;字节多路通道：以字节为信息传输单位，服务于多台低速IO设备，当通道为一台设备传输一个字节后立刻转向为下一台设备传送字符，交叉控制下属各个设备的工作&lt;/li&gt;
+  &lt;li&gt;选择通道：同一时间只能为一台设备服务，连续地传输一批数据，主要用于连接高速外部设备&lt;/li&gt;
+  &lt;li&gt;成组多路通道：广泛用于连接高速和中速设备，结合了字节多路通道分时操作和选择通道高速传送的优点，允许多个通道程序在同一IO通道中并行，每执行完一条通道指令就转向另一通道程序，任意时刻只能为一个设备服务但又能立刻切换到下一个通道&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;微型机IO系统&lt;/strong&gt;
+大多使用总线IO系统结构，实现CPU和控制器之间的通信
+&lt;img src=&quot;/assets/image-20200707232242950.png&quot; alt=&quot;image-20200707232242950&quot; /&gt;
+IO设备一般有机械和电子两部分组成，&lt;strong&gt;电子部分称为设备控制器或适配器&lt;/strong&gt;，可以&lt;strong&gt;管理端口、总线或设备，实现设备主体和主机间的连接与通信&lt;/strong&gt;，一台设备控制器可以控制多台同一类型的设备，&lt;strong&gt;控制器是可编址的设备，OS常常通过控制器实施对设备的控制和操作&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;io系统的控制方法&quot;&gt;IO系统的控制方法&lt;/h4&gt;
+
+&lt;p&gt;程序控制直接传递方式，程序查询方式，中断控制方式，直接存储器访问方式，独立通道方式，IO处理器方式&lt;/p&gt;
+
+&lt;h5 id=&quot;直接存储器访问方式dma&quot;&gt;直接存储器访问方式DMA&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image-20200707234317228.png&quot; alt=&quot;image-20200707234317228&quot; /&gt;
+	DMA传送操作：DMA包括内存地址寄存器、字节计数寄存器、一个或多个控制寄存器，控制寄存器指明所用的端口、传送方向（读还是写）、传送的单位（一个字节或者字），本次传送的字节数，CPU可以读写这些寄存器&lt;/p&gt;
+
+&lt;p&gt;​	DMA工作过程：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;CPU把一个DMA命令块写入内存&lt;/strong&gt;，命令包含传送数据的源地址、目的地址和传送字节数，然后&lt;strong&gt;把该块地址写入到DMA控制寄存器中&lt;/strong&gt;，CPU&lt;strong&gt;向磁盘控制器发送读盘命令&lt;/strong&gt;，然后CPU处理其他任务，当&lt;strong&gt;有效数据存入到磁盘控制器的缓冲区中后开始DMA存取&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DMA控制器启动数据传送，通过总线向磁盘控制器发送读盘请求，读数据到指定内存单元中&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/image-20200707235201907.png&quot; alt=&quot;image-20200707235201907&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;某些DMA可以每次一字或者整块传送
+&lt;img src=&quot;/assets/image-20200707235721294.png&quot; alt=&quot;image-20200707235721294&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;缓冲技术&quot;&gt;缓冲技术&lt;/h4&gt;
+
+&lt;p&gt;为了解决CPU和IO设备速度不匹配的矛盾，提高CPU和IO设备的并行性
+可设置为硬缓冲和软缓冲（从内存中开辟区域做缓冲区，缓冲区大小一般与盘块大小一样）
+可设置单缓冲、双缓冲或多缓冲
+&lt;img src=&quot;/assets/image-20200708001716335.png&quot; alt=&quot;image-20200708001716335&quot; /&gt;
+&lt;img src=&quot;/assets/image-20200708001800311.png&quot; alt=&quot;image-20200708001800311&quot; /&gt;
+在多缓冲基础上可以构造循环缓冲或缓冲池，有两个指针：一个指向缓冲区中数据第一个字，一个指向首个空闲区位置。为了提高缓冲区利用率，往往采用公用缓冲池的方式，池中的缓冲区可以供多个进程使用&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;设备管理的功能&quot;&gt;设备管理的功能&lt;/h4&gt;
+
+&lt;p&gt;设备管理的目标：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;使用方便：屏蔽物理特性，按统一规则使用设备，OS负责输入输出工作&lt;/li&gt;
+  &lt;li&gt;设备独立性：OS分配实际设备，程序只关心设备类型&lt;/li&gt;
+  &lt;li&gt;效率高：利用通道和缓冲提高CPU和IO设备的并行性&lt;/li&gt;
+  &lt;li&gt;管理统一：对各种外设采用统一的管理方法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;为实现目标所需的功能：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;监视设备状态：记住所有设备、控制器和通道的状态，以便有效管理和调度使用&lt;/li&gt;
+  &lt;li&gt;进行设备分配：按类型和分配算法实施设备分配&lt;/li&gt;
+  &lt;li&gt;完成IO操作：OS按用户的要求调用具体设备驱动程序，进行IO操作并处理中断&lt;/li&gt;
+  &lt;li&gt;缓冲管理和地址转换&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;62-分配技术和spooling系统&quot;&gt;6.2 分配技术和SPOOLing系统&lt;/h3&gt;
+
+&lt;p&gt;设备分配的相关因素有：IO设备的固有属性、os采用的分配算法、分配应防止死锁发生、用户程序使用的逻辑设备和物理设备无关&lt;/p&gt;
+
+&lt;p&gt;设备分配技术：独占分配、共享分配和虚拟分配（SPOOLing系统）&lt;/p&gt;
+
+&lt;p&gt;分配算法：先来先服务，优先级高的优先服务&lt;/p&gt;
+
+&lt;p&gt;SPOOLing系统一般分为存输入、取输入、存输出、取输出
+&lt;img src=&quot;/assets/image-20200708103344372.png&quot; alt=&quot;image-20200708103344372&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;63-io-软件构造&quot;&gt;6.3 IO 软件构造&lt;/h3&gt;
+
+&lt;p&gt;IO软件系统的层次：
+为了实现设备独立性、统一命名、出错控制和同步（阻塞）异步（中断驱动）处理
+&lt;img src=&quot;/assets/image-20200708113352464.png&quot; alt=&quot;image-20200708113352464&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;总体过程
+&lt;img src=&quot;/assets/image-20200708120656311.png&quot; alt=&quot;image-20200708120656311&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;设备驱动程序&quot;&gt;设备驱动程序&lt;/h4&gt;
+
+&lt;p&gt;功能：接收上层与设备无关的读写请求，IO请求排在请求队列队尾；取出请求队列队首请求，并将设备分配给它；想设备控制器发送命令，完成IO操作；处理来自设备的中断&lt;/p&gt;
+
+&lt;p&gt;设备驱动程序在系统中的逻辑位置
+&lt;img src=&quot;/assets/image-20200708111122729.png&quot; alt=&quot;image-20200708111122729&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;与设备无关的操作系统io软件&quot;&gt;与设备无关的操作系统IO软件&lt;/h4&gt;
+&lt;p&gt;基本功能是执行所有驱动器共同的IO功能和为用户级软件提供统一接口，所有驱动程序都有相同的接口，新驱动程序遵守接口规则，这样很容易加入操作系统
+&lt;img src=&quot;/assets/image-20200708113208607.png&quot; alt=&quot;image-20200708113208607&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;设备驱动程序的统一接口：
+与接口相关的问题是IO设备如何命名，设备无关软件负责把符号设备名映像到相应的设备，每个设备指定唯一的一个特殊文件 i 节点，包含主设备号和次设备号，主设备号用来确定相应的驱动程序，次设备号作为传递给驱动程序的参数。还有保护问题，系统管理员可为每台设备规定权限&lt;/li&gt;
+  &lt;li&gt;出错报告：很多错误与设备相关，需要由相应的驱动程序处理，但出错处理的架构与设备无关
+错误产生的原因：&lt;strong&gt;一类是程序错误&lt;/strong&gt;，如把信息写到输入设备上（键盘）、提供的参数错误、指定设备不合法等，处理方法是&lt;strong&gt;直接向调用者报告&lt;/strong&gt;；一类是&lt;strong&gt;实际IO错误&lt;/strong&gt;，如把信息写到坏块中、从关机的设备中读信息，此时&lt;strong&gt;驱动程序可以向设备无关软件报告&lt;/strong&gt;，
+&lt;img src=&quot;/assets/image-20200708115618746.png&quot; alt=&quot;image-20200708115618746&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;分配和释放独占设备：处理的简单方法是让进程打开设备特殊文件，如果设备不可用则打开失败，以后通过关闭独占设备释放它；另一种方法是设立专门机制，&lt;strong&gt;负责独占设备的申请和释放&lt;/strong&gt;，设备不可用则阻塞调用者，&lt;strong&gt;进程放入阻塞队列，当申请设备可用时，阻塞队列第一个进程使用它&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;提供与设备无关的块大小&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;用户空间的io软件&quot;&gt;用户空间的IO软件&lt;/h4&gt;
+
+&lt;p&gt;以库函数的形式出现，如printf、scanf等函数，编译链接后放入内存，运行时利用系统调用进入到操作系统，由OS接收用户的IO请求，提供相应服务。由于把设备当成特殊文件处理，对设备的访问变成了对文件的访问，输入输出管理就是打开关闭、读写和查找文件&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image-20200708122001236.png&quot; alt=&quot;image-20200708122001236&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;64-磁盘调度和管理&quot;&gt;6.4 磁盘调度和管理&lt;/h3&gt;
+
+&lt;p&gt;磁盘硬件：磁头，柱面，扇区；
+现代磁盘驱动器提供给操作系统的是虚拟的几何参数，到操作系统提出寻道请求时，再由磁盘控制器把请求的参数重新映射成实际磁道地址，也就是磁盘的逻辑地址是由逻辑块组成的一维数组，文件系统读写某个文件时，由逻辑块号映射成物理块号，再由磁盘驱动程序转换成磁盘地址，再由磁盘控制器把磁盘地址定位到具体的磁盘物理地址。&lt;/p&gt;
+
+&lt;h3 id=&quot;65-linux系统设备管理&quot;&gt;6.5 Linux系统设备管理&lt;/h3&gt;
+
+&lt;p&gt;Linux系统中硬件设备分为：块设备、字符设备和网络设备&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image-20200708125118694.png&quot; alt=&quot;image-20200708125118694&quot; /&gt;
+&lt;strong&gt;设备转接表是文件系统和设备驱动程序之间的接口&lt;/strong&gt;，每类设备在转接表中都占有一项，&lt;strong&gt;转接表中记录了对该类设备执行操作的各个子程序的入口地址&lt;/strong&gt;，连接表在系统初启时根据硬件配置情况建立，&lt;strong&gt;系统只有这两个设备转接表&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;硬件和驱动程序之间的接口是通过相关控制寄存器或操纵设备的IO指令及中断向量组成的&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Linux系统的缓冲技术&lt;/strong&gt;：使用多重缓冲技术来平滑和加快文件信息从内存到磁盘的传输
+&lt;img src=&quot;/assets/image-20200708130519127.png&quot; alt=&quot;image-20200708130519127&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;块设备管理&lt;/strong&gt;
+磁盘块的读写方式，读有立即读和预读两种，写有立即写、异步写和延迟写&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;上述读写的实现机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;系统中有一个描述一系列在系统中登记的块设备的结构，使用主设备号作为索引，还包括了指向有关操作的函数指针，其是连接抽象的块设备操作与具体块设备类型操作之间的枢纽（实现块设备转接表功能）&lt;/p&gt;</content><author><name>true</name></author><category term="操作系统" /><category term="linux" /><category term="学习" /><summary type="html">操作系统原理 第一章 操作系统概述 P9 1.1 操作系统概念 操作系统是系统软件，是用户与计算机之间的接口，基本职能是控制和管理系统内部的各种资源，有效地组织多道程序的运行，扩充硬件功能。从 作为扩展机器的操作系统把硬件细节与程序员隔离开，实际客户是应用程序 作为资源管理的操作系统的功能是管理系统中的硬件资源和数据、程序等软件资源，控制协调各个程序对这些资源的利用，涉及资源共享的问题。操作系统是计算机系统的资源管理器这种观点占主导地位 用户观点：操作系统处于用户和硬件之间，有助于用户使用计算机系统的接口和各种资源 系统观点：操作系统是硬件上第一层软件，管理硬件资源和软件资源的分配问题，是资源分配者 （操作系统要对 IO 设备和用户程序加以控制，防止非法操作，这样看操作系统就是控制程序） 进程管理观点：进程是程序在并发环境中的执行过程 与操作系统相关的几种主要寄存器: 用户可编程寄存器以及控制与状态寄存器。 用户可编程寄存器是机器语言或者汇编语言可以进行操作的寄存器，如数据、地址、条件码寄存器 控制与状态寄存器可以被处理器用来控制自身操作，或者被有特权的操作系统例程用来控制相关程序的执行。如PC（程序计数器）、IR（指令）、PSW（程序状态字）寄存器等 CPU能执行的全部指令集合称作指令系统或指令集，特权指令用于操作系统或者其他系统软件，主要用于系统资源的分配和管理；用户使用的是非特权指令，如算术运算和访管指令。 CPU运行模式：内核态和用户态（与PSW有关） 中断和异常是实施并发的基础，由硬件和软件结合而成，中断来自CPU外，异常来自CPU内 系统初启的一般过程： 硬件检测：BIOS加电进行硬件自检，然后读入系统引导区的程序，并将系统控制权交给引导装入程序 加载引导程序：其不直接引导操作系统，但能根据盘区划分的信息找到活动分区，然后从其中将引导程序读入内存；运行引导程序，从硬盘中读入其他几个软件，由后者加载内核；内核加载完毕后系统跳到setup程序，在实模式下运行，设置系统参数和显示器；最后进入保护模式跳到内核映像开头，执行内核初始化。 初始化内核： 第一个阶段是CPU本身初始化：设置内核页表、启动页面映射机制、建立系统第一个进程、初始化内核的全局变量和静态变量、设置中断向量表等； 第二个阶段是系统一些基础设施的初始化：设置内存边界、初始化内存页面、设置各种处理程序入口地址、定义系统中最大进程数目、创建init内核线程等 第三个阶段是对上层的初始化：初始化外部设备、加载驱动、创建核心线程、初始化文件系统并加载 实现用户登录：init程序在tty每个端口上都创建一个进程login，用于登录 操作系统的构建目标：高效性（对软硬件资源合理的调度和分派）、方便性（操作系统对外提供接口，方便用户使用）、安全性（保护信息不被未授权人员使用）、鲁棒性（稳定性、强健性）、移植性（从一个硬件平台到另一个平台时的改动不能过多且要容易实施） 软件分类：系统软件（操作系统、编译、汇编、链接、数据库、网络程序）、应用软件、支撑软件（辅助软件技术人员从事软件开发的工具） 操作系统是整个计算机系统的控制管理中心，经过软件扩充功能后的机器称为“虚拟机” 操作系统提供的服务：用户接口、程序执行、IO操作、文件系统管理、出错检测、通信、资源分配、统计、保护。 操作系统的服务方式是系统调用和系统程序 系统调用：一般处于操作系统核心的最高层，CPU执行用户程序中的系统调用时，处理机的状态会从用户态变成核心态，进入操作系统内部；而过程调用只能在用户态下运行，不能进入核心态，系统调用完成了用户态到核心态的转变。系数调用可以大致分为五类：进程控制、文件管理、设备管理、信息维护和通信 系统程序：系统程序主要指系统程序包（库函数）中提供的大量系统程序。大概分为六大类：文件管理、状态信息、文件修改、程序设计语言的支持、程序装入和执行、通信。最重要的系统程序是命令解释程序，系统程序是对系统调用功能的集成和应用简化 1.2 操作系统的功能 OS应当具有的五大基本功能：存储管理、进程和处理机管理、文件管理、设备管理、用户接口 存储管理：用户程序在运行之前要装入内存，内存是所有运行程序的共享资源，存储管理的主要功能为：内存分配、地址映射、内存保护和内存扩充 内存分配：主要任务是为每道程序按某种策略来分配一定的内存空间，并且接收释放的空间 地址映射：编写程序时不需要考虑程序和数据要存放在内存的什么位置，CPU在执行用户程序的时候要从内存中取出指令或数据，就必须把逻辑地址转换成内存的物理地址，这叫地址映射需要有硬件支持 内存保护：不同用户的程序都在内存中，必须保证它们在各自的内存空间中活动，不能相互干扰，不能侵犯其他空间，必须建立内存保护机制。可以设置两个界限寄存器（上界地址和下界地址） 内存扩充：逻辑扩充使用虚拟存储技术，一个程序不是全部放在内存中，其余部分放在磁盘上，以后根据程序执行时的要求和内存情况，随机将所需部分调入内存或回收已分配的内存 进程和处理机管理：所有用户程序和系统程序都必须在CPU上运行，对它的管理直接影响整个系统的性能，主要包括：作业和进程调度、进程控制、进程同步和进程通信 作业和进程调度：用户的计算任务称为作业，程序的执行过程称作进程，进程是分配和运行处理机的基本单位。首先作业经过作业调度，把一批选中的作业放入内存并为其分配资源，建立相应的进程，然后进程调度按一定的算法从就绪进程中找出一个合适进程在CPU上运行 进程控制：进程是系统活动的主体，进程控制包括创建进程、撤销进程、封锁进程、唤醒进程 进程同步：多个进程在活动过程中彼此彼此会发生相互依赖或制约等关系，为了保证所有进程都能正常活动就必须设置进程同步机制：分为同步和互斥 进程通信：相互合作的进程之间往往需要交换信息，为此系统要提供通信机制 文件管理：在计算机工作经常要建立文件、打开文件、对文件读写等，所以文件管理功能应该包括：文件存储空间的管理、文件操作的一般管理、目录管理、文件读写管理和存储控制 文件存储空间管理：系统文件和用户文件存放在磁盘上，需要由文件系统对所有文件以及文件的存储空间进行统一管理：为新文件分配必要的外存空间，回收释放的文件空间 文件操作：对文件的创建删除打开关闭等 目录管理：目录文件的组织、实现“按名存储”，目录快速查找和文件共享 文件读写管理和存取控制：按请求从外存读或者写入外存，防止未授权用户破坏 设备管理：设备的分配和驱动由OS负责，设备管理的主要功能包括缓冲区管理、设备分配、设备驱动和设备无关性 缓冲区管理：解决CPU和外设速度不同的问题 设备分配：根据请求为用户分配设备 设备驱动：实现CPU与通道和外设之间的通信，屏蔽硬件细节 设备无关性：用户写的程序（逻辑设备）和实际使用的物理设备无关，由OS映射到物理设备 用户接口：OS对外提供的多种服务，使用户方便有效地使用计算机硬件和用户程序 程序接口：也称系统调用，是OS内核和用户程序应用程序的接口，只能在核心态下运行 命令行接口：OS与用户的交互界面，输入命令后程序解释这些命令，交给OS内部程序处理 图形用户接口：用户利用图形界面工具操作计算机 1.3 操作系统的特征 OS特征为:并发、共享、异步性和抽象性 并发：微观上单个进程在CPU上执行，进程交替运行，宏观看是并行 共享：资源被多个任务共用，被共享的程序必须是纯码（在执行过程中本身不作任何变化） 异步性：进程执行过程中“走走停停”，但在相同初始数据下总能得到同样结果 抽象性：把复杂的事情简单化 1.4操作系统的形成和基本类型 OS的形成和发展：手工操作阶段、早期批处理阶段（联机批处理，脱机批处理）、多道批处理系统、分时系统、实时系统（后三种是传统意义上OS的基本类型） 多道程序设计的基本思想是，在内存中同时存放多道程序，在管理程序的控制下交替地执行 分时系统的特征和优点：同时性、交互性、独立性、及时性 实时系统的类型：过程控制、信息查询、事务处理系统，其实现可分为软式硬式两种方式 1.5 操作系统的主要结构 OS主要有单体结构、层次结构、虚拟机结构、微内核结构和客户-服务器结构 单体结构：OS中有大量模块，模块就是完成一定功能的子程序，是构成软件的基本单位 层次结构：把模块分为若干层，底层不能调用高层 虚拟机结构：最底层是虚拟机监控程序，向上层提供多台虚拟机，虚拟机是裸机硬件的复制品。是通过共享物理机器资源实现的，每台虚拟机可以使用不同的操作系统，在系统调用时陷入自身的操作系统里面，最后的 IO操作由虚拟机监控程序完成 微内核结构：把扩展机器功能向上移，操作系统被分为文件服务、进程服务、终端服务或者内存服务，各个服务器在用户态下运行并不直接访问硬件，客户进程通过微内核访问服务，因此微内核在核心态下实现所有操作系统的基本功能：中断处理、进程管理等 客户-服务器结构：多用于分布式系统，进程如微内核结构分为两类：服务器和客户进程 1.6 UNIX | LINUX 系统的核心结构 UNIX是多用户、多进程、多任务的分时系统，其分为三层：靠近硬件的底层是内核即UNIX常驻内存部分，核外中间层是shell层，最高层是应用层 LINUX和UNIX一样多用户和多任务，从结构上看是采用单体结构的操作系统，所有的内核系统功能都包含在一个大型的内核软件之中 第二章 进程管理 P42 2.1 进程概念 进程和程序的区别： 动态性：程序是静态的，进程是动态的，程序作为一种软件资源长期保留，而进程是程序的一次执行过程，动态的产生和销毁 并发性：进程作为资源申请和调度单位存在，而程序不能作为独立运行的单位并发执行，因为进程不仅包括相应的程序和数据，还有一系列描述其活动的数据结构，能用于CPU调度 非对应性：一个程序可以被多个进程共用，一个进程可以在活动中执行若干程序 异步性：各个进程在并发执行时会产生互相制约关系，导致前进速度不可预测 进程的特征：动态性、并发性、调度性、异步性、结构性 2.2 进程状态描述及组织方式 进程映像：程序、数据集合、栈和PCB（进程控制块） 栈用来保存过程调用和相互传参的踪迹 进程控制块PCB：进程名PID、状态信息、特征信息、优先级、通信信息、现场保护区（中断时保存现场环境）、资源需求、实体信息、族系关系、其他。 LINUX中进程控制块为task_struct数据结构，系统维护一个进程向量组task，元素是指向task_struct结构的指针，进程的栈和task_struct数据结构紧密联系 LINUX进程状态：运行态、可中断等待态（可被中断唤醒）、不可中断等待态（只能等待资源满足唤醒）、停止态、僵死态（进程被种子但是进程控制块依然保留着） 2.4 线程概念 在现代操作系统中，进程只作为资源拥有者，负责申请和占有所需的全部资源；而参与调度和运行的是线程，线程是进程执行运算的最小单位，即执行处理机调度的基本单位 线程的组成：每一个线程用于一个Thread结构（线程控制块） 线程的实现方式 ： 在用户空间实现，管理线程的工作完全由应用程序完成，每个进程有一个私有的线程表，核心只对进程实施管理； 在核心空间实现，核心知道线程的存在并实施管理，线程表和进程表都在核心空间中，线程在创建或者删除一个线程的时候需要使用系统调用，核心可以同时调度同一进程的多个线程 2.5 进程间的同步和互斥 进程间的相互关系主要分为：互斥、同步和通信 互斥关系中，并发进程对共享资源的竞争，这些资源称为临界资源，访问临界资源的那段程序称为临界区，简称CS区。进程互斥进入临界区前需要申请，执行后需要退出才能执行其他代码，禁止两个或者两个以上的进程同时进入临界区 实现互斥的方法 硬件方法：关中断（不响应中断），另一种是设置专用机器指令（测试并上锁） 软件方法：设置软件锁 一种更通用的方法：信号量即PV操作原语，信号量是一种设施，在进程间发送信号 整形信号量：将信号量定义成一个特殊可共享的整形量，有“忙锁”问题 记录型信号量：信号量一般由整形变量和指向PCB的指针组成，信号量的值大于0时表示当前可用的资源数量，小于零则绝对值表示等待使用该资源的进程个数 一般应用还分了二值信号量（类似互斥锁 01的值）和一般信号量 具体过程： 生产者消费者问题中，应先执行同步信号量P再执行互斥信号量，不能调换顺序不然可能产生死锁 读者写者问题，仅在第一个访问数据库的读者才对信号量w执行P操作，最后一个访问的读者才对信号量W进行V操作，隐含读者优先级高于写者 哲学家进餐问题，解决死锁有三种方法：最多4人拿、均可用才拿、奇拿左偶拿右 理发店问题 P85 使用信号量的提示：先确定有几个或者几类进程，确定进程制约关系确定信号量种类，定义信号量含义和初值，编写代码，PV操作要成对出现 2.7 进程通信 互斥和同步机构因交换的信息量少，归结为低级通信，高级进程通信分为三类：共享存储器、管道文件和消息传递 共享存储器：在内存中分配一片空间作为共享存储区 管道文件：也称管道线，连接两个命令的一个打开文件，一个命令写，一个命令读 消息传递：以消息为单位在进程间进行数据交换，有直接通信和间接通信两种方式 消息缓冲通信（直接通信）：进程发送信息前先向系统申请缓冲区，缓冲区中写入消息，然后将缓冲区连到接收进程的消息队列中，并通知接收者，接受者在自己占用的内存中指定一个接收消息区，接收消息。 信箱通信：信箱可以存放一定数量的消息，发送进程将消息送入信箱，接收进程从信箱中取出发给自己的消息，有公有信箱（操作系统创建）、共享信箱（某个进程创建，创建者和共享这可以从中取走发给自己的消息）、私有信箱（用户进程创建，创建者可读，其他进程只能发） 2.8 linux系统的进程通信 信号亦称为软中断，只有父子进程和进程自身可以应用信号机制通信，也并不是专为进程间通信设置，可以用于内核与进程间通信，内核只能发送不能接收 处理信号的方式：忽略信号、阻塞信号、由进程处理信号、默认由系统处理信号 检测信号的时间：从系统空间返回用户空间之前，进程刚被唤醒的时候 2.10 死锁 产生死锁的根本原因是资源有限且操作不当， 产生死锁的四个必要条件：互斥条件、不可抢占条件、占有且申请条件、环路等待条件， 当死锁发送时四个条件一定是同时满足的，任何一个条件不成立，死锁就不会发生 对待死锁的策略：忽略死锁、死锁预防、死锁避免、死锁检测与恢复 死锁预防： 破坏互斥条件：一般不使用，因为某些资源固有属性就是独占性 破坏占用且等待条件：预分配，所有进程开始之前就分配所需全部资源；空手申请，只有进程不占有资源时才可以申请资源 破坏非抢占条件：一个进程在申请资源时会隐性释放申请前已占有的资源，只有当该进程获得所有申请的资源和被剥夺的资源后才能重新启动。 破坏环路等待条件：为资源有序分配序列，确保占用资源时不会形成环路 死锁避免：是排除死锁的动态策略，它不限制有关申请资源的命令，而是在实施资源分配前检查，若预测有死锁发生的可能则加以避免。 银行家算法是死锁避免，允许互斥、占有且申请和不可抢占条件 死锁检测： 对单体资源（所有类型的资源只有一个实体），可以将资源分配图中的资源去掉形成只有边的等待图，系统定期搜索等待图中的环路 对多体资源，系统检查未完成的进程是否能满足资源请求，不满足则说明有死锁 死锁恢复：通过抢占资源、回退执行和杀死进程自动从死锁中恢复，或者直接通知系统管理人员 抢占式：临时从资源从占用它的进程中剥夺过来 回退执行：系统定期检查进程，出现死锁就让某个占有必要资源的进程回退到前一个检查点，释放占有资源 杀死进程：一次终止一个，终止后要进行死锁检测 活锁和饥饿：活锁是忙式等待，饥饿是调度问题 第三章 处理机调度 P114 处理机分配由调度和分派两个功能组成，调度是指组织和维护就绪进程，分派是当CPU空闲就从就绪队列中取出PCB将其运行 调度级别：高级调度（作业调度）从作业中选出若干个作业分配必要的资源；中级调度，内存紧张时将某些进程从内存中移到外存上；低级调度（进程调度）按一定算法将CPU分派给就绪队列中的某一个进程 3.2 作业调度 作业通常分为：提交、后备、执行和完成四种状态， 作业调度功能 记录系统中各个作业的情况，记录在作业的JCB中 按照某种调度算法从后备作业队列中挑选，决定接纳多少个作业进入内存 为选中的作业分配内存的外设（存储管理和设备管理） 为选中的作业创建进程，放入就绪队列中 作业结束后善后处理，释放JCB 进程调度：使就绪进程获得CPU的控制权 调度算法的性能评价：1、CPU利用率 2、吞吐量 3、带权周转时间 4、就绪等待时间 5、响应时间 3.7 实时调度 静态调度：在系统开始之前作出调度决定，必须在知道有关需要完成的工作和截止时间的情况下才能起作用；（优先级谁速率单调的调度算法，优先级和速率呈线性关系，总是运行优先级最高的进程）![image-20200705201308138]/assets理/image-20200705201308138.png) 动态调度：在运行时做调度决定，不受限制。（最早截止时间优先调度算法，每个进程申请CPU时，表明自己的存放和截止时间等信息，调度程序把所有可运行的进程按截止时间排序，选最紧迫的进程运行） 3.8 LINUX系统中的进程调度 LINUX调度机制主要涉及调度方式、调度策略、调度时机和调度算法 调度方式基本采用抢占式优先级的方法 调度策略有FIFO RR OTHER（由进程剩余时间配额设置优先级，由nice命令设置优先级） 调度时机 调度算法：抢占式优先级算法 3.9 中断处理 保存现场时有两种方法：集中式保存，在内存的系统区设置一个中断现场保存栈；分散式保存，在每个进程的PCB中设置一个核心栈 中断优先级：可能某个时刻有多个中断同时出现，在硬件设计中断响应时，必须按各种中断事件的轻重缓急对线路进程排队，安排中断响应次序；而在软件中处理中断也要排序，可以和响应顺序不同，高级别中断有打断低级别中断处理程序的权利。 中断屏蔽：中断请求提出后CPU不响应，常常用来防止同级中断的打扰 中断禁止：系统不接受中断信号，不会提出中断请求 系统调用：陷入和捕俘，所有陷入事件有一个总的服务程序：陷入总控程序，在处理系统调用处理的过程中并不自动关闭中断 具体过程为：陷入总控程序将参数压入系统栈，调用陷入处理程序trap，程序根据陷入事件的不同类型进行不同的处理，对于非法指令、指令故障、转换无效等事件，转入信号机构处理；对于系统调用使用系统调用函数处理 第四章 存储管理 P149 4.1 地址空间与重定位 程序装入内存有三种方式 绝对装入：程序中使用的所有地址都是内存绝对地址，程序装入到内存的指定位置 可重定位装入：程序中根据内存当时的使用情况，决定存放到内存的位置，程序使用相对地址 动态运行时装入：装入内存的程序可以换到磁盘，需要时再换入内存中，需要硬件支持 静态重定位：由装入程序对目标程序中的指令和数据的地址进行修改，执行过程中不再改动 动态重定位：在程序执行期间，每次访问内存之前都要进行重定位，靠硬件地址转换机构实现，通常采用一对重定位寄存器，一个存放程序在内存的初始地址（基址寄存器）另一个表示程序的逻辑地址最大范围（限长寄存器），都为特权寄存器 UNIX LINUX 中对内存管理还利用了多道程序对换技术（中级调度），内存中保留多个进程，当内存空间紧张则把某些进程换出到外存中。 4.2 分区技术 内存一开始为一大块，各个分区在相应进程进入内存时才建立，大小和进程大小相同，在进程完成后就释放所占分区，系统尝试将其与邻接的空闲分区合并起来，成为一个大分区 动态分区法常用于记录内存使用情况的数据结构有：空闲分区表和分区链 P159 分配算法有：最先适应算法、最佳适应算法、循环适应算法和最坏使用算法 最先适应：分区表按位置排列，先找到满足的空闲区就直接分配，释放内存时就根据分区表合并上下空闲区，如果无相连空闲区，则新建并插入分区表 最佳适应：以空闲区大小为序，从小到大，同样想找到先分配，划分后有剩余则修改分区大小和重新确定空闲区在表中位置 循环适应：和最先使用一样，但每次找到合适的空闲区后就记录，下次查找空闲区从记录位置的下一个空闲分区开始找 最坏适应：从大到小排，利用划分后剩余的分区来减少碎片 采用分区技术需要有硬件保护，通常由一对寄存器分别表示用户进程在内存空间中的上下界 4.3 分页技术 分区和对换技术都要求把一个进程放置在一片连续的内存区域，而分页允许程序存储空间不连续，从而解决外部碎片的问题，提高内存利用率 逻辑空间分页、内存空间分块，块大小和页面大小相同。分页情况下，系统以块作为单位把内存分给各个进程，进程的每个页面对应一个内存块，为了找到每个页面在内存中对应的物理块，系统为每一个进程设立了一张页面映射表，操作系统通过建立内存块表管理整个内存 为了解决放置页表带来的存取速度下降的问题，可以设置一个高速联想存储器快表，快表包含键（页号）和值（块号） 页的共享：只有只读的页可以共享，而且通常因为系统分页情况是用户不可见的，会把私有数据和可共享数据混杂到同一个页，不容易实现共享 页的保护 利用页表本身进行保护：页表基址信息放在进程的PCB中，访问内存要利用页表进行地址转换，各进程在自己的存储空间内活动 设置存储控制位：在页表表现设置存取控制字段，指明块的内容允许何种操作 设置合法标志：非法时表示该页不在该进程的逻辑地址空间中 页表构造（为了节省内存空间，需要动态调入页表） 多级页表：用来防止一级页表过大，进程只保留部分页表，剩下的页表动态调入到内存中 散列页表，处理大于32位地址空间的通用方式，表中每一项有一个链表，由页号、对应的内存块号和指向下一个元素的指针组成 倒置页表，用于64位虚拟地址空间在处理器上的应用，系统中只有一个页表，每个内存块对应唯一的表项，表项由进程标识符和虚拟页号组成，访问地址时用PID和页号查询块号，如果找不到，则此页未调入内存，产生请求调页中断，如果还没有，则地址错误 4.4 分段技术 将用户程序分成若干相对独立的部分，每段从0开始编址，并采用一段连续的地址空间 程序地址结构：整个进程的地址空间分成多个段，逻辑地址分成段号S和段内地址d ，段的信息的逻辑单位，用于可以知道自己的程序分成几段以及相应的功能 段表和段表地址寄存器，一个进程的全部段都在该进程的段表中登记，系统还有一个段表地址寄存器，一部分指出段表在内存中的起始地址；另一部分指出段表的长度，主要用于段寻址和越界检测 段的保护 存取控制：在段表中记录本段允许的操作，可读、可写、可读写 段表本身的保护：利用段表地址寄存器判断访问空间 保护环： 4.5 段页式结合系统 分页存储管理能提高内存利用率，分段存储可以满足用户需求，两者结合可以“各取所长” 段页式存储管理的基本原理： 等分内存：把内存分成大小相等的内存块 进程地址空间采用分段：吧进程的程序和数据分成若干段，每段一个段名 段内分页：把每段分成若干页，页面大小和内存块相同 逻辑地址结构：由段号、段页页号和页内地址组成 内存分配：内存分配单位为块 段表、页表和段表地址寄存器：系统为每个进程建立一个段表，为每一个段建立一个页表。因此段表中不再是段长和内存地址，而是页表长和页表地址 实现的具体过程为： 4.6 虚拟存储器 虚存特征 虚拟扩充：不是扩大物理空间，而是扩充逻辑内存容量 部分装入：进程不是一次性全部装入内存，而是将当前运行需要用到的那部分程序和数据装入内存中 离散分配：一个进程在内存的部分可能散布在内存的不同地方，避免浪费也为动态调入提供了方便 多次对换：一个进程运行期间，它所需的全部程序和数据分成多次调入内存 4.7 请求分页 页表结构 抖动是指，如果置换算法不合适，可能出现刚换出的页面又很快被访问，系统大部分时间用在页面调度和传输上，实际效率太低 页面置换算法： 先进先出、最佳置换、最近最久未使用 第二次机会置换法：查看引用位，被引用过为1则视为刚装入，并把引用位清零，继续寻找引用位为0的页 时钟置换法：是对第二次机会置换法的改进，使用循环链表![image-20200706153036986]/assets理/image-20200706153036986.png) 最近未使用：启动进程时所有页的引用位和修改位都置成0，引用位会定期清0![image-20200706153222897]/assets理/image-20200706153222897.png) 过程为，从当前指针指向的位置开始查找循环队列（结构和时钟算法一样），先找第一类，不满足则再找第二类，第二类也不满足则把引用位都清0 4.8 内存块分配和抖动问题 内存最少块数：每个进程需要有最少的内存块数，分配的总块数不能超过可用块的总量 内存块分配策略：固定分配，给进程分配的内存块数是固定的，缺页时只能从分给该进程的内存块中进行页面置换；可变分配，如果进程运行持续缺页率较高，则多分内存块 页面置换范围：全局置换，运行一个进程从全部内存中选取淘汰的内存块；局部置换，只能置换分给进程的那一组，全局置换只能和可变分配策略相结合 分配内存块的算法：等分法、比例法（依照进程的地址空间）和优先权法（依照进程的优先级） 防止抖动的方法： 采用局部置换：当进程出现抖动时，其不能从另外的进程那里获得内存块，使抖动局限在一个小范围，但未解决抖动 挂起某些进程：腾出内存空间给抖动进程使用 采用缺页频度发：如果缺页率太高则给进程更多内存块，控制缺页率 利用工作集：程序往往具有局部性，时间局部性，某条指令刚被执行后，往往很快又被执行（循环顺序）；空间局部性，某个位置被访问，它附近的位置也要被访问（数组结构） 工作集就是一个进程在某一小段时间内访问页面的集合，工作集大小WSSi 与时间间隔d有关，如果d过小则不能反映工作集缓慢变化，如果d太大则不体现局部的效果 有公式 $D=\sum^n_{i=1}WSS_i$ ，其中D是系统中全部进程的总请求量，D大于可以的内存块总量m表示将出现抖动 4.9 请求分段 段式虚存可以实现动态链接技术，使用间接编址和链接故障指示两个硬件设施,间接地址是指存放直接地址的地址,链接故障指示检查时，如果段未链接上，硬件会产生链接中断 4.10 linux系统的存储管理技术 采用了和UNIX一样的请求分页存储管理技术和对换技术。页面置换使用LRU，管理用位图和链表结构 第五章 文件系统 P207 5.1 文件及其分类 文件是从存储设备抽象出来的被命名的相关信息的集合体，通常存放在外存中。 文件类型按用途分类 系统文件：操作系统和其他系统程序信息组成的文件，只能通过系统调用为用户服务 库文件：由标准子程序和常用的应用程序组成的文件，允许用户使用但不能修改 用户文件：由用户保存管理的文件，可以被创建者或者被授权者进行操作 按数据形式分类：源文件、目标文件（编译后未链接）、可执行文件（编译链接） 按存储权限分类：只读文件、读写文件和可执行文件 按保存时间分类：临时文件和永久文件 在UNIX和Linux中按文件的内部构造和处理方式分类： 普通文件：内部没有固定结构，由程序、数据活文本的字符串构成 目录文件：由下属文件的目录项构成的文件，可进行读写等操作 特殊文件：特指各种外部设备，系统把IO设备作为文件对待，进行统一管理![image-20200707103847223]/assets理/image-20200707103847223.png) 普通文件分为文本文件（ASCII文件）和二进制文件，二进制文件有内部结构，在UNIX和Linux中有五个区，文件头、正文段、数据段、重定位区和符号表区，文件头结构由标志可执行文件特征的幻数、正文段长度、数据段长度、BSS段长度、符号表的长度和入口单元及各种标志组成，重定位时利用重定位区，而符号表用于调试程序 文件抽象最重要的特性是“按名”管理对象，用户对文件也是“按名存取”。 文件系统是OS负责操纵和管理文件的一套系统 文件管理：创建删除、打开关闭、读写执行一个文件 目录管理：为每个文件建立一个文件目录项，若干文件的目录项构成一个目录文件，根据用户要求创建或者删除目录文件、对用户指定文件进行检索和权限验证、更改工作目录等 文件存储空间管理：对文件的存储空间分配与回收，并为文件逻辑结构与物理地址建立映射 文件的共享和保护：在系统控制下使用户能共享其他用户的文件，防止对文件的未授权访问或破坏 提供方便的接口：为用户提供统一的文件存取方式，实现“按名存取”，OS为用户提供有关文件操作的系统调用，给用户编程使用 5.2 文件的逻辑组织和物理组织 逻辑组织有无结构文件和有结构文件两种 无结构文件是有一组相关信息组成的有序字符流，OS并不关心文件中存放的内容是什么，其看到的都是一个一个的字节，具体内容由用户级程序解释； 有结构文件，又称记录型文件，文件是由若干相关记录组成的，每个记录是一组相关的数据集合（具体类似于JSON文件），用于描述一个对象某个方面的属性，如年龄、姓名等。分为定长和变长记录文件两种 存取方式分为顺序存取和随机存取，顺序存取严格按照字符流或记录的排序依次存取，随机存取这允许用户随意存取文件中的一个记录 随机存取基于磁盘的文件存取模式，对于定长记录文件，随机存取把文件视为一系列编号上的块或记录，通常每块的大小是一样的，被操作系统作为最小的定位单位 文件的物理组织 连续文件：把逻辑上连续的文件信息存放在连续编号的物理块中，如定长文件大小为2000，假设一个物理块大小为512，文件需要占用4块 链接文件：逻辑连续的文件分散存放在不同物理块中，为各个物理块设置链接字，指示该文件的下一个物理块，系统维护一个文件分配表，每个文件都在表中独占一项，其中包括了文件名、起始块号和最后块号 索引文件：系统为每一个文件建立索引表，表项指出存放该文件的各个物理块号，索引表也存放在一个盘块中，由文件目录项指出索引盘块地址 多重索引 5.3 文件控制块和文件目录 文件系统内部给每个文件唯一地设置一个文件控制块，核心利用该结构进行管理时，首先会验证权限 UNIX和Linux中该结构称为 i 节点，i 节点分为静态和动态两种，静态在磁盘上，动态在内存中，每个文件对应一个唯一的静态 i 节点，而每个打开的文件都有一个对应的动态 i 节点，只有动态 i 节点才有节点号，节点号是唯一的，指向静态 i 节点。 文件目录是文件控制块的有序集合，完全由目录项组成的文件称为目录文件 目录结构有：单级目录、二级目录（多了用户目录）、树形目录（多级目录）、非循环图目录（带链接的树形结构） 5.4 文件存储空间管理 空闲空间管理技术有：空闲空间表法、空闲块链接法、位示图法和空闲块成组链表法 空闲块成组链表法：把所有空闲盘块按固定数量分组，如50个空闲块为一组，组中第一块为组长块，第一组的50个空闲块块号放在第二组的组长块中……最后一个块（可能不到50块）放在文件系统超级块中的空闲块号栈里 第一个块中的警戒位 5.7 linux文件系统 每个进程有两个数据结构来描述进程与文件的相关信息，一个是fs_struct 指向两个VFS索引节点，分别是根目录节点和当前目录节点；另一个是files_struct（进程文件描述符表） 保存该进程打开文件的有关信息，其中的指针指向对应的 file 结构（打开文件描述表表） 进程文件描述符表让各个进程掌握它当前使用文件的情况，不要同时打开太多文件，并加速对文件的查找速度 核心设置打开文件表的原因是，一个文件可以被多个进程打开 第六章设备管理 P254 6.1 设备管理概述 设备分类 按工作特性分为存储设备和输入输出设备两大类，有个别不符合这两类的，如时钟 按设备使用性质分为独占设备（只能一个进程独占）、共享设备（多个进程同时共用）和虚拟设备（利用某种技术吧独占设备改造成多个进程共用的设备） 按数据传输方式分为串行设备（二进制位一位一位顺序传送）和并行设备（8位数据同时通过并行线进行传送的设备） 设备标识：OS为每台设备分配一个唯一设备绝对号用于区分和识别设备，UNIX和Linux中每个块设备的名字由两部分组成：主设备号和次设备号。 多道程序环境中，写程序时使用的是主设备号（设备的类型号），而次设备号表示同类设备的相对序号，用户程序只知道使用设备的类型，具体使用哪一台由系统分配，OS负责进行“地址转换”，将类型号变成设备绝对号 IO 系统结构：主机IO系统和微型机IO系统 主机IO系统 通道相当于小型处理机，独立执行通道程序，对外部设备的IO操作进行控制，实现内存和外设之间的数据传输，主机委托的IO处理完成后，通道发出中断信号，请求CPU处理使CPU和外设并行效率提升 主机IO系统的通道三种类型 字节多路通道：以字节为信息传输单位，服务于多台低速IO设备，当通道为一台设备传输一个字节后立刻转向为下一台设备传送字符，交叉控制下属各个设备的工作 选择通道：同一时间只能为一台设备服务，连续地传输一批数据，主要用于连接高速外部设备 成组多路通道：广泛用于连接高速和中速设备，结合了字节多路通道分时操作和选择通道高速传送的优点，允许多个通道程序在同一IO通道中并行，每执行完一条通道指令就转向另一通道程序，任意时刻只能为一个设备服务但又能立刻切换到下一个通道 微型机IO系统 大多使用总线IO系统结构，实现CPU和控制器之间的通信 IO设备一般有机械和电子两部分组成，电子部分称为设备控制器或适配器，可以管理端口、总线或设备，实现设备主体和主机间的连接与通信，一台设备控制器可以控制多台同一类型的设备，控制器是可编址的设备，OS常常通过控制器实施对设备的控制和操作 IO系统的控制方法 程序控制直接传递方式，程序查询方式，中断控制方式，直接存储器访问方式，独立通道方式，IO处理器方式 直接存储器访问方式DMA DMA传送操作：DMA包括内存地址寄存器、字节计数寄存器、一个或多个控制寄存器，控制寄存器指明所用的端口、传送方向（读还是写）、传送的单位（一个字节或者字），本次传送的字节数，CPU可以读写这些寄存器 ​ DMA工作过程： CPU把一个DMA命令块写入内存，命令包含传送数据的源地址、目的地址和传送字节数，然后把该块地址写入到DMA控制寄存器中，CPU向磁盘控制器发送读盘命令，然后CPU处理其他任务，当有效数据存入到磁盘控制器的缓冲区中后开始DMA存取 DMA控制器启动数据传送，通过总线向磁盘控制器发送读盘请求，读数据到指定内存单元中 某些DMA可以每次一字或者整块传送 缓冲技术 为了解决CPU和IO设备速度不匹配的矛盾，提高CPU和IO设备的并行性 可设置为硬缓冲和软缓冲（从内存中开辟区域做缓冲区，缓冲区大小一般与盘块大小一样） 可设置单缓冲、双缓冲或多缓冲 在多缓冲基础上可以构造循环缓冲或缓冲池，有两个指针：一个指向缓冲区中数据第一个字，一个指向首个空闲区位置。为了提高缓冲区利用率，往往采用公用缓冲池的方式，池中的缓冲区可以供多个进程使用 设备管理的功能 设备管理的目标： 使用方便：屏蔽物理特性，按统一规则使用设备，OS负责输入输出工作 设备独立性：OS分配实际设备，程序只关心设备类型 效率高：利用通道和缓冲提高CPU和IO设备的并行性 管理统一：对各种外设采用统一的管理方法 为实现目标所需的功能： 监视设备状态：记住所有设备、控制器和通道的状态，以便有效管理和调度使用 进行设备分配：按类型和分配算法实施设备分配 完成IO操作：OS按用户的要求调用具体设备驱动程序，进行IO操作并处理中断 缓冲管理和地址转换 6.2 分配技术和SPOOLing系统 设备分配的相关因素有：IO设备的固有属性、os采用的分配算法、分配应防止死锁发生、用户程序使用的逻辑设备和物理设备无关 设备分配技术：独占分配、共享分配和虚拟分配（SPOOLing系统） 分配算法：先来先服务，优先级高的优先服务 SPOOLing系统一般分为存输入、取输入、存输出、取输出 6.3 IO 软件构造 IO软件系统的层次： 为了实现设备独立性、统一命名、出错控制和同步（阻塞）异步（中断驱动）处理 总体过程 设备驱动程序 功能：接收上层与设备无关的读写请求，IO请求排在请求队列队尾；取出请求队列队首请求，并将设备分配给它；想设备控制器发送命令，完成IO操作；处理来自设备的中断 设备驱动程序在系统中的逻辑位置 与设备无关的操作系统IO软件 基本功能是执行所有驱动器共同的IO功能和为用户级软件提供统一接口，所有驱动程序都有相同的接口，新驱动程序遵守接口规则，这样很容易加入操作系统 设备驱动程序的统一接口： 与接口相关的问题是IO设备如何命名，设备无关软件负责把符号设备名映像到相应的设备，每个设备指定唯一的一个特殊文件 i 节点，包含主设备号和次设备号，主设备号用来确定相应的驱动程序，次设备号作为传递给驱动程序的参数。还有保护问题，系统管理员可为每台设备规定权限 出错报告：很多错误与设备相关，需要由相应的驱动程序处理，但出错处理的架构与设备无关 错误产生的原因：一类是程序错误，如把信息写到输入设备上（键盘）、提供的参数错误、指定设备不合法等，处理方法是直接向调用者报告；一类是实际IO错误，如把信息写到坏块中、从关机的设备中读信息，此时驱动程序可以向设备无关软件报告， 分配和释放独占设备：处理的简单方法是让进程打开设备特殊文件，如果设备不可用则打开失败，以后通过关闭独占设备释放它；另一种方法是设立专门机制，负责独占设备的申请和释放，设备不可用则阻塞调用者，进程放入阻塞队列，当申请设备可用时，阻塞队列第一个进程使用它 提供与设备无关的块大小 用户空间的IO软件 以库函数的形式出现，如printf、scanf等函数，编译链接后放入内存，运行时利用系统调用进入到操作系统，由OS接收用户的IO请求，提供相应服务。由于把设备当成特殊文件处理，对设备的访问变成了对文件的访问，输入输出管理就是打开关闭、读写和查找文件 6.4 磁盘调度和管理 磁盘硬件：磁头，柱面，扇区； 现代磁盘驱动器提供给操作系统的是虚拟的几何参数，到操作系统提出寻道请求时，再由磁盘控制器把请求的参数重新映射成实际磁道地址，也就是磁盘的逻辑地址是由逻辑块组成的一维数组，文件系统读写某个文件时，由逻辑块号映射成物理块号，再由磁盘驱动程序转换成磁盘地址，再由磁盘控制器把磁盘地址定位到具体的磁盘物理地址。 6.5 Linux系统设备管理 Linux系统中硬件设备分为：块设备、字符设备和网络设备 设备转接表是文件系统和设备驱动程序之间的接口，每类设备在转接表中都占有一项，转接表中记录了对该类设备执行操作的各个子程序的入口地址，连接表在系统初启时根据硬件配置情况建立，系统只有这两个设备转接表 硬件和驱动程序之间的接口是通过相关控制寄存器或操纵设备的IO指令及中断向量组成的 Linux系统的缓冲技术：使用多重缓冲技术来平滑和加快文件信息从内存到磁盘的传输 块设备管理 磁盘块的读写方式，读有立即读和预读两种，写有立即写、异步写和延迟写 上述读写的实现机制 系统中有一个描述一系列在系统中登记的块设备的结构，使用主设备号作为索引，还包括了指向有关操作的函数指针，其是连接抽象的块设备操作与具体块设备类型操作之间的枢纽（实现块设备转接表功能）</summary></entry><entry><title type="html">技术栈总结</title><link href="http://localhost:4000/2020/05/21/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="技术栈总结" /><published>2020-05-21T19:51:00+08:00</published><updated>2020-05-21T19:51:00+08:00</updated><id>http://localhost:4000/2020/05/21/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2020/05/21/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93.html">&lt;h1 id=&quot;技术栈&quot;&gt;技术栈&lt;/h1&gt;
+
+&lt;h2 id=&quot;待完善&quot;&gt;待完善&lt;/h2&gt;
+
+&lt;h3 id=&quot;底层&quot;&gt;底层&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;操作系统：了解内核、了进程和文件管理等重要的概念和实现方式&lt;/li&gt;
+  &lt;li&gt;编译原理：粗略搞懂编译器的执行过程（汇编√-机器码×）&lt;/li&gt;
+  &lt;li&gt;计算机网络：彻底搞懂连网原理和TCP/IP的具体意义，打通网络黑箱&lt;/li&gt;
+  &lt;li&gt;JVM：这个底层其实还挺好奇的，目前处于黑箱状态&lt;/li&gt;
+  &lt;li&gt;Tomcat：热部署怎么使用的，大概了解原理&lt;/li&gt;
+  &lt;li&gt;数据库高级：索引概念、视图概念、底层逻辑都不清楚其实。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;应用类&quot;&gt;应用类&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Vue.js：其实很好奇怎么用MVVM模式来进一步优化界面层啊？！借此完善自己的第一个项目，&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SpringBoot框架：如何实现前后端数据传输啊？？？&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;现在已知的是三层架构模式:&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;界面层 JSP(EL+JSTL) + JQuery + Ajax&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;业务逻辑层Web (Servlet+Filter)&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;数据访问层（Druied链接池+ JDBCUtils）DAO模式&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javaweb注解配置（及时补充）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;深入&quot;&gt;深入&lt;/h2&gt;
+
+&lt;h3 id=&quot;底层---汇编王爽汇编语言第三版&quot;&gt;底层 - 汇编：（王爽《汇编语言第三版》）&lt;/h3&gt;
+
+&lt;h5 id=&quot;37-cpu提供的栈机制&quot;&gt;3.7 CPU提供的栈机制&lt;/h5&gt;
+
+&lt;p&gt;入栈和出栈都是以字为单位，通过 &lt;strong&gt;SS段寄存器：SP寄存器 来指向栈顶元素&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;栈是从高地址往低地址增长的，这同时解决了“&lt;strong&gt;CPU如何知道此段内存空间是栈&lt;/strong&gt;“的问题，当SP寄存器 负增长的底线是0000h，故定义起始地址后栈大小也随之确定。但CPU是不会保证我们对栈的操作不会越界的，POP和PUSH的过程中有可能会产生溢出&lt;/p&gt;
+
+&lt;p&gt;当栈为空时 &lt;strong&gt;SS：SP 指向栈空间最高地址单元的下一个单元&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;​	我们当然希望CPU可以帮我们解决这个问题，比如说在CPU中有记录栈顶上限和栈
+底的寄存器，我们可以通过填写这些寄存器来指定栈空间的范围，然后，CPU在执行
+push指令的时候靠检测栈顶上限寄存器、在执行pop指令的时候靠检测栈底寄存器保证不
+会超界。
+​	不过，对于8086CPU,这只是我们的一个设想(我们当然可以这样设想，如果CPU是
+我们设计的话，这也就不仅仅是一个设想)。实际的情况是，8086CPU 中并没有这样的寄
+存器。
+​	8086CPU不保证我们对栈的操作不会超界。这也就是说，8086CPU 只知道栈顶在何
+处(由SS:SP指示)，而不知道我们安排的栈空间有多大。这点就好像CPU只知道当前要执
+行的指令在何处(由CS:IP指示),而不知道要执行的指令有多少。从这两点上我们可以看
+出8086CPU的工作机理，它只考虑当前的情况:当前的栈顶在何处、当前要执行的指令
+是哪一条。
+​	我们在编程的时候要自己操心栈顶超界的问题，要根据可能用到的最大栈空间，来安
+排栈的大小，防止入栈的数据太多而导致的超界;执行出栈操作的时候也要注意，以防栈
+空的时候继续出栈而导致的超界。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;应用层---javaweb_filter--ajax--json&quot;&gt;应用层 - JavaWeb_Filter &amp;amp; Ajax &amp;amp; JSON&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Json 一种轻量化的通用数据传输格式，轻量化是与XML对比，JSON更小、更快、更易解析。&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;有两种表示方法 JSON对象 和 JSON字符串 用parse() stringify() 互相转化&lt;/p&gt;
+
+    &lt;p&gt;采用键值对方式存放 可以放 number、String、数组、JSON对象&lt;/p&gt;
+
+    &lt;p&gt;语法是花括号 {} 加 key:values 用 逗号，分隔&lt;/p&gt;
+
+    &lt;p&gt;在 Java 调用时可以选择导 GSON（谷歌） 或者 阿里（推荐阿里 没有太多依赖） 的jar包&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ajax ：Asynchronous JavaScript and XML. （异步的js和xml）是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;同步：在提交表单后必须等待服务器返回才可以继续处理数据（造成页面卡死待响应的现象，体验差）&lt;/p&gt;
+
+    &lt;p&gt;异步：在提交表单后无须等待，服务器处理完成后会自动返回&lt;/p&gt;
+
+    &lt;p&gt;Ajax在JQuery中有封装完成的使用方法，JSP页面中应用较多&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Filter：JavaWeb的三大组件之一 用于过滤请求&lt;/strong&gt; 可以用于用户权限的管理&lt;/p&gt;
+
+    &lt;p&gt;FilterChain 过滤器链（多个过滤器一起工作）如果通过XML配置，则先配置的先调用&lt;/p&gt;
+
+    &lt;p&gt;FilterChain.doFilter() - 执行过滤操作 如果有下一个过滤器则进入 否则执行后置代码&lt;/p&gt;
+
+    &lt;p&gt;FilterConfig类 可以获取在XML文件中的配置信息&lt;/p&gt;
+
+    &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-name&amp;gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-value&amp;gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;时间线&quot;&gt;时间线&lt;/h1&gt;
+
+&lt;h2 id=&quot;五月&quot;&gt;五月&lt;/h2&gt;
+
+&lt;h3 id=&quot;12---json--ajax---javaweb_filter&quot;&gt;12 - JSON &amp;amp; Ajax &amp;amp;  Javaweb_Filter&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Json 一种轻量化的通用数据传输格式，轻量化是与XML对比，JSON更小、更快、更易解析。&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;有两种表示方法 JSON对象 和 JSON字符串 用parse() stringify() 互相转化&lt;/p&gt;
+
+    &lt;p&gt;采用键值对方式存放 可以放 number、String、数组、JSON对象&lt;/p&gt;
+
+    &lt;p&gt;语法是花括号 {} 加 key:values 用 逗号，分隔&lt;/p&gt;
+
+    &lt;p&gt;在 Java 调用时可以选择导 GSON（谷歌） 或者 阿里（推荐阿里 没有太多依赖） 的jar包&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ajax ：Asynchronous JavaScript and XML. （异步的js和xml）是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;同步：在提交表单后必须等待服务器返回才可以继续处理数据（造成页面卡死待响应的现象，体验差）&lt;/p&gt;
+
+    &lt;p&gt;异步：在提交表单后无须等待，服务器处理完成后会自动返回&lt;/p&gt;
+
+    &lt;p&gt;Ajax在JQuery中有封装完成的使用方法，JSP页面中应用较多&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Filter：JavaWeb的三大组件之一 用于过滤请求&lt;/strong&gt; 可以用于用户权限的管理&lt;/p&gt;
+
+    &lt;p&gt;FilterChain 过滤器链（多个过滤器一起工作）如果通过XML配置，则先配置的先调用&lt;/p&gt;
+
+    &lt;p&gt;FilterChain.doFilter() - 执行过滤操作 如果有下一个过滤器则进入 否则执行后置代码&lt;/p&gt;
+
+    &lt;p&gt;FilterConfig类 可以获取在XML文件中的配置信息&lt;/p&gt;
+
+    &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-name&amp;gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-value&amp;gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;13---汇编语言--操作系统&quot;&gt;13 - 汇编语言 &amp;amp;&amp;amp; 操作系统&lt;/h3&gt;
+
+&lt;p&gt;​	重温了汇编的寄存器部分，预计两天内看完&lt;/p&gt;
+
+&lt;p&gt;​	操作系统看了Linux 0.11内核的系统启动过程，bochs真难用&lt;/p&gt;
+
+&lt;p&gt;### 14 - 汇编语言&lt;/p&gt;
+
+&lt;p&gt;loop指令：两步操作 1.（cx）=（cx）-1   2.判断 cx 是否为零。在debug中用 g + [偏移地址]可以一次性执行所有loop&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Debug 将它解释为“[idata]” 是-一个内存单元，idata是内存单元的偏移地址;
+而编译器将“[idata]” 解释为 idata 。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在汇编源程序中，数据不能以字母开头，所以要在前面加 0
+直接写内存的话应当&lt;strong&gt;使用0:200~0:2ff 这段空间&lt;/strong&gt; dos和其他合法程序通常不会使用这段空间。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;程序中的指令就要对这8个数据进行累加，这8个数据在代码段中，程序在运行的时候CS中存放代码段的段地址，所以可以从CS中得到它们的段地址。它们的偏移地址是多少呢?因为用dw定义的数据处于代码段的最开始，所以偏移地址为0，&lt;strong&gt;这8个数据就在代码段的偏移0、2、4、6、8、A、C、E处。&lt;/strong&gt;程序运行时，它&lt;strong&gt;们的地址就是CS:0、CS:2、 CS:4、CS:6、CS:8、CS:A、 CS:C、 CS:E。&lt;/strong&gt;
+…………
+dw段的数据的值是多少，对于程序来说没有意义。我们定义这些数据的最终目的是，通过它们获取一定容量的内存空间，所以我们在描述dw的作用时，可以说用它定义数据，也可以说用它开辟内存空间。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;一般在需要暂存数据的时候，我们都应该使用栈&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在8086CPU中只有bx si di bp 这4个寄存器可以用于内存单元寻址，这4个寄存器可以单个出现，或者以4种组合出现： bx+si , bx+di , bp+si , bp+di (ds:bx  ss:bp)
+CPU提供的如[bx+si+idata]的寻址方式为结构化处理提供了方便，用 bx 定位整个结构体，idata定位结构体中的某一个数据项，si 定位数组项中的每个元素。可以写成bx.idata[si]。&lt;/p&gt;
+
+&lt;h3 id=&quot;15---汇编语言&quot;&gt;15 - 汇编语言&lt;/h3&gt;
+
+&lt;p&gt;jmp指令经典例题：
+&lt;img src=&quot;https://s1.ax1x.com/2020/05/15/Yrs7Y6.png&quot; alt=&quot;Yrs7Y6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;flag 寄存器：
+&lt;img src=&quot;https://s1.ax1x.com/2020/05/15/YsSYSP.png&quot; alt=&quot;YsSYSP.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;CPU提供了cmp 指令，也提供了je等条件转移指令，如果将它们配合使用，可以实
+现根据比较结果进行转移的功能。但这只是“如果”，只是一种合理的建议，和事实上常
+用的方法。但究竟是否配合使用它们，完全是你自己的事情。这就好像call 和ret 指令的
+关系一样。
+&lt;img src=&quot;https://s1.ax1x.com/2020/05/15/YsAvWQ.png&quot; alt=&quot;YsAvWQ.png&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;8086在内存 0000:0000 到 0000:03FF 的1024个单元中存放着中断向量表&lt;/p&gt;
+
+&lt;h3 id=&quot;18---操作系统----系统调用&quot;&gt;18 - 操作系统  - 系统调用&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;内核态和用户态：&lt;/strong&gt;一种处理器 “硬件设计”， DPL目标段的特权级、CPL当前段的特权级
+当前程序执行在什么态用CS的最低两位来表示：0是内核态，3是用户态 数字越小级别越高
+计算机对CPU是一段一段地使用，故我们可以用段寄存器来判断特权级 
+而GDT表中的表项用来描述一段内存，&lt;strong&gt;在操作系统段中所有的DPL在GDT中都对应内核态&lt;/strong&gt;
+当前用户使用时，根据PC（内存段）中的CS段我们可以知道当前用户的CPL，故可以判断权限&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GDT/LDT表中的描述符，描述的是一段内存。其中的DPL代表着GDT/LDT中的描述符描述的内存段的特权级别。比如，当前正在执行的代码，它的特权级别就是当前的CS段选择子指向的段描述符中的DPL所决定的。即DPL是描述&lt;strong&gt;一段内存&lt;/strong&gt;的特权级别。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;系统调用的核心：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用户程序中包含一段有中断指令（必须是 &lt;code class=&quot;highlighter-rouge&quot;&gt;INT 0x80&lt;/code&gt;）和系统调用号（&lt;code class=&quot;highlighter-rouge&quot;&gt;INT system_call&lt;/code&gt;）的代码&lt;/li&gt;
+  &lt;li&gt;操作系统写中断处理，获取调取程序的编号&lt;/li&gt;
+  &lt;li&gt;操作系统根据编号执行相应的代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;中断处理-用户态转化成内核态最终调用内核方法&lt;/strong&gt;
+硬件提供了 INT 0x80 中断能让我们主动进入内核，最重要的就是 set_system_gate 设置中断陷阱门
+set_system_gate 的参数为 &lt;code class=&quot;highlighter-rouge&quot;&gt;INT 0x80&lt;/code&gt;80中断和&lt;code class=&quot;highlighter-rouge&quot;&gt;INT system_call&lt;/code&gt;表示要调用是方法，此时的DPL为3；
+通过转化后进入到内核态，设置PC，其中CS为8（100）故可得CPL为0内核态，而IP为 &lt;code class=&quot;highlighter-rouge&quot;&gt;system_call&lt;/code&gt;
+通过查system_call_table 得到 _NR_XXX 最终调用 sys_XXX&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;调用的具体过程：&lt;/strong&gt;
+用户调用XXX方法 :point_right: 通过库函数展开成宏，调用中断 :point_right: 中断处理system_call  :point_right: 查sys_call_table  	  						:point_right: 得到&lt;/p&gt;
+
+&lt;h3 id=&quot;19---操作系统---进程管理cpu部分&quot;&gt;19 - 操作系统 - 进程管理（CPU部分）&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;CPU使用的关键是：取值执行&lt;/strong&gt; 设置完PC后便自动开始工作，但这样顺序执行有很多缺点：但程序需要调用IO设备或者磁盘时，会等待很久从而造成时间上的浪费，于是我们需要让CPU交替执行多个程序&lt;/p&gt;
+
+&lt;p&gt;一个CPU上交替执行多个程序称为：&lt;strong&gt;并发&lt;/strong&gt;，在交替执行的时候为了完成切换需要保存寄存器等程序信息，从而引入&lt;strong&gt;进程&lt;/strong&gt;（进行中的程序）的概念，CPU在运行多个程序时跑多个进程，因此CPU运行的效率得到大大提升&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多进程图像：&lt;/strong&gt;
+CPU用 PCB（Process Control Block 记录进程信息的数据结构）
+进程带动内存的使用需要用映射表（MMU）进行内存封存 - 同一地址指向不同物理地址 - 为了共存；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多线程：&lt;/strong&gt;- TCB 线程控制表
+&lt;strong&gt;线程有自己的TCB，thread control block, 只负责这条流程的信息&lt;/strong&gt;，包括PC程序计数器，SP堆栈，State状态，和寄存器。有不同的控制流，需要不同的寄存器来表示控制流的执行状态，每个线程有独立的这些信息，但共享一个资源。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多核：线程-用户栈和内核栈-进程切换&lt;/strong&gt;
+每个线程对应一套栈，用户栈和内核栈
+用户栈进入内核栈：系统调用（fork()）会引起中断并且创建一个进程，有两个重点：
+&lt;strong&gt;1.一个线程是怎么通过进程切换的 2.创建一个进程需要做哪些准备&lt;/strong&gt;
+线程切换五段论：中断入口，建立用户栈和内核栈的联系:point_right: 进入内核态执行，执行完毕过程中或者执行完毕后，系统会判断事件有可能引发切换（中间三段）:point_right: 中断返回 ret_from_sys_call&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;在A处&lt;/strong&gt;调用 fork() 时会产生 INT 0x80中断和 _NR_fork 同时CPU立刻把用户态的相关信息压入内核栈&lt;/li&gt;
+  &lt;li&gt;call sys_fork 根据PCB中的state判断进程状态是&lt;strong&gt;就绪&lt;/strong&gt;还是&lt;strong&gt;阻塞&lt;/strong&gt;，&lt;strong&gt;非0则阻塞&lt;/strong&gt;，阻塞需要调度切换  &lt;code class=&quot;highlighter-rouge&quot;&gt;reschedule{ jmp _schedule } &lt;/code&gt;；然后需要判断进程时间片再一次&lt;code class=&quot;highlighter-rouge&quot;&gt;reschedule&lt;/code&gt;；最后返回中断。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_schedule{ switch_to(next) } &lt;/code&gt;中具体实现调度和切换 ：next=XXX 下一个进程XXX（用调度算法找到下一个已经就绪的进程），switch_to（切换将PC跳到下一个进程XXX中执行）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;switch_to&lt;/code&gt;&lt;/strong&gt;通过TSS（task state segment 任务段）进行段跳转切换，首先用&lt;strong&gt;TR寄存器&lt;/strong&gt;作为选择子在GDT表中找到TSS描述符，从而找到TSS的段地址，把CPU中的EAX、EBX等寄存器的相关信息保存在原TSS段中（相当于存档）；同理找到下一个进程的TSS段地址赋给TR，将该TSS中的信息拷贝到CPU中（相当于读档），完成跳转。此时下一个进程是我们创建的子进程&lt;/li&gt;
+  &lt;li&gt;中断返回 &lt;code class=&quot;highlighter-rouge&quot;&gt;ret_from_sys_call&lt;/code&gt;：先popl 用户态中的信息 最后 iret&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;创建进程的任务就开始了 ThreadCreate：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;要创建下一个进程中的TSS需要用到 &lt;code class=&quot;highlighter-rouge&quot;&gt;sys_fork { call _copy_process }&lt;/code&gt; 此时内核栈中的信息全部作为 _copy_process 的参数从而创建出差不多完全一样的子进程&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;copy_process 细节：创建栈&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_struct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_free_page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//申请内存空间&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//创建内核栈&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;esp0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PAGE_SIZE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;//创建用户栈(和父进程共用的栈 ss和esp 是由父进程中用户栈中传入的)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0xffff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;esp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;esp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;具体过程是：switch_to(next=子进程) 创建子进程同时设置好TSS并且和TCB相连，上面是创建子进程的具体过程&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;执行我们想要的代码：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我们创建的子进程随着中断返回到A处，而此时不会和父进程一样的执行fork() 而是 call sys_execve 从而执行我们所要执行的操作&lt;/li&gt;
+  &lt;li&gt;要找到真正的PC，我们需要在中断返回前将当前得到的IP 压入到 用户栈中的 EIP 从而真正的赋值给IP寄存器，得到PC从而执行&lt;/li&gt;
+  &lt;li&gt;获取当前 IP 要根据 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls -&amp;gt; entry (call do_entry ) &lt;/code&gt;获得&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;do_entry { eip[0] = ex. a_entry }; &lt;/code&gt;a_entry 代表的就是编译器在编译链接产生ls.exe时编译器提供的入口： unsigned a_entry，而 ls文件实际存在于磁盘之中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;20---操作系统---调度算法---进程合作&quot;&gt;20 - 操作系统 - 调度算法 - 进程合作&lt;/h3&gt;
+
+&lt;h4 id=&quot;调度算法----io约束型和cpu约束型&quot;&gt;&lt;strong&gt;调度算法&lt;/strong&gt; -  IO约束型和CPU约束型&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;IO约束型：&lt;/strong&gt;通常优先级会比较高，提前调用IO可以让设备先处理，CPU可以并发执行，等待设备处理完后CPU读数据就行 此时是 read 中断，对应的通常是前台进程（用户进程）
+&lt;strong&gt;CPU约束型：&lt;/strong&gt;用的 TimeOut 中断，对应的通常是后台进程&lt;/p&gt;
+
+&lt;p&gt;一个好的调度算法（&lt;code class=&quot;highlighter-rouge&quot;&gt;Schedule（）&lt;/code&gt;）应该折中、会自适应、能自动分辨前后台进程、以RR（轮转调度算法）为核心、有优先级。具体实现方式是：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先找到就绪队列中&lt;strong&gt;优先级最大&lt;/strong&gt;的一个进程（用COUNT时间片表示，越大优先级越高）&lt;/li&gt;
+  &lt;li&gt;然后当该进程的时间片为0时，&lt;strong&gt;重新设置所有进程的COUNT&lt;/strong&gt;（右移一位+初始时间片长度），让处于拥塞状态的进程的优先级比当前进程优先级高，等待就绪后可以被CPU调用&lt;/li&gt;
+  &lt;li&gt;动态调整COUNT同时也意味着此时调度会从CPU约束转成IO约束，而IO约束对应的是前台进程的特征，于是分辨出前后台进程。原理是拥塞状态下的进程大部分都是前台进程（需要调用IO）在调整后优先级高，阻塞越久优先级越高，但&lt;strong&gt;COUNT不会无限增长破坏RR算法&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;这和COUNT的重置算法有关：$c(n)=c(n-1)/2+P$ 其中 $ c(0)= P$  于&lt;strong&gt;最终收敛于2P&lt;/strong&gt; 不会无限大符合时间片的规则&lt;/li&gt;
+  &lt;li&gt;后台进程一直循环可以近似看出是SJF调度，符合CPU约束型&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;进程合作---多个进程共同完成一个任务---信号量&quot;&gt;&lt;strong&gt;进程合作&lt;/strong&gt; - 多个进程共同完成一个任务 - 信号量&lt;/h4&gt;
+
+&lt;p&gt;COUNT信号已经无法简单处理了多个进程等待和资源生产复杂情况了，需要一个信号量来实现“走走停停”，信号量里有value（资源的个数）和PCB阻塞队列（等待在该信号量上的进程），信号量中P操作是消费资源，V操作是生产资源。&lt;/p&gt;
+
+&lt;p&gt;信号量解生产者-消费者问题：
+生产者第一步P(empty)需要判断资源是否满了，满了则不能再生产了，empty= 0 表示缓冲区满了，消费者的第一步P(full)则是判断当前已经生产的个数，为零则无法消费，full 表示已经生产的个数；第二步两者都是上锁P(mutex)，然后分别执行读入写出，最后解锁V(mutex)；生产者第三步是V(full) 代表生产了一些资源，而消费者是V(empty) 消耗了一些资源&lt;/p&gt;
+
+&lt;p&gt;信号量需要临界区来保护，因为信号量是所以进程共享的。
+临界区保护原则：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本原则：互斥进入，进程间的互斥关系保证了是临界区&lt;/li&gt;
+  &lt;li&gt;好的保护原则：有空让进和有限等待&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;信号量的具体实现过程：面包算法、关中断方法、原子指令上锁法
+在内核中为用于一个数组存放信号量，再建立队列用于存放PCB，因为是全局数据所以要写在内核中，用的时候必须使用系统调用队列中对应的信号量&lt;/p&gt;
+
+&lt;p&gt;死锁处理：PC机通常使用死锁忽略&lt;/p&gt;
+
+&lt;h3 id=&quot;21---操作系统---内存管理&quot;&gt;21 - 操作系统 - 内存管理&lt;/h3&gt;
+
+&lt;h4 id=&quot;内存使用和分段&quot;&gt;内存使用和分段：&lt;/h4&gt;
+&lt;p&gt;要从逻辑地址转化成物理地址用&lt;strong&gt;运行时重定位&lt;/strong&gt;最合适，利用的基址放在PCB中，执行指令时第一步就是从PCB(特殊数据结构，其中包含了&lt;strong&gt;GDT&lt;/strong&gt;和&lt;strong&gt;LDT&lt;/strong&gt;)中取出基地址&lt;/p&gt;
+
+&lt;p&gt;由于程序是分段的code segment | data segment …. 方便管理而且在载入时节约资源，所以在存放基地址时还需要按段号分段存放到DS中，形成进程段表。
+操作系统的段表就是&lt;strong&gt;GDT&lt;/strong&gt;，子进程的段表是&lt;strong&gt;LDT&lt;/strong&gt;（LDT可以看成是GDT分配的）&lt;/p&gt;
+
+&lt;p&gt;地址翻译的具体实现过程是：首先找到本段的程序段号，然后在LDT表中的找到对应的基地址，完成重定位过程，段号存放在 ldtr 中&lt;/p&gt;
+
+&lt;h4 id=&quot;内存分页&quot;&gt;&lt;strong&gt;内存分页&lt;/strong&gt;：&lt;/h4&gt;
+
+&lt;p&gt;分区是为了能找到空闲的内存区并管理内存，这样在进程载入的时候才找得到空闲内存区，分段分区都是针对的虚拟内存。但分区会产生很多碎片，因此我们&lt;strong&gt;采用分页&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;一个程序有很多段，一个段又对应很多页
+用页表实现分页，页表起始地址放在 cr3 通过 MMU 得到页号，页号找到页框号，最后将页框号和逻辑地址相连，页框规定了页的大小，页表存放在PCB中，每个进程都有自己的页表&lt;/p&gt;
+
+&lt;h4 id=&quot;段页内存同时存在&quot;&gt;段页内存同时存在：&lt;/h4&gt;
+&lt;p&gt;程序用段-虚拟内存-虚拟内存分页-映射到物理内存
+段页同时存在时的重定位（地址翻译）：
+段依旧按段表找出基地址加上段偏移得到虚拟地址-再从虚拟地址映射到页表找到页号，利用页号和偏移地址得到物理地址，两层地址翻译：段号到虚拟地址、页号到物理地址&lt;/p&gt;
+
+&lt;h1 id=&quot;备忘录&quot;&gt;备忘录&lt;/h1&gt;
+
+&lt;h1 id=&quot;随记&quot;&gt;随记&lt;/h1&gt;
+
+&lt;h2 id=&quot;5142020-解题的思考&quot;&gt;5/14/2020 解题的思考&lt;/h2&gt;
+
+&lt;p&gt;在解题之前先思考题目考察的内容，不要盲目地做题。先想一想、写一下文档理清思路。
+&lt;img src=&quot;https://s1.ax1x.com/2020/05/14/YDcluQ.png&quot; alt=&quot;YDcluQ.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如这一道题目要求将指令复制到另一个地方，解题时首先就应该想到在哪个内存地址可以找到要复制的数据，在8086中CS.dreg 指向的就是程序地址，而 di 中存放着 s 标号的地址，此时 CS:DI 就可以找到 S标号对应的程序地址了，同理便可得目的地址。有了地址就可以考虑如何复制数据，很明显通过 mov指令和寄存器就轻松完成了复制。&lt;/p&gt;
+
+&lt;p&gt;思考的关键就在于如何能快速地利用已经学过的知识来解析问题，&lt;strong&gt;用什么方法，需要找到什么数据（或者地址）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5152020-合理计划学习任务&quot;&gt;5/15/2020 合理计划学习任务&lt;/h2&gt;
+
+&lt;p&gt;今天学习进度没有赶得很紧，大学课程的实验让我十分的烦恼。最近只想赶快把汇编看完然后去学OS，自知学知识不能太赶，要一步一个脚印地来，但今天还是跳了很多个实验，寄希望于学完OS后再回头把实验写了，只看重理论很不好，打不下基础，我决定分批次完成实验的内容，明天把理论知识学完，然后分批完成汇编的实验和课程的实验（又把学习当任务了！！其实应该把&lt;strong&gt;学习时间拉长，每天只学一点但一定要完全领悟通透&lt;/strong&gt;，只怪我脑子太笨，如今只能争取理论尽快地领悟，实验只能后补了。）唉，如果大学的课程能不那么赶而且还不要考试就好了。&lt;/p&gt;
+
+&lt;p&gt;有个妹妹自杀了，她的遗书写得十分平静，她所有牵挂的人和事都已经放下了，信中看不出她的绝望和痛苦，好像死亡对她来说只是一件很平常的事，她说她已经去了自己想要的很美好的地方， 突然间我开始相信我们都拥有灵魂了，相信她只是选择了另一种方式存在，愿超脱了肉体的你能永远徜徉在极乐天堂 R.I,P&lt;/p&gt;</content><author><name>true</name></author><category term="日常总结" /><category term="学习" /><summary type="html">技术栈 待完善 底层 操作系统：了解内核、了进程和文件管理等重要的概念和实现方式 编译原理：粗略搞懂编译器的执行过程（汇编√-机器码×） 计算机网络：彻底搞懂连网原理和TCP/IP的具体意义，打通网络黑箱 JVM：这个底层其实还挺好奇的，目前处于黑箱状态 Tomcat：热部署怎么使用的，大概了解原理 数据库高级：索引概念、视图概念、底层逻辑都不清楚其实。 应用类 Vue.js：其实很好奇怎么用MVVM模式来进一步优化界面层啊？！借此完善自己的第一个项目， SpringBoot框架：如何实现前后端数据传输啊？？？ 现在已知的是三层架构模式: 界面层 JSP(EL+JSTL) + JQuery + Ajax 业务逻辑层Web (Servlet+Filter) 数据访问层（Druied链接池+ JDBCUtils）DAO模式 Javaweb注解配置（及时补充） 深入 底层 - 汇编：（王爽《汇编语言第三版》） 3.7 CPU提供的栈机制 入栈和出栈都是以字为单位，通过 SS段寄存器：SP寄存器 来指向栈顶元素 栈是从高地址往低地址增长的，这同时解决了“CPU如何知道此段内存空间是栈“的问题，当SP寄存器 负增长的底线是0000h，故定义起始地址后栈大小也随之确定。但CPU是不会保证我们对栈的操作不会越界的，POP和PUSH的过程中有可能会产生溢出 当栈为空时 SS：SP 指向栈空间最高地址单元的下一个单元 ​ 我们当然希望CPU可以帮我们解决这个问题，比如说在CPU中有记录栈顶上限和栈 底的寄存器，我们可以通过填写这些寄存器来指定栈空间的范围，然后，CPU在执行 push指令的时候靠检测栈顶上限寄存器、在执行pop指令的时候靠检测栈底寄存器保证不 会超界。 ​ 不过，对于8086CPU,这只是我们的一个设想(我们当然可以这样设想，如果CPU是 我们设计的话，这也就不仅仅是一个设想)。实际的情况是，8086CPU 中并没有这样的寄 存器。 ​ 8086CPU不保证我们对栈的操作不会超界。这也就是说，8086CPU 只知道栈顶在何 处(由SS:SP指示)，而不知道我们安排的栈空间有多大。这点就好像CPU只知道当前要执 行的指令在何处(由CS:IP指示),而不知道要执行的指令有多少。从这两点上我们可以看 出8086CPU的工作机理，它只考虑当前的情况:当前的栈顶在何处、当前要执行的指令 是哪一条。 ​ 我们在编程的时候要自己操心栈顶超界的问题，要根据可能用到的最大栈空间，来安 排栈的大小，防止入栈的数据太多而导致的超界;执行出栈操作的时候也要注意，以防栈 空的时候继续出栈而导致的超界。 应用层 - JavaWeb_Filter &amp;amp; Ajax &amp;amp; JSON Json 一种轻量化的通用数据传输格式，轻量化是与XML对比，JSON更小、更快、更易解析。 有两种表示方法 JSON对象 和 JSON字符串 用parse() stringify() 互相转化 采用键值对方式存放 可以放 number、String、数组、JSON对象 语法是花括号 {} 加 key:values 用 逗号，分隔 在 Java 调用时可以选择导 GSON（谷歌） 或者 阿里（推荐阿里 没有太多依赖） 的jar包 Ajax ：Asynchronous JavaScript and XML. （异步的js和xml）是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 同步：在提交表单后必须等待服务器返回才可以继续处理数据（造成页面卡死待响应的现象，体验差） 异步：在提交表单后无须等待，服务器处理完成后会自动返回 Ajax在JQuery中有封装完成的使用方法，JSP页面中应用较多 Filter：JavaWeb的三大组件之一 用于过滤请求 可以用于用户权限的管理 FilterChain 过滤器链（多个过滤器一起工作）如果通过XML配置，则先配置的先调用 FilterChain.doFilter() - 执行过滤操作 如果有下一个过滤器则进入 否则执行后置代码 FilterConfig类 可以获取在XML文件中的配置信息 &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; 时间线 五月 12 - JSON &amp;amp; Ajax &amp;amp; Javaweb_Filter Json 一种轻量化的通用数据传输格式，轻量化是与XML对比，JSON更小、更快、更易解析。 有两种表示方法 JSON对象 和 JSON字符串 用parse() stringify() 互相转化 采用键值对方式存放 可以放 number、String、数组、JSON对象 语法是花括号 {} 加 key:values 用 逗号，分隔 在 Java 调用时可以选择导 GSON（谷歌） 或者 阿里（推荐阿里 没有太多依赖） 的jar包 Ajax ：Asynchronous JavaScript and XML. （异步的js和xml）是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 同步：在提交表单后必须等待服务器返回才可以继续处理数据（造成页面卡死待响应的现象，体验差） 异步：在提交表单后无须等待，服务器处理完成后会自动返回 Ajax在JQuery中有封装完成的使用方法，JSP页面中应用较多 Filter：JavaWeb的三大组件之一 用于过滤请求 可以用于用户权限的管理 FilterChain 过滤器链（多个过滤器一起工作）如果通过XML配置，则先配置的先调用 FilterChain.doFilter() - 执行过滤操作 如果有下一个过滤器则进入 否则执行后置代码 FilterConfig类 可以获取在XML文件中的配置信息 &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; 13 - 汇编语言 &amp;amp;&amp;amp; 操作系统 ​ 重温了汇编的寄存器部分，预计两天内看完 ​ 操作系统看了Linux 0.11内核的系统启动过程，bochs真难用 ### 14 - 汇编语言 loop指令：两步操作 1.（cx）=（cx）-1 2.判断 cx 是否为零。在debug中用 g + [偏移地址]可以一次性执行所有loop Debug 将它解释为“[idata]” 是-一个内存单元，idata是内存单元的偏移地址; 而编译器将“[idata]” 解释为 idata 。 在汇编源程序中，数据不能以字母开头，所以要在前面加 0 直接写内存的话应当使用0:200~0:2ff 这段空间 dos和其他合法程序通常不会使用这段空间。 程序中的指令就要对这8个数据进行累加，这8个数据在代码段中，程序在运行的时候CS中存放代码段的段地址，所以可以从CS中得到它们的段地址。它们的偏移地址是多少呢?因为用dw定义的数据处于代码段的最开始，所以偏移地址为0，这8个数据就在代码段的偏移0、2、4、6、8、A、C、E处。程序运行时，它们的地址就是CS:0、CS:2、 CS:4、CS:6、CS:8、CS:A、 CS:C、 CS:E。 ………… dw段的数据的值是多少，对于程序来说没有意义。我们定义这些数据的最终目的是，通过它们获取一定容量的内存空间，所以我们在描述dw的作用时，可以说用它定义数据，也可以说用它开辟内存空间。 一般在需要暂存数据的时候，我们都应该使用栈 在8086CPU中只有bx si di bp 这4个寄存器可以用于内存单元寻址，这4个寄存器可以单个出现，或者以4种组合出现： bx+si , bx+di , bp+si , bp+di (ds:bx ss:bp) CPU提供的如[bx+si+idata]的寻址方式为结构化处理提供了方便，用 bx 定位整个结构体，idata定位结构体中的某一个数据项，si 定位数组项中的每个元素。可以写成bx.idata[si]。 15 - 汇编语言 jmp指令经典例题： flag 寄存器： CPU提供了cmp 指令，也提供了je等条件转移指令，如果将它们配合使用，可以实 现根据比较结果进行转移的功能。但这只是“如果”，只是一种合理的建议，和事实上常 用的方法。但究竟是否配合使用它们，完全是你自己的事情。这就好像call 和ret 指令的 关系一样。 8086在内存 0000:0000 到 0000:03FF 的1024个单元中存放着中断向量表 18 - 操作系统 - 系统调用 内核态和用户态：一种处理器 “硬件设计”， DPL目标段的特权级、CPL当前段的特权级 当前程序执行在什么态用CS的最低两位来表示：0是内核态，3是用户态 数字越小级别越高 计算机对CPU是一段一段地使用，故我们可以用段寄存器来判断特权级 而GDT表中的表项用来描述一段内存，在操作系统段中所有的DPL在GDT中都对应内核态 当前用户使用时，根据PC（内存段）中的CS段我们可以知道当前用户的CPL，故可以判断权限 GDT/LDT表中的描述符，描述的是一段内存。其中的DPL代表着GDT/LDT中的描述符描述的内存段的特权级别。比如，当前正在执行的代码，它的特权级别就是当前的CS段选择子指向的段描述符中的DPL所决定的。即DPL是描述一段内存的特权级别。 系统调用的核心： 用户程序中包含一段有中断指令（必须是 INT 0x80）和系统调用号（INT system_call）的代码 操作系统写中断处理，获取调取程序的编号 操作系统根据编号执行相应的代码 中断处理-用户态转化成内核态最终调用内核方法 硬件提供了 INT 0x80 中断能让我们主动进入内核，最重要的就是 set_system_gate 设置中断陷阱门 set_system_gate 的参数为 INT 0x8080中断和INT system_call表示要调用是方法，此时的DPL为3； 通过转化后进入到内核态，设置PC，其中CS为8（100）故可得CPL为0内核态，而IP为 system_call 通过查system_call_table 得到 _NR_XXX 最终调用 sys_XXX 调用的具体过程： 用户调用XXX方法 :point_right: 通过库函数展开成宏，调用中断 :point_right: 中断处理system_call :point_right: 查sys_call_table :point_right: 得到 19 - 操作系统 - 进程管理（CPU部分） CPU使用的关键是：取值执行 设置完PC后便自动开始工作，但这样顺序执行有很多缺点：但程序需要调用IO设备或者磁盘时，会等待很久从而造成时间上的浪费，于是我们需要让CPU交替执行多个程序 一个CPU上交替执行多个程序称为：并发，在交替执行的时候为了完成切换需要保存寄存器等程序信息，从而引入进程（进行中的程序）的概念，CPU在运行多个程序时跑多个进程，因此CPU运行的效率得到大大提升 多进程图像： CPU用 PCB（Process Control Block 记录进程信息的数据结构） 进程带动内存的使用需要用映射表（MMU）进行内存封存 - 同一地址指向不同物理地址 - 为了共存； 多线程：- TCB 线程控制表 线程有自己的TCB，thread control block, 只负责这条流程的信息，包括PC程序计数器，SP堆栈，State状态，和寄存器。有不同的控制流，需要不同的寄存器来表示控制流的执行状态，每个线程有独立的这些信息，但共享一个资源。 多核：线程-用户栈和内核栈-进程切换 每个线程对应一套栈，用户栈和内核栈 用户栈进入内核栈：系统调用（fork()）会引起中断并且创建一个进程，有两个重点： 1.一个线程是怎么通过进程切换的 2.创建一个进程需要做哪些准备 线程切换五段论：中断入口，建立用户栈和内核栈的联系:point_right: 进入内核态执行，执行完毕过程中或者执行完毕后，系统会判断事件有可能引发切换（中间三段）:point_right: 中断返回 ret_from_sys_call 在A处调用 fork() 时会产生 INT 0x80中断和 _NR_fork 同时CPU立刻把用户态的相关信息压入内核栈 call sys_fork 根据PCB中的state判断进程状态是就绪还是阻塞，非0则阻塞，阻塞需要调度切换 reschedule{ jmp _schedule } ；然后需要判断进程时间片再一次reschedule；最后返回中断。 _schedule{ switch_to(next) } 中具体实现调度和切换 ：next=XXX 下一个进程XXX（用调度算法找到下一个已经就绪的进程），switch_to（切换将PC跳到下一个进程XXX中执行） switch_to通过TSS（task state segment 任务段）进行段跳转切换，首先用TR寄存器作为选择子在GDT表中找到TSS描述符，从而找到TSS的段地址，把CPU中的EAX、EBX等寄存器的相关信息保存在原TSS段中（相当于存档）；同理找到下一个进程的TSS段地址赋给TR，将该TSS中的信息拷贝到CPU中（相当于读档），完成跳转。此时下一个进程是我们创建的子进程 中断返回 ret_from_sys_call：先popl 用户态中的信息 最后 iret 创建进程的任务就开始了 ThreadCreate： 要创建下一个进程中的TSS需要用到 sys_fork { call _copy_process } 此时内核栈中的信息全部作为 _copy_process 的参数从而创建出差不多完全一样的子进程 copy_process 细节：创建栈 p = (struct task_struct *)get_free_page();//申请内存空间 //创建内核栈 p-&amp;gt;tss.esp0 = PAGE_SIZE + (long) p ; p-&amp;gt;tss.ss0 = 0x10; //创建用户栈(和父进程共用的栈 ss和esp 是由父进程中用户栈中传入的) p-&amp;gt;tss.ss = ss &amp;amp; 0xffff; p-&amp;gt;tss.esp = esp; 具体过程是：switch_to(next=子进程) 创建子进程同时设置好TSS并且和TCB相连，上面是创建子进程的具体过程 执行我们想要的代码： 我们创建的子进程随着中断返回到A处，而此时不会和父进程一样的执行fork() 而是 call sys_execve 从而执行我们所要执行的操作 要找到真正的PC，我们需要在中断返回前将当前得到的IP 压入到 用户栈中的 EIP 从而真正的赋值给IP寄存器，得到PC从而执行 获取当前 IP 要根据 ls -&amp;gt; entry (call do_entry ) 获得 do_entry { eip[0] = ex. a_entry }; a_entry 代表的就是编译器在编译链接产生ls.exe时编译器提供的入口： unsigned a_entry，而 ls文件实际存在于磁盘之中 20 - 操作系统 - 调度算法 - 进程合作 调度算法 - IO约束型和CPU约束型 IO约束型：通常优先级会比较高，提前调用IO可以让设备先处理，CPU可以并发执行，等待设备处理完后CPU读数据就行 此时是 read 中断，对应的通常是前台进程（用户进程） CPU约束型：用的 TimeOut 中断，对应的通常是后台进程 一个好的调度算法（Schedule（））应该折中、会自适应、能自动分辨前后台进程、以RR（轮转调度算法）为核心、有优先级。具体实现方式是： 首先找到就绪队列中优先级最大的一个进程（用COUNT时间片表示，越大优先级越高） 然后当该进程的时间片为0时，重新设置所有进程的COUNT（右移一位+初始时间片长度），让处于拥塞状态的进程的优先级比当前进程优先级高，等待就绪后可以被CPU调用 动态调整COUNT同时也意味着此时调度会从CPU约束转成IO约束，而IO约束对应的是前台进程的特征，于是分辨出前后台进程。原理是拥塞状态下的进程大部分都是前台进程（需要调用IO）在调整后优先级高，阻塞越久优先级越高，但COUNT不会无限增长破坏RR算法 这和COUNT的重置算法有关：$c(n)=c(n-1)/2+P$ 其中 $ c(0)= P$ 于最终收敛于2P 不会无限大符合时间片的规则 后台进程一直循环可以近似看出是SJF调度，符合CPU约束型 进程合作 - 多个进程共同完成一个任务 - 信号量 COUNT信号已经无法简单处理了多个进程等待和资源生产复杂情况了，需要一个信号量来实现“走走停停”，信号量里有value（资源的个数）和PCB阻塞队列（等待在该信号量上的进程），信号量中P操作是消费资源，V操作是生产资源。 信号量解生产者-消费者问题： 生产者第一步P(empty)需要判断资源是否满了，满了则不能再生产了，empty= 0 表示缓冲区满了，消费者的第一步P(full)则是判断当前已经生产的个数，为零则无法消费，full 表示已经生产的个数；第二步两者都是上锁P(mutex)，然后分别执行读入写出，最后解锁V(mutex)；生产者第三步是V(full) 代表生产了一些资源，而消费者是V(empty) 消耗了一些资源 信号量需要临界区来保护，因为信号量是所以进程共享的。 临界区保护原则： 基本原则：互斥进入，进程间的互斥关系保证了是临界区 好的保护原则：有空让进和有限等待 信号量的具体实现过程：面包算法、关中断方法、原子指令上锁法 在内核中为用于一个数组存放信号量，再建立队列用于存放PCB，因为是全局数据所以要写在内核中，用的时候必须使用系统调用队列中对应的信号量 死锁处理：PC机通常使用死锁忽略 21 - 操作系统 - 内存管理 内存使用和分段： 要从逻辑地址转化成物理地址用运行时重定位最合适，利用的基址放在PCB中，执行指令时第一步就是从PCB(特殊数据结构，其中包含了GDT和LDT)中取出基地址 由于程序是分段的code segment | data segment …. 方便管理而且在载入时节约资源，所以在存放基地址时还需要按段号分段存放到DS中，形成进程段表。 操作系统的段表就是GDT，子进程的段表是LDT（LDT可以看成是GDT分配的） 地址翻译的具体实现过程是：首先找到本段的程序段号，然后在LDT表中的找到对应的基地址，完成重定位过程，段号存放在 ldtr 中 内存分页： 分区是为了能找到空闲的内存区并管理内存，这样在进程载入的时候才找得到空闲内存区，分段分区都是针对的虚拟内存。但分区会产生很多碎片，因此我们采用分页。 一个程序有很多段，一个段又对应很多页 用页表实现分页，页表起始地址放在 cr3 通过 MMU 得到页号，页号找到页框号，最后将页框号和逻辑地址相连，页框规定了页的大小，页表存放在PCB中，每个进程都有自己的页表 段页内存同时存在： 程序用段-虚拟内存-虚拟内存分页-映射到物理内存 段页同时存在时的重定位（地址翻译）： 段依旧按段表找出基地址加上段偏移得到虚拟地址-再从虚拟地址映射到页表找到页号，利用页号和偏移地址得到物理地址，两层地址翻译：段号到虚拟地址、页号到物理地址 备忘录 随记 5/14/2020 解题的思考 在解题之前先思考题目考察的内容，不要盲目地做题。先想一想、写一下文档理清思路。 如这一道题目要求将指令复制到另一个地方，解题时首先就应该想到在哪个内存地址可以找到要复制的数据，在8086中CS.dreg 指向的就是程序地址，而 di 中存放着 s 标号的地址，此时 CS:DI 就可以找到 S标号对应的程序地址了，同理便可得目的地址。有了地址就可以考虑如何复制数据，很明显通过 mov指令和寄存器就轻松完成了复制。 思考的关键就在于如何能快速地利用已经学过的知识来解析问题，用什么方法，需要找到什么数据（或者地址） 5/15/2020 合理计划学习任务 今天学习进度没有赶得很紧，大学课程的实验让我十分的烦恼。最近只想赶快把汇编看完然后去学OS，自知学知识不能太赶，要一步一个脚印地来，但今天还是跳了很多个实验，寄希望于学完OS后再回头把实验写了，只看重理论很不好，打不下基础，我决定分批次完成实验的内容，明天把理论知识学完，然后分批完成汇编的实验和课程的实验（又把学习当任务了！！其实应该把学习时间拉长，每天只学一点但一定要完全领悟通透，只怪我脑子太笨，如今只能争取理论尽快地领悟，实验只能后补了。）唉，如果大学的课程能不那么赶而且还不要考试就好了。 有个妹妹自杀了，她的遗书写得十分平静，她所有牵挂的人和事都已经放下了，信中看不出她的绝望和痛苦，好像死亡对她来说只是一件很平常的事，她说她已经去了自己想要的很美好的地方， 突然间我开始相信我们都拥有灵魂了，相信她只是选择了另一种方式存在，愿超脱了肉体的你能永远徜徉在极乐天堂 R.I,P</summary></entry></feed>

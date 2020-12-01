@@ -14,13 +14,16 @@ subtitle: "java network programming"
 用于存放学习java网络编程过程遇见的重难点笔记和相关代码
 
 * 对运算字符串进行识别的作业 @since2020.11.26
-* IO流 - 多线程 @since2020.11.26
-* internet地址 @since2020.11.27
-* URL 和 URI 类 @since2020.11.28
-* HTTP @since 2020.11.28
-* URLConnection @since 2020.11.29
-* Socket ServerSocket 学习 @since 2020.11.30
-* 非阻塞I/O @since 2020.11.30
+* <a href="#io">IO流 - 多线程</a> @since2020.11.26
+* <a href="#inet">internet地址</a> @since2020.11.27
+* <a href="#url">URL 和 URI 类 </a>@since2020.11.28
+* <a href="#http">HTTP</a> @since 2020.11.28
+* <a href="#urlc">URLConnection</a> @since 2020.11.29
+* <a href="#so">Socket学习</a> @since 2020.12.01
+* <a href="#sso">ServerSocket 学习</a> @since 2020.12.01
+* <a href="#nio">非阻塞I/O</a> @since 2020.12.01
+
+<div id="io"></div>
 
 ## IO Stream
 
@@ -273,6 +276,8 @@ public void doTest(){
 
 最后两种已被舍弃，因为这会可能会让对象处于不一致状态
 
+<div id="inet"></div>
+
 ## internet地址
 
 ### 按IP地址查找
@@ -358,11 +363,11 @@ public class PooledWeblog {
 
 > 日志文件过于庞大的时候，这个程序会占用很大的内存，为了避免这个问题可以将输出也放到一个单独的线程之中，与输入共享一个队列，这样可以避免队列膨胀，但**需要有个信号告知输出线程可以运行了**
 
+<div id="url"></div>
+
 ## URL  和 URI
 
 ### URL
-
-
 
 **URL由一下5个部分组成：**
 
@@ -473,6 +478,8 @@ public class QueryString {
 }
 ```
 
+<div id="http"></div>
+
 ## HTTP
 
 ### HTTP方法
@@ -490,6 +497,8 @@ HTTP首部中两个比较关键面字段：`Content-type`指明MIME媒体类型�
 ### Cookie
 
 一种用于存储连接件持久客户端状态的小文本串，cookie在请求和响应的HTTP首部，从服务器传给客户端，再从客户端传到服务器，cookie中通常不包含数据，只是指示服务器上的数据，用`CookeiManager`和`CookieStore`来管理和在本地存放和获取cookie
+
+<div id="urlc"></div>
 
 ## URLConnection
 
@@ -530,6 +539,7 @@ HTTP服务器不总会在数据发送完后就立即关闭联系，因此在读�
 
 这两种方式对身份认证和重定向有一定的影响，除非确实有必要，否则不要使用流模式
 
+<div id="so"></div>
 
 ## 客户端Socket
 
@@ -1021,6 +1031,8 @@ public class WhoisGUI extends JFrame {
   }
 }
 ```
+
+<div id="sso"></div>
 
 ## 服务器Socket
 
@@ -1605,6 +1617,8 @@ public class RequestProcessor implements Runnable {
   }
 }
 ```
+
+<div id="nio"></div>
 
 ## 非阻塞I/O
 

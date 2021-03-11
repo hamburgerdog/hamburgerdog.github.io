@@ -2,10 +2,10 @@
 layout: post
 title:  "java网络编程学习"
 date:   2020-11-30 23:25:00 +0800
-tags: java 网络编程 学习
+tags: Java 网络编程 学习
 color: rgb(98,170,255)
-cover: '../assets/test.png'
-subtitle: "java network programming"
+cover: '../assets/java-network.gif'
+subtitle: "Java network programming"
 ---
 
 # java网络编程学习

@@ -4,7 +4,7 @@ title:  "WHAT IS REST"
 date:   2021-01-14 13:20:00 +0800
 tags: WEB 学习
 color: rgb(154,133,255)
-cover: '../assets/whatisREST.png'
+cover: '../assets/whatisREST.gif'
 subtitle: 'REST架构风格 基本知识了解'
 ---
 # WHAT IS REST 

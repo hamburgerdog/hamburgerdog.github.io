@@ -282,9 +282,177 @@ ALTER TABLE t1 ALTER INDEX i_idx INVISIBLE;
 
 `show status like 'Hanlder_read%'`查看索引的使用情况，其中`Handler_read_rnd_next`的值越高，说明表索引的设置越不理想
 
-## :zap: 【代办】开发常用数据库对象：
+## :pause_button: 【暂停】开发常用数据库对象（大坑！！！:cry: ）：
+
+> 这真的是一个大坑！！繁琐、难用是我对这一章节的印象，看十几分钟后脑子里的想法都是来颗陨石吧！:dizzy: 具体内容实在无法静心读完并找到其中的精华（能力不过关）日后如果有业务相关再进行填坑吧！弃坑辽
+
+#### 视图
+
+视图，是屏蔽了对应表的结构影响的一种过滤好的复合条件的结果集，源表增加列对视图没有影响，而原表修改列名可以通过修改视图来解决，可以理解为把某一次查询出来的数据存到一个实际不存在的表中（`SHOW TABLE STATUS`命令会同时显示表和视图）。
+
+视图是可以更新的，除了在以下情况：
+
+1. 包含以下关键字的SQL语句: `聚合函数、DISTINCT、GROUP BY、HAVING、UNION或UNION ALL`
+2. 常量视图 | `SELECT`中包含子查询 | `JOIN` | `FROM`一个不能更新的视图 
+3. `WHERE`子句的子查询引用了FROM子句中的表
+
+`WITH [CASCADED | LOCAL] CHECK OPTION`命令决定了是否允许更新数据使得记录不再满足视图的条件，`LOCAL`只要满足本视图就可以更新，`CASCADED`必须满足所有针对该视图的视图的条件才可以更新，默认为`CASCADED`
+
+#### 存储过程、存储函数和触发器 
+
+存储过程和函数都是一段SQL语句的集合，存储函数可以被各类语句重用，而存储过程主要用于解决某一个具体的问题，简单而言就是用SQL编程。
+
+触发器即满足特定条件时执行对应的语句集合，只能建立在永久表上
+
+## :scissors: MySQL分区：
+
+分区主要用于管理大表，按照一定的范围、特定值列表或者HASH函数值来把数据进行区域划分，大部分存储引擎（MyISAM | InnoDB | Memory等）都支持分区，除了MERGE | CSV | FEDERATED 这三类不支持，且在同一个表上不能对多个分区使用多个引擎。
+
+**分区类型**：
+
+1. RANGE范围分区：基于一个给定的连续区间的范围来分区
+2. LIST分区：基于枚举的值来进行分区
+3. COLUMNS分区：分区键可以是多列、非整数
+   1. RANGE COLUMNS 分区
+   2. LIST COLUMNS 分区
+4. HASH分区：基于给定的分区个数，把数据取模进行分区
+5. KEY分区：和HASH分区类似但基于MySQL的哈希函数进行分区
+6. 子分区：在主分区下又一次分区
+
+LIST | RANGE | HASH分区 都需要分区键为INT类型，如果需要非整数可用COLUMNS分区，不能使用除主键（或唯一键）外的列进行分区。列名、别名、分区名都是不区分大小写的
+
+#### RANGE分区 
+
+特点：数据存储是连续的，其利用取值范围把区间连续且不重叠的数据进行分区
+
+```mysql
+CREATE TABLE emp(
+    id INT NOT NULL AUTO_INCREMENT,
+    store_id INT NOT NULL 
+)PARTITION BY RANGE (store_id)(
+    PARTITION p0 VALUES LESS THAN (10),
+    PARTITION p1 VALUES LESS THAN (20),
+    PARTITION p2 VALUES LESS THAN (30),
+    PARTITION p3 VALUES LESS THAN MAXVALUE # 用于处理store_id不小于30的的数据
+    )
+```
+
+如果没有`VALUES LESS THAN MAXVALUE`则但store_id不小于30的数据插入时会提醒失败，使用`RANGE COLUMNS`可以支持除整数外其他的一些数据类型
+
+#### LIST分区
+
+特点：数据必须符合指定的枚举值，不存在像RANGE类似`switch语句`处理default情况的语句
+
+```mysql
+CREATE TABLE emp
+(
+    id        INT  NOT NULL,
+    category INT
+) PARTITION BY LIST (category)(
+    PARTITION p0 VALUES IN (1,2,3,4,5),
+    PARTITION p1 VALUES IN (6,7,8,9)
+    );
+```
+
+同理可以使用LIST COLUMNS
+
+#### COLUMNS分区
+
+特点：支持的数据类型有整数、日期时间、字符串三大类型，其他数值 ` Decimal ` 和 ` Float ` 不支持，且不支持`text`| `blob`做分区键，且支持多列分区，同时如果使用了多列分区键，则会按从左到右的原则进行多列比较，和`RANGE`单字段分组的原理一样。
+
+#### HASH分区
+
+特点：有常规分区和线性分区两种方法。
+
+```mysql
+CREATE TABLE emp
+(
+    id        INT  NOT NULL AUTO_INCREMENT,
+    store_id  INT  NOT NULL
+) PARTITION BY LINEAR HASH ( store_id ) PARTITIONS 4;
+
+# 常规与线性的选择只在一个LINEAR关键字上的区别
+```
+
+**常规分区：**`PARTITION BY HASH(expr) PARTITIONS num`中expr表达式可以是一个返回非常数也非随机数的整数的任何函数（表达式），如最常见的取模运算，可以把数据均匀散列，又不会因为计算太复杂而产生性能问题（MySQL本身不推荐使用太复杂的表达式）但其缺点也很明显，在对新增 | 减少分区时需要把数据进行重新散列会产生性能问题，不能灵活变动。
+
+**线性分区：**使用一个线性的2的幂的运算法则，当线性HASH分区的个数是2的N次幂时，线性HASH分区的结果和常规分区的结果是一样的，但当分区进行维护时，MySQL的处理可以更加快速，但数据的分布可能不太均匀。
+
+#### KEY分区
+
+特点：支持除`BLOB`和`Text`外的其他类型数据作分区键。`PATITION BY KEY(expr)`中expr是字段列表，其只能使用MySQL自带的HASH函数来进行计算，分区键必须是唯一键且非空，默认选择的是主键。
+
+```mysql
+CREATE TABLE emp
+(
+    id        INT  NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    store_id  INT  NOT NULL
+) PARTITION BY KEY() PARTITIONS 4;
+```
+
+#### 子分区
+
+特点：分区下的分区，又称复合分区，可以用 `RANGE | LIST | KEY | HASH ` 每个分区必须具有相同数量的子分区且必须显示指定子分区，子分区的名称在整个表中都是唯一的
+
+```mysql
+# 数量相同子分区
+CREATE TABLE emp
+(
+    id        INT  NOT NULL AUTO_INCREMENT,
+    store_id  INT  NOT NULL,
+    separated DATE NOT NULL DEFAULT '1999-11-11'
+) PARTITION BY RANGE (store_id)
+    SUBPARTITION BY HASH ( separated )
+    SUBPARTITIONS 2(
+    PARTITION p0 VALUES LESS THAN (20),
+    PARTITION p3 VALUES LESS THAN MAXVALUE
+    );
+    
+# 子分区名称唯一
+CREATE TABLE emp
+(
+    id       INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    store_id INT NOT NULL
+) PARTITION BY KEY ()(
+    PARTITION p0 (
+        SUBPARTITION s0,
+        SUBPARTITION s1),
+    PARTITION p1(
+        SUBPARTITION s2,
+        SUBPARTITION s3
+        )
+    );
+```
+
+> **MySQL分区处理null值的方式**：不禁止使用，会把null当成最小值或者零值进行处理（RANGE当做最小值、LIST中必须显示出现、HASH和KEY当做0值处理）。这样会容易造成语义上的误判，因此最好应当设置字段非空和默认值来避免null值的出现。
+
+### 分区管理 :hammer:
+
+#### RANGE | LIST 分区管理
+
+可以实现增加、删除、拆分、合并操作：
+
+1. 删除操作:`ALTER TABLE DROP PARTITION`语句可以用于删除，删除后无法再写入包含了已删除分区的值的数据了（LIST中无法添加被删除的枚举值）
+2. 增加操作:`ALTER TABLE ADD PARTITION`添加语句时，只能添加到分区列表的最大一端（LIST增加的分区中不能含有已添加的枚举值）
+3. 拆分合并:`ALTER TABLE REORGANIZE PARITION INTO`重定义分区，在合并的时候只能合并相邻的分区，LIST也不能跳过分区进行重新定义。
+
+#### HASH | KEY 分区管理
+
+通过合并来减少分区、但可以增加分区
+
+1. `ALTER TABLE COALESCE PARTITION` 合并分组
+2. `ALTER TABLE ADD PARTITION` 增加分组
+
+#### 交换分区
+
+`ALTER TABLE pt EXCHANGE PARTITION p WHERE TABLE nt`  用于交换分区，要交换分区必须先将某个分区（子分区）的数据和普通表的数据进行交换，如命令中就是分区表pt的p分区和普通表nt进行交换。
+
+交换分区应当满足下列条件：
+
+* 表nt不能是分区表和临时表，如果需要从分区表到分区表需要使用一个中间普通表协助
+* 表pt和表nt在结构上应当完全一致，包括索引名和索引列
+* 表nt上不能有外键和相关依赖
+* nt表原有的数据应当在分区p定义的范围之内
 
 
-
-## :zap: 【代办】MySQL分区：
 

@@ -42,7 +42,6 @@ subtitle: 'JavaStream常用小技巧的积累'
         <br>
     </p>
 </div>
-
 # 关于Java-StreamAPI的奇技淫巧
 
 > :memo: 主要记录在编程中用Steam解决问题的一些好方法！
@@ -217,9 +216,54 @@ Optional<Grade> optionalGrade = Optional.of(grade);
 
 ​		如果你真的要这样用，那我只能说：“人生有梦，各自精彩”。
 
+##  :tiger: `SplittableRandom`一个高质量的随机数生成器
+
+>根据「Java_8_API」的介绍：
+>
+>`public final class SplittableRandom`
+>`extends Object`
+>**适用于（在其他上下文中）使用可能产生子任务的孤立并行计算的均匀伪随机值的生成器。** 
+>
+>类`SplittableRandom`支持方法用于生产类型的伪随机数`int`、 `long`和`double`具有类似用途作为类[`Random`](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Random.html)但在以下方面不同：
+>
+>- 系列生成值通过了DieHarder套件测试随机数发生器的独立性和均匀性。 
+>- 方法[`split()`](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/SplittableRandom.html#split--)构造并返回**与当前实例共享不可变状态的新SplitableRandom实例**。 然而，以非常高的概率，由两个对象共同生成的值具有与使用单个`SplittableRandom`对象的单个线程生成相同数量的值相同的统计特性。==对并行操作的一种支持==
+>- SplittableRandom的实例*不是*线程安全的。 它们被设计为跨线程分割，不共享。
+>   例如， [`fork/join-style`](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/concurrent/ForkJoinTask.html)计算使用随机数可能包括以下形式的建设：
+>  `new Subtask(aSplittableRandom.split()).fork()` 。
+>- 该类提供了用于**生成随机流的附加方法**，在`stream.parallel()`模式（并行模式）下使用上述技术。
+>
+>SplittableRandom的`SplittableRandom`不是加密安全的。 考虑在安全敏感的应用程序中使用`SecureRandom`。 
+>
+>此外，默认构造的实例不使用加密随机种子，除非`java.util.secureRandomSeed`设置为`true` 。
+>
+>*「PS : `Stream.parallel()`采用的也是`join|fork`框架的设计模式」*
+
+### 生成随机数流的操作：
+
+先上一个简单的随机数案例，假如班级有40个人，需要选十个老倒霉蛋去参加比赛，我们要怎么做？
+
+```java
+public static void main(String[] args) {
+  			//	快速生成数组的秘籍！
+  			//  int[] ints = IntStream.range(1, 40).toArray();
+  			//  System.out.println(Arrays.toString(ints));
+  
+  			//	先生成高质量随机生成器（以后简称高机器吧。。。。）
+        SplittableRandom splittableRandom = new SplittableRandom();
+  			//	直接梭哈！我要一个随机的intStream，里面不要有负数，也不要有重复，而且只要10个
+  			//	把这十个数和40求模然后+1即可得到随机分布在[1,40]的数了
+        System.out.println(Arrays.toString(splittableRandom.ints().parallel()
+                .filter(i -> i > 0).distinct().limit(10)
+                .map(i -> (i % 40) + 1).toArray()));
+    }
+```
 
 
-#### 写在最后
+
+
+
+## 写在最后
 
 > ​		流操作是用来一个简约编码的好手段，我始终认为在**知识在需要用到时才能记忆得更深刻**。SteamAPI的学习是很需要经验积累的（其实各种库都是这样），因此在**处理符合流特征的数据（比如说容器）时可以多考虑一下如果换成流要如何操作**。这篇小文章就是用于记录平时我在使用Steam时觉得好用的小知识点，有遇到好玩有用的技巧会多多加更！
 

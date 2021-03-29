@@ -8,6 +8,90 @@ cover: '../assets/mysql.gif'
 subtitle: '对MySQL的常用知识的理解'
 ---
 
+<div class='md-toc' mdtype='toc'>
+    <p class="md-toc-content" role="list">
+        <span role="listitem" class="md-toc-item md-toc-h1" data-ref="n257">
+            <a class="md-toc-inner" href="#book-深入浅出mysql基础开发篇部分章节知识整理">📖 《深入浅出MySQL》基础、开发篇部分章节知识整理</a>
+        </span>
+        <br/>&emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h2" data-ref="n5">
+            <a class="md-toc-inner" href="#wavydash-窗口函数">〰️ 窗口函数</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n70">
+            <a class="md-toc-inner" href="#memo-建表使用的mysql语句">📝
+                建表使用的MySQL语句</a>
+        </span><br/>
+        <br/>&emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h2" data-ref="n73">
+            <a class="md-toc-inner" href="#bookmarktabs-索引">📑 索引：</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n93">
+            <a class="md-toc-inner" href="#pagefacingup-hash索引-和-btree索引">📄 HASH索引 和 Btree索引</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n119">
+            <a class="md-toc-inner" href="#fog-不可见索引">🌫 不可见索引</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h3" data-ref="n129">
+            <a class="md-toc-inner" href="#索引问题-之-mysql如何使用索引-question">索引问题 之 MySQL如何使用索引 ❓</a>
+        </span><br/>
+        <br/>&emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h2" data-ref="n164">
+            <a class="md-toc-inner" href="#pausebutton-暂停开发常用数据库对象大坑cry-）">⏸ 【暂停】开发常用数据库对象（大坑！！！😢 ）：</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n167">
+            <a class="md-toc-inner" href="#视图">视图</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n178">
+            <a class="md-toc-inner" href="#存储过程存储函数和触发器">存储过程、存储函数和触发器 </a>
+        </span><br/>
+        <br/>&emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h2" data-ref="n181">
+            <a class="md-toc-inner" href="#scissors-mysql分区">✂️ MySQL分区：</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n203">
+            <a class="md-toc-inner" href="#range分区">RANGE分区 </a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n207">
+            <a class="md-toc-inner" href="#list分区">LIST分区</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n211">
+            <a class="md-toc-inner" href="#columns分区">COLUMNS分区</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n213">
+            <a class="md-toc-inner" href="#hash分区">HASH分区</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n218">
+            <a class="md-toc-inner" href="#key分区">KEY分区</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n221">
+            <a class="md-toc-inner" href="#子分区">子分区</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h3" data-ref="n226">
+            <a class="md-toc-inner" href="#分区管理-hammer">分区管理 🔨</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n227">
+            <a class="md-toc-inner" href="#range--list-分区管理">RANGE
+                | LIST 分区管理</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n236">
+            <a class="md-toc-inner" href="#hash--key-分区管理">HASH | KEY 分区管理</a>
+        </span><br/>
+         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4"
+            data-ref="n243">
+            <a class="md-toc-inner" href="#交换分区">交换分区</a>
+        </span><br/>
+    </p>
+</div>
+
 # :book: 《深入浅出MySQL》基础、开发篇部分章节知识整理
 
 > 对《深入浅出MySQL》中理解不深入章节的知识笔记整理:notebook_with_decorative_cover:

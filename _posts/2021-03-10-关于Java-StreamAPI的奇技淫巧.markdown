@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Java Stream API"
-date:   2021-03-10 21:00:00 +0800
+date:   2021-03-30 23:50:00 +0800
 tags: Java 学习
 color: rgb(98,170,255)
 cover: '../assets/java-stream.png'
@@ -32,6 +32,15 @@ subtitle: 'JavaStream常用小技巧的积累'
                 无情的NPE杀手-Optional</a>
         </span>
         <br>
+      &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h2" data-ref="n225"><a class="md-toc-inner"
+                href="#tiger-SplittableRandom一个高质量的随机数生成器">🦊 `SplittableRandom`一个高质量的随机数生成器</a>
+        </span>
+        <br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h3" data-ref="n222"><a class="md-toc-inner"
+                href="#生成随机数流的操作">生成随机数流的操作<span> </span>
+            </a>
+        </span>
+        <br>
         &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h4" data-ref="n265"><a class="md-toc-inner"
                 href="#写在最后">写在最后</a>
         </span>
@@ -42,6 +51,7 @@ subtitle: 'JavaStream常用小技巧的积累'
         <br>
     </p>
 </div>
+
 # 关于Java-StreamAPI的奇技淫巧
 
 > :memo: 主要记录在编程中用Steam解决问题的一些好方法！
@@ -239,9 +249,9 @@ Optional<Grade> optionalGrade = Optional.of(grade);
 >
 >*「PS : `Stream.parallel()`采用的也是`join|fork`框架的设计模式」*
 
-### 生成随机数流的操作：
+### 生成随机数流的操作
 
-先上一个简单的随机数案例，假如班级有40个人，需要选十个老倒霉蛋去参加比赛，我们要怎么做？
+先上一个简单的随机整数案例，假如班级有40个人，需要选十个老倒霉蛋去参加比赛，我们要怎么做？
 
 ```java
 public static void main(String[] args) {
@@ -259,13 +269,17 @@ public static void main(String[] args) {
     }
 ```
 
+除此之外，这个随机生成器还可以生成随机的`boolean` 、`double`、`long`、等基本类型和其对应的流（布尔值除外）。其`split()`如上文的APIdoc所讲，主要是用来满足并行`join\fork`任务的。
 
+而`join | fork`框架如《Java并发编程的艺术》所介绍：“**其是一个用于并发执行任务的框架，是一个把「大任务分割成若干小任务」最终汇总每个小任务结果后得到大任务结果的框架**”，简单理解即这个框架处理并发的方式就是需要实现一个`compute`方法，在该方法中继续分割任务并使用`fork()`执行任务，用`join()`等待任务完成，直到任务足够小则不进行分割，而此处的随机生成器可以被使用。
 
-
+关于`IntStream`等基本元素类的使用方法，我的建议是先上手一个`boxed()`然后再考虑进一步的操作，而且尽量使用容器来收集数据，使用`toArray()`等到数组真的不方便操作，除非你真的需要那数组一点点性能提升（现在的容器已经被优化得很好了）而愿意舍弃容器的便捷。
 
 ## 写在最后
 
 > ​		流操作是用来一个简约编码的好手段，我始终认为在**知识在需要用到时才能记忆得更深刻**。SteamAPI的学习是很需要经验积累的（其实各种库都是这样），因此在**处理符合流特征的数据（比如说容器）时可以多考虑一下如果换成流要如何操作**。这篇小文章就是用于记录平时我在使用Steam时觉得好用的小知识点，有遇到好玩有用的技巧会多多加更！
+
+突然就更不动了呢。。。近期拜读《On Java 8》的函数式编程那一章节时，被安利了一波`Scala`和`Clojure`，现在入迷了正在疯狂卷`Kotlin`​ :cry:  ​ `Java`在一瞬间就变得没那么香香了（不是）
 
 ## 参考阅读
 

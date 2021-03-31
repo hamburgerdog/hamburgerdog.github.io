@@ -33,7 +33,7 @@ subtitle: 'JavaStream常用小技巧的积累'
         </span>
         <br>
       &emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h2" data-ref="n225"><a class="md-toc-inner"
-                href="#tiger-SplittableRandom一个高质量的随机数生成器">🦊 `SplittableRandom`一个高质量的随机数生成器</a>
+                href="#tiger-splittablerandom一个高质量的随机数生成器">🦊 `SplittableRandom`一个高质量的随机数生成器</a>
         </span>
         <br>
       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span role="listitem" class="md-toc-item md-toc-h3" data-ref="n222"><a class="md-toc-inner"

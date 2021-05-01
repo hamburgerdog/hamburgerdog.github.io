@@ -8,17 +8,135 @@ layout: default
     max-width: 600px;
     text-align: center;
   }
+
   h1 {
-    margin: 30px 0;
+    margin: 10px 0;
     font-size: 4em;
     line-height: 1;
     letter-spacing: -1px;
   }
+
+  main {
+    margin: auto;
+    width: 962px;
+  }
+  .container code {
+    display: inline-block;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    color: #666;
+    background-color: rgb(222, 220, 220);
+  }
 </style>
 
 <div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <h2>404 Page not found :( </h2>
+  <p><strong>【Tips】Just try : <code>W</code>、<code>S</code>、<code>A</code>、<code>D</code>  to play</strong></p>
 </div>
+<main>
+  <canvas id="map" width="962" height="482"></canvas>
+</main>
+<script>
+  window.onload = function () {
+    let canvas = document.getElementById('map');
+    if (canvas.getContext) {
+      let context = canvas.getContext('2d');
+      //  起点
+      let pointX = (canvas.width - 28) / 2;
+      let pointY = 3;
+
+      let backgroundImg = new Image();
+      backgroundImg.onload = function () {
+        //  绘制背景和圆点
+        context.drawImage(backgroundImg, 0, 0);
+        drawPonit(context, pointX, pointY);
+        //  记录圆点移动轨迹
+        context.beginPath();
+        context.moveTo(pointX + 6, pointY + 6);
+        document.body.onkeydown = function (e) {
+          let [oldX, oldY] = [pointX, pointY]
+          switch (e.key) {
+            case 'w':
+              if (!canMove(context, pointX, pointY - 2)) {
+                return;
+              }
+              pointY -= 16;
+              break;
+            case 's':
+              if (!canMove(context, pointX, pointY + 14)) {
+                return;
+              }
+              pointY += 16;
+              break;
+            case 'a':
+              if (!canMove(context, pointX - 2, pointY)) {
+                return;
+              }
+              pointX -= 16;
+              break;
+            case 'd':
+              if (!canMove(context, pointX + 14, pointY)) {
+                return;
+              }
+              pointX += 16;
+              break;
+          }
+          clearPoint(context, oldX, oldY);
+          drawMove(context, pointX, pointY)
+          drawPonit(context, pointX, pointY);
+        }
+      };
+      //  遇见跨域问题请将其部署到服务器后再运行，推荐vscode插件>>>「Express」
+      backgroundImg.src = `/assets/maze/maze${Math.floor((Math.random() * 10) + 1)}.png`;
+    }
+  }
+  /**
+   * 绘制圆点
+   * @param {*} context 画布
+   * @param {*} startX 圆点起始位置
+   * @param {*} startY 圆点起始位置
+   */
+  function drawPonit(context, startX, startY) {
+    let point = new Image();
+    point.onload = function () {
+      context.drawImage(point, startX, startY);
+    }
+    point.src = '/assets/point.png'
+  }
+
+  /**
+   * 移动后清除旧位置上的圆点
+   * @param {*} context 画布
+   * @param {*} startX 
+   * @param {*} startY 
+   */
+  function clearPoint(context, startX, startY) {
+    context.clearRect(startX, startY, 11, 11)
+  }
+
+  /**
+   * 判断当前圆点是否可以前进到下一个位置
+   * @returns 如果下一个位置没有超界且不是墙则返回true
+   */
+  function canMove(context, x, y) {
+    if (x < 2 || y < 2 || x > context.canvas.offsetWidth || y > context.canvas.offsetHeight) {
+      return false;
+    }
+    let { data } = context.getImageData(x, y, 1, 1)
+    if (data[0] === 0 && data[1] === 0 && data[2] === 0 && data[3] === 255) {
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * 记录圆点移动的数据
+   */
+  function drawMove(context, x, y) {
+    context.strokeStyle = '#ffe36f';
+    context.lineWidth = 2;
+    context.lineTo(x + 6, y + 6);
+    context.stroke();
+  }
+</script>

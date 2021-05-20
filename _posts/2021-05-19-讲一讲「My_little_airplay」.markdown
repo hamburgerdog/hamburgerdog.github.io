@@ -70,7 +70,7 @@ axios的使用就不用再赘述了，这里主要讲项目是如何将axios封�
 
 **问题：**在项目初期axios是被各个组件中直接引入使用的，没有考虑统一的异常处理，那时组件少，使用catch来捕捉异常的工作量完全可以应付，但当组件变多后逐一添加catch就力不从心了。
 
-**分析：**据此分析我们需要将axios先进行一次的封装（代理 | 切面）以便出错时能弹出默认提醒，让组件使用axios时自动拥有最基本异常处理功能，同时为了让每个组件不丢失自定义异常处理的功能，我们应当让axios的回调能继续被调用。观察axios的大致逻辑我们就可以找到关键的切入点，<u>构建axios>>发送请求>>收到响应>>执行回调</u>，答案呼之欲出！我们只需要在收到响应后做一层封装然后让其继续执行指令即可，axios也提高了对应的钩子来给我们使用，即响应拦截器。
+**分析：**据此分析我们需要将axios先进行一次的封装（代理 | 切面）以便出错时能**弹出默认提醒**，让组件使用axios时自动拥有最基本异常处理功能，同时为了让每个组件不丢失自定义异常处理的功能，我们应当让axios的回调能继续被调用。观察axios的大致逻辑我们就可以找到关键的切入点，<u>构建axios>>发送请求>>收到响应>>执行回调</u>，答案呼之欲出！我们只需要在收到响应后做一层封装再让其继续执行指令即可，axios也提高了对应的钩子来给我们使用，即响应拦截器。
 
 **实现：** talk is cheap, show me the code
 
@@ -179,6 +179,170 @@ this.$api.song.searchSongByName(this.searchName).then().catch();
 这里还有一个问题，即请求的地址要怎么配置？这里有很多方式：如项目配置代理、硬编码、使用静态文件读取等... 这里我使用的是将其保留到 ***base.js*** 一个js文件中，然后引入使用，这样做其实是不太方便的，比如要修改的时候需要重新编译，很死板。另一个好方式的就是让项目去静态资源中读取，这样可以实现热更新这里不细讲了。
 
 <u>*具体可以参考*</u>:point_right: [如何修改Vue打包后文件的接口地址配置](https://www.cnblogs.com/webhmy/p/9517680.html)
+
+## :grey_question: 「搜索框 - 动画」节流和防抖
+
+#### :one: 搜索框
+
+**需求：**我们在搜索的时候需要让用户在输入的时候能得到一定的响应，但又要限制用户在该时间段里不能发出太多请求，这时候我们就可以选择用节流来对搜索功能进行优化。
+
+<u>*节流：使用阀门的概念来理解就是每隔一段时间泄一次洪，要让数据能流出去又不至于洪泛。*</u>
+
+**实现：**节流功能需要借助一个状态来判断当前是否要响应事件（即阀门的开启与否），初始时阀门打开，确认阀门当前处于开启状态后就可以为响应目标函数做准备，准备期间需要先将阀门关闭屏蔽外界的响应（关中断....），执行目标函数后再将阀门打开即可，把要目标函数包装成定时任务就可实现每隔一段时间响应一次。
+
+```javascript
+//  节流函数
+function throttle(fn, delay = 500) {
+  let timer = null;		//	在下次执行前如果定时任务未完成则清楚定时任务
+  let canRun = true;	//	阀门
+
+  return function () {
+    //	当前不营业
+    if (!canRun) return;
+    canRun = false;		//	关阀门
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn();
+      canRun = true;	//	开阀门
+    }, delay);
+  };
+}
+```
+
+直接使用的` fn()` 是最简化的模式了，实际上我们在`fn()`中必须考虑使用this和传参数的问题，因此在这里我们要写成`fn.apply(this, arguments) | fn.call(this,...) | fn.bind(this)`。
+
+这里还有另一种写法是将`fn()`放置到定时器的外面变成立即执行的函数，具体采用哪种方式还是依据个人选择，功能上的差异是不大的。
+
+#### :two: ​动画
+
+**需求：**项目中使用了***Animate.css***动画库来实现某些组件在点击后触发某些动画，同时要屏蔽用户的重复点击事件，不然动画就会出现鬼畜效果。
+
+**实现：**使用css动画库要求我们在处理点击事件的时要修改类名，触发事件时添加类名以触发动画，事件结束后删除类名以方便下次触发动画，要屏蔽用户重复点击事件使用定时任务即可，这里我想让用户有一个重复点击蓄能的体验，即事件不是第一时间响应的，要留有一定的缓冲期，在用户停止点击后再执行动画，这就需要使用到防抖了。（有种面向答案出题的感觉）
+
+<u>*防抖：使用定时器来执行任务，在定时任务未被执行前又触发了事件则需要重设定时器。*</u>
+
+```javascript
+//	防抖
+function debounce(fn,delay){
+    let timer = null 									//	闭包
+    return function() {
+      	//	重置与否
+        if(timer){
+            clearTimeout(timer) 
+        }
+        timer = setTimeout(fn,delay) 	//	设置定时器
+    }
+}
+```
+
+可以看到防抖和节流其实很相似，其核心思想都是尽可能少的触发目标事件，节约资源。
+
+#### :three: 操作类名的小知识点：`classList`
+
+> *`elementClasses`* 是一个 [`DOMTokenList`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList) 表示 `elementNodeReference` 的类属性 。如果类属性未设置或为空，那么 *`elementClasses.length`* 返回 `0`。虽然 *`element.classList`* 本身是**只读**的，但是你可以使用 `add()` 和 `remove()` 方法修改它。 - [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/classList)
+
+答应我，不要再用`className`了好吗？classList提供了`add() | remove() | replace() | taggle()`这四种方法大大方便了我们操作类名。不过 Vue 中是不推荐我们直接操作dom的，如果还有其他更好的实现方式都值得我们去了解一下。
+
+## :earth_asia: 自定义全局API -  eventBus & global
+
+#### :one: eventBus | 观察者模式
+
+**需求：**在项目中有一个播放器组件(vue-aplayer)，我们需要在很多组件更新其播放数据，如在搜索组件中，用户搜索到歌曲后要添加到播放器组件中，专辑列表需要一次性大量添加歌曲，将通知绑定在父子孙组件上进行组件间通信的方式显示是过于繁琐不合适的，这时候我们可能会想如果组件间收发“短信”问题就容易解决了。
+
+**思考：**我们都学过计算机网络，那么模仿网络通信的方式我们可不可以也在vue中实现“端口”监听呢？学过 vue 的我们可能就会想起一个叫做 vuex 的工具，但也正如其文档所写：“如果您的应用够简单，您最好不要使用 Vuex。” 显然，mla项目很符合「简单」的定义，为项目引入 vuex 远远超过了够用即可的原则（我的原则）。还好我们有另一种选择，vue.api 为我们提供的 `$on`和 `$emit`函数实现“端口”监听 :point_right: [vue-api](https://cn.vuejs.org/v2/api/#vm-on)
+
+**实现思路：**既然vue的实例有提供用于监听的API，那我们直接注册一个空的vue实例并将其挂载到vue原型链上，或者直接绑定到根实例的数据中，那我们不就可以在全局使用了吗？这个实例就像是邮差，其有个通用的名字叫***eventBus*** 没错，其和计算机中的总线的概念是一致的！接下来的代码实现就简单了
+
+```javascript
+//	main.js
+Vue.prototype.$eventBus = new Vue();	//	挂载到原型链上
+
+//	app.js
+mounted(){
+  this.$eventBus.$on('getRandomSong', (load) => this.addSong(load));
+}
+
+//	RandomPlay.vue
+this.$api.song.getRandomSongsWithLimit(1).then((resp) => {
+        this.$eventBus.$emit('getRandomSong', resp.data[0]);
+});
+```
+
+这里要注意的重点问题是`$on`一定要比`$emit`先调用，必须先监听再触发，如果两个组件没有依赖关系都加载完了，则放在`mounted()`钩子上就好了，但如果是A组件先加载后才会加载B组件，是有顺序的，那么A中的监听必须放在`mounted()`钩子运行之前，而B中的必须放在`beforeDestroy`及之后，否则不起作用。
+
+<u>*在项目中最好是使用一个bus.js来提供vue实例对象，这样通过统一的引入更规范也便于观察。*</u>
+
+观察者模式（发布/订阅模式）就不展开了，看代码就能基本了解了。
+
+#### :two: global
+
+这是一个工具类，其中存放了一些全局可使用的函数来简化编码操作，如防抖节流函数就很适合放在这里，还有上文提到的操作类名的方法也被抽离到了这里。在项目中对应是***global.vue***，这和 ***.js文件*** 是一样的，在项目中纯粹是为了验证 ***.vue文件*** 引入的效果。
+
+全局即代表我们在***main.js***中将其绑定到了原型链上，这和`$eventBus`的操作是一样的，因此我们可以在多个组件中这样使用：
+
+```javascript
+//	main.js
+import global_ from './Global.vue';
+Vue.prototype.$global = global_;
+
+//	global.vue
+function addAnimateClass(element,
+                         animateName,
+                         delay) {
+  element.classList.add('animate__animated');
+  element.classList.add(animateName);
+  setTimeout(() => {
+    element.classList.remove(animateName);
+  }, delay);
+}
+
+function deBounceAddAnimate(element, 
+                            animateName,
+                            canRun,
+                            delay = 2000) {
+  debounce(
+    () => {
+      addAnimateClass(element, animateName, delay);
+    },
+    canRun,
+    delay,
+  );
+}
+
+//	组件中
+this.$global.deBounceAddAnimate(
+          event.srcElement.parentElement,
+          'animate__rubberBand',
+          this.canPulse,	//	组件中的阀门
+          2000,);
+```
+
+将阀门保存在组件中的好处是，每个组件触发事件是受组件本身控制的，各个组件可以使用统一的函数又不至于互相干扰。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

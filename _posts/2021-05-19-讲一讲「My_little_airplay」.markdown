@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "讲一讲「My_little_airplay」"
+date:   2021-05-19 19:00:00 +0800
+tags: 学习 vue
+color: rgb(255,210,32)
+cover: '../assets/mla.png'
+subtitle: 'vue项目总结'
+---
+
 [toc]
 
 # :musical_keyboard: 讲一讲「My_little_airplay」
@@ -10,7 +20,7 @@
 
 #### :one: package.json 
 
-* ***package.json*** 这个文件里放的就是我们项目的依赖，通过`npm list`可以查看所有依赖，还可以配置一些脚本搭配`npm | yarn`来使用，***package-lock.json、yarn.lock***这两个文件是用来保证依赖一致性的，即不仅版本(version)一致，其来源(resolved)也应当一致，不过lock文件更侧重项目依赖，而package文件则着眼项目全局，没有lock项目依旧是可运行的。
+* ***package.json*** 这个文件里放的就是我们项目的依赖，通过`npm list`可以查看所有依赖，还可以配置一些脚本搭配`npm \ yarn`来使用，***package-lock.json、yarn.lock***这两个文件是用来保证依赖一致性的，即不仅版本(version)一致，其来源(resolved)也应当一致，不过lock文件更侧重项目依赖，而package文件则着眼项目全局，没有lock项目依旧是可运行的。
 
   ***yarn.lock***与***package-lock.json***的差异在于依赖扁平化的处理，yarn的处理方式是把所有依赖都平铺没有层级关系，而npm的处理是嵌套的，即第一次出现的包名会被提到顶部，一些常用的依赖可能被多个包重复引用，因为层级关系被包含到了不同的依赖里（不完全扁平），导致不必要的资源浪费。
 
@@ -40,7 +50,7 @@
 
 #### :three: browserslistrc & editorconfig
 
-* ***.browserslistrc***这个文件用于配置浏览器兼容，按官方说法是：**'The config to share target browsers and Node.js versions between different front-end tools. '** 这里的工具常见的有 babel | eslint | postcss 等，语义特别简洁明了，如下：
+* ***.browserslistrc***这个文件用于配置浏览器兼容，按官方说法是：**'The config to share target browsers and Node.js versions between different front-end tools. '** 这里的工具常见的有 babel \ eslint \ postcss 等，语义特别简洁明了，如下：
   
   `defaults`: Browserslist’s default browsers (`> 0.5%, last 2 versions, Firefox ESR, not dead`).
   
@@ -70,7 +80,7 @@ axios的使用就不用再赘述了，这里主要讲项目是如何将axios封�
 
 **问题：**在项目初期axios是被各个组件中直接引入使用的，没有考虑统一的异常处理，那时组件少，使用catch来捕捉异常的工作量完全可以应付，但当组件变多后逐一添加catch就力不从心了。
 
-**分析：**据此分析我们需要将axios先进行一次的封装（代理 | 切面）以便出错时能**弹出默认提醒**，让组件使用axios时自动拥有最基本异常处理功能，同时为了让每个组件不丢失自定义异常处理的功能，我们应当让axios的回调能继续被调用。观察axios的大致逻辑我们就可以找到关键的切入点，<u>构建axios>>发送请求>>收到响应>>执行回调</u>，答案呼之欲出！我们只需要在收到响应后做一层封装再让其继续执行指令即可，axios也提高了对应的钩子来给我们使用，即响应拦截器。
+**分析：**据此分析我们需要将axios先进行一次的封装（代理 \ 切面）以便出错时能**弹出默认提醒**，让组件使用axios时自动拥有最基本异常处理功能，同时为了让每个组件不丢失自定义异常处理的功能，我们应当让axios的回调能继续被调用。观察axios的大致逻辑我们就可以找到关键的切入点，<u>构建axios>>发送请求>>收到响应>>执行回调</u>，答案呼之欲出！我们只需要在收到响应后做一层封装再让其继续执行指令即可，axios也提高了对应的钩子来给我们使用，即响应拦截器。
 
 **实现：** talk is cheap, show me the code
 
@@ -209,7 +219,7 @@ function throttle(fn, delay = 500) {
 }
 ```
 
-直接使用的` fn()` 是最简化的模式了，实际上我们在`fn()`中必须考虑使用this和传参数的问题，因此在这里我们要写成`fn.apply(this, arguments) | fn.call(this,...) | fn.bind(this)`。
+直接使用的` fn()` 是最简化的模式了，实际上我们在`fn()`中必须考虑使用this和传参数的问题，因此在这里我们要写成`fn.apply(this, arguments) \ fn.call(this,...) \ fn.bind(this)`。
 
 这里还有另一种写法是将`fn()`放置到定时器的外面变成立即执行的函数，具体采用哪种方式还是依据个人选择，功能上的差异是不大的。
 
@@ -241,11 +251,11 @@ function debounce(fn,delay){
 
 > *`elementClasses`* 是一个 [`DOMTokenList`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList) 表示 `elementNodeReference` 的类属性 。如果类属性未设置或为空，那么 *`elementClasses.length`* 返回 `0`。虽然 *`element.classList`* 本身是**只读**的，但是你可以使用 `add()` 和 `remove()` 方法修改它。 - [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/classList)
 
-答应我，不要再用`className`了好吗？classList提供了`add() | remove() | replace() | taggle()`这四种方法大大方便了我们操作类名。不过 Vue 中是不推荐我们直接操作dom的，如果还有其他更好的实现方式都值得我们去了解一下。
+答应我，不要再用`className`了好吗？classList提供了`add() \ remove() \ replace() \ taggle()`这四种方法大大方便了我们操作类名。不过 Vue 中是不推荐我们直接操作dom的，如果还有其他更好的实现方式都值得我们去了解一下。
 
 ## :earth_asia: 自定义全局API -  eventBus & global
 
-#### :one: eventBus | 观察者模式
+#### :one: eventBus \ 观察者模式
 
 **需求：**在项目中有一个播放器组件(vue-aplayer)，我们需要在很多组件更新其播放数据，如在搜索组件中，用户搜索到歌曲后要添加到播放器组件中，专辑列表需要一次性大量添加歌曲，将通知绑定在父子孙组件上进行组件间通信的方式显示是过于繁琐不合适的，这时候我们可能会想如果组件间收发“短信”问题就容易解决了。
 
@@ -270,9 +280,9 @@ this.$api.song.getRandomSongsWithLimit(1).then((resp) => {
 
 这里要注意的重点问题是`$on`一定要比`$emit`先调用，必须先监听再触发，如果两个组件没有依赖关系都加载完了，则放在`mounted()`钩子上就好了，但如果是A组件先加载后才会加载B组件，是有顺序的，那么A中的监听必须放在`mounted()`钩子运行之前，而B中的必须放在`beforeDestroy`及之后，否则不起作用。
 
-<u>*在项目中最好是使用一个bus.js来提供vue实例对象，这样通过统一的引入更规范也便于观察。*</u>
+<u>*在项目中最好是使用一个bus.js来提供vue实例对象，这样通过统一的引入更规范也便于观察。同样简单场景直接用 `this.$root.$emit` 和 `this.$root.$on `也是一样的，可以少初始化一个 Vue 对象*</u>
 
-观察者模式（发布/订阅模式）就不展开了，看代码就能基本了解了。
+观察者模式（发布/订阅模式）就不展开了，看代码就能基本了解了，其在vue源码中也有大量的应用，如数据变化侦测的功能实现，因此这个设计模式还是很重要的~ <u>*有兴趣推荐*</u>:point_right:《深入浅出vue.js》
 
 #### :two: global
 
@@ -319,36 +329,35 @@ this.$global.deBounceAddAnimate(
 
 将阀门保存在组件中的好处是，每个组件触发事件是受组件本身控制的，各个组件可以使用统一的函数又不至于互相干扰。
 
+## :zap: 小结
 
+#### :lipstick: css
 
+在这个项目中我花在写css样式上的时间占比是很大的，要实现组件的通用要考虑的因素有很多，一下几点是我在项目中收获比较多的。
 
+* 我在写比较通的组件中的块级元素时会尽量不书写 width \ height 让其自然铺开，在使用这些组件时利用`flex布局`直接管理这些组件，如果需要留空尽量通过父元素或者`flex-gap`来实现
 
+* 减少对vant组件库的依赖，vant修改默认样式是不太方便的，有时候vant组件提供的API是不够用的，在首页的轮播图组件中就遇到一个比较麻烦的问题：要给该组件设置圆角，但vant是不支持的，于是采用给组件的父盒子设圆角然后溢出隐藏的方式实现近似效果，但这会导致一个小问题，轮播图是带动画的，当动画播放时组件还是会撑开圆角，当动画结束时才会恢复圆角效果：
+  ![动画过程](https://z3.ax1x.com/2021/05/20/goNirV.png)
 
+  ![正常展示](https://z3.ax1x.com/2021/05/20/goNePJ.png)
+  这样在视觉上的变动是很突兀的，但却又很难消除这个影响，我最后选择的方案是让圆角缩小以减少突变的程度。
 
+* 响应式布局，从px -> em -> rem ，我们其实可以使用一些css框架来帮助我们进行开发，我很喜欢的一个响应式布局css框架就是 [tailwindcss](https://www.tailwindcss.cn/)，当然它还不局限于响应式！引用《css权威指南》中提起的一个很实用的概念：「不需要精确地去计算1rem等于多少px，只要知道“大概”多有宽就可以了」。这和`tailwindcss`中的大小描述方式是不谋而合的，在`tailwindcss`中描述文字大小用的是 ` xs\sm\base\lg\_xl `，描述宽度(高度)的时候使用的是`w-1\w-2\w-xx\w-2/3\w-1/3\w-full\...`这写背后转换后的单位都是rem，但具体是多少我们不需要考虑，除非要 1:1 精确的还原设计图。
 
+  `tailwindcss`甚至是`windcss`的火爆大家都有目共睹了，在使用这些框架开发项目后我组件中`<style>`标签中的内容大幅度下降了，用`flex \ grid`布局也更得心应手了！真的香香
 
+css要学习的东西有很多，有时候遇到各种怪异的问题处理起来是很棘手的，在另一个项目中我就遇到了 img元素 溢出 div 挤占了下行内容还解决不了的问题，对于各种css原理还是需要继续加强，这里推荐张鑫旭老师的[《css世界》](https://www.cssworld.cn/)系列书籍，属于细致到读每一章都能更新一次观念的书籍。
 
+#### :coffee: 项目后端
 
+项目的后端看 前端 ***api.js*** 就知道其实提供的接口并不多也不复杂，技术就是最常见的springMVC+mybatis，redis都没用上，因为没有什么可缓存的，如果一定要缓存甚至可以不用mysql，单一个redis就足够存放所有数据了。作为歌迷我是打心底里希望mla多出点歌，多出点专辑 :joy:
 
+不过最后还是总结一下后端一些我觉得比较好玩的点吧
 
+* 提供资源的方式：直接向前端提供静态资源存放的url，对于图片还有另一种方式：即***html页面的img***可以直接渲染base64编码的图片，`<img src="data:image/png;***"/>` 因此，对于较小的图片后端设计了一个返回`ResponseEntity<byte[]>`的接口，这样可以减少发送请求的次数。
+* Controller中使用`ResponseEntity<>`用于返回响应数据是很有用，比如在请求mp3数据的时候，利用这个数据类型保存响应头并结合206状态码就可以在前端告知用户当前要响应的文件类型和大小，以便确认是否要下载了。
+* 应当使用API文档生成的`Swagger2` 框架 和 日志系统`slf4j + log4j` 记录系统运行的情况，在服务器运行过程中搭配使用nohup命令将数据按日期存放到两个标准输出文件、错误输出文件即可。提到这两个是因为在项目中我并没有用这两个...... 实际上我知道也会用！我只是懒！
+* `hutool`的使用，项目中大量使用该工具库用来实现json格式转换、文件读取等操作，对于开发真的很友好。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+说到后端我们前端工程师绕不开的一个话题就是***golang***，go确实是一个很好玩的语言开发web比spring要轻便很多，项目中之所以不用GO是因为我接近三四个月没写GO有些遗忘了......... 菜是原罪。

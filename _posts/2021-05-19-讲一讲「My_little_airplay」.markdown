@@ -8,7 +8,67 @@ cover: '../assets/mla.png'
 subtitle: 'vue项目总结'
 ---
 
-[toc]
+<div class="md-toc" mdtype="toc">
+  <div style="line-height: 1.2em;margin-left: 4em;" class="md-toc-content" role="list">
+    <p role="listitem" class="md-toc-item md-toc-h1" data-ref="n105">
+      <a class="md-toc-inner" href="#musicalkeyboard-讲一讲mylittleairplay">🎹 讲一讲「My_little_airplay」</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h2" style="margin-left: 2em;" data-ref="n107">
+      <a class="md-toc-inner" href="#pagefacingup-从项目根目录下的配置文件们讲起">📄 从项目根目录下的配置文件们讲起</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n109">
+      <a class="md-toc-inner" href="#one-packagejson">package.json </a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n116">
+      <a class="md-toc-inner" href="#two-vueconfigjs">vue.config.js</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n122">
+      <a class="md-toc-inner" href="#three-browserslistrc--editorconfig">browserslistrc &amp; editorconfig</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n132">
+      <a class="md-toc-inner" href="#four-eslintrc--babelconfig">eslintrc &amp; babel.config</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h2" style="margin-left: 2em;" data-ref="n140">
+      <a class="md-toc-inner" href="#europeanpostoffice-网络-axios-和-api-的封装">🏤 「网络」 Axios 和 API 的封装</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n141">
+      <a class="md-toc-inner" href="#one-axios">axios</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n150">
+      <a class="md-toc-inner" href="#two-api">API</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h2" style="margin-left: 2em;" data-ref="n157">
+      <a class="md-toc-inner" href="#greyquestion-搜索框---动画节流和防抖">❔ 「搜索框 - 动画」节流和防抖</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n158">
+      <a class="md-toc-inner" href="#one-搜索框">搜索框</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n165">
+      <a class="md-toc-inner" href="#two-动画">​动画</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n171">
+      <a class="md-toc-inner" href="#three-操作类名的小知识点classlist">操作类名的小知识点：<code>classList</code></a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h2" style="margin-left: 2em;" data-ref="n175">
+      <a class="md-toc-inner" href="#earthasia-自定义全局api----eventbus--global">🌏 自定义全局API - eventBus &amp; global</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n176">
+      <a class="md-toc-inner" href="#one-eventbus--观察者模式">eventBus | 观察者模式</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n184">
+      <a class="md-toc-inner" href="#two-global">global</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h2" style="margin-left: 2em;" data-ref="n189">
+      <a class="md-toc-inner" href="#zap-小结">⚡️ 小结</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n190">
+      <a class="md-toc-inner" href="#lipstick-css">css</a>
+    </p>
+    <p role="listitem" class="md-toc-item md-toc-h4" style="margin-left: 4em" data-ref="n202">
+      <a class="md-toc-inner" href="#coffee-项目后端">项目后端</a>
+    </p>
+  </div>
+</div>
 
 # :musical_keyboard: 讲一讲「My_little_airplay」
 

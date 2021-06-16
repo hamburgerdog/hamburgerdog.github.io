@@ -17,9 +17,9 @@ author: true
 name: 'oneShowWuJiang'
 NickName: 'Hambuger'
 webtitle: 'xjosiah_page'
-bio: '大三在读 | 可以乱开玩笑 | 孤傲挑战者'
+bio: '大三在读 | 可以乱开玩笑 | 前端小码隆~'
 about: true
-aboutyou: '别拿你的代码当草稿~ 📲 <br> 愿我航向大海 承载你的信赖 '
+aboutyou: '别拿你的代码当草稿~ 📲 <br> 愿我航向大海 承载你的信赖 <br> 寻找一份实习岗位，欢迎mail联系我~'
 portraits: '/assets/profile.jpeg' # your portraits image file path
 
 # SNS
@@ -31,8 +31,8 @@ SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagr
   github: 'https://github.com/hamburgerdog'
   Codepen: 'https://codepen.io/'
   weibo: 'https://www.weibo.com/'
-  instagram: 'https://www.instagram.com/'
-  Twitter: 'https://twitter.com/'
+#  instagram: 'https://www.instagram.com/'
+#  Twitter: 'https://twitter.com/'
 #  Dribbble: ''
 #  Facebook: ''
 #  Google: ''
@@ -59,6 +59,7 @@ pygmentsTheme: 'tango'
 
 # 友情链接
 friends:
+  my_little_airplay: 'http://175.24.126.146/#/home'
   永聪同学的博客: 'https://blog.situ2001.com/'
   网页设计作品展示: 'http://xjosiah.gitee.io/web_page/'
 

@@ -56,6 +56,39 @@ type a = GetKey<PickEffectsAndReducers<UserModel>>;
 
 把联合类型变成交叉类型，我没有想到很好的解决办法，所以我们可以换条路子走，一次拿不到，就分开拿再组合。
 
+> 睡醒后回顾代码的时候发现自己还是写得太过于臃肿了，下面这一段是优化后的代码结构，大家可以对比着看，旧代码不会删除，具体的思路是一样的，写得浅显反而方便理解，也能更好的鞭策自己多review
+
+```typescript
+//	新代码 
+//	@version 2021-09-15
+interface SimpleModelType {
+  namespace: unknown;
+  state: unknown;
+  effects: unknown;
+  reducers: unknown;
+}
+//	核心逻辑
+type PickDeepVKeyFromT<T, V extends keyof T> = {
+  [K in keyof T]: K extends V
+    ? keyof {
+        [P in keyof T[K]]: P;
+      }
+    : never;
+}[keyof T];
+
+type GetNamespaceType<T extends SimpleModelType> = T['namespace'];
+type GetEffectsAndReducersType<T extends SimpleModelType> = PickDeepVKeyFromT<T,'reducers' | 'effects' >;
+
+const getDispatchType = <T extends SimpleModelType>(
+  type: GetEffectsAndReducersType<T>,
+  namespace?: GetNamespaceType<T>,
+) => {
+  return namespace ? `${namespace}/${type}` : type;
+};
+```
+
+**以下为旧代码**：
+
 ```typescript
 //	从 T,K 中获取方法名并将其交叉
 type DeepUnion<T, K> = { [P in keyof T]: T[P] }[keyof T] & { [P in keyof K]: K[P] }[keyof K];

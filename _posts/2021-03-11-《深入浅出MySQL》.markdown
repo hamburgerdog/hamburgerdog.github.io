@@ -2,7 +2,7 @@
 layout: post
 title:  "《深入浅出MySQL》基础、开发篇部分章节知识整理"
 date:   2021-03-11 12:30:00 +0800
-tags: MySQL 学习
+tags: MySQL 服务端
 color: rgb(255,210,32)
 cover: '../assets/mysql.jpg'
 subtitle: '对MySQL的常用知识的理解'

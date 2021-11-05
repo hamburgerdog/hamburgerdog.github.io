@@ -2,7 +2,7 @@
 layout: post
 title:  "Linux操作系统原理与应用笔记"
 date:   2020-11-08 08:00:00 +0800
-tags: linux C 学习
+tags: 操作系统 底层
 color: rgb(154,133,255)
 cover: '../assets/linux_note_page.png'
 subtitle: '深入理解Linux内核分析的重难点笔记理解'
@@ -108,7 +108,7 @@ subtitle: '深入理解Linux内核分析的重难点笔记理解'
   //	当前被删除的节点的前趋后继是指向内核中两个固定位置的，如果按list_for_each会出错
   #define list_for_each_safe(pos,n,head)\
   	for(pos=(head)->next,n=pos->next; pos!=(head); pos=n,n=pos->next)
-
+  
   static inline void __list_del(struct list_head *prev,struct list_head *next){
     next->prev=prev;
     prev->next=next;
@@ -304,9 +304,9 @@ linux中对进程的描述结构叫做PCB（task_struct）其是一个相当庞�
 linux进程调度是时机：
 
 	1. 进程状态转换的时刻，使用`sleep_on()`、`exit()`时会主动调用调度函数
- 	2. 当前进程的时间片用完
- 	3. 设备驱动程序运行时
- 	4. 从内核态返回到用户态时，从系统调用返回意味着离开内核态，状态转换需要花费一定的时间，在返回到用户态前，系统把在内核态该处理的事应当全部做完。
+	2. 当前进程的时间片用完
+	3. 设备驱动程序运行时
+	4. 从内核态返回到用户态时，从系统调用返回意味着离开内核态，状态转换需要花费一定的时间，在返回到用户态前，系统把在内核态该处理的事应当全部做完。
 
 ```c
 //	schedule() 函数主框架 
@@ -843,5 +843,4 @@ VFS的四个主要对象为:
 <div id="dev"></div>
 
 ## 第九章 设备驱动
-
 

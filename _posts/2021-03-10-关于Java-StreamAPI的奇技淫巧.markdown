@@ -2,7 +2,7 @@
 layout: post
 title:  "Java Stream API"
 date:   2021-03-30 23:50:00 +0800
-tags: Java 学习
+tags: Java 服务端
 color: rgb(98,170,255)
 cover: '../assets/java-stream.png'
 subtitle: 'JavaStream常用小技巧的积累'
@@ -240,7 +240,7 @@ Optional<Grade> optionalGrade = Optional.of(grade);
 >- 方法[`split()`](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/SplittableRandom.html#split--)构造并返回**与当前实例共享不可变状态的新SplitableRandom实例**。 然而，以非常高的概率，由两个对象共同生成的值具有与使用单个`SplittableRandom`对象的单个线程生成相同数量的值相同的统计特性。==对并行操作的一种支持==
 >- SplittableRandom的实例*不是*线程安全的。 它们被设计为跨线程分割，不共享。
 >   例如， [`fork/join-style`](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/concurrent/ForkJoinTask.html)计算使用随机数可能包括以下形式的建设：
->  `new Subtask(aSplittableRandom.split()).fork()` 。
+>    `new Subtask(aSplittableRandom.split()).fork()` 。
 >- 该类提供了用于**生成随机流的附加方法**，在`stream.parallel()`模式（并行模式）下使用上述技术。
 >
 >SplittableRandom的`SplittableRandom`不是加密安全的。 考虑在安全敏感的应用程序中使用`SecureRandom`。 

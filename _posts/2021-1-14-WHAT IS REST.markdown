@@ -2,7 +2,7 @@
 layout: post
 title:  "WHAT IS REST"
 date:   2021-01-14 13:20:00 +0800
-tags: WEB 学习
+tags: 随记
 color: rgb(154,133,255)
 cover: '../assets/whatisREST.jpg'
 subtitle: 'REST架构风格 基本知识了解'

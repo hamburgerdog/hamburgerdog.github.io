@@ -4,7 +4,7 @@ title:  "What happens after Array<T> calls sorted()？"
 date:   2021-11-29 20:40:00 +0800
 tags: 随记 前端
 color: rgb(154,133,255)
-cover: '../assets/popmart.png'
+cover: '../assets/arraysort.png'
 ---
 
 # 🤔 What happens after Array\<T\> calls sorted()？

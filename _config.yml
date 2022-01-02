@@ -19,7 +19,7 @@ NickName: 'Hambuger'
 webtitle: 'xjosiah_page'
 bio: '大四在读 | 可以乱开玩笑 | 前端小码隆~'
 about: true
-aboutyou: '别拿你的代码当草稿~ 📲 <br> 愿我航向大海 承载你的信赖 <br> 寻找一份应届工作，欢迎mail联系我~'
+aboutyou: '别拿你的代码当草稿~ 📲 <br> 愿我航向大海 承载你的信赖 <br>'
 portraits: '/assets/profile.jpeg' # your portraits image file path
 
 # SNS

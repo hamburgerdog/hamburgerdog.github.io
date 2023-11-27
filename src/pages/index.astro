@@ -1,0 +1,57 @@
+---
+import Nav from './nav.astro';
+import '@fontsource/ia-writer-quattro';
+---
+
+<style is:global>
+	:root {
+		--background-color: #fff;
+		--text-color: #000;
+		--max-width: 640px;
+	}
+
+	:root.dark {
+		--background-color: #000;
+		--text-color: #fff;
+	}
+
+	html {
+		max-width: var(--max-width);
+		font-family: 'iA Writer Quattro', sans-serif;
+		background: var(--background-color);
+		color: var(--text-color);
+		margin: auto;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	.nav {
+		position: fixed;
+		width: 100%;
+		left: 0;
+		backdrop-filter: blur(10px);
+	}
+</style>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/reset-min.css"
+			integrity="sha256-2AeJLzExpZvqLUxMfcs+4DWcMwNfpnjUeAAvEtPr0wU="
+			crossorigin="anonymous"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>JOSIAH｜博客 SPACE</title>
+	</head>
+	<body>
+		<div class="nav">
+			<Nav />
+		</div>
+	</body>
+</html>

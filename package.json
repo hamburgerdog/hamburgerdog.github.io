@@ -1,0 +1,23 @@
+{
+	"name": "xjosiah-space",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@fontsource/ia-writer-quattro": "^5.0.7",
+		"algoliasearch": "^4.20.0",
+		"astro": "^3.6.0",
+		"dayjs": "^1.11.10",
+		"instantsearch.js": "^4.60.0",
+		"react-instantsearch": "^7.3.0"
+	},
+	"devDependencies": {
+		"less": "^4.2.0"
+	}
+}

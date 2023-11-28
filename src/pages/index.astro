@@ -1,6 +1,8 @@
 ---
 import Nav from './nav.astro';
 import '@fontsource/ia-writer-quattro';
+import mainInfo from '../assets/josiah.jpeg';
+import { Content as InfoMarkdowm } from '../content/info.md';
 ---
 
 <style is:global>
@@ -8,11 +10,13 @@ import '@fontsource/ia-writer-quattro';
 		--background-color: #fff;
 		--text-color: #000;
 		--max-width: 640px;
+		--highlight: #163b6620;
 	}
 
 	:root.dark {
 		--background-color: #000;
 		--text-color: #fff;
+		--highlight: #e9c4997f;
 	}
 
 	html {
@@ -21,17 +25,63 @@ import '@fontsource/ia-writer-quattro';
 		background: var(--background-color);
 		color: var(--text-color);
 		margin: auto;
+		cursor: default;
 	}
 
 	body {
 		margin: 0;
 	}
 
+	code {
+		line-height: 20px;
+		padding: 2px 4px;
+		border-radius: 4px;
+		background-color: var(--highlight);
+	}
+</style>
+
+<style>
 	.nav {
+		z-index: 1;
 		position: fixed;
 		width: 100%;
 		left: 0;
 		backdrop-filter: blur(10px);
+	}
+	.fill_item {
+		height: 55px;
+	}
+
+	.main_info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 12px;
+	}
+
+	.main_info img {
+		max-width: 80%;
+		border-radius: 8px;
+		box-shadow:
+			2.6px 2.8px 2.5px -50px rgba(0, 0, 0, 0.017),
+			7.3px 7.6px 7px -50px rgba(0, 0, 0, 0.025),
+			17.5px 18.4px 16.9px -50px rgba(0, 0, 0, 0.033),
+			58px 61px 56px -50px rgba(0, 0, 0, 0.05);
+	}
+
+	.main_info p {
+		opacity: 0.5;
+		text-decoration: underline;
+		margin-top: 48px;
+		margin-bottom: 16px;
+	}
+
+	:root.dark .main_info img {
+		opacity: 0.8;
+	}
+
+	.blog_info {
+		padding: 12px;
 	}
 </style>
 
@@ -52,6 +102,15 @@ import '@fontsource/ia-writer-quattro';
 	<body>
 		<div class="nav">
 			<Nav />
+		</div>
+		<!-- 占位符，补充 fixed Nav 的 -->
+		<div class="fill_item"></div>
+		<div class="main_info">
+			<img src={mainInfo.src} />
+			<p>愿我航向大海乘载你的信赖.</p>
+		</div>
+		<div class="blog_info">
+			<InfoMarkdowm />
 		</div>
 	</body>
 </html>

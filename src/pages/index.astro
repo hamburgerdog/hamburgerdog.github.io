@@ -5,6 +5,7 @@ import mainInfo from '../assets/josiah.jpeg';
 import { Content as InfoMarkdowm } from '../content/info.md';
 import { Content as Smartmore } from '../content/smartmore.md';
 import { Content as SmartmoreJP } from '../content/smartmoreJP.md';
+import { Content as Contact } from '../content/contact.md';
 ---
 
 <style is:global>
@@ -34,6 +35,10 @@ import { Content as SmartmoreJP } from '../content/smartmoreJP.md';
 
 	body {
 		margin: 0;
+	}
+
+	a {
+		color: var(--text-color);
 	}
 
 	code {
@@ -91,12 +96,6 @@ import { Content as SmartmoreJP } from '../content/smartmoreJP.md';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/reset-min.css"
-			integrity="sha256-2AeJLzExpZvqLUxMfcs+4DWcMwNfpnjUeAAvEtPr0wU="
-			crossorigin="anonymous"
-		/>
 		<link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -114,9 +113,10 @@ import { Content as SmartmoreJP } from '../content/smartmoreJP.md';
 		</div>
 		<div class="blog_info">
 			<InfoMarkdowm />
+			<h3>工作经历</h3>
 			<Smartmore />
-			<br />
 			<SmartmoreJP />
+			<Contact />
 		</div>
 	</body>
 </html>

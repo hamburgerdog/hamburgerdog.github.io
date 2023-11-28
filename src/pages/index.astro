@@ -3,6 +3,8 @@ import Nav from './nav.astro';
 import '@fontsource/ia-writer-quattro';
 import mainInfo from '../assets/josiah.jpeg';
 import { Content as InfoMarkdowm } from '../content/info.md';
+import { Content as Smartmore } from '../content/smartmore.md';
+import { Content as SmartmoreJP } from '../content/smartmoreJP.md';
 ---
 
 <style is:global>
@@ -16,7 +18,7 @@ import { Content as InfoMarkdowm } from '../content/info.md';
 	:root.dark {
 		--background-color: #000;
 		--text-color: #fff;
-		--highlight: #e9c4997f;
+		--highlight: #6666667f;
 	}
 
 	html {
@@ -26,6 +28,8 @@ import { Content as InfoMarkdowm } from '../content/info.md';
 		color: var(--text-color);
 		margin: auto;
 		cursor: default;
+		word-spacing: 3px;
+		line-height: 22px;
 	}
 
 	body {
@@ -33,7 +37,6 @@ import { Content as InfoMarkdowm } from '../content/info.md';
 	}
 
 	code {
-		line-height: 20px;
 		padding: 2px 4px;
 		border-radius: 4px;
 		background-color: var(--highlight);
@@ -111,6 +114,9 @@ import { Content as InfoMarkdowm } from '../content/info.md';
 		</div>
 		<div class="blog_info">
 			<InfoMarkdowm />
+			<Smartmore />
+			<br />
+			<SmartmoreJP />
 		</div>
 	</body>
 </html>

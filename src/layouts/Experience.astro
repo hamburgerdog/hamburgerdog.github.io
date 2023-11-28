@@ -1,0 +1,56 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+
+type Props = MarkdownLayoutProps<{
+	// 在这里定义 frontmatter 属性
+	company: string;
+	date: string;
+	role: string;
+	keywords: string;
+}>;
+
+const { frontmatter } = Astro.props;
+---
+
+<style>
+	p {
+		margin: 0;
+		line-height:;
+	}
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.role {
+		margin-top: 8px;
+		opacity: 0.6;
+		display: flex;
+		gap: 16px;
+		line-height: normal;
+		font-size: 14px;
+	}
+
+	.role:hover {
+		opacity: 1;
+	}
+
+	.detail {
+		line-height: 24px;
+	}
+</style>
+
+<article>
+	<div class="title">
+		<p>{frontmatter.company}</p>
+		<p>{frontmatter.date}</p>
+	</div>
+	<div class="role">
+		<p>{frontmatter.role}</p>
+		<p>{frontmatter.keywords}</p>
+	</div>
+	<div class="detail">
+		<slot />
+	</div>
+</article>

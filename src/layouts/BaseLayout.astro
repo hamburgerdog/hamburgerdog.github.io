@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/nav.astro';
 import '@fontsource/ia-writer-quattro';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <style is:global>
@@ -64,6 +65,7 @@ import '@fontsource/ia-writer-quattro';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>JOSIAH｜博客 SPACE</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<main>
@@ -74,5 +76,8 @@ import '@fontsource/ia-writer-quattro';
 			<div class="fill_item"></div>
 			<slot />
 		</main>
+		<script>
+			import '../script/themeSwitch.js';
+		</script>
 	</body>
 </html>

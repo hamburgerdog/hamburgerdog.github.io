@@ -11,18 +11,20 @@ const handleToggleClick = (e) => {
 	localStorage.setItem('theme', isDark ? 'dark' : 'light');
 };
 
-document.addEventListener('astro:after-swap', () => {
-	const theme = (() => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark';
-		}
-		return 'light';
-	})();
+const getTheme = () => {
+	if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+		return localStorage.getItem('theme');
+	}
+	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		return 'dark';
+	}
+	return 'light';
+};
 
-	const btnID = 'modeBtn';
+const btnID = 'modeBtn';
+
+document.addEventListener('astro:after-swap', () => {
+	const theme = getTheme();
 	const btnElement = document.getElementById(btnID);
 
 	if (btnElement === null || theme === null) {
@@ -43,5 +45,16 @@ document.addEventListener('astro:after-swap', () => {
 });
 
 document.addEventListener('astro:page-load', () => {
+	const theme = getTheme();
+	const btnElement = document.getElementById(btnID);
+
+	if (theme === 'light') {
+		btnElement.setAttribute('src', '/sun.svg');
+		document.documentElement.classList.remove('dark');
+	} else {
+		btnElement.setAttribute('src', '/moon.svg');
+		document.documentElement.classList.add('dark');
+	}
+
 	document.getElementById('modeBtn').addEventListener('click', handleToggleClick);
 });

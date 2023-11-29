@@ -25,8 +25,16 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
 		cursor: pointer;
 	}
 
-	.post:hover {
+	.page_title:hover,.post:hover {
 		opacity: 0.6;
+	}
+
+	a{
+		text-decoration: none;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-end: 0;
+		margin-inline-end: 0;
 	}
 
 	#modeBtn {
@@ -75,9 +83,9 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
 </script>
 
 <nav class="box">
-	<p class="page_title">{formattedDate}</p>
+	<a href="/" class="page_title">{formattedDate}</a>
 	<div class="side">
-		<p class="post">博客|Blog</p>
+		<a href="/blog" class="post">博客|Blog</a>
 		<img id="modeBtn" src="/sun.svg" />
 	</div>
 </nav>

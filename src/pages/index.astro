@@ -1,65 +1,13 @@
 ---
-import Nav from './nav.astro';
-import '@fontsource/ia-writer-quattro';
 import mainInfo from '../assets/josiah.jpeg';
 import { Content as InfoMarkdowm } from '../content/info.md';
 import { Content as Smartmore } from '../content/smartmore.md';
 import { Content as SmartmoreJP } from '../content/smartmoreJP.md';
 import { Content as Contact } from '../content/contact.md';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<style is:global>
-	:root {
-		--background-color: #fff;
-		--text-color: #000;
-		--max-width: 640px;
-		--highlight: #163b6620;
-	}
-
-	:root.dark {
-		--background-color: #000;
-		--text-color: #fff;
-		--highlight: #6666667f;
-	}
-
-	html {
-		max-width: var(--max-width);
-		font-family: 'iA Writer Quattro', sans-serif;
-		background: var(--background-color);
-		color: var(--text-color);
-		margin: auto;
-		cursor: default;
-		word-spacing: 3px;
-		line-height: 22px;
-	}
-
-	body {
-		margin: 0;
-	}
-
-	a {
-		color: var(--text-color);
-	}
-
-	code {
-		padding: 2px 4px;
-		border-radius: 4px;
-		background-color: var(--highlight);
-	}
-</style>
-
 <style>
-	.nav {
-		z-index: 1;
-		position: fixed;
-		width: 100%;
-		left: 0;
-		backdrop-filter: blur(10px);
-	}
-	.fill_item {
-		height: 55px;
-	}
-
 	.main_info {
 		display: flex;
 		flex-direction: column;
@@ -94,30 +42,16 @@ import { Content as Contact } from '../content/contact.md';
 	}
 </style>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>JOSIAH｜博客 SPACE</title>
-	</head>
-	<body>
-		<div class="nav">
-			<Nav />
-		</div>
-		<!-- 占位符，补充 fixed Nav 的 -->
-		<div class="fill_item"></div>
-		<div class="main_info">
-			<img src={mainInfo.src} />
-			<p>愿我航向大海乘载你的信赖.</p>
-		</div>
-		<div class="blog_info">
-			<InfoMarkdowm />
-			<h3>工作经历</h3>
-			<Smartmore />
-			<SmartmoreJP />
-			<Contact />
-		</div>
-	</body>
-</html>
+<BaseLayout>
+	<div class="main_info">
+		<img src={mainInfo.src} />
+		<p>愿我航向大海乘载你的信赖.</p>
+	</div>
+	<div class="blog_info">
+		<InfoMarkdowm />
+		<h3>工作经历</h3>
+		<Smartmore />
+		<SmartmoreJP />
+		<Contact />
+	</div>
+</BaseLayout>

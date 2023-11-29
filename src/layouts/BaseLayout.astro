@@ -2,6 +2,8 @@
 import Nav from '../components/nav.astro';
 import '@fontsource/ia-writer-quattro';
 import { ViewTransitions } from 'astro:transitions';
+
+const { title } = Astro.props;
 ---
 
 <style is:global>
@@ -64,7 +66,7 @@ import { ViewTransitions } from 'astro:transitions';
 		<link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>JOSIAH｜博客 SPACE</title>
+		<title>JOSIAH｜{title}</title>
 		<ViewTransitions />
 	</head>
 	<body>
@@ -73,7 +75,7 @@ import { ViewTransitions } from 'astro:transitions';
 				<Nav />
 			</div>
 			<!-- 占位符，补充 fixed Nav 的 -->
-			<div class="fill_item" />
+			<div class="fill_item"></div>
 			<slot />
 		</main>
 		<script>

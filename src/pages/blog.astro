@@ -1,7 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+import { BlogFilter } from '../components/BlogFilter.jsx';
 ---
 
-<BaseLayout>
-	<section>123</section>
+<style>
+	nav {
+		display: flex;
+		gap: 16px;
+	}
+</style>
+
+<BaseLayout title="博客 Space">
+	<!-- 文章标签分类区域 -->
+	<nav>
+		<BlogFilter client:load />
+	</nav>
 </BaseLayout>

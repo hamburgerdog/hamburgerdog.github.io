@@ -1,0 +1,13 @@
+.item {
+	cursor: pointer;
+	padding: 2px 4px;
+	border-radius: 4px;
+
+	&.selected {
+		background-color: var(--highlight);
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

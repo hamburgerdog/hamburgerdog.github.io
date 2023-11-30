@@ -30,11 +30,10 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		#quote {
 			opacity: 0.7;
 			font-size: 14px;
-			font-style: italic;
 			text-decoration: underline;
 
-			&::after {
-				content: '...';
+			&::before {
+				content: '# ';
 			}
 
 			&:hover {
@@ -63,6 +62,7 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		margin-block-end: 1.5em;
 
 		&:hover {
+			font-weight: bold;
 			opacity: 1;
 		}
 
@@ -117,8 +117,9 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 <script>
 	//	每日一句的 API
 	document.addEventListener('astro:page-load', async () => {
-		const res = await fetch('https://api.github.com/zen');
-		(document.querySelector('#quote') as HTMLSpanElement).innerHTML = await res.text();
+		const res = await fetch('https://v1.hitokoto.cn/');
+		const data = await res.json();
+		(document.querySelector('#quote') as HTMLSpanElement).innerHTML = `「${data.from}」${data.hitokoto}`;
 	});
 
 	document.addEventListener('astro:page-load', async () => {

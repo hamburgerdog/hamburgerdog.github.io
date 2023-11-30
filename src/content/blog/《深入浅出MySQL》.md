@@ -2,8 +2,6 @@
 title: '《深入浅出MySQL》知识整理'
 date: 2021-03-11 12:30:00 +0800
 tags: 编程 后端
-color: rgb(255,210,32)
-cover: '../assets/mysql.jpg'
 subtitle: '对MySQL的常用知识的理解'
 ---
 

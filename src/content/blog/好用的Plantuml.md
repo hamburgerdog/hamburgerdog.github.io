@@ -2,8 +2,6 @@
 title: '好用的PlantUML'
 date: 2022-05-03 18:30:00 +0800
 tags: 其他
-color: rgb(255,210,32)
-cover: '../assets/test.png'
 subtitle: '好用的PlantUML的读书笔记'
 ---
 

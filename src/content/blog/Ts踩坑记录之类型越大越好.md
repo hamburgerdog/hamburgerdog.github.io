@@ -2,8 +2,6 @@
 title: 'Ts踩坑记录-类型越大越好'
 date: 2021-09-09 23:00:00 +0800
 tags: 编程 前端 精选
-color: rgb(255,210,32)
-cover: '../assets/bkpp.png'
 ---
 
 # Ts 踩坑记录-类型越大越好

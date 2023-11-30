@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Linux操作系统原理与应用笔记"
 date:   2020-11-08 08:00:00 +0800
 tags: 操作系统 底层

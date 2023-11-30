@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Experience.astro
+layout: ../../layouts/Experience.astro
 company: SmartMore.JP
 date: 2023.09 - 2023.12
 role: 软件开发工程师

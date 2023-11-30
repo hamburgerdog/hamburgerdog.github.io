@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Java Stream API"
 date:   2021-03-30 23:50:00 +0800
 tags: Java 服务端

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "用Ts为Dispatch赋能"
 date:   2021-09-14 23:59:00 +0800
 tags: Typescript 前端

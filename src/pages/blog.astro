@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import { BlogFilter } from '../components/BlogFilter.jsx';
+
+import BlogList from '../components/blogList.astro';
 ---
 
 <style>
@@ -16,4 +18,5 @@ import { BlogFilter } from '../components/BlogFilter.jsx';
 	<nav>
 		<BlogFilter client:load />
 	</nav>
+	<BlogList />
 </BaseLayout>

@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Experience.astro
+layout: ../../layouts/Experience.astro
 company: SmartMore
 date: 2022.02 - 至今
 role: 前端开发工程师

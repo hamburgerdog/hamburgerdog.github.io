@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "讲一讲「My_little_airplay」"
 date:   2021-05-19 19:00:00 +0800
 tags: vue 前端

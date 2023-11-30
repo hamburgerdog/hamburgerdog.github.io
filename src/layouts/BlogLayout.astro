@@ -22,25 +22,34 @@ const { title } = Astro.props;
 		height: auto;
 	}
 	h1 {
+		text-align: center;
+		word-break: auto-phrase;
 		font-size: 2.5rem;
+		line-height: 2.5rem;
 		margin-block-start: 1.6em;
 		margin-block-end: 1.6em;
 	}
 
 	h2 {
+		word-break: auto-phrase;
 		font-size: 1.8rem;
+		line-height: 1.8rem;
 		margin-block-start: 1.6em;
 		margin-block-end: 1.6em;
 	}
 
 	h3 {
+		word-break: auto-phrase;
 		font-size: 1.5rem;
+		line-height: 1.5rem;
 		margin-block-start: 1.6em;
 		margin-block-end: 1.6em;
 	}
 
 	h4 {
+		word-break: auto-phrase;
 		font-size: 1.2rem;
+		line-height: 1.2rem;
 		margin-block-start: 1.6em;
 		margin-block-end: 1.6em;
 	}
@@ -77,6 +86,10 @@ const { title } = Astro.props;
 		margin-inline-start: 0;
 		margin-inline-end: 0;
 		text-align: justify;
+	}
+
+	pre code {
+		background-color: transparent;
 	}
 </style>
 

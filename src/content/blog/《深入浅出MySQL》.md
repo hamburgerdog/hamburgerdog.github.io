@@ -1,5 +1,5 @@
 ---
-title: '《深入浅出MySQL》基础、开发篇部分章节知识整理'
+title: '《深入浅出MySQL》知识整理'
 date: 2021-03-11 12:30:00 +0800
 tags: 编程 后端
 color: rgb(255,210,32)
@@ -7,7 +7,7 @@ cover: '../assets/mysql.jpg'
 subtitle: '对MySQL的常用知识的理解'
 ---
 
-# 《深入浅出 MySQL》基础、开发篇部分章节知识整理
+# 《深入浅出 MySQL》知识整理
 
 > 对《深入浅出 MySQL》中理解不深入章节的知识笔记整理:notebook_with_decorative_cover:
 

@@ -7,7 +7,7 @@ cover: '../assets/java-stream.png'
 subtitle: 'JavaStream常用小技巧的积累'
 ---
 
-# 关于 Java-StreamAPI 的奇技淫巧
+# Java-StreamAPI 的奇技淫巧
 
 > :memo: 主要记录在编程中用 Steam 解决问题的一些好方法！
 

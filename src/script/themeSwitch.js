@@ -6,14 +6,14 @@ const handleToggleClick = (e) => {
 	//	更新css主题
 	const element = document.documentElement;
 	element.classList.toggle('dark');
-	//	切换 localStorage 的存储变量
+	//	切换 sessionStorage 的存储变量
 	const isDark = element.classList.contains('dark');
-	localStorage.setItem('theme', isDark ? 'dark' : 'light');
+	sessionStorage.setItem('theme', isDark ? 'dark' : 'light');
 };
 
 const getTheme = () => {
-	if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-		return localStorage.getItem('theme');
+	if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('theme')) {
+		return sessionStorage.getItem('theme');
 	}
 	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		return 'dark';
@@ -39,7 +39,7 @@ document.addEventListener('astro:after-swap', () => {
 		document.documentElement.classList.add('dark');
 	}
 
-	window.localStorage.setItem('theme', theme);
+	window.sessionStorage.setItem('theme', theme);
 
 	document.getElementById('modeBtn').addEventListener('click', handleToggleClick);
 });

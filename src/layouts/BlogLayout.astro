@@ -1,0 +1,28 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { title } = Astro.props;
+---
+
+<style lang="scss">
+	.blog {
+	}
+</style>
+
+<style is:global>
+	.blog img {
+		display: block;
+		margin-block-start: 2em;
+		margin-block-end: 2em;
+		border-radius: 4px;
+		width: 100%;
+		object-fit: contain;
+		height: auto;
+	}
+</style>
+
+<BaseLayout title={title}>
+	<div class="blog">
+		<slot />
+	</div>
+</BaseLayout>

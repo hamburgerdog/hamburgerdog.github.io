@@ -1,0 +1,23 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getCollection, getEntryBySlug } from 'astro:content';
+
+export async function getStaticPaths() {
+	const blogs = await getCollection('blog');
+	return blogs.map((blog) => ({ params: { title: blog.slug } }));
+}
+
+const { title } = Astro.params;
+
+// 获取集合中的所有条目。
+// 需要集合的名称作为参数。
+// 示例：检索 `src/content/blog/**`
+
+const blog = await getEntryBySlug('blog', title);
+
+const { Content } = await blog.render();
+---
+
+<BlogLayout title={blog.slug}>
+	<Content />
+</BlogLayout>

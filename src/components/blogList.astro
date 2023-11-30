@@ -48,7 +48,7 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 	{
 		posts.map((post) => (
 			<>
-				<a href="" class="item">
+				<a href={`/blog/${post.slug}`} class="item">
 					<p class="title">{post.data.title}</p>
 					<div class="label">
 						<p class="date">{post.data.date}</p>

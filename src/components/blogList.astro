@@ -5,7 +5,9 @@ import { getCollection } from 'astro:content';
 // 需要集合的名称作为参数。
 // 示例：检索 `src/content/blog/**`
 const blogCollection = await getCollection('blog');
+//	获取所有 tag
 const tags = blogCollection.flatMap((blog) => blog.data.tags.split(' ')) as string[];
+//	获取所有 tag 并去重，分组成 { value: string, total: number } 的形式
 const tagsGroup = tags.reduce((acc: { value: string; total: number }[], cur) => {
 	const index = acc.findIndex((item) => item.value === cur);
 	if (index === -1) {
@@ -16,6 +18,7 @@ const tagsGroup = tags.reduce((acc: { value: string; total: number }[], cur) => 
 	return acc;
 }, []);
 
+//	按照日期排序所有的文章
 const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
 
@@ -55,6 +58,9 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		opacity: 0.7;
 		display: block;
 		text-decoration: none;
+
+		margin-block-start: 1.5em;
+		margin-block-end: 1.5em;
 
 		&:hover {
 			opacity: 1;
@@ -109,9 +115,38 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 </style>
 
 <script>
+	//	每日一句的 API
 	document.addEventListener('astro:page-load', async () => {
 		const res = await fetch('https://api.github.com/zen');
 		(document.querySelector('#quote') as HTMLSpanElement).innerHTML = await res.text();
+	});
+
+	document.addEventListener('astro:page-load', async () => {
+		const tags = document.querySelectorAll('.filter_item') as NodeListOf<HTMLParagraphElement>;
+		const items = document.querySelectorAll('.item') as NodeListOf<HTMLDivElement>;
+
+		//	tags 支持多选并筛选
+		tags.forEach((tag) => {
+			tag.addEventListener('click', () => {
+				//	多选样式调整
+				tag.classList.toggle('selected');
+				//	所有选中的 tag
+				const selectedTags = document.querySelectorAll('.selected');
+				//	所有选中的 tag 的值
+				const selectedTagsValue = Array.from(selectedTags).map((tag) => tag.id);
+				//	所有 item 就是所有文章
+				items.forEach((item) => {
+					//	每篇文章的 tags
+					const tags = (item.getAttribute('data-tags') as string).split(' ');
+					//	如果没有选中任何 tag，那么所有文章都显示，否则只显示选中的 tag 的文章
+					if (selectedTagsValue.length === 0) {
+						item.style.display = 'block';
+						return;
+					}
+					item.style.display = selectedTagsValue.every((tag) => tags.includes(tag)) ? 'block' : 'none';
+				});
+			});
+		});
 	});
 </script>
 
@@ -125,7 +160,7 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		<div class="tag_filter">
 			{
 				tagsGroup.map((tag) => (
-					<p class="filter_item">
+					<p class="filter_item" id={tag.value}>
 						#{tag.value}({tag.total})
 					</p>
 				))
@@ -137,14 +172,13 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		{
 			posts.map((post) => (
 				<>
-					<a href={`/blog/${post.slug}`} class="item">
+					<a href={`/blog/${post.slug}`} class="item" id={post.slug} data-tags={post.data.tags}>
 						<p class="title">{post.data.title}</p>
 						<div class="label">
 							<p class="date">{post.data.date}</p>
 							<p class="tags">{post.data.tags.replaceAll(' ', ' | ')}</p>
 						</div>
 					</a>
-					<br />
 				</>
 			))
 		}

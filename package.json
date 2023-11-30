@@ -18,7 +18,8 @@
 		"dayjs": "^1.11.10",
 		"nanostores": "^0.9.5",
 		"preact": "^10.19.2",
-		"sass": "^1.69.5"
+		"sass": "^1.69.5",
+		"sharp": "^0.33.0"
 	},
 	"devDependencies": {
 		"less": "^4.2.0"

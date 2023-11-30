@@ -1,7 +1,7 @@
 ---
 title: 'Java Stream API'
 date: 2021-03-30 23:50:00 +0800
-tags: Java 服务端
+tags: 编程 后端
 color: rgb(98,170,255)
 cover: '../assets/java-stream.png'
 subtitle: 'JavaStream常用小技巧的积累'

@@ -1,7 +1,7 @@
 ---
 title: 'HTTP从1到2再到3'
 date: 2021-06-08 22:22:00 +0800
-tags: 计网 底层
+tags: 编程 其他
 color: rgb(98,170,255)
 cover: '../assets/http.png'
 subtitle: 'HTTP协议发展历史'

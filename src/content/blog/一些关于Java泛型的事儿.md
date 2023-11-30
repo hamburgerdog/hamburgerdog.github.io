@@ -1,7 +1,7 @@
 ---
 title: 'Java泛型通配符的事儿'
 date: 2021-03-20 20:00:00 +0800
-tags: Java 服务端
+tags: 编程 后端
 color: rgb(154,133,255)
 cover: '../assets/java-generic-paradigm.jpg'
 subtitle: 'Java泛型参数类型|边界符'

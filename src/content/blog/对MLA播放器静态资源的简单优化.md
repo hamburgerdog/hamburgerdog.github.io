@@ -1,7 +1,7 @@
 ---
 title: '对MLA播放器静态资源的简单优化'
 date: 2021-12-23 23:00:00 +0800
-tags: 前端 性能优化
+tags: 编程 前端 精选
 color: rgb(98,170,255)
 cover: '../assets/test.png'
 subtitle: '压缩与缓存'

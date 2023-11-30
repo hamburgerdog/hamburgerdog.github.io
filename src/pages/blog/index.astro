@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-import { BlogFilter } from '../../components/BlogFilter.jsx';
-
 import BlogList from '../../components/blogList.astro';
 ---
 
@@ -15,8 +13,5 @@ import BlogList from '../../components/blogList.astro';
 
 <BaseLayout title="博客 Space">
 	<!-- 文章标签分类区域 -->
-	<nav>
-		<BlogFilter client:load />
-	</nav>
 	<BlogList />
 </BaseLayout>

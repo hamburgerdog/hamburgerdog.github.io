@@ -1,7 +1,7 @@
 ---
 title: 'Linux操作系统原理与应用笔记'
 date: 2020-11-08 08:00:00 +0800
-tags: 操作系统 底层
+tags: 编程 其他
 color: rgb(154,133,255)
 cover: '../assets/linux_note_page.png'
 subtitle: '深入理解Linux内核分析的重难点笔记理解'

@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 // 需要集合的名称作为参数。
 // 示例：检索 `src/content/blog/**`
 const blogCollection = await getCollection('blog');
-
+const tags = new Set(blogCollection.flatMap((blog) => blog.data.tags.split(' ')));
 const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
 
@@ -42,9 +42,40 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 			}
 		}
 	}
+
+	.tag_filter {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		font-size: 16px;
+		font-weight: bold;
+
+		margin-block-start: 2em;
+		margin-block-end: 2em;
+	}
+
+	.filter_item {
+		cursor: pointer;
+		padding: 2px 4px;
+		border-radius: 4px;
+
+		margin-block-start: 0em;
+		margin-block-end: 0em;
+
+		&.selected {
+			background-color: var(--highlight);
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 </style>
 
 <section>
+	<div class="tag_filter">
+		{[...tags].map((tag) => <p class="filter_item">{tag}</p>)}
+	</div>
 	{
 		posts.map((post) => (
 			<>

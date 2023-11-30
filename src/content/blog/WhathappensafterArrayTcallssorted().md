@@ -1,7 +1,7 @@
 ---
 title: 'What happens after Array<T> calls sorted()？'
 date: 2021-11-29 20:40:00 +0800
-tags: 随记 前端
+tags: 编程 前端 精选
 color: rgb(154,133,255)
 cover: '../assets/arraysort.png'
 ---

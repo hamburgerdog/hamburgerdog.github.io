@@ -1,7 +1,7 @@
 ---
 title: 'GO语言编写规范简记'
 date: 2021-01-10 13:25:00 +0800
-tags: Golang 服务端
+tags: 编程 后端
 color: rgb(255,210,32)
 cover: '../assets/go_title.jpeg'
 subtitle: 'go学习笔记'

@@ -1,7 +1,7 @@
 ---
 title: 'java网络编程学习'
 date: 2020-11-30 23:25:00 +0800
-tags: Java 服务端 网络编程 底层
+tags: 编程 后端
 color: rgb(98,170,255)
 cover: '../assets/java-network.jpg'
 subtitle: 'Java network programming'

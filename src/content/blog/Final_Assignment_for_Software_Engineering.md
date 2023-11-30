@@ -1,7 +1,7 @@
 ---
 title: '疫情对软件开发的工作模式的影响'
 date: 2020-11-14 12:00:00 +0800
-tags: 软件工程
+tags: 编程 其他
 color: rgb(255,90,90)
 cover: '../assets/homework.png'
 subtitle: '软件工程结业的小论文'

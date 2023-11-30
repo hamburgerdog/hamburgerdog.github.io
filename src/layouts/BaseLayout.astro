@@ -9,6 +9,7 @@ const { title } = Astro.props;
 <style is:global>
 	:root {
 		--background-color: #fff;
+		--nav-background-color: #ffffffa0;
 		--text-color: #000;
 		--max-width: 640px;
 		--highlight: #163b6620;
@@ -16,6 +17,7 @@ const { title } = Astro.props;
 
 	:root.dark {
 		--background-color: #000;
+		--nav-background-color: #000000a0;
 		--text-color: #fff;
 		--highlight: #6666667f;
 	}
@@ -52,6 +54,7 @@ const { title } = Astro.props;
 		position: fixed;
 		width: 100%;
 		left: 0;
+		background-color: var(--nav-background-color);
 		backdrop-filter: blur(10px);
 	}
 

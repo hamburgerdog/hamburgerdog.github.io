@@ -20,6 +20,26 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 ---
 
 <style lang="scss">
+	.quote {
+		margin-block-start: 1em;
+		margin-block-end: 2em;
+
+		#quote {
+			opacity: 0.7;
+			font-size: 14px;
+			font-style: italic;
+			text-decoration: underline;
+
+			&::after {
+				content: '...';
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
 	.theme {
 		margin-block-start: 2em;
 		margin-block-end: 2em;
@@ -88,7 +108,18 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 	}
 </style>
 
+<script>
+	document.addEventListener('astro:page-load', async () => {
+		const res = await fetch('https://api.github.com/zen');
+		(document.querySelector('#quote') as HTMLSpanElement).innerHTML = await res.text();
+	});
+</script>
+
 <section>
+	<div class="quote">
+		<p>每日一句</p>
+		<span id="quote"></span>
+	</div>
 	<div class="theme">
 		<p>主题</p>
 		<div class="tag_filter">

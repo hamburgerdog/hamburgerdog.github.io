@@ -1,0 +1,16 @@
+{
+	"name": "xjosiah blog",
+	"short_name": "xjosiah blog",
+	"description": "A blog about web development and other things.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#163b66",
+	"icons": [
+		{
+			"src": "/xjosiah.ico",
+			"sizes": "100x100",
+			"type": "image/ico"
+		}
+	]
+}

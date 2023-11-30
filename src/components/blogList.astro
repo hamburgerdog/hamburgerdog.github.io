@@ -5,11 +5,31 @@ import { getCollection } from 'astro:content';
 // 需要集合的名称作为参数。
 // 示例：检索 `src/content/blog/**`
 const blogCollection = await getCollection('blog');
-const tags = new Set(blogCollection.flatMap((blog) => blog.data.tags.split(' ')));
+const tags = blogCollection.flatMap((blog) => blog.data.tags.split(' ')) as string[];
+const tagsGroup = tags.reduce((acc: { value: string; total: number }[], cur) => {
+	const index = acc.findIndex((item) => item.value === cur);
+	if (index === -1) {
+		acc.push({ value: cur, total: 1 });
+	} else {
+		acc[index].total++;
+	}
+	return acc;
+}, []);
+
 const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
 
 <style lang="scss">
+	.theme {
+		margin-block-start: 2em;
+		margin-block-end: 2em;
+	}
+
+	.detail {
+		margin-block-start: 2em;
+		margin-block-end: 2em;
+	}
+
 	.item {
 		cursor: pointer;
 		opacity: 0.7;
@@ -47,11 +67,7 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px;
-		font-size: 16px;
-		font-weight: bold;
-
-		margin-block-start: 2em;
-		margin-block-end: 2em;
+		font-size: 14px;
 	}
 
 	.filter_item {
@@ -73,21 +89,33 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 </style>
 
 <section>
-	<div class="tag_filter">
-		{[...tags].map((tag) => <p class="filter_item">{tag}</p>)}
+	<div class="theme">
+		<p>主题</p>
+		<div class="tag_filter">
+			{
+				tagsGroup.map((tag) => (
+					<p class="filter_item">
+						#{tag.value}({tag.total})
+					</p>
+				))
+			}
+		</div>
 	</div>
-	{
-		posts.map((post) => (
-			<>
-				<a href={`/blog/${post.slug}`} class="item">
-					<p class="title">{post.data.title}</p>
-					<div class="label">
-						<p class="date">{post.data.date}</p>
-						<p class="tags">{post.data.tags.replaceAll(' ', '，')}</p>
-					</div>
-				</a>
-				<br />
-			</>
-		))
-	}
+	<div class="detail">
+		<p>内容</p>
+		{
+			posts.map((post) => (
+				<>
+					<a href={`/blog/${post.slug}`} class="item">
+						<p class="title">{post.data.title}</p>
+						<div class="label">
+							<p class="date">{post.data.date}</p>
+							<p class="tags">{post.data.tags.replaceAll(' ', ' | ')}</p>
+						</div>
+					</a>
+					<br />
+				</>
+			))
+		}
+	</div>
 </section>

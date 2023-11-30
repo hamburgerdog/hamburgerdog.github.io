@@ -9,7 +9,7 @@ subtitle: 'vue项目总结'
 
 # 讲一讲「My_little_airplay」
 
-关于这个前端项目虽然小且简单，但其功能实现所使用的方法（库）都还是蛮实用的，如**统一包装 Axios 的 AP**I 设计、`$EventBus`的封装（**观察者模式**）等还是值得总结提炼一下帮助加深记忆的，最近面临实习、秋招也顺带借这篇文章梳理一下项目的结构。由于本人技术尚浅，肯定有很多不足的地方可以提炼重构，请多担待~​ :smile:
+> 关于这个前端项目虽然小且简单，但其功能实现所使用的方法（库）都还是蛮实用的，如**统一包装 Axios 的 AP**I 设计、`$EventBus`的封装（**观察者模式**）等还是值得总结提炼一下帮助加深记忆的，最近面临实习、秋招也顺带借这篇文章梳理一下项目的结构。由于本人技术尚浅，肯定有很多不足的地方可以提炼重构，请多担待~​
 
 ## 从项目根目录下的配置文件们讲起
 
@@ -23,7 +23,7 @@ subtitle: 'vue项目总结'
 
   <u>_（唬烂三小，请跳过）这是一个我们再熟悉不过的配置文件了，说`npm init`这条命令是前端学习者的导师没有人会不认同，其重要性不言而喻，因此我们在这里出于礼貌也应当敬重地来重温一下相关知识。_</u>
 
-  <u>_推荐阅读~_</u>:point_right:[package-lock.json 和 yarn.lock 的包依赖区别](https://segmentfault.com/a/1190000017075256)
+  <u>_推荐阅读~_</u>[package-lock.json 和 yarn.lock 的包依赖区别](https://segmentfault.com/a/1190000017075256)
 
 #### vue.config.js
 
@@ -54,7 +54,7 @@ subtitle: 'vue项目总结'
 
   `no dead`:不要超过二十四个月没有官方维护、更新的浏览器，当前指`IE 10`和`IE_Mob 11`
 
-  <u>_推荐阅读~_</u>:point_right:[browserslist 项目地址](https://github.com/browserslist/browserslist)\*</u>
+  <u>_推荐阅读~_</u>[browserslist 项目地址](https://github.com/browserslist/browserslist)\*</u>
 
 - **_.editorconfig_**顾名思义这个配置文件就是用来统一配置文本编辑器的，这样可以使代码格式更加统一，方便阅读，经常搭配`ESLint`来使用，不过在使用 vscode 的 format 功能的时候最好需要配置一下用户设置（直接安装的插件也行**_EditorConfig for VS Code_**）如尾逗号的处理、文件末尾另起新行，当然也可以直接修改**_.editorconfig_**文件，比如使用`tailwindCss`的时候最好把`max_line_length`设长一些。
 
@@ -62,11 +62,11 @@ subtitle: 'vue项目总结'
 
 - **_.eslintrc.js_**重头戏！Eslint 是一个让人感受短暂痛苦但又一定离不开的开发工具，主要用来统一代码规范，优化代码结构，而该文件就用来配置这个工具，我们可以为其拓展一定的风格指南，项目中就参照了`airbnb`风格的规范。当前我在个人项目中通常都是直接按照默认规则来使用的，有时候嫌烦会使用`// eslint-disable-next-line`屏蔽掉一些警告（很讨厌返回无名函数的警告），如果是多人项目最好还是依照项目统一的格式来书写代码，尽量不用屏蔽语句，遇到奇怪的报错可以查漏补缺还是很值得的！
 
-  <u>_推荐阅读~_</u>:point_right:[Eslint 的文档地址](https://eslint.org/docs/user-guide/configuring/)
+  <u>_推荐阅读~_</u>[Eslint 的文档地址](https://eslint.org/docs/user-guide/configuring/)
 
 - **_babel.config.js_** Babel 也是当前开发必不可少的工具，主要功能就是自动实现一个 ES 版本兼容的转换（ES6 -> ES5），就如中文官网的口号一般 **“今天就开始使用下一代的 JavaScript 语法编程吧！”** 它的出现让我们很大程度上摆脱了各种兜底（polyfill）代码的编写（需要 Babel-polyfill 插件的支持），因为 babel 支持的是 es6 语法新特性的转换，让浏览器看得懂 ES6 代码，对于 ES6 中各类新 api 的转换还是要依靠插件，Babel 的插件众多也成就了它功能的丰富程度。
 
-  <u>_推荐阅读~_</u>:point_right:[一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
+  <u>_推荐阅读~_</u>[一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
 
 ## 「网络」 Axios 和 API 的封装
 
@@ -352,7 +352,7 @@ css 要学习的东西有很多，有时候遇到各种怪异的问题处理起�
 
 #### 项目后端
 
-项目的后端看 前端 **_api.js_** 就知道其实提供的接口并不多也不复杂，技术就是最常见的 springMVC+mybatis，redis 都没用上，因为没有什么可缓存的，如果一定要缓存甚至可以不用 mysql，单一个 redis 就足够存放所有数据了。作为歌迷我是打心底里希望 mla 多出点歌，多出点专辑 :joy:
+项目的后端看 前端 **_api.js_** 就知道其实提供的接口并不多也不复杂，技术就是最常见的 springMVC+mybatis，redis 都没用上，因为没有什么可缓存的，如果一定要缓存甚至可以不用 mysql，单一个 redis 就足够存放所有数据了。作为歌迷我是打心底里希望 mla 多出点歌，多出点专辑
 
 不过最后还是总结一下后端一些我觉得比较好玩的点吧
 

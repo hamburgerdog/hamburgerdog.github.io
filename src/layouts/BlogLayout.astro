@@ -4,12 +4,14 @@ import BaseLayout from './BaseLayout.astro';
 const { title } = Astro.props;
 ---
 
-<style lang="scss">
+<style lang="scss" is:global>
 	.blog {
+		font-size: 0.9rem;
+		line-height: 1.5rem;
+		margin-block-start: 2em;
+		margin-block-end: 2em;
 	}
-</style>
 
-<style is:global>
 	.blog img {
 		display: block;
 		margin-block-start: 2em;
@@ -18,6 +20,63 @@ const { title } = Astro.props;
 		width: 100%;
 		object-fit: contain;
 		height: auto;
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin-block-start: 1.6em;
+		margin-block-end: 1.6em;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+		margin-block-start: 1.6em;
+		margin-block-end: 1.6em;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		margin-block-start: 1.6em;
+		margin-block-end: 1.6em;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+		margin-block-start: 1.6em;
+		margin-block-end: 1.6em;
+	}
+
+	ul {
+		padding-inline-start: 2em;
+	}
+
+	li {
+		margin-block-start: 0.8em;
+		margin-block-end: 0.8em;
+	}
+
+	blockquote {
+		margin-block-start: 1.6em;
+		margin-block-end: 1.6em;
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+		padding: 0.8em 1.6em;
+		border-left: 4px solid var(--text-color);
+	}
+
+	pre {
+		padding: 1em;
+		border-radius: 1em;
+		overflow-x: auto;
+		margin-block-start: 1.6em;
+		margin-block-end: 1.6em;
+	}
+
+	p {
+		margin-block-start: 0.8em;
+		margin-block-end: 0.8em;
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+		text-align: justify;
 	}
 </style>
 

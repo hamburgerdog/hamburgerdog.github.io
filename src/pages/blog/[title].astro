@@ -15,9 +15,79 @@ const { title } = Astro.params;
 
 const blog = await getEntryBySlug('blog', title);
 
-const { Content } = await blog.render();
+const { Content, headings } = await blog.render();
+console.log(headings);
 ---
 
+<style>
+	.toc {
+		display: flex;
+		flex-direction: column;
+	}
+
+	a {
+		display: inline-block;
+		width: fit-content;
+	}
+
+	a::before {
+		content: '#';
+	}
+
+	ul {
+		padding-inline-start: 0;
+	}
+
+	ol {
+		padding-left: 0;
+	}
+
+	.top {
+		display: flex;
+		cursor: default;
+		position: fixed;
+		width: 100%;
+		max-width: var(--max-width);
+		bottom: 2em;
+		justify-content: end;
+	}
+
+	#top {
+		cursor: pointer;
+		transform: translateX(calc(100% + 8em));
+	}
+</style>
+
+<script>
+	const top = document.getElementById('top') as HTMLParagraphElement;
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 200) {
+			top.style.display = 'block';
+		} else {
+			top.style.display = 'none';
+		}
+	});
+
+	top.addEventListener('click', () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	});
+</script>
+
 <BlogLayout title={blog.slug}>
+	<ul class="toc">
+		{
+			headings.map((heading) => (
+				<ol>
+					<a href={`#${heading.slug}`} style={{ paddingLeft: `${heading.depth * 12}px` }}>
+						{heading.text}
+					</a>
+				</ol>
+			))
+		}
+	</ul>
+	<div class="top"><span id="top">TOP ⬆</span></div>
 	<Content />
 </BlogLayout>

@@ -53,25 +53,28 @@ console.log(headings);
 	}
 
 	#top {
+		display: none;
 		cursor: pointer;
 		transform: translateX(calc(100% + 8em));
 	}
 </style>
 
 <script>
-	const top = document.getElementById('top') as HTMLParagraphElement;
-	window.addEventListener('scroll', () => {
-		if (window.scrollY > 200) {
-			top.style.display = 'block';
-		} else {
-			top.style.display = 'none';
-		}
-	});
+	document.addEventListener('astro:page-load', () => {
+		const top = document.getElementById('top') as HTMLParagraphElement;
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 200) {
+				top.style.display = 'block';
+			} else {
+				top.style.display = 'none';
+			}
+		});
 
-	top.addEventListener('click', () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
+		top.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth',
+			});
 		});
 	});
 </script>

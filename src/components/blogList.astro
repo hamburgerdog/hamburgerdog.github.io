@@ -62,7 +62,6 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 		margin-block-end: 1.5em;
 
 		&:hover {
-			font-weight: bold;
 			opacity: 1;
 		}
 
@@ -71,9 +70,21 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 			margin-block-end: 0.2em;
 		}
 
+		.header {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+		}
+
 		.title {
 			cursor: pointer;
 			font-size: 16px;
+		}
+
+		.subtitle {
+			display: inline;
+			font-size: 12px;
+			opacity: 0.5;
 		}
 
 		.label {
@@ -174,7 +185,10 @@ const posts = blogCollection.sort((a, b) => new Date(b.data.date).valueOf() - ne
 			posts.map((post) => (
 				<>
 					<a href={`/blog/${post.slug}`} class="item" id={post.slug} data-tags={post.data.tags}>
-						<p class="title">{post.data.title}</p>
+						<div class="header">
+							<p class="title">{post.data.title}</p>
+							{post.data.subtitle && <p class="subtitle">-- {post.data.subtitle}</p>}
+						</div>
 						<div class="label">
 							<p class="date">{post.data.date}</p>
 							<p class="tags">{post.data.tags.replaceAll(' ', ' | ')}</p>

@@ -82,13 +82,15 @@ console.log(headings);
 <BlogLayout title={blog.slug}>
 	<ul class="toc">
 		{
-			headings.map((heading) => (
-				<ol>
-					<a href={`#${heading.slug}`} style={{ paddingLeft: `${heading.depth * 12}px` }}>
-						{heading.text}
-					</a>
-				</ol>
-			))
+			headings
+				.filter((head) => head.depth < 4)
+				.map((heading) => (
+					<ol>
+						<a href={`#${heading.slug}`} style={{ paddingLeft: `${heading.depth * 12}px` }}>
+							{heading.text}
+						</a>
+					</ol>
+				))
 		}
 	</ul>
 	<div class="top"><span id="top">TOP ⬆</span></div>

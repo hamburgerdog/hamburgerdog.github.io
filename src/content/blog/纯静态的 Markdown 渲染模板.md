@@ -21,9 +21,17 @@ subtitle: 'all in HTML'
 
   ![深色模式](../../assets/mdHTML/image-20231205215450066.png)
 
-## 怎么足够让页面简单？
+## 资源
 
-既然要足够简单打开即用，那就 all in HTML + CSS + JS , 所以没什么可以分享的，JS 解析 Markdown 提供几个库来处理就好了
+[静态资源包下载](https://github.com/hamburgerdog/hamburgerdog.github.io/blob/astro/resource/md-html.zip)
+
+<br />
+
+---
+
+## 怎么足够简单？
+
+既然要足够简单打开即用，那就 all in HTML + CSS + JS , 核心是要用 JS 来解析 Markdown ，这部分利用几个库来处理就好了
 
 1. `markdown-it.js`
 2. `markdown-it-toc.js` 用来解析 TOC
@@ -62,7 +70,7 @@ window.a = (() => {
 }
 ```
 
-同时，这个解析库的配置项是很丰富的，欢迎大家去关注一下配置。例如以下配置就是只解析到一、二、三号标题。
+同时，这个库 [markdown-it-table-of-contents](https://github.com/cmaas/markdown-it-table-of-contents#options) 的配置项是很丰富的，欢迎大家去关注一下。例如以下配置就是只解析到一、二、三号标题。
 
 `md.use(window.markdownToc,{includeLevel:[1, 2, 3]})`
 
@@ -137,6 +145,28 @@ document.getElementById('modeBtn').addEventListener('click', handleToggleClick);
 }
 ```
 
-## 资源
+## Markdown 数据源在哪
 
-[静态资源包下载](https://github.com/hamburgerdog/hamburgerdog.github.io/blob/astro/resource/md-html.zip)
+既然 HTML 本身就是一个文档，那么在 HTML 直接写 Markdown 是不是也很合理？🤔
+
+```html
+<div id="markdown">
+
+# Hello, Markdown!
+
+这是一段写在 HTML 里面的 Markdown 语法
+
+</div>
+
+<main>
+	<div id="slot" />
+</main>
+
+<script>
+
+const markdown = document.getElementById('markdown').textContent;
+const result = markdownit.render(markdown);
+document.getElementById('slot').innerHTML = result;
+
+</script>
+```

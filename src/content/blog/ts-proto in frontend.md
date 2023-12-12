@@ -1,19 +1,21 @@
 ---
-title: 'ts-proto in frontend'
+title: 'TS-Protobuf in Frontend'
 date: 2023-12-11 22:30:00 +0800
 tags: 编程 前端 精选
 ---
 
-# ts-proto in frontend
+# TS-Protobuf in Frontend
 
 > 一个比较奇怪的需求：即后台内部服务之间的通信使用的是 gRPC ，因此接口都使用了 Protocol Buffers 来实现数据结构定义，同时又通过 http（openAPI） 和前端交互。
 >
 > - protobuf: 跨平台的序列化数据接口定义的协议
 > - openAPI: 一种用于设计、构建和文档化 RESTful Web 服务的规范
 
+<br />
+
 ## 理论储备
 
-已知 `ProtoBuf + OpenAPI` 可以写出如下代码片段：
+已知 `Protobuf + OpenAPI` 可以写出如下代码片段：
 
 ```protobuf
 syntax = "proto3";
@@ -71,6 +73,8 @@ async function TestAPI(data: Person): Promise<AddressBook> {
 }
 ```
 
+<br />
+
 ## 预期效果
 
 1. 通过 Protobuf 的定义自动生成 TS 代码片段；
@@ -78,6 +82,8 @@ async function TestAPI(data: Person): Promise<AddressBook> {
 3. 封装 HTTP 层的转换接口，axios/fetch 都轻松支持转换；
 4. 完整的自测覆盖（虽然修改机会不多，但也别出错）；
 5. 最好能有 js 版本（JSDoc）。
+
+<br />
 
 ## 工程收益
 
@@ -97,6 +103,8 @@ async function TestAPI(data: Person): Promise<AddressBook> {
 
 **执行全流程：**
 ![执行全流程](../../assets/ts-proto/image-20231211142115103.png)
+
+<br />
 
 ## 实现效果
 
@@ -120,6 +128,8 @@ async function TestAPI(data: Person): Promise<AddressBook> {
 4. 自测覆盖（覆盖业务层的常用场景，手写 protobuf + vitest 实现）
    ![自测覆盖](../../assets/ts-proto/image-20231211121559405.png)
 
+<br />
+
 ## 实现过程
 
 ### 拉取 itf
@@ -140,6 +150,8 @@ itf 仓库是 protobuf 的数据源，前后端统一将其作为子仓库，由
 4. [backend] [frontent] [itf] release/1.0.0
 
 当然，以上流程也可以调整为，前端只读、后端读写，接口定义依靠后端，进一步降低沟通成本。
+
+<br />
 
 ### 编译 PB & 生成 TS
 
@@ -180,6 +192,8 @@ protoc -I $THIRD_PARTY \
             $PROTO_FILES
 ```
 
+<br />
+
 ### 执行脚本
 
 单从以上脚本来看，bash 整体的语法还是偏复杂，作为前端开发工程师，那就要用属于 “前端开发工程师自己的 shell ” 来写脚本 - zx https://github.com/google/zx
@@ -204,6 +218,8 @@ await $`mkdir /tmp/${name}`
 ```
 
 <u>TIPS: 在使用 `zx` 的过程中，难免会碰到使用 esm 模块引入的问题，建议从一开始就将文件名修改成 `.mjs` ，或者修改 `package.json` 直接指明要使用 `esm` 来处理</u>
+
+<br />
 
 ### 构造接口
 
@@ -409,6 +425,8 @@ Tips：
 
 封装 API 实例是为了兼容各类业务工程中旧接口，而且，通常工程上还会在实例上注册许多拦截器以实现统一的处理异常、打印网络日志等功能，封装 API 实例还能兼顾着一些功能，不至于修改太多。
 
+<br />
+
 ### 测试覆盖
 
 简单介绍一下 Vitest（由 Vite 提供支持的极速单元测试框架），极速易用就是他最大的特点。
@@ -445,11 +463,15 @@ API Mock - 推荐一个 **Rap2 平台**
 
 > 这是一款 API 文档管理工具，在 RAP 中，可以定义接口的 URL、请求 & 响应细节格式等等。同时 RAP 还提供 MOCK 服务、测试服务等自动化工等工具，帮助开发团队高效开发。
 
+<br />
+
 ### 业务使用 & 版本维护
 
 自动生成的 API 代码直接导入业务层中使用，这样在前后端业务回滚无需任何改动。
 
 而自身的代码功能使用单独的 git 仓库来维护，可以在基础功能上，满足不同项目的特定需求。
+
+<br />
 
 ## 后续想法 💡
 

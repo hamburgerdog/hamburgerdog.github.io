@@ -92,10 +92,33 @@ const { title } = Astro.props;
 		background-color: transparent;
 	}
 
+	/*表格样式*/
 	table {
+		margin: 10px auto;
 		width: 100%;
-		border-collapse: collapse;
 		text-align: left;
+
+		border-collapse: collapse;
+		border-radius: 2px;
+	}
+	th,
+	td {
+		padding: 4px 12px;
+		height: 25px;
+		line-height: 25px;
+		border: 1px solid var(--text-color);
+	}
+
+	th:hover,
+	td:hover {
+		opacity: 0.9;
+	}
+
+	th {
+		font-weight: bold;
+	}
+	tr:hover {
+		opacity: 0.9;
 	}
 
 	.blog .line span {

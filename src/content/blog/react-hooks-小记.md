@@ -2,7 +2,7 @@
 title: 'React hooks 小记'
 date: 2023-12-29 15:30:00 +0800
 tags: 编程 前端
-subtitle: ''
+subtitle: '原生以及常用 hooks 分享'
 ---
 
 # React hooks 小记
@@ -196,8 +196,6 @@ const useCreation = <T>(fn: () => T, deps: DependencyList) => {
 
 > 用法和 `useState()` 一致，但能有效减少定义的 state 数量，提升开发效率。
 
-写法：
-
 ```ts
 const observer = <T extends Record<string, any>>(initialVal: T, cb: () => void): T => {
   const proxy = new Proxy<T>(initialVal, {
@@ -229,6 +227,7 @@ const useReactive = <T extends Record<string, any>>(initialState: T): T => {
   return state;
 };
 
+//  Record 的作用介绍：
 type IRecord = Record<string, any>;
 
 const a: IRecord = {
@@ -238,4 +237,158 @@ const a: IRecord = {
 };
 ```
 
+## useDebounceFn / useThrottleFn
 
+> 用于处理防抖/节流的 hooks ，通过封装 Lodash 实现
+
+```ts
+type noop = (...args: unknown[]) => unknown;
+
+interface ThrottleOptions {
+  wait?: number; //  超时时间
+  leading?: boolean; //  是否在延迟前执行
+  trailing?: boolean; //  是否在延迟后执行
+}
+
+interface DebounceOptions extends ThrottleOptions {
+  maxWait?: number; //  最大等待时间  （throttle 没有该属性）
+}
+
+const useDebounceFn = <T extends noop>(fn: T, options?: DebounceOptions) => {
+  const fnRef = useRef(fn);
+
+  //  (...args: Parameters<T>): ReturnType<T>
+  //  这里的意思是，入参为一个函数，而出参为该函数的返回值
+  const debounceFn = useCreatetion(() =>
+    debounce((...args: Parameters<T>): ReturnType<T> => fnRef.current(...args), opetions?.wait ?? 1000, options),
+  );
+
+  useUnmount(() => {
+    debouceFn.cancel();
+  });
+
+  return debounceFn;
+};
+
+//  const useThrottleFn =  替换一下 debounce 为 throttle 即可
+```
+
+## useDebounce / useThrottle
+
+> 直接返回防抖/节流的更新的值，通常用于 watch 输入框等高频更新的 state
+
+```ts
+const useDebounce = <T>(value: T, options?: DebounceOptions) => {
+  const [debounced, setDebounced] = useSafeState(value);
+
+  const run = useDebounceFn(() => {
+    setDebounced(value);
+  }, options);
+
+  useCreation(() => {
+    run();
+  }, [value]);
+
+  return debounced;
+};
+
+//  useThrottle 同理
+```
+
+## useLockFn
+
+> 竞态锁，在异步函数执行的时候可以实现阻塞状态，避免并发执行，例如避免重复点击
+
+```ts
+const useLockFn = <P extends any[] = any[], V extends any = any>(fn: (...args: P) => Promise<V>) => {
+  const lockRef = useRef(false);
+
+  return useCallback(
+    async (...args: P) => {
+      if (lockRef.current) return;
+      lockRef.current = true;
+      try {
+        const ret = await fn(...args);
+        lockRef.current = false;
+        return ret;
+      } catch (e) {
+        lockRef.current = false;
+        throw e;
+      }
+    },
+    [fn],
+  );
+};
+```
+
+在组件中的使用方式也很简单，以下在请求期间，click 是无效的：
+
+```jsx
+const [count, setCount] = useState(0);
+
+const submit = useLockFn(async () => {
+  await mockApiRequest();
+  setCount((val) => val + 1);
+});
+
+<>
+  <p>Submit count: {count}</p>
+  <button onClick={submit}>Submit</button>
+</>;
+```
+
+## useCopy
+
+> 实现一个复制信息的 hooks ，只需要调用 copy 方法就能够将入参保存到剪贴板中。复制过程借用 [copy-to-clipboard](https://github.com/sudodoki/copy-to-clipboard)
+
+```ts
+const useCopy = (): [string | undefined, (text: string) => void] => {
+  const [copyText, setCopyText] = useSafeState<string | undefined>('');
+
+  const copy = useCallback((value?: string | number) => {
+    if (!value) return setCopyText('');
+    try {
+      copyToClipboard.writeText(value.toString());
+      setCopyText(value.toString());
+    } catch (error) {
+      setCopyText('');
+      console.error(error);
+    }
+  });
+
+  return [copyText, copy];
+};
+```
+
+## useEventListener
+
+> 实现一个调用 addEventListener 的 hooks，用来监听各类事件。
+
+```ts
+const useEventListener = (event: string, handler: (...e: unknown) => void, target?: unknown) => {
+  const handlerRef = useRef(handler);
+
+  useEffect(() => {
+    // 支持useRef 和 DOM节点
+    let targetElement: unknown;
+    if (!target) {
+      targetElement = window;
+    } else if ('current' in target) {
+      targetElement = target.current;
+    } else {
+      targetElement = target;
+    }
+
+    //  防止没有 addEventListener 这个属性
+    if (!targetElement?.addEventListener) return;
+
+    const useEventListener = (event: Event) => {
+      return handlerRef.current(event);
+    };
+    targetElement.addEventListener(event, useEventListener);
+    return () => {
+      targetElement.removeEventListener(event, useEventListener);
+    };
+  }, [event, target]);
+};
+```

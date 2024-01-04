@@ -7,86 +7,86 @@ const { title } = Astro.props;
 ---
 
 <style is:global>
-	:root {
-		--background-color: #fff;
-		--nav-background-color: #ffffffa0;
-		--text-color: #000;
-		--max-width: 780px;
-		--highlight: #163b6620;
-	}
+  :root {
+    --background-color: #fff;
+    --nav-background-color: #ffffffa0;
+    --text-color: #000;
+    --max-width: 640px;
+    --highlight: #163b6620;
+  }
 
-	:root.dark {
-		--background-color: #000;
-		--nav-background-color: #000000a0;
-		--text-color: #fff;
-		--highlight: #6666667f;
-	}
+  :root.dark {
+    --background-color: #000;
+    --nav-background-color: #000000a0;
+    --text-color: #fff;
+    --highlight: #6666667f;
+  }
 
-	html {
-		max-width: var(--max-width);
-		font-family: 'iA Writer Quattro', sans-serif;
-		background: var(--background-color);
-		color: var(--text-color);
-		margin: auto;
-		cursor: default;
-		word-spacing: 3px;
-		line-height: 22px;
-	}
+  html {
+    max-width: var(--max-width);
+    font-family: 'iA Writer Quattro', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: auto;
+    cursor: default;
+    word-spacing: 3px;
+    line-height: 22px;
+  }
 
-	body {
-		margin: 0;
-	}
+  body {
+    margin: 0;
+  }
 
-	a {
-		color: var(--text-color);
-	}
+  a {
+    color: var(--text-color);
+  }
 
-	code {
-		padding: 2px 4px;
-		border-radius: 2px;
-		background-color: var(--highlight);
-	}
+  code {
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: var(--highlight);
+  }
 </style>
 
 <style>
-	.nav {
-		z-index: 1;
-		position: fixed;
-		width: 100%;
-		left: 0;
-		background-color: var(--nav-background-color);
-		backdrop-filter: blur(10px);
-	}
+  .nav {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background-color: var(--nav-background-color);
+    backdrop-filter: blur(10px);
+  }
 
-	.fill_item {
-		height: 55px;
-	}
+  .fill_item {
+    height: 55px;
+  }
 </style>
 
 <html lang="zh">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="josiah blog" />
-		<meta name="keywords" content="JOSIAH｜blog" />
-		<meta name="author" content="josiahhong" />
-		<link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
-		<link rel="manifest" href="/manifest.json" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>JOSIAH｜{title}</title>
-		<ViewTransitions />
-	</head>
-	<body>
-		<main>
-			<div class="nav">
-				<Nav />
-			</div>
-			<!-- 占位符，补充 fixed Nav 的 -->
-			<div class="fill_item"></div>
-			<slot />
-		</main>
-		<script>
-			import '../script/themeSwitch.js';
-		</script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="josiah blog" />
+    <meta name="keywords" content="JOSIAH｜blog" />
+    <meta name="author" content="josiahhong" />
+    <link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>JOSIAH｜{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <main>
+      <div class="nav">
+        <Nav />
+      </div>
+      <!-- 占位符，补充 fixed Nav 的 -->
+      <div class="fill_item"></div>
+      <slot />
+    </main>
+    <script>
+      import '../script/themeSwitch.js';
+    </script>
+  </body>
 </html>

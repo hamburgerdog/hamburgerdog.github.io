@@ -3,8 +3,8 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getCollection, getEntryBySlug } from 'astro:content';
 
 export async function getStaticPaths() {
-	const blogs = await getCollection('blog');
-	return blogs.map((blog) => ({ params: { title: blog.slug } }));
+  const blogs = await getCollection('blog');
+  return blogs.map((blog) => ({ params: { title: blog.slug } }));
 }
 
 const { title } = Astro.params;
@@ -16,83 +16,155 @@ const { title } = Astro.params;
 const blog = await getEntryBySlug('blog', title);
 
 const { Content, headings } = await blog.render();
-console.log(headings);
 ---
 
 <style>
-	.toc {
-		display: flex;
-		flex-direction: column;
-	}
+  .toc {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 2%;
+    top: 60px;
+    max-width: 250px;
+  }
 
-	a {
-		display: inline-block;
-		width: fit-content;
-	}
+  .toc a {
+    opacity: 0.4;
+  }
 
-	a::before {
-		content: '#';
-	}
+  @media (max-width: 1250px) {
+    .toc {
+      max-width: 150px;
+    }
+  }
 
-	ul {
-		padding-inline-start: 0;
-	}
+  @media (max-width: 1000px) {
+    .toc {
+      position: relative;
+      left: 0;
+      top: 0;
+      max-width: 100%;
+    }
+  }
 
-	ol {
-		padding-left: 0;
-	}
+  a {
+    display: inline-block;
+    width: fit-content;
+    text-decoration-line: none;
+    line-height: 1.5;
+    font-size: 0.8rem;
+  }
 
-	.top {
-		display: flex;
-		cursor: default;
-		position: fixed;
-		width: 100%;
-		max-width: var(--max-width);
-		bottom: 2em;
-		justify-content: end;
-	}
+  ul {
+    padding-inline-start: 0;
+  }
 
-	#top {
-		display: none;
-		cursor: pointer;
-		transform: translateX(calc(100% + 8em));
-	}
+  ol {
+    padding-left: 0;
+  }
+
+  .top {
+    display: flex;
+    cursor: default;
+    position: fixed;
+    width: 100%;
+    max-width: var(--max-width);
+    bottom: 2em;
+    justify-content: end;
+  }
+
+  #top {
+    display: none;
+    cursor: pointer;
+    transform: translateX(calc(100% + 8em));
+  }
+</style>
+
+<style is:global>
+  .toc .cur-slug {
+    opacity: 1 !important;
+    text-decoration: underline;
+  }
 </style>
 
 <script>
-	document.addEventListener('astro:page-load', () => {
-		const top = document.getElementById('top') as HTMLParagraphElement;
-		window.addEventListener('scroll', () => {
-			if (window.scrollY > 200) {
-				top.style.display = 'block';
-			} else {
-				top.style.display = 'none';
-			}
-		});
+  document.addEventListener('astro:page-load', () => {
+    const top = document.getElementById('top') as HTMLParagraphElement;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        top.style.display = 'block';
+      } else {
+        top.style.display = 'none';
+      }
+    });
 
-		top.addEventListener('click', () => {
-			window.scrollTo({
-				top: 0,
-				behavior: 'smooth',
-			});
-		});
-	});
+    top.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  });
+</script>
+
+<script>
+  /**
+   * 处理目录高亮的逻辑
+   */
+  document.addEventListener('astro:page-load', () => {
+    //  获取目录dom
+    const tocElm = document.getElementById('toc');
+    if (!tocElm || !tocElm.dataset.toc) return;
+
+    //  获取目录数据
+    const headings = JSON.parse(tocElm.dataset.toc);
+    //  观测器配置
+    const option = {
+      threshold: 1,
+    };
+    //  观测器回调
+    const callback = (entries) => {
+      if (entries.length === 0) return;
+      const entry = entries.find((item) => item.isIntersecting);
+      if (!entry) return;
+      const element = entry.target;
+
+      //  获取目录dom
+      const tagContainer = document.querySelector('#toc');
+      if (!tagContainer) return;
+      //  获取当前目录dom
+      const curTag = tagContainer.querySelector(`a[href="#${element.id}"]`);
+      if (!curTag) return;
+      //  移除所有目录高亮
+      tagContainer.querySelectorAll('a').forEach((a) => a.classList.remove('cur-slug'));
+      //  添加当前目录高亮
+      curTag.classList.add('cur-slug');
+    };
+    //  创建观测器
+    const observer = new IntersectionObserver(callback, option);
+    //  注册观测器
+    headings.forEach(({ slug }) => {
+      const target = document.getElementById(slug);
+      if (!target) return;
+      observer.observe(target);
+    });
+  });
 </script>
 
 <BlogLayout title={blog.slug}>
-	<ul class="toc">
-		{
-			headings
-				.filter((head) => head.depth < 4)
-				.map((heading) => (
-					<ol>
-						<a href={`#${heading.slug}`} style={{ paddingLeft: `${heading.depth * 12}px` }}>
-							{heading.text}
-						</a>
-					</ol>
-				))
-		}
-	</ul>
-	<div class="top"><span id="top">TOP ⬆</span></div>
-	<Content />
+  <ul id="toc" data-toc={JSON.stringify(headings)} class="toc">
+    {
+      headings
+        .filter((head) => head.depth < 4)
+        .map((heading) => (
+          <ol>
+            <a href={`#${heading.slug}`} style={{ paddingLeft: `${heading.depth * 12}px` }}>
+              {heading.text}
+            </a>
+          </ol>
+        ))
+    }
+  </ul>
+  <div class="top"><span id="top">TOP ⬆</span></div>
+  <Content />
 </BlogLayout>

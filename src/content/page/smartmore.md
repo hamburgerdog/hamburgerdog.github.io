@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Experience.astro
-company: SmartMore
+company: 思谋科技SmartMore
 date: 2022.02 - 至今
 role: 前端开发工程师
 keywords: JavaScript | React.js | wasm | opencv.js

@@ -26,6 +26,13 @@ const { Content, headings } = await blog.render();
     left: 2%;
     top: 60px;
     max-width: 250px;
+
+    height: 80vh;
+    overflow-y: auto;
+  }
+
+  .toc::-webkit-scrollbar {
+    width: 0;
   }
 
   .toc a {
@@ -147,6 +154,7 @@ const { Content, headings } = await blog.render();
       tagContainer.querySelectorAll('a').forEach((a) => a.classList.remove('cur-slug'));
       //  添加当前目录高亮
       curTag.classList.add('cur-slug');
+      curTag.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
     };
     //  创建观测器
     const observer = new IntersectionObserver(callback, option);

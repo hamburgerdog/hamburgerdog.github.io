@@ -1,7 +1,7 @@
 ---
 title: 'What happens after Array<T> calls sorted()？'
 date: 2021-11-29 20:40:00 +0800
-tags: 编程 前端 精选
+tags: 前端 精选
 ---
 
 # 🤔 What happens after Array\<T\> calls sorted()？

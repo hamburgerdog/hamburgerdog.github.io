@@ -1,7 +1,7 @@
 ---
 title: '好用的PlantUML'
 date: 2022-05-03 18:30:00 +0800
-tags: 其他
+tags: 生活
 subtitle: '好用的PlantUML的读书笔记'
 ---
 

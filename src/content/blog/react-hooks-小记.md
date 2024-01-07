@@ -1,7 +1,7 @@
 ---
 title: 'React hooks 小记'
 date: 2023-12-29 15:30:00 +0800
-tags: 编程 前端
+tags: 前端
 subtitle: '原生以及常用 hooks 分享'
 ---
 

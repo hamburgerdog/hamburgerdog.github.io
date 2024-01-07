@@ -1,7 +1,7 @@
 ---
 title: '纯静态的 Markdown 渲染模板'
 date: 2023-12-05 22:30:00 +0800
-tags: 编程 前端
+tags: 前端
 subtitle: 'all in HTML'
 ---
 

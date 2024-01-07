@@ -1,7 +1,7 @@
 ---
 title: 'TS-Protobuf in Frontend'
 date: 2023-12-11 22:30:00 +0800
-tags: 编程 前端 精选
+tags: 前端 精选
 ---
 
 # TS-Protobuf in Frontend

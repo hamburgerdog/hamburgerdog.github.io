@@ -1,7 +1,7 @@
 ---
 title: 'WHAT IS REST'
 date: 2021-01-14 13:20:00 +0800
-tags: 编程 其他
+tags: 前端
 subtitle: 'REST架构风格 基本知识了解'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: '讲一讲「My_little_airplay」'
 date: 2021-05-19 19:00:00 +0800
-tags: 编程 前端
+tags: 前端
 subtitle: 'vue项目总结'
 ---
 

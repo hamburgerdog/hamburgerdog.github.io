@@ -14,13 +14,13 @@ subtitle: 'REST架构风格 基本知识了解'
 > @author : xjosiah
 > @since : 2021.01.14
 
-## REST - REpresentational State Transfer :tada:
+## REST - REpresentational State Transfer 
 
 REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server. We will go into what these terms mean and why they are beneficial characteristics for services on the Web.
 
 REST 即 REpresentational State Transfer（中文译为表现层状态转换），是一种为连接在互联网上的计算机提供一个标准的传送数据格式的软件架构风格，其致力于让计算机之间的通信变得更加简捷。符合 REST 风格的系统通常被称为 RESTful 系统，该系统的特点是无状态的、客户端和服务器对数据的关注是分开的，接下来，我们会介绍这些术语的具体含义和为什么 REST 的这些特点对互联网提供的服务是很有好处的。
 
-### Separation of Client and Server :zap:
+### Separation of Client and Server 
 
 In the REST architectural style, the implementation of the client and the implementation of the server can be done independently without each knowing about the other. This means that the code on the client side can be changed at any time without affecting the operation of the server, and the code on the server side can be changed without affecting the operation of the client.
 
@@ -34,7 +34,7 @@ By using a REST interface, different clients hit the same REST endpoints, perfor
 
 通过使用 REST 风格的接口，不同客户端可以连接同一个 REST 服务端口，执行一致的操作，获取相同的响应。
 
-### Statelessness :white_circle:
+### Statelessness 
 
 Systems that follow the REST paradigm are stateless, meaning that the server does not need to know anything about what state the client is in and vice versa. In this way, both the server and the client can understand any message received, even without seeing previous messages. This constraint of statelessness is enforced through the use of _resources_, rather than _commands_. Resources are the nouns of the Web - they describe any object, document, or _thing_ that you may need to store or send to other services.
 
@@ -52,13 +52,13 @@ REST 风格通过一些标准操作来控制资源，所以其并不依赖数据
 
 现在，我们将揭示了实现 REST 风格接口的客户端和服务器之间是如何进行通信的。
 
-## Communication between Client and Server :speech_balloon:
+## Communication between Client and Server 
 
 In the REST architecture, clients send requests to retrieve or modify resources, and servers send responses to these requests. Let’s take a look at the standard ways to make requests and send responses.
 
 在 REST 架构中，客户端发送 request 请求去获取或者更新资源，服务器回送 response 响应这些请求。接下来，我们将展示发送请求和回送响应的标准方法。
 
-### Making Requests :question:
+### Making Requests 
 
 REST requires that a client make a request to the server in order to retrieve or modify data on the server. A request generally consists of:
 
@@ -167,7 +167,7 @@ If we are trying to access a single resource, we would need to append an `id` to
 - `GET fashionboutique.com/customers/:id` —— 通过指明`id`在`customers`中获取一个对应的项
 - `DELETE fashionboutique.com/customers/:id ` —— 通过指明`id`在`customers`中删除一个对应的项
 
-### Sending Responses :exclamation:
+### Sending Responses 
 
 #### Content Types
 
@@ -253,7 +253,7 @@ For each HTTP verb, there are expected status codes a server should return upon 
 >
 > 推荐阅读程度： :star2::star2::star2::star2::star2:
 
-## Examples of Requests and Responses :memo:
+## Examples of Requests and Responses 
 
 Let’s say we have an application that allows you to view, create, edit, and delete customers and orders for a small clothing store hosted at `fashionboutique.com`. We could create an HTTP API that allows a client to perform these functions:
 
@@ -332,7 +332,7 @@ DELETE http://fashionboutique.com/customers/123
 
 The response would have a header containing `Status Code: 204 (NO CONTENT)`, notifying the client that the item with `id` 123 has been deleted, and nothing in the body.
 
-## Practice with REST :factory:
+## Practice with REST 
 
 Let’s imagine we are building a photo-collection site. We want to make an API to keep track of users, venues, and photos of those venues. This site has an `index.html` and a `style.css`. Each user has a username and a password. Each photo has a venue and an owner (i.e. the user who took the picture). Each venue has a name and street address. Can you design a REST system that would accommodate:
 

@@ -582,7 +582,7 @@ public class Daytime {
   static Date parseDate(String s) throws ParseException {
     String[] pieces = s.split(" ");
     String dateTime = pieces[1] + " " + pieces[2] + " UTC";
-    DateFormat format = new SimpleDateFormat("yy-MM-dd hh:mm:ss z");
+    DateFormat format = new SimpleDateFormat("yy-MM-dd hhss z");
     return format.parse(dateTime);
   }
 }
@@ -1676,7 +1676,7 @@ public class RequestProcessor implements Runnable {
 - 缓冲区中剩余的元素个数相同
 - 相同位置上的剩余元素彼此相等
 
-:warning:==相等性并不考虑缓冲区中位置之前的元素，也不考虑缓冲区的容量、限度和标记==
+==相等性并不考虑缓冲区中位置之前的元素，也不考虑缓冲区的容量、限度和标记==
 
 ### 通道
 

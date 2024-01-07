@@ -143,25 +143,36 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
     const tags = document.querySelectorAll('.filter_item') as NodeListOf<HTMLParagraphElement>;
     const items = document.querySelectorAll('.item') as NodeListOf<HTMLDivElement>;
 
-    //	tags 支持多选并筛选
+    //	tags 单选并执行筛选
     tags.forEach((tag) => {
       tag.addEventListener('click', () => {
         //	多选样式调整
-        tag.classList.toggle('selected');
+        const isCancel = tag.classList.contains('selected');
         //	所有选中的 tag
         const selectedTags = document.querySelectorAll('.selected');
-        //	所有选中的 tag 的值
-        const selectedTagsValue = Array.from(selectedTags).map((tag) => tag.id);
+        //  除去所有选中状态
+        selectedTags.forEach((tag) => {
+          tag.classList.remove('selected');
+        });
+
+        //	如果没有选中任何 tag，那么所有文章都显示，否则只显示选中的 tag 的文章
+        if (isCancel) {
+          items.forEach((item) => {
+            item.style.display = 'block';
+          });
+          return;
+        }
+
+        //  如果当前没有选择即不是取消选中的逻辑
+        tag.classList.add('selected');
+        //  获取筛选值
+        const tagValue = tag.id;
         //	所有 item 就是所有文章
         items.forEach((item) => {
           //	每篇文章的 tags
           const tags = (item.getAttribute('data-tags') as string).split(' ');
           //	如果没有选中任何 tag，那么所有文章都显示，否则只显示选中的 tag 的文章
-          if (selectedTagsValue.length === 0) {
-            item.style.display = 'block';
-            return;
-          }
-          item.style.display = selectedTagsValue.every((tag) => tags.includes(tag)) ? 'block' : 'none';
+          item.style.display = tags.includes(tagValue) ? 'block' : 'none';
         });
       });
     });

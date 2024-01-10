@@ -29,7 +29,7 @@ subtitle: 'evenodd & nonzero'
 
 规则：从任意一点向外发送一条射线，每经过一条线就计算方向，方向为以射线指向为箭头方向，计算与线形成的折线的时钟方向，顺时针则 +1，逆时针则 -1，最终结果如果非零，则判断为该区域需要填充，反之则不需要填充。
 
-![nonzero](../../assets/fillrule/nonzero.jpg)
+![nonzero](../../assets/fillrule/nonzero.png)
 
 ## 应用场景
 

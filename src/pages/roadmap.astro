@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RoadmapIcon from '../assets/xjosiah-roadmap.svg';
+---
+
+<style>
+  nav {
+    display: flex;
+    gap: 16px;
+  }
+
+  .main {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main img {
+    max-width: 80vw;
+  }
+
+  @media (max-width: 800px) {
+    .main img {
+      max-width: 95vw;
+    }
+  }
+</style>
+
+<BaseLayout title="技能树 Roadmap">
+  <article class="main">
+    <img src={RoadmapIcon.src} />
+  </article>
+</BaseLayout>

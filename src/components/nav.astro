@@ -8,46 +8,47 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
 ---
 
 <style>
-	.box {
-		margin: auto;
-		max-width: var(--max-width);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+  .box {
+    margin: auto;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-	.side {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-	}
+  .side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
 
-	.post {
-		cursor: pointer;
-	}
+  .post {
+    cursor: pointer;
+  }
 
-	.page_title:hover,
-	.post:hover {
-		opacity: 0.6;
-	}
+  .page_title:hover,
+  .post:hover {
+    opacity: 0.6;
+  }
 
-	a {
-		text-decoration: none;
-		margin-block-start: 1em;
-		margin-block-end: 1em;
-		margin-inline-end: 0;
-		margin-inline-end: 0;
-	}
+  a {
+    text-decoration: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-end: 0;
+    margin-inline-end: 0;
+  }
 
-	#modeBtn {
-		cursor: pointer;
-	}
+  #modeBtn {
+    cursor: pointer;
+  }
 </style>
 
 <nav class="box">
-	<a href="/" class="page_title">{formattedDate}</a>
-	<div class="side">
-		<a href="/blog" class="post">博客|Blog</a>
-		<img alt="theme_mode" width="24px" height="24px" id="modeBtn" src="/sun.svg" />
-	</div>
+  <a href="/" class="page_title">{formattedDate}</a>
+  <div class="side">
+    <a href="/roadmap" class="post">技能树|Roadmap</a>
+    <a href="/blog" class="post">博客|Blog</a>
+    <img alt="theme_mode" width="24px" height="24px" id="modeBtn" src="/sun.svg" />
+  </div>
 </nav>

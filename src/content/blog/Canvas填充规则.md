@@ -1,7 +1,7 @@
 ---
 title: 'Canvas 填充规则'
 date: 2024-01-09 18:30:00 +0800
-tags: 前端 精选
+tags: 前端
 subtitle: 'evenodd & nonzero'
 ---
 

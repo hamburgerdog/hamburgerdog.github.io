@@ -1,7 +1,7 @@
 ---
 title: 'CDN 简记'
 date: 2024-05-24 17:30:00 +0800
-tags: 前端 精选
+tags: 前端
 subtitle: 'A content delivery network 内容分发网络'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Java Stream API'
 date: 2021-03-30 23:50:00 +0800
-tags: 后端 精选
+tags: 后端
 subtitle: 'JavaStream常用小技巧的积累'
 ---
 

@@ -14,7 +14,6 @@ const experienceCollection = await getCollection('experience');
 
   p {
     margin: 0;
-    line-height:;
   }
 
   .title {
@@ -28,7 +27,6 @@ const experienceCollection = await getCollection('experience');
     opacity: 0.6;
     display: flex;
     gap: 16px;
-    line-height: normal;
     font-size: 14px;
   }
 
@@ -37,7 +35,6 @@ const experienceCollection = await getCollection('experience');
   }
 
   .detail {
-    line-height: 24px;
     font-size: 14px;
   }
 </style>
@@ -57,9 +54,7 @@ const experienceCollection = await getCollection('experience');
         <p>{item.data.role}</p>
         <p>{item.data.keywords}</p>
       </div>
-      <div class="detail">
-				{item.body}
-			</div>
+      <div class="detail" set:html={item?.rendered?.html}></div>
     </article>
   ))
 }

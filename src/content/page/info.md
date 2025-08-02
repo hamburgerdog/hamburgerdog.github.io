@@ -3,14 +3,16 @@
 
 <br />
 
-你好！这里是 Josiah.Hong 的博客空间，目前就职于深圳思谋科技，已经从事前端开发工作两年，喜欢编程、户外和骑行 🚴，博客主要用于纪录生活与技术分享。
+你好，这里是 <u>Josiah</u> 的博客空间，用于纪录生活与技术分享，让我们多交流！👋 
 
-技术栈为 `TypeScript/JavaScript + React.js`， 聚焦于 `Canvas` 领域相关， 良好掌握 `opencv.js + wasm` 等前端技术， 目前正在研究 `pixi.js`
+中级开发工程师，以及正在学习的人工智能行业 TPM ，喜欢编程、户外、旅行，热衷于骑行
+
+主要技术栈为 TypeScript | JavaScript | React.js， 聚焦于高性能画布领域
 
 <br />
 
-Welcome to Josiah Hong's blog space! I'm based in Shenzhen, China, working as a web frontend developer at SmartMore. I have a passion for programming, the outdoors, and riding. This blog is a platform where I share insights into both life and technology.
+Hello, this is Josiah's blog space, dedicated to recording life and sharing technology. A web-frontend developer and currently learning to be a TPM in the AI industry. 
 
-My technology stack includes `TypeScript/JavaScript` and `React.js`, with a focus on the `Canvas` domain. I have a strong command of `opencv.js + wasm` and other front-end technologies. Currently, I am actively engaged in projects involving `pixi.js`.
+I enjoy programming, the outdoors, traveling, and am passionate about cycling. Main tech stack is TypeScript, JavaScript, React, with a focus on high-performance canvas development.
 
 <br />

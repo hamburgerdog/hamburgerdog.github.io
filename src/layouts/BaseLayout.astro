@@ -11,7 +11,7 @@ const { title } = Astro.props;
     --background-color: #fff;
     --nav-background-color: #ffffffa0;
     --text-color: #000;
-    --max-width: 640px;
+    --max-width: 800px;
     --highlight: #163b6620;
   }
 
@@ -30,7 +30,8 @@ const { title } = Astro.props;
     margin: auto;
     cursor: default;
     word-spacing: 3px;
-    line-height: 22px;
+    line-height: calc(1em + 8px);
+    font-size: 16px;
   }
 
   body {

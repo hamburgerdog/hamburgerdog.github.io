@@ -1,7 +1,7 @@
 ---
 import Nav from '../components/nav.astro';
 import '@fontsource/ia-writer-quattro';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 
 const { title } = Astro.props;
 ---
@@ -11,7 +11,7 @@ const { title } = Astro.props;
     --background-color: #fff;
     --nav-background-color: #ffffffa0;
     --text-color: #000;
-    --max-width: 800px;
+    --max-width: 640px;
     --highlight: #163b6620;
   }
 
@@ -75,7 +75,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>JOSIAH｜{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <main>

@@ -1,58 +1,65 @@
 ---
-import type { MarkdownLayoutProps } from 'astro';
+import { getCollection } from 'astro:content';
 
-type Props = MarkdownLayoutProps<{
-	// 在这里定义 frontmatter 属性
-	company: string;
-	date: string;
-	role: string;
-	keywords: string;
-}>;
-
-const { frontmatter } = Astro.props;
+const experienceCollection = await getCollection('experience');
 ---
 
 <style>
-	p {
-		margin: 0;
-		line-height:;
-	}
-
-	.title {
+  .experience {
+    margin-bottom: 36px;
 		display: flex;
-		justify-content: space-between;
-		font-weight: bold;
-	}
+		flex-direction: column;
+		gap: 4px;
+  }
 
-	.role {
-		margin-top: 8px;
-		opacity: 0.6;
-		display: flex;
-		gap: 16px;
-		line-height: normal;
-		font-size: 14px;
-	}
+  p {
+    margin: 0;
+    line-height:;
+  }
 
-	.role:hover {
-		opacity: 1;
-	}
+  .title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
 
-	.detail {
-		line-height: 24px;
-		font-size: 14px;
-	}
+  .role {
+    margin-top: 8px;
+    opacity: 0.6;
+    display: flex;
+    gap: 16px;
+    line-height: normal;
+    font-size: 14px;
+  }
+
+  .role:hover {
+    opacity: 1;
+  }
+
+  .detail {
+    line-height: 24px;
+    font-size: 14px;
+  }
 </style>
 
-<article>
-	<div class="title">
-		<p>{frontmatter.company}</p>
-		<p>{frontmatter.date}</p>
-	</div>
-	<div class="role">
-		<p>{frontmatter.role}</p>
-		<p>{frontmatter.keywords}</p>
-	</div>
-	<div class="detail">
-		<slot />
-	</div>
-</article>
+<!--
+	遍历 pageCollection，渲染每一项的工作经历信息
+	假设每个 item.frontmatter 都包含 company, date, role, keywords 字段
+-->
+{
+  experienceCollection.map((item) => (
+    <article class="experience">
+      <div class="title">
+        <p>{item.data.company}</p>
+        <p>{item.data.date}</p>
+      </div>
+      <div class="role">
+        <p>{item.data.role}</p>
+        <p>{item.data.keywords}</p>
+      </div>
+      <div class="detail">
+				{item.body}
+			</div>
+    </article>
+  ))
+}

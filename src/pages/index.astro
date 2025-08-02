@@ -1,57 +1,55 @@
 ---
 import mainInfo from '../assets/josiah.webp';
 import { Content as InfoMarkdowm } from '../content/page/info.md';
-import { Content as Smartmore } from '../content/page/smartmore.md';
-import { Content as SmartmoreJP } from '../content/page/smartmoreJP.md';
 import { Content as Contact } from '../content/page/contact.md';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Experience from '../layouts/Experience.astro';
 ---
 
 <style>
-	.main_info {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 12px;
-	}
+  .main_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
 
-	.main_info img {
-		max-width: 80%;
-		border-radius: 2px;
-		box-shadow:
-			2.6px 2.8px 2.5px -50px rgba(0, 0, 0, 0.017),
-			7.3px 7.6px 7px -50px rgba(0, 0, 0, 0.025),
-			17.5px 18.4px 16.9px -50px rgba(0, 0, 0, 0.033),
-			58px 61px 56px -50px rgba(0, 0, 0, 0.05);
-	}
+  .main_info img {
+    max-width: 80%;
+    border-radius: 2px;
+    box-shadow:
+      2.6px 2.8px 2.5px -50px rgba(0, 0, 0, 0.017),
+      7.3px 7.6px 7px -50px rgba(0, 0, 0, 0.025),
+      17.5px 18.4px 16.9px -50px rgba(0, 0, 0, 0.033),
+      58px 61px 56px -50px rgba(0, 0, 0, 0.05);
+  }
 
-	.main_info p {
-		opacity: 0.5;
-		text-decoration: underline;
-		margin-top: 48px;
-		margin-bottom: 16px;
-	}
+  .main_info p {
+    opacity: 0.5;
+    text-decoration: underline;
+    margin-top: 48px;
+    margin-bottom: 16px;
+  }
 
-	:root.dark .main_info img {
-		opacity: 0.8;
-	}
+  :root.dark .main_info img {
+    opacity: 0.8;
+  }
 
-	.blog_info {
-		padding: 12px;
-		text-align: justify;
-	}
+  .blog_info {
+    padding: 12px;
+    text-align: justify;
+  }
 </style>
 
 <BaseLayout title="首页">
-	<div class="main_info">
-		<img alt="josiah" width="500px" height="660px" src={mainInfo.src} />
-		<p>愿我航向大海乘载你的信赖.</p>
-	</div>
-	<div class="blog_info">
-		<InfoMarkdowm />
-		<h3>工作经历</h3>
-		<Smartmore />
-		<SmartmoreJP />
-		<Contact />
-	</div>
+  <div class="main_info">
+    <img alt="josiah" width="500px" height="660px" src={mainInfo.src} />
+    <p>愿我航向大海乘载你的信赖.</p>
+  </div>
+  <div class="blog_info">
+    <InfoMarkdowm />
+    <h3>工作经历</h3>
+    <Experience/>
+    <Contact />
+  </div>
 </BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogs = await getCollection('blog');
@@ -13,7 +13,11 @@ const { title } = Astro.params;
 // 需要集合的名称作为参数。
 // 示例：检索 `src/content/blog/**`
 
-const blog = await getEntryBySlug('blog', title);
+const blog = await getEntry('blog', title);
+
+if (!blog) {
+  return Astro.redirect('/blog');
+}
 
 const { Content, headings } = await blog.render();
 ---

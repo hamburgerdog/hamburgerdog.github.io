@@ -1,7 +1,7 @@
 ---
 title: '用Ts为Dispatch赋能'
 date: 2021-09-14 23:59:00 +0800
-tags: 前端
+tags: 前端 精选
 ---
 
 # 用 TS 为 Dispatch 赋能
@@ -53,60 +53,6 @@ type a = GetKey<PickEffectsAndReducers<UserModel>>;
 
 把联合类型变成交叉类型，我没有想到很好的解决办法，所以我们可以换条路子走，一次拿不到，就分开拿再组合。
 
-> review 才发现自己的 ts 水平到底有多垃圾：
-
-```typescript
-//	脑子清醒后
-//	@version 2021-09-26
-
-//	前置
-interface SimpleModelType {
-  namespace: unknown;
-  state: unknown;
-  effects: unknown;
-  reducers: unknown;
-}
-
-//	此处导出以供项目灵活使用
-export type GetEffectsAndReducersType<T extends SimpleModelType> = keyof T['effects'] | keyof T['reducers'];
-const getDispatchType = <T extends SimpleModelType>(
-  type: GetEffectsAndReducersType<T>,
-  namespace?: T['namespace'];,
-) => {
-  return namespace ? `${namespace}/${type}` : type;
-};
-```
-
-> 睡醒后回顾代码的时候发现自己还是写得太过于臃肿了，下面这一段是优化后的代码结构，大家可以对比着看，旧代码不会删除，具体的思路是一样的，写得浅显反而方便理解，也能更好的鞭策自己多 review
-
-```typescript
-//	新代码
-//	@version 2021-09-15
-
-//	前置
-		...
-
-//	核心逻辑
-type PickDeepVKeyFromT<T, V extends keyof T> = {
-  [K in keyof T]: K extends V
-    ? keyof {
-        [P in keyof T[K]]: P;
-      }
-    : never;
-}[keyof T];
-
-type GetNamespaceType<T extends SimpleModelType> = T['namespace'];
-type GetEffectsAndReducersType<T extends SimpleModelType> = PickDeepVKeyFromT<T,'reducers' | 'effects' >;
-
-const getDispatchType = <T extends SimpleModelType>(
-  type: GetEffectsAndReducersType<T>,
-  namespace?: GetNamespaceType<T>,
-) => {
-  return namespace ? `${namespace}/${type}` : type;
-};
-```
-
-**以下为旧代码**：
 
 ```typescript
 //	从 T,K 中获取方法名并将其交叉
@@ -163,6 +109,75 @@ getDispatchType<UserModel>('$1', '$2'); //	$出现对应的代码提示$
 ```
 
 需求完成 ✅
+
+### 优化：交叉类型
+```typescript
+//	脑子清醒后
+//	@version 2021-09-26
+
+//	前置
+interface SimpleModelType {
+  namespace: unknown;
+  state: unknown;
+  effects: unknown;
+  reducers: unknown;
+}
+
+type UserModel = {
+	namespace: 'user'; //	注意这里使用的字面量类型是很有用的
+	state: {
+		name: string;
+		age: string;
+	};
+	effects: {
+		updateName: Effect;
+	};
+	reducers: {
+		updateAge: Reducer;
+	};
+};
+
+//	此处导出以供项目灵活使用
+export type GetEffectsAndReducersType<T extends SimpleModelType> = keyof T['effects'] | keyof T['reducers'];
+const getDispatchType = <T extends SimpleModelType>(
+  type: GetEffectsAndReducersType<T>,
+  namespace?: T['namespace'],
+) => {
+  return namespace ? `${namespace}/${type}` : type;
+};
+
+//	此时已经有了良好的代码提示
+const test = getDispatchType<UserModel>('updateName', 'user');
+```
+
+### 优化：通过递归获取方法名
+
+```typescript
+//	新代码
+//	@version 2021-09-15
+
+//	前置
+		...
+
+//	核心逻辑
+type PickDeepVKeyFromT<T, V extends keyof T> = {
+  [K in keyof T]: K extends V
+    ? keyof {
+        [P in keyof T[K]]: P;
+      }
+    : never;
+}[keyof T];
+
+type GetNamespaceType<T extends SimpleModelType> = T['namespace'];
+type GetEffectsAndReducersType<T extends SimpleModelType> = PickDeepVKeyFromT<T,'reducers' | 'effects' >;
+
+const getDispatchType = <T extends SimpleModelType>(
+  type: GetEffectsAndReducersType<T>,
+  namespace?: GetNamespaceType<T>,
+) => {
+  return namespace ? `${namespace}/${type}` : type;
+};
+```
 
 ## 总结
 

@@ -15,6 +15,7 @@ import Experience from '../layouts/Experience.astro';
   }
 
   .main_info img {
+    object-fit: contain;
     max-width: 80%;
     border-radius: 2px;
     box-shadow:
@@ -38,6 +39,12 @@ import Experience from '../layouts/Experience.astro';
   .blog_info {
     padding: 12px;
     text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    .main_info img {
+      max-height: 400px;
+    }
   }
 </style>
 

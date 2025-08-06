@@ -129,6 +129,12 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
       opacity: 0.8;
     }
   }
+
+  @media (max-width: 768px) {
+    .blog_list {
+      padding-inline: 36px;
+    }
+  }
 </style>
 
 <script>
@@ -179,7 +185,7 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
   });
 </script>
 
-<section>
+<section class="blog_list">
   <div class="quote">
     <p>每日一句</p>
     <span id="quote"></span>

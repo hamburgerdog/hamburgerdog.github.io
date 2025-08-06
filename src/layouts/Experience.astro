@@ -37,6 +37,14 @@ const experienceCollection = await getCollection('experience');
   .detail {
     font-size: 14px;
   }
+
+  @media (max-width: 768px) {
+    .title{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
 </style>
 
 <!--

@@ -42,6 +42,22 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
   #modeBtn {
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    .box {
+      flex-direction: column;
+      padding-block: 8px;
+    }
+
+    .page_title {
+      margin-block: 0px;
+    }
+
+    .side a{
+      margin-block: 0px;
+
+    }
+  }
 </style>
 
 <nav class="box">

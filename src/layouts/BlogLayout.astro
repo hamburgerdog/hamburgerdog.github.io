@@ -103,6 +103,12 @@ const { title } = Astro.props;
 	.blog .line span {
 		word-spacing: 1px;
 	}
+
+	@media (max-width: 1000px) {
+    .blog {
+			padding-inline: 36px;
+    }
+  }
 </style>
 
 <BaseLayout title={title}>

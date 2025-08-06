@@ -45,7 +45,7 @@ const { Content, headings } = await blog.render();
 
   @media (max-width: 1250px) {
     .toc {
-      max-width: 150px;
+      max-width: 100px;
     }
   }
 
@@ -55,6 +55,7 @@ const { Content, headings } = await blog.render();
       left: 0;
       top: 0;
       max-width: 100%;
+      height: auto;
     }
   }
 
@@ -140,6 +141,15 @@ const { Content, headings } = await blog.render();
     const option = {
       threshold: 1,
     };
+    
+    /**
+     * 检查是否为小屏幕
+     * @returns {boolean} 是否为小屏幕
+     */
+    const isSmallScreen = () => {
+      return window.innerWidth <= 1000;
+    };
+    
     //  观测器回调
     const callback = (entries) => {
       if (entries.length === 0) return;
@@ -157,7 +167,11 @@ const { Content, headings } = await blog.render();
       tagContainer.querySelectorAll('a').forEach((a) => a.classList.remove('cur-slug'));
       //  添加当前目录高亮
       curTag.classList.add('cur-slug');
-      curTag.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
+      
+      // 只在大屏幕时执行目录自动滚动，避免小屏幕时页面跳转
+      if (!isSmallScreen()) {
+        curTag.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
+      }
     };
     //  创建观测器
     const observer = new IntersectionObserver(callback, option);

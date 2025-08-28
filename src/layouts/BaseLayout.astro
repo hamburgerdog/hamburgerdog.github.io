@@ -55,9 +55,21 @@ const { title } = Astro.props;
   }
 
   code {
-    padding: 2px 4px;
+    font-size: 12px;
+    padding: 2px;
     border-radius: 2px;
     background-color: var(--highlight);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    code {
+      font-size: 1em;
+    }
   }
 </style>
 

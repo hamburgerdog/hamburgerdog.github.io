@@ -15,27 +15,16 @@ subtitle: '以 React 更新为例'
 2. 浏览器的「HMR 运行时」通过 `module.hot` 方法将旧模块替换成新模块；
 3. 更新完执行/卸载回调，回调由用户手动编写或通过常见的插件添加；
 4. 通过回调中的代码让页面更新。
-
-
-
+<br />
 **各个流程简要分析**
 
-1. **文件变更导致的编译增量 bundle ：**
+1. **文件变更导致的编译增量 bundle。** webpack-dev-server 监测到文件变更，仅构建受影响的模块，并通过 web-socket 推送更新信息给浏览器
 
-   webpack-dev-server 监测到文件变更，仅构建受影响的模块，并通过 web-socket 推送更新信息给浏览器
+2. **浏览器加载更新包。** 更新信息包含哪些模块更新，以及如何拉去更新包的元信息，HMR 运行时通过代码请求下载并更新模块
 
-2. **浏览器加载更新包：**
+3. **替换模块并执行回调。** 检查模块或者父级模块是否使用了 `module.hot.accept(...)` ，运行时会执行该回调，回调里通常包含 re-require/render 等方法；如果没有使用处理回调，运行时直接触发整个页面的更新
 
-   更新信息包含哪些模块更新，以及如何拉去更新包的元信息，HMR 运行时通过代码请求下载并更新模块
-
-3. **替换模块并执行回调：**
-
-   - 检查模块或者父级模块是否使用了 `module.hot.accept(...)` ，运行时会执行该回调，回调里通常包含 re-require/render 等方法
-   - 如果没有使用处理回调，运行时直接触发整个页面的更新
-
-4. **样式的更新链路：**
-
-   `style-loader` 会把 css 直接注入到 style 标签中，更新时也会直接替换当前的内容，浏览器自动应用新样式，无需 JS 挂载
+4. **样式的更新链路。**`style-loader` 会把 css 直接注入到 style 标签中，更新时也会直接替换当前的内容，浏览器自动应用新样式，无需 JS 挂载
 
 
 
@@ -52,7 +41,9 @@ subtitle: '以 React 更新为例'
 **原理要点：**
 
 - webpack-dev-server 下发的是增量模块，浏览器中的 HMR 运行时会把新模块下载并替换旧模块（内部是替换 module map）
+
 - `module.hot.accept(modulePath, callback)` 建立 HMR 运行时和应用代码的联系，也是自动执行新代码的来源
+
 - 还有提供 `module.hot.dispose` 以及 `module.hot.data` 可以做到保留某些更新前的 state，在新模块中用 data 恢复
 
 **代码示例：**
@@ -115,11 +106,13 @@ export default function App() {
 **为什么 React 会“执行”新代码？**
 
 * 当 `App.jsx` 文件被改并重新编译，dev-server 下发更新，webpack 的模块系统用新模块定义覆盖旧的模块表项。
+
 * 因为我们在 `index.js` 注册了 `module.hot.accept('./App', ...)`，所以 HMR 运行时会调用回调，回调里 `require('./App')` 拿到的是**新模块实现**，然后我们把新组件传给 `root.render()`：这样页面用的是新实现，从而“自动执行新代码”。
 
 **如何保留 state（手动）？**
 
 * `module.hot.dispose` 在替换发生前执行，把需要保留的数据写进 `data`。新模块加载后可以读 `module.hot.data` 恢复。上面 `App.jsx` 就示范了计数器的保留方法。
+
 * 这种保留是手工的、粗粒度的：你需要自己挑哪些 state 存储；并且对复杂的组件树（hooks 列表、上下文、闭包）不容易做到完全一致。
 
 
@@ -129,13 +122,17 @@ export default function App() {
 **为什么用 react-refresh？**
 
 * 它比手动 HMR 更智能：在大多数组件变更下能**保留 hooks 状态**并替换实现，做到“热替换而不重置 state”。
+
 * 原理：react-refresh 在 Babel 阶段给每个组件打上标记并把模块暴露一个“签名”；运行时维护旧组件实例与新实现的映射，尝试把旧的 hooks/state 迁移到新的实现（匹配 hooks 顺序/数量），并对不安全的更改回退到完全刷新。它避免了你手工保存/恢复 state 的繁琐。
 
 **要做的代码级改动**
 
 1. 在 Babel 配置里加 `react-refresh/babel` 插件（仅 dev）。
+
 2. 插件会在编译后生成一些运行时代码（层面上是注入标识和注册函数）。
+
 3. 在 webpack dev 环境中加入 `@pmmmwh/react-refresh-webpack-plugin`，它会注入 client runtime 支持、在模块热替换时调用 react-refresh 的 runtime。
+
 4. 代码上你不需要写 `module.hot.accept`（插件会自动处理大多数模块边界），但仍可以在**特殊场景用手动 accept**。
 
 **代码层面简要说明**
@@ -164,7 +161,9 @@ export default function App() {
 **核心点**
 
 * `style-loader`把 CSS 当模块处理：加载时创建 `<style>` 标签并把编译后的 CSS 插入其中。
+
 * 当对应的 CSS 模块被更新，`style-loader` 的 HMR 逻辑会替换/更新对应的 `<style>` 标签的内容，因此样式即时生效。
+
 * CSS 更新是最简单的 HMR：不需要调用如 React render 之类的回调——浏览器的样式表更新立即影响渲染。
 
 **直观理解**
@@ -176,6 +175,7 @@ export default function App() {
 ## HMR 运行时的替换逻辑揭秘
 
 * **moduleMap** (`__webpack_modules__`) 是 Webpack 运行时保存所有模块工厂函数的对象。
+
 * HMR 的原理就是：**用新工厂函数替换 moduleMap 的旧函数，并重新执行依赖链，得到一个 exports**。
 
 ### 1. Webpack HMR 的运行时核心

@@ -16,6 +16,8 @@ const { title } = Astro.props;
 	}
 
 	.blog img {
+		max-width: 360px;
+		margin-inline-start: 12px;
 		display: block;
 		border-radius: 2px;
 		width: 100%;
@@ -69,7 +71,12 @@ const { title } = Astro.props;
 	}
 
 	pre code {
+		font-size: 12px;
 		background-color: transparent;
+
+		span{
+			line-height: 1em;
+		}
 	}
 
 	/*表格样式*/

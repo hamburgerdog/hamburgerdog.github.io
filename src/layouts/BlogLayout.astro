@@ -5,122 +5,144 @@ const { title } = Astro.props;
 ---
 
 <style lang="scss" is:global>
-	:root{
-		--max-width: 760px;
-	}
+  :root {
+    --max-width: 820px;
+  }
 
-	.blog {
-		font-size: 1rem;
-		// 保证还有半页的阅读空间
-		padding-bottom: 50vh;	
-	}
+  @media (max-width: 1000px) {
+    :root {
+      --max-width: 760px;
+    }
+  }
 
-	.blog img {
-		max-height: 500px;
-		display: block;
-		border-radius: 2px;
-		width: 100%;
-		object-fit: contain;
-		height: auto;
-	}
-	h1 {
-		word-break: auto-phrase;
-		font-size: 2.5rem;
-	}
+  .blog {
+    font-size: 1rem;
+    // 保证还有半页的阅读空间
+    padding-bottom: 50vh;
+  }
 
-	h2 {
-		word-break: auto-phrase;
-		font-size: 1.8rem;
-	}
+  .blog img {
+    max-height: 500px;
+    display: block;
+    border-radius: 2px;
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+  }
+  h1 {
+    word-break: auto-phrase;
+    font-size: 2.5rem;
+  }
 
-	h3 {
-		word-break: auto-phrase;
-		font-size: 1.5rem;
-	}
+  h2 {
+    word-break: auto-phrase;
+    font-size: 1.8rem;
+  }
 
-	h4 {
-		word-break: auto-phrase;
-		font-size: 1.2rem;
-	}
+  h3 {
+    word-break: auto-phrase;
+    font-size: 1.5rem;
+  }
 
-	ul {
-		padding-inline-start: 2em;
-	}
+  h4 {
+    word-break: auto-phrase;
+    font-size: 1.2rem;
+  }
 
-	li {
-	}
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: bolder;
+  }
 
-	blockquote {
-		margin-inline-start: 0;
-		margin-inline-end: 0;
-		padding: 0.5em 1em;
-		border-left: 4px solid var(--text-color);
-	}
+  ul {
+    padding-inline-start: 2em;
 
-	pre {
-		padding: 1em;
-		border-radius: 0.2em;
-		overflow-x: auto;
-	}
+    li + li {
+      margin-block-start: 0.8em;
+    }
+  }
 
-	p {
-		margin-inline-start: 0;
-		margin-inline-end: 0;
-		margin-block-start: 0.5em;
-		margin-block-end: 0.5em;
-		text-align: justify;
-	}
+  blockquote {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding: 0.5em 1em;
+    border-left: 4px solid var(--text-color);
 
-	pre code {
-		font-size: 12px;
-		background-color: transparent;
+    p {
+      margin-block: 0.2em;
+    }
+  }
 
-		span{
-			line-height: 1em;
-		}
-	}
+  strong {
+    font-size: 16px;
+  }
 
-	/*表格样式*/
-	table {
-		margin: 10px auto;
-		width: 100%;
-		text-align: left;
+  pre {
+    padding: 1em;
+    border-radius: 0.2em;
+    overflow-x: auto;
+  }
 
-		border-collapse: collapse;
-		border-radius: 2px;
-	}
-	th,
-	td {
-		padding: 4px 12px;
-		height: 25px;
-		border: 1px solid var(--text-color);
-	}
+  p {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    text-align: justify;
+  }
 
-	th:hover,
-	td:hover {
-		opacity: 0.9;
-	}
+  pre code {
+    font-size: 12px;
+    background-color: transparent;
 
-	th {
-		font-weight: bold;
-	}
-	tr:hover {
-		opacity: 0.9;
-	}
+    span {
+      line-height: 1em;
+    }
+  }
 
-	.blog .line span {
-		word-spacing: 1px;
-	}
+  /*表格样式*/
+  table {
+    margin: 10px auto;
+    width: 100%;
+    text-align: left;
 
-	@media (max-width: 1000px) {
+    border-collapse: collapse;
+    border-radius: 2px;
+  }
+  th,
+  td {
+    padding: 4px 12px;
+    height: 25px;
+    border: 1px solid var(--text-color);
+  }
+
+  th:hover,
+  td:hover {
+    opacity: 0.9;
+  }
+
+  th {
+    font-weight: bold;
+  }
+  tr:hover {
+    opacity: 0.9;
+  }
+
+  .blog .line span {
+    word-spacing: 1px;
+  }
+
+  @media (max-width: 1000px) {
     .blog {
-			padding-inline: 36px;
+      padding-inline: 36px;
     }
   }
 </style>
 
 <BaseLayout title={title}>
-	<div class="blog">
-		<slot />
-	</div>
+  <div class="blog">
+    <slot />
+  </div>
 </BaseLayout>

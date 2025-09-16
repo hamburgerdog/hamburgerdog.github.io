@@ -19,6 +19,7 @@
 		"dayjs": "^1.11.10",
 		"nanostores": "^0.9.5",
 		"preact": "^10.19.2",
+		"qrcode": "^1.5.4",
 		"rehype-accessible-emojis": "^0.3.2",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-slug": "^6.0.0",

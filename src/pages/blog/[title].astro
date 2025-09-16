@@ -20,6 +20,13 @@ if (!blog) {
 }
 
 const { Content, headings } = await blog.render();
+
+// 获取文章数据用于分享
+const articleData = {
+  title: blog.data.title || blog.slug,
+  date: blog.data.date || new Date().toISOString().slice(0, 10),
+  slug: blog.slug,
+};
 ---
 
 <style>
@@ -89,6 +96,29 @@ const { Content, headings } = await blog.render();
     cursor: pointer;
     transform: translateX(calc(100% + 8em));
   }
+
+  .share-p {
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-color);
+    z-index: 1000;
+  }
+
+  .share-p:hover {
+    color: var(--link-color);
+  }
+
+  @media (max-width: 768px) {
+    .share-p {
+      display: flex;
+    }
+  }
 </style>
 
 <style lang="scss" is:global>
@@ -141,7 +171,7 @@ const { Content, headings } = await blog.render();
     const option = {
       threshold: 1,
     };
-    
+
     /**
      * 检查是否为小屏幕
      * @returns {boolean} 是否为小屏幕
@@ -149,7 +179,7 @@ const { Content, headings } = await blog.render();
     const isSmallScreen = () => {
       return window.innerWidth <= 1000;
     };
-    
+
     //  观测器回调
     const callback = (entries) => {
       if (entries.length === 0) return;
@@ -167,7 +197,7 @@ const { Content, headings } = await blog.render();
       tagContainer.querySelectorAll('a').forEach((a) => a.classList.remove('cur-slug'));
       //  添加当前目录高亮
       curTag.classList.add('cur-slug');
-      
+
       // 只在大屏幕时执行目录自动滚动，避免小屏幕时页面跳转
       if (!isSmallScreen()) {
         curTag.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
@@ -180,6 +210,42 @@ const { Content, headings } = await blog.render();
       const target = document.getElementById(slug);
       if (!target) return;
       observer.observe(target);
+    });
+  });
+</script>
+
+<script>
+  // 分享功能
+  document.addEventListener('astro:page-load', async () => {
+    const shareBtn = document.getElementById('shareBtn') as HTMLButtonElement;
+    if (!shareBtn) return;
+
+    // 导入 toCanvas 函数
+    const { renderAndDownloadPosterToCanvas } = await import('../../script/toCanvas.js');
+
+    shareBtn.addEventListener('click', async () => {
+      try {
+        // 获取文章数据 - 使用服务器端传递的数据
+        const articleTitle =
+          shareBtn.dataset.articleTitle || document.querySelector('h1')?.textContent || 'JOSIAH｜个人博客';
+        // 使用文章的实际日期，格式化为更友好的显示
+        const articleDate = shareBtn.dataset.articleDate;
+        const articleTime = articleDate
+          ? new Date(articleDate).toLocaleDateString('zh-CN', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+            })
+          : new Date().toLocaleDateString();
+
+        // 显示加载状态
+        shareBtn.disabled = true;
+
+        // 生成海报
+        await renderAndDownloadPosterToCanvas(articleTitle, articleTime);
+      } catch (error) {
+        console.error('生成分享海报失败:', error);
+      }
     });
   });
 </script>
@@ -199,5 +265,8 @@ const { Content, headings } = await blog.render();
     }
   </ul>
   <div class="top"><span id="top">TOP ⬆</span></div>
+  <p id="shareBtn" class="share-p" title="分享文章" data-article-title={articleData.title} data-article-date={articleData.date}>
+    分享
+  </p>
   <Content />
 </BlogLayout>

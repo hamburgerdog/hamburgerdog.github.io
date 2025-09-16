@@ -141,7 +141,10 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
   document.addEventListener('astro:page-load', async () => {
     const res = await fetch('https://v1.hitokoto.cn/');
     const data = await res.json();
-    (document.querySelector('#quote') as HTMLSpanElement).innerHTML = `「${data.from}」${data.hitokoto}`;
+    const ele = document.querySelector('#quote') as HTMLSpanElement;
+    if (ele) {
+      ele.innerHTML = `「${data.from}」${data.hitokoto}`;
+    }
   });
 
   document.addEventListener('astro:page-load', async () => {

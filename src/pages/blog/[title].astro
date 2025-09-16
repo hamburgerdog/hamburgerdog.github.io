@@ -30,6 +30,16 @@ const articleData = {
 ---
 
 <style>
+  .top {
+    display: flex;
+    cursor: default;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    justify-content: end;
+    cursor: pointer;
+  }
+
   .toc {
     display: flex;
     flex-direction: column;
@@ -81,22 +91,6 @@ const articleData = {
     padding-left: 0;
   }
 
-  .top {
-    display: flex;
-    cursor: default;
-    position: fixed;
-    width: 100%;
-    max-width: var(--max-width);
-    bottom: 2em;
-    justify-content: end;
-  }
-
-  #top {
-    display: none;
-    cursor: pointer;
-    transform: translateX(calc(100% + 8em));
-  }
-
   .share-p {
     position: fixed;
     top: 2em;
@@ -117,6 +111,12 @@ const articleData = {
   @media (max-width: 768px) {
     .share-p {
       display: flex;
+    }
+
+    .top {
+      /* 文字竖向阅读 */
+      writing-mode: vertical-rl;
+      right: 0;
     }
   }
 </style>
@@ -139,6 +139,7 @@ const articleData = {
 <script>
   document.addEventListener('astro:page-load', () => {
     const top = document.getElementById('top') as HTMLParagraphElement;
+    if (!top) return;
     window.addEventListener('scroll', () => {
       if (window.scrollY > 200) {
         top.style.display = 'block';
@@ -147,6 +148,7 @@ const articleData = {
       }
     });
 
+    if (!top) return;
     top.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
@@ -255,7 +257,7 @@ const articleData = {
         ))
     }
   </ul>
-  <div class="top"><span id="top">TOP ⬆</span></div>
+  <div class="top"><span id="top">TOP</span></div>
   <p
     id="shareBtn"
     class="share-p"

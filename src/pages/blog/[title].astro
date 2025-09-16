@@ -219,30 +219,21 @@ const articleData = {
   document.addEventListener('astro:page-load', async () => {
     const shareBtn = document.getElementById('shareBtn') as HTMLButtonElement;
     if (!shareBtn) return;
-
+    const articleData = {
+      title: shareBtn.dataset.articleTitle,
+      date: shareBtn.dataset.articleDate,
+    };
     // 导入 toCanvas 函数
     const { renderAndDownloadPosterToCanvas } = await import('../../script/toCanvas.js');
 
     shareBtn.addEventListener('click', async () => {
       try {
         // 获取文章数据 - 使用服务器端传递的数据
-        const articleTitle =
-          shareBtn.dataset.articleTitle || document.querySelector('h1')?.textContent || 'JOSIAH｜个人博客';
-        // 使用文章的实际日期，格式化为更友好的显示
-        const articleDate = shareBtn.dataset.articleDate;
-        const articleTime = articleDate
-          ? new Date(articleDate).toLocaleDateString('zh-CN', {
-              year: 'numeric',
-              month: '2-digit',
-              day: '2-digit',
-            })
-          : new Date().toLocaleDateString();
 
-        // 显示加载状态
-        shareBtn.disabled = true;
-
+        // 复制文章链接到剪贴板
+        navigator.clipboard.writeText(window.location.href);
         // 生成海报
-        await renderAndDownloadPosterToCanvas(articleTitle, articleTime);
+        await renderAndDownloadPosterToCanvas(articleData.title, articleData.date);
       } catch (error) {
         console.error('生成分享海报失败:', error);
       }
@@ -265,7 +256,13 @@ const articleData = {
     }
   </ul>
   <div class="top"><span id="top">TOP ⬆</span></div>
-  <p id="shareBtn" class="share-p" title="分享文章" data-article-title={articleData.title} data-article-date={articleData.date}>
+  <p
+    id="shareBtn"
+    class="share-p"
+    title="分享文章"
+    data-article-title={articleData.title}
+    data-article-date={articleData.date}
+  >
     分享
   </p>
   <Content />

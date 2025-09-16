@@ -26,9 +26,11 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
 ---
 
 <style lang="scss">
+  a {
+    color: var(--text-color);
+  }
   .quote {
     margin-block-start: 1em;
-    margin-block-end: 2em;
 
     #quote {
       color: orangered;
@@ -58,16 +60,13 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
 
   .item {
     cursor: pointer;
-    opacity: 0.7;
     display: block;
     text-decoration: none;
 
-    margin-block-start: 1.5em;
-    margin-block-end: 1.5em;
+    margin-block-end: 1em;
 
     &:hover {
       color: orangered;
-      opacity: 1;
     }
 
     p {
@@ -187,11 +186,11 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
 
 <section class="blog_list">
   <div class="quote">
-    <p>每日一句</p>
+    <h2 class="section-title">每日一句</h2>
     <span id="quote"></span>
   </div>
   <div class="theme">
-    <p>主题 | Filter</p>
+    <h2 class="section-title">主题 | Filter</h2>
     <div class="tag_filter">
       {
         sortTags.map((tag) => (
@@ -202,7 +201,7 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
       }
     </div>
   </div>
-  <p>精选 | Star</p>
+  <h2 class="section-title">精选 | Star</h2>
   <div class="star_list">
     {
       starPosts.map((post) => (
@@ -221,9 +220,8 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
       ))
     }
   </div>
-  <br />
   <div class="detail">
-    <p>时间线 | Timeline</p>
+    <h2 class="section-title">时间线 | Timeline</h2>
     {
       posts.map((post) => (
         <>

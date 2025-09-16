@@ -12,7 +12,7 @@
 	"dependencies": {
 		"@astrojs/markdown-remark": "^6.3.5",
 		"@astrojs/preact": "^4.1.0",
-		"@fontsource/ia-writer-quattro": "^5.0.7",
+		"@fontsource-variable/space-grotesk": "^5.2.9",
 		"@nanostores/preact": "^0.5.0",
 		"algoliasearch": "^4.20.0",
 		"astro": "^5.12.8",

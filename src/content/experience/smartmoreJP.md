@@ -1,5 +1,6 @@
 ---
 company: SmartMore Japan - 思谋科技 日本
+order: 2
 date: 2023.09 - 2023.12
 role: 软件开发工程师
 keywords:

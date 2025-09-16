@@ -9,7 +9,7 @@ const experienceCollection = await getCollection('experience');
     margin-bottom: 36px;
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 2px;
   }
 
   p {
@@ -23,11 +23,11 @@ const experienceCollection = await getCollection('experience');
   }
 
   .role {
-    margin-top: 8px;
     opacity: 0.6;
     display: flex;
     gap: 16px;
     font-size: 14px;
+    font-style: italic;
   }
 
   .role:hover {
@@ -52,7 +52,7 @@ const experienceCollection = await getCollection('experience');
 	假设每个 item.frontmatter 都包含 company, date, role, keywords 字段
 -->
 {
-  experienceCollection.map((item) => (
+  experienceCollection.sort((a, b) => a.data.order - b.data.order).map((item) => (
     <article class="experience">
       <div class="title">
         <p>{item.data.company}</p>

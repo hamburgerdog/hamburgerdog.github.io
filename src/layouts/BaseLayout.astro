@@ -1,30 +1,43 @@
 ---
 import Nav from '../components/nav.astro';
-import '@fontsource/ia-writer-quattro';
+import '@fontsource-variable/space-grotesk';
 import { ClientRouter } from 'astro:transitions';
 
 const { title } = Astro.props;
 ---
 
-<style is:global>
+<style is:global lang="scss">
   :root {
     --background-color: #fff;
     --nav-background-color: #ffffffa0;
-    --text-color: #000;
+    --header-color: oklch(0.21 0.034 264.665);
+    --text-color: oklch(0.373 0.034 259.733);
     --max-width: 640px;
-    --highlight: #163b6620;
+    --highlight: #163b660a;
+    --code-color: oklch(0.585 0.233 277.117);
+    --link-color: oklch(0.656 0.241 154.32);
+
+    --font-space-grotesk: 'Space Grotesk Variable';
+    --font-mono: monospace;
+    --default-font-family: var(--font-space-grotesk);
   }
 
   :root.dark {
+    --header-color: oklch(0.967 0.003 264.542);
     --background-color: #000;
     --nav-background-color: #000000a0;
-    --text-color: #fff;
+    --text-color: oklch(0.872 0.01 258.338);
     --highlight: #6666667f;
+  }
+
+  :root code {
+    font-family: var(--font-mono);
   }
 
   html {
     max-width: var(--max-width);
-    font-family: 'iA Writer Quattro', sans-serif;
+    font-family: var(--default-font-family,), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     background: var(--background-color);
     color: var(--text-color);
     margin: auto;
@@ -40,10 +53,18 @@ const { title } = Astro.props;
   h4,
   h5,
   h6,
+  strong {
+    color: var(--header-color);
+  }
+
+  p {
+    margin-block: 0;
+  }
+
   p,
   span,
   li {
-    line-height: calc(1em + 8px);
+    line-height: calc(1em + 12px);
   }
 
   body {
@@ -51,14 +72,16 @@ const { title } = Astro.props;
   }
 
   a {
-    color: var(--text-color);
+    color: var(--link-color);
   }
 
   code {
-    font-size: 12px;
+    font-size: 14px;
     padding: 2px;
     border-radius: 2px;
     background-color: var(--highlight);
+    color: var(--code-color);
+    font-weight: bold;
   }
 
   h1,
@@ -66,10 +89,8 @@ const { title } = Astro.props;
   h3,
   h4,
   h5,
-  h6 {
-    code {
-      font-size: 1em;
-    }
+  h6 code {
+    font-size: 1em;
   }
 </style>
 

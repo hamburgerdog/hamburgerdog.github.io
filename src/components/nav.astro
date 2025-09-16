@@ -26,12 +26,17 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
     cursor: pointer;
   }
 
+  .page_title{
+    font-weight: bold;
+  }
+
   .page_title:hover,
   .post:hover {
     opacity: 0.6;
   }
 
   a {
+    color: var(--header-color);
     text-decoration: none;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -55,7 +60,6 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
 
     .side a{
       margin-block: 0px;
-
     }
   }
 </style>
@@ -63,8 +67,8 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
 <nav class="box">
   <a href="/" class="page_title">{formattedDate}</a>
   <div class="side">
-    <a href="/roadmap" class="post">技能树|Roadmap</a>
-    <a href="/blog" class="post">博客|Blog</a>
+    <a href="/roadmap" class="post">Roadmap</a>
+    <a href="/blog" class="post">Blog</a>
     <img alt="theme_mode" width="24px" height="24px" id="modeBtn" src="/sun.svg" />
   </div>
 </nav>

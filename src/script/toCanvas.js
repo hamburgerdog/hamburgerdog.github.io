@@ -7,8 +7,8 @@ export async function renderPosterToCanvas(title, time = new Date().toLocaleStri
   img.src = imageSrc;
   await img.decode();
 
-  const viewWidth = Math.min(window.innerWidth, 402);
-  const viewHeight = Math.min(window.innerHeight, 842);
+  const viewWidth = 402;
+  const viewHeight = 842;
 
   const canvas = document.createElement('canvas');
   canvas.width = viewWidth;
@@ -54,8 +54,8 @@ export async function renderPosterToCanvas(title, time = new Date().toLocaleStri
 export async function renderAndDownloadPosterToCanvas(title, time = new Date().toLocaleString()) {
   const dataUrl = await renderPosterToCanvas(title, time);
   const link = document.createElement('a');
-  link.download = `${title.replace(/[^\w\s]/gi, '')}_poster.png`;
   link.href = dataUrl;
+  link.download = `${title || 'poster'}.png`;
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

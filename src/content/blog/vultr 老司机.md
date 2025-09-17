@@ -1,7 +1,7 @@
 ---
 title: vultr 老司机
 date: 2025-09-06 14:30:00 +0800
-tags: 前端
+tags: 生活
 ---
 # vultr 老司机
 

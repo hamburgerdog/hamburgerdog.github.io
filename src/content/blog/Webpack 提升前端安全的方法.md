@@ -1,7 +1,7 @@
 ---
 title: 'Webpack 提升前端安全的方法'
 date: 2025-08-28 14:30:00 +0800
-tags: 前端 精选
+tags: 前端 工程基建 精选
 subtitle: 'nonce、SRI 等在 webpack 中的使用方法'
 ---
 

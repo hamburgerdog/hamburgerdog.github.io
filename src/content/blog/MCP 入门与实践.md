@@ -1,7 +1,7 @@
 ---
 title: 'MCP 入门与实践'
 date: 2025-09-01 15:00:00 +0800
-tags: VibeCode
+tags: Ai
 subtitle: 'MCP 入门与实践'
 ---
 

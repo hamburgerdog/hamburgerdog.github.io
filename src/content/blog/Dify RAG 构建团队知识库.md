@@ -1,7 +1,7 @@
 ---
 title: Dify RAG 构建团队知识库
 date: 2025-09-13 12:00:00 +0800
-tags: 精选 VibeCode
+tags: Ai
 subtitle: 智能体代码托管
 ---
 # Dify RAG 构建团队知识库

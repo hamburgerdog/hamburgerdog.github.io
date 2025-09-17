@@ -1,7 +1,7 @@
 ---
 title: '如何写一个自己的MCP'
 date: 2025-09-02 15:00:00 +0800
-tags: VibeCode
+tags: Ai
 subtitle: '如何写一个自己的MCP'
 ---
 

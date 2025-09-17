@@ -1,7 +1,7 @@
 ---
 title: 'Vite in ViMo'
 date: 2023-07-01 23:00:00 +0800
-tags: 前端 精选
+tags: 前端 工程基建 精选
 subtitle: '复杂项目改造'
 ---
 

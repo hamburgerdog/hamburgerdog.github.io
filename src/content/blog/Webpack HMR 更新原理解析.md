@@ -1,7 +1,7 @@
 ---
 title: 'Webpack HMR 更新原理解析'
 date: 2025-08-29 14:30:00 +0800
-tags: 前端 精选
+tags: 前端 工程基建
 subtitle: '以 React 更新为例'
 ---
 

@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+
+// 获取最近的3篇文章
+const allPosts = await getCollection('blog');
+const recentPosts = allPosts
+  .sort((a, b) => {
+    const dateA = a.data.date ? new Date(a.data.date) : new Date(0);
+    const dateB = b.data.date ? new Date(b.data.date) : new Date(0);
+    return dateB.getTime() - dateA.getTime();
+  })
+  .slice(0, 5);
+
+// 格式化日期
+const formatDate = (date: Date | string | undefined) => {
+  if (!date) return '';
+  const d = typeof date === 'string' ? new Date(date) : date;
+  return d.toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+---
+
+<style>
+  .recent-posts {
+    margin-bottom: 2rem;
+  }
+
+  .recent-posts h3 {
+    margin-bottom: 1rem;
+    color: var(--header-color);
+  }
+
+  .posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color, #eee);
+    transition: all 0.2s ease;
+  }
+
+  .post-item:last-child {
+    border-bottom: none;
+  }
+
+  .post-item:hover {
+    background-color: var(--hover-bg, rgba(0, 0, 0, 0.02));
+    padding-left: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .post-link {
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .post-date {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  :root.dark .post-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  :root.dark .post-date {
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .post-title {
+      font-size: 14px;
+    }
+
+    .post-date {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<div class="recent-posts">
+  <h3>最新文章</h3>
+  <ul class="posts-list">
+    {
+      recentPosts.map((post) => (
+        <li class="post-item">
+          <a href={`/blog/${post.slug}`} class="post-link">
+            <div class="post-title">{post.data.title || post.slug}</div>
+            <div class="post-date">{formatDate(post.data.date)}</div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

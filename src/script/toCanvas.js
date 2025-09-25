@@ -24,8 +24,8 @@ export async function renderPosterToCanvas(title, time = new Date().toLocaleStri
   const padding = viewWidth * paddingPercent;
   const lineHeight = 24;
 
-  const titleFontSize = '20px';
-  const timeFontSize = '14px';
+  let titleFontSize = '20px';
+  let timeFontSize = '14px';
   ctx.fillStyle = '#f7f7f7';
   ctx.textAlign = 'left';
   // 测量宽度避免超宽

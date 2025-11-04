@@ -11,6 +11,12 @@
 
 <br />
 
-Hello, this is [Josiah](https://github.com/hamburgerdog)'s blog space, dedicated to recording life and sharing technology. A web-frontend developer and currently learning to be a TPM in the AI industry. I enjoy programming, the outdoors, traveling, and am passionate about cycling. Main tech stack is TypeScript, JavaScript, React, with a focus on high-performance canvas development.
+
+Hi, I’m [Josiah](https://github.com/hamburgerdog) — welcome to my blog!
+
+This space is where I record moments from life and share insights on technology.
+I’m a web frontend developer exploring the path toward becoming a TPM in the AI industry.
+I love coding, being outdoors, traveling, and I’m especially passionate about cycling.
+My main tech stack includes TypeScript, JavaScript, and React, with a focus on high-performance canvas development.
 
 <br />

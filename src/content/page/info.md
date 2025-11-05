@@ -12,11 +12,11 @@
 <br />
 
 
-Hi, I’m [Josiah](https://github.com/hamburgerdog) — welcome to my blog!
+Hi, I'm [Josiah](https://github.com/hamburgerdog) — welcome to my blog!
 
-This space is where I record moments from life and share insights on technology.
-I’m a web frontend developer exploring the path toward becoming a TPM in the AI industry.
-I love coding, being outdoors, traveling, and I’m especially passionate about cycling.
+This space is where I record life moments and share insights on technology.
+I'm a frontend web developer working toward becoming a TPM in the AI industry.
+I love coding, outdoor activities, and traveling, and I'm especially passionate about cycling.
 My main tech stack includes TypeScript, JavaScript, and React, with a focus on high-performance canvas development.
 
 <br />

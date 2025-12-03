@@ -24,8 +24,11 @@ const { Content, headings } = await blog.render();
 // 获取文章数据用于分享
 const articleData = {
   title: blog.data.title || blog.slug,
+  subtitle: blog.data.subtitle || '',
+  remark: blog.data.remark || '',
   date: blog.data.date || new Date().toISOString().slice(0, 10),
   slug: blog.slug,
+  tags: blog.data.tags || '',
 };
 ---
 
@@ -245,7 +248,12 @@ const articleData = {
   });
 </script>
 
-<BlogLayout title={blog.slug}>
+<BlogLayout
+  title={articleData.slug}
+  subtitle={articleData.subtitle}
+  tags={articleData.tags}
+  remark={articleData.remark}
+>
   <ul id="toc" data-toc={JSON.stringify(headings)} class="toc">
     {
       headings

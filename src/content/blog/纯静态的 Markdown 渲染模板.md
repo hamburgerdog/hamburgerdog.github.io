@@ -3,6 +3,7 @@ title: '纯静态的 Markdown 渲染模板'
 date: 2023-12-05 22:30:00 +0800
 tags: 前端
 subtitle: 'all in HTML'
+remark: '纯静态 HTML 页面展示 Markdown 格式文档的实现方案，支持浅色和深色模式'
 ---
 
 # 纯静态的 Markdown 渲染模板

@@ -1,7 +1,8 @@
 --- 
-title: 'Cloudflare “useEffect” 事故报告'
+title: 'Cloudflare "useEffect" 事故报告'
 date: 2025-09-17 12:00:00 +0800
 tags: 前端
+remark: '分析 Cloudflare 因 useEffect 重复调用导致的自我 DDoS 事故，探讨对象字面量作为依赖项的问题'
 ---
 
 # Cloudflare “useEffect” 事故报告

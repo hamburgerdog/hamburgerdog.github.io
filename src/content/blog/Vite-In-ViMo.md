@@ -3,6 +3,7 @@ title: 'Vite in ViMo'
 date: 2023-07-01 23:00:00 +0800
 tags: 前端 工程基建 精选
 subtitle: '复杂项目改造'
+remark: '分享在复杂项目中引入 Vite 开发模式的实践经验，兼容现有 webpack 配置的改造方案'
 ---
 
 # Vite3 in ViMo

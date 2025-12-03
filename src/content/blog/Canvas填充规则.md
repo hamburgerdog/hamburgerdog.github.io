@@ -3,6 +3,7 @@ title: 'Canvas 填充规则'
 date: 2024-01-09 18:30:00 +0800
 tags: 前端
 subtitle: 'evenodd & nonzero'
+remark: '介绍 Canvas 中 fillRule 的两种填充规则：evenodd（奇偶规则）和 nonzero（非零填充），并分享业务实践案例'
 ---
 
 # Canvas 填充规则

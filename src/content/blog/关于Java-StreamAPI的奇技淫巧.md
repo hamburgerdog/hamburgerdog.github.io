@@ -3,6 +3,7 @@ title: 'Java Stream API'
 date: 2021-03-30 23:50:00 +0800
 tags: 后端
 subtitle: 'JavaStream常用小技巧的积累'
+remark: 'Java Stream API 实用技巧分享，包括使用 Collectors 查找重复数据、Stream 操作优化等'
 ---
 
 # Java-StreamAPI 的奇技淫巧
@@ -81,7 +82,7 @@ public static void main(String[] args) {
 /**
  * partitioningBy测试用例
  *
- * @author xjosiah
+ * @author Josiah Hong
  * @since 2021/3/10
  */
 public class MyPartitioningBy {
@@ -107,7 +108,7 @@ output:
 /**
  * Function类的测试用例
  *
- * @author xjosiah
+ * @author Josiah Hong
  * @since 2021/3/10
  */
 public class MyFunction {

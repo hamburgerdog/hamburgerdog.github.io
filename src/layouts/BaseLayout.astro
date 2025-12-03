@@ -3,7 +3,12 @@ import Nav from '../components/nav.astro';
 import '@fontsource-variable/space-grotesk';
 import { ClientRouter } from 'astro:transitions';
 
-const { title } = Astro.props;
+const { title, subtitle, tags, remark } = Astro.props;
+
+const description = [title, subtitle, tags, remark].filter(Boolean).join(',');
+const author = 'Josiah Hong';
+const keywords = [title, tags, author].filter(Boolean).join(',');
+const canonical = Astro.site ? Astro.site.href : '';
 ---
 
 <style is:global lang="scss">
@@ -120,15 +125,32 @@ const { title } = Astro.props;
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="josiah blog" />
-    <meta name="keywords" content="JOSIAH｜blog" />
-    <meta name="author" content="josiahhong" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/xjosiah.ico" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Josiah Hong`s Blog" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/xjosiah.ico" />
     <link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-    <meta name="viewport" content="width=device-width" />
+    <link rel="alternate" hreflang="zh-CN" href={canonical} />
+    <link rel="canonical" href={canonical} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>JOSIAH｜{title}</title>
+    <title>{title} | Josiah Hong</title>
     <ClientRouter />
   </head>
   <body>

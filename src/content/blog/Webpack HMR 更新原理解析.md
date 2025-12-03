@@ -3,6 +3,7 @@ title: 'Webpack HMR 更新原理解析'
 date: 2025-08-29 14:30:00 +0800
 tags: 前端 工程基建
 subtitle: '以 React 更新为例'
+remark: '深入解析 Webpack HMR（模块热更新）的工作原理，以 React 组件更新为例说明整个流程'
 ---
 
 # Webpack HMR 更新原理解析

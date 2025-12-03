@@ -3,6 +3,7 @@ title: 'CDN 简记'
 date: 2024-05-24 17:30:00 +0800
 tags: 前端
 subtitle: 'A content delivery network 内容分发网络'
+remark: '介绍 CDN（内容分发网络）的基本原理、工作方式和应用场景'
 ---
 
 # CDN 简记

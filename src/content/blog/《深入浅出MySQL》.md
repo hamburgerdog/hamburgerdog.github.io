@@ -3,6 +3,7 @@ title: '《深入浅出MySQL》知识整理'
 date: 2021-03-11 12:30:00 +0800
 tags: 后端
 subtitle: '对MySQL的常用知识的理解'
+remark: '本篇文章介绍了MySQL的常用知识，包括窗口函数、索引、聚合函数等。'
 ---
 
 # 《深入浅出 MySQL》知识整理
@@ -192,7 +193,7 @@ INSERT INTO test1.order_tab (order_id, user_no, amount, create_date) VALUES (10,
 
 > 参考资料：[MySQL 索引总结](https://zhuanlan.zhihu.com/p/29118331)
 
- **HASH 索引**：
+**HASH 索引**：
 
 MySQL 中只有 Memory/NDB 引擎完全支持 Hash 索引，Hash 索引是计算索引列的 hash 值然后放到索引表中，而表项就是指向对应行（数据）的指针。
 
@@ -209,7 +210,7 @@ MySQL 中只有 Memory/NDB 引擎完全支持 Hash 索引，Hash 索引是计算
 > - 访问 Hash 索引的速度非常快，除非有很多哈希冲突（不同的索引列值却有相同的哈希值）。当出现哈希冲突的时候，存储引擎必须遍历链表中所有的行指针，逐行进行比较，直到找到所有符合条件的行。
 > - 如果哈希冲突很多的话，一些索引维护操作的代价也会很高。当从表中删除一行时，存储引擎要遍历对应哈希值的链表中的每一行，找到并删除对应行的引用，冲突越多，代价越大。
 
- **Btree 索引**：
+**Btree 索引**：
 
 B-tree 是一种适合范围查询的索引类型，适用于`> | < | <= | >= | BETWEEN | != | <>  | LIKE ` 这是因为 B-tree 索引是按顺序排序的，即每个节点都含有指向叶子节点的指针，所以在范围操作的时候能发挥很大作用。同时，该索引也是可以用在`ORDER BY`索引排序的。
 
@@ -242,7 +243,7 @@ ALTER TABLE t1 ALTER INDEX i_idx VISIBLE;
 ALTER TABLE t1 ALTER INDEX i_idx INVISIBLE;
 ```
 
-### 索引问题 之 MySQL 如何使用索引 
+### 索引问题 之 MySQL 如何使用索引
 
 **MySQL 中能够使用的索引的经典场景：**
 
@@ -421,7 +422,7 @@ CREATE TABLE emp
 
 > **MySQL 分区处理 null 值的方式**：不禁止使用，会把 null 当成最小值或者零值进行处理（RANGE 当做最小值、LIST 中必须显示出现、HASH 和 KEY 当做 0 值处理）。这样会容易造成语义上的误判，因此最好应当设置字段非空和默认值来避免 null 值的出现。
 
-### 分区管理 
+### 分区管理
 
 #### RANGE | LIST 分区管理
 

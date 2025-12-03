@@ -3,6 +3,7 @@ title: '好用的PlantUML'
 date: 2022-05-03 18:30:00 +0800
 tags: 生活
 subtitle: '好用的PlantUML的读书笔记'
+remark: 'PlantUML 使用指南，介绍如何使用文本描述生成 UML 图、流程图、时序图等'
 ---
 
 # plantuml

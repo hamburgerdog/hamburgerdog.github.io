@@ -2,6 +2,7 @@
 title: 'Coding DevOps 与 Jenkins 迟暮'
 date: 2025-11-18 10:00:00 +0800
 tags: 其他
+remark: '讨论 CODING DevOps 产品下线对开发团队的影响，以及 Jenkins 等传统 CI/CD 工具的现状'
 ---
 # Coding DevOps 与 Jenkins 迟暮
 

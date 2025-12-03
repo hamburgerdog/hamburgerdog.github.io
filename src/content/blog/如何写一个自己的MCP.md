@@ -3,6 +3,7 @@ title: '如何写一个自己的MCP'
 date: 2025-09-02 15:00:00 +0800
 tags: Ai
 subtitle: '如何写一个自己的MCP'
+remark: '使用 TypeScript 开发 MCP 服务的实践指南，包括 DevOps 管理、PR 合并、代码仓库查询等功能'
 ---
 
 # 如何写一个自己的 MCP 

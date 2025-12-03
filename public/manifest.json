@@ -1,7 +1,7 @@
 {
-	"name": "xjosiah blog",
-	"short_name": "xjosiah blog",
-	"description": "A blog about web development and other things.",
+	"name": "Josiah Hong's Blog",
+	"short_name": "Josiah Hong's Blog",
+	"description": "Here is Josiah Hong's blog, a blog about life and technology. 这里是 Josiah Hong 的博客空间，纪录生活与技术分享，让我们多交流！",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#ffffff",

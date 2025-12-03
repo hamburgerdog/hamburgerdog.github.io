@@ -3,6 +3,7 @@ title: 'WHAT IS REST'
 date: 2021-01-14 13:20:00 +0800
 tags: 前端
 subtitle: 'REST架构风格 基本知识了解'
+remark: 'REST 架构风格介绍，包括无状态、客户端-服务器分离等核心原则和实践示例'
 ---
 
 # WHAT IS REST
@@ -11,7 +12,7 @@ subtitle: 'REST架构风格 基本知识了解'
 > 翻译自原贴 - [WHAT IS REST](https://www.codecademy.com/articles/what-is-rest) 原文阅读难度不大，推荐看原文<br>
 > 如果对 REST 有一定了解，推荐直接阅读 【 <u>Practice with REST 🏭</u> 】章节<br>
 >
-> @author : xjosiah
+> @author : Josiah Hong
 > @since : 2021.01.14
 
 ## REST - REpresentational State Transfer 

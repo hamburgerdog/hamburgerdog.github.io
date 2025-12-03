@@ -2,6 +2,7 @@
 title: 'What happens after Array<T> calls sorted()？'
 date: 2021-11-29 20:40:00 +0800
 tags: 前端
+remark: 'JavaScript/TypeScript 数组 sort() 方法默认排序规则解析，探讨字符串排序与数值排序的区别'
 ---
 
 # 🤔 What happens after Array\<T\> calls sorted()？

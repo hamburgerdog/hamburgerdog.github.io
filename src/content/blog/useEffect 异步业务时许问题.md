@@ -3,6 +3,7 @@ title: 'useEffect 异步业务时许问题'
 date: 2025-09-25 21:00:00 +0800
 tags: 前端 精选
 subtitle: '细粒度拆分导致的 useEffect 时序混乱的问题'
+remark: '分析细粒度拆分 Hook 导致的 useEffect 异步时序问题，探讨 Taro + Canvas 场景下的解决方案'
 ---
 
 # useEffect 异步业务时许问题

@@ -3,6 +3,7 @@ title: '讲一讲「My_little_airplay」'
 date: 2021-05-19 19:00:00 +0800
 tags: 前端
 subtitle: 'vue项目总结'
+remark: 'Vue 项目开发总结，包括 Axios API 封装、EventBus 观察者模式实现等实用技巧'
 ---
 
 # 讲一讲「My_little_airplay」

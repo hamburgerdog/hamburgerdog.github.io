@@ -3,6 +3,7 @@ title: Dify RAG 构建团队知识库
 date: 2025-09-13 12:00:00 +0800
 tags: Ai
 subtitle: 智能体代码托管
+remark: '介绍如何使用 Dify RAG 构建团队知识库，实现 AI 托管代码仓库和系统架构文档'
 ---
 # Dify RAG 构建团队知识库
 

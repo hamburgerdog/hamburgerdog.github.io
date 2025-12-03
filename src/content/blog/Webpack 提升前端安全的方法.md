@@ -3,6 +3,7 @@ title: 'Webpack 提升前端安全的方法'
 date: 2025-08-28 14:30:00 +0800
 tags: 前端 工程基建 精选
 subtitle: 'nonce、SRI 等在 webpack 中的使用方法'
+remark: '介绍在 Webpack 中使用 nonce、SRI 等安全机制提升前端应用安全性的实践方法'
 ---
 
 # Webpack 提升前端安全的方法

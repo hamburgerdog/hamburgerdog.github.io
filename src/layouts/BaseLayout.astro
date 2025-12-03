@@ -9,6 +9,8 @@ const description = [title, subtitle, tags, remark].filter(Boolean).join(',');
 const author = 'Josiah Hong';
 const keywords = [title, tags, author].filter(Boolean).join(',');
 const canonical = Astro.site ? Astro.site.href : '';
+// 当前页面 URL 
+const url = Astro.url.toString();
 ---
 
 <style is:global lang="scss">
@@ -134,15 +136,15 @@ const canonical = Astro.site ? Astro.site.href : '';
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/xjosiah.ico" />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="/josiah.webp" />
+    <meta property="og:url" content={url} />
     <meta property="og:site_name" content="Josiah Hong`s Blog" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/xjosiah.ico" />
+    <meta name="twitter:image" content="/josiah.webp" />
     <link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />

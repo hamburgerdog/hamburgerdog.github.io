@@ -9,12 +9,14 @@ const description = [title, subtitle, tags, remark].filter(Boolean).join(',');
 const author = 'Josiah Hong';
 const keywords = [title, tags, author].filter(Boolean).join(',');
 const canonical = Astro.site ? Astro.site.href : '';
-// 当前页面 URL 
+// 当前页面 URL
 const url = Astro.url.toString();
 ---
 
 <style is:global lang="scss">
   :root {
+    --primary-color: #000;
+    --sub-text-color: #666;
     --background-color: #fff;
     --nav-background-color: #ffffffa0;
     --header-color: oklch(0.21 0.034 264.665);
@@ -30,6 +32,8 @@ const url = Astro.url.toString();
   }
 
   :root.dark {
+    --primary-color: #fff;
+    --sub-text-color: #aaa;
     --header-color: oklch(0.967 0.003 264.542);
     --background-color: #000;
     --nav-background-color: #000000a0;

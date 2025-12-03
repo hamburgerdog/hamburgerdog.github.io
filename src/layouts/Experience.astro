@@ -7,9 +7,9 @@ const experienceCollection = await getCollection('experience');
 <style>
   .experience {
     margin-bottom: 36px;
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   p {
@@ -23,7 +23,7 @@ const experienceCollection = await getCollection('experience');
   }
 
   .role {
-    opacity: 0.6;
+    color: var(--sub-text-color);
     display: flex;
     gap: 16px;
     font-size: 14px;
@@ -31,7 +31,7 @@ const experienceCollection = await getCollection('experience');
   }
 
   .role:hover {
-    opacity: 1;
+    color: var(--primary-color);
   }
 
   .detail {
@@ -39,7 +39,7 @@ const experienceCollection = await getCollection('experience');
   }
 
   @media (max-width: 768px) {
-    .title{
+    .title {
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -52,17 +52,19 @@ const experienceCollection = await getCollection('experience');
 	假设每个 item.frontmatter 都包含 company, date, role, keywords 字段
 -->
 {
-  experienceCollection.sort((a, b) => a.data.order - b.data.order).map((item) => (
-    <article class="experience">
-      <div class="title">
-        <p>{item.data.company}</p>
-        <p>{item.data.date}</p>
-      </div>
-      <div class="role">
-        <p>{item.data.role}</p>
-        <p>{item.data.keywords}</p>
-      </div>
-      <div class="detail" set:html={item?.rendered?.html}></div>
-    </article>
-  ))
+  experienceCollection
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((item) => (
+      <article class="experience">
+        <div class="title">
+          <p>{item.data.company}</p>
+          <p>{item.data.date}</p>
+        </div>
+        <div class="role">
+          <p>{item.data.role}</p>
+          <p>{item.data.keywords}</p>
+        </div>
+        <div class="detail" set:html={item?.rendered?.html} />
+      </article>
+    ))
 }

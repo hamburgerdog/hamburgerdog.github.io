@@ -34,7 +34,6 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
 
     #quote {
       color: orangered;
-      opacity: 0.7;
       font-size: 14px;
       text-decoration: underline;
 
@@ -43,7 +42,7 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
       }
 
       &:hover {
-        opacity: 1;
+        font-weight: bold;
       }
     }
   }
@@ -67,6 +66,10 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
     &:hover {
       color: orangered;
       padding-inline-start: 1em;
+
+      .subtitle {
+        color: orangered;
+      }
     }
     p {
       margin-block-start: 0.2em;
@@ -87,7 +90,7 @@ const starPosts = posts.filter((p) => p.data.tags.includes('精选'));
     .subtitle {
       display: inline;
       font-size: 12px;
-      opacity: 0.5;
+      color: var(--sub-text-color);
     }
 
     .label {

@@ -152,81 +152,11 @@ posts.forEach((p) => {
 </style>
 
 <script>
-  //	每日一句的 API
-  document.addEventListener('astro:page-load', async () => {
-    const res = await fetch('https://v1.hitokoto.cn/');
-    const data = await res.json();
-    const ele = document.querySelector('#quote') as HTMLSpanElement;
-    if (ele) {
-      ele.innerHTML = `「${data.from}」${data.hitokoto}`;
-    }
-  });
-
-  document.addEventListener('astro:page-load', async () => {
-    const tags = document.querySelectorAll('.filter_item') as NodeListOf<HTMLParagraphElement>;
-    const items = document.querySelectorAll('.item') as NodeListOf<HTMLDivElement>;
-    const starTitle = document.querySelector('#star-section-title') as HTMLHeadingElement;
-    const timelineTitle = document.querySelector('#timeline-section-title') as HTMLHeadingElement;
-    const starItems = document.querySelectorAll('.star_list .item') as NodeListOf<HTMLDivElement>;
-    const timelineItems = document.querySelectorAll('.detail .item') as NodeListOf<HTMLDivElement>;
-
-    /**
-     * 检查并更新标题的显示状态
-     * 如果某个部分的所有文章都被隐藏，则隐藏对应的标题
-     */
-    const updateSectionTitles = () => {
-      // 检查精选部分是否有可见文章
-      const hasVisibleStarItems = Array.from(starItems).some(
-        (item) => item.style.display !== 'none'
-      );
-      starTitle.style.display = hasVisibleStarItems ? 'block' : 'none';
-
-      // 检查时间线部分是否有可见文章
-      const hasVisibleTimelineItems = Array.from(timelineItems).some(
-        (item) => item.style.display !== 'none'
-      );
-      timelineTitle.style.display = hasVisibleTimelineItems ? 'block' : 'none';
-    };
-
-    //	tags 单选并执行筛选
-    tags.forEach((tag) => {
-      tag.addEventListener('click', () => {
-        //	多选样式调整
-        const isCancel = tag.classList.contains('selected');
-        //	所有选中的 tag
-        const selectedTags = document.querySelectorAll('.selected');
-        //  除去所有选中状态
-        selectedTags.forEach((tag) => {
-          tag.classList.remove('selected');
-        });
-
-        //	如果没有选中任何 tag，那么所有文章都显示，否则只显示选中的 tag 的文章
-        if (isCancel) {
-          items.forEach((item) => {
-            item.style.display = 'block';
-          });
-          // 重置标题显示状态
-          starTitle.style.display = 'block';
-          timelineTitle.style.display = 'block';
-          return;
-        }
-
-        //  如果当前没有选择即不是取消选中的逻辑
-        tag.classList.add('selected');
-        //  获取筛选值
-        const tagValue = tag.id;
-        //	所有 item 就是所有文章
-        items.forEach((item) => {
-          //	每篇文章的 tags
-          const tags = (item.getAttribute('data-tags') as string).split(' ');
-          //	如果没有选中任何 tag，那么所有文章都显示，否则只显示选中的 tag 的文章
-          item.style.display = tags.includes(tagValue) ? 'block' : 'none';
-        });
-
-        // 更新标题显示状态
-        updateSectionTitles();
-      });
-    });
+  import BlogFilter from '../script/blogFilter.js';
+  // 初始化博客筛选器
+  document.addEventListener('astro:page-load', () => {
+    const blogFilter = new BlogFilter();
+    blogFilter.init();
   });
 </script>
 

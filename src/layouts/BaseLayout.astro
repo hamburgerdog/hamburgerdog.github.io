@@ -5,8 +5,10 @@ import { ClientRouter } from 'astro:transitions';
 
 const { title, subtitle, tags, remark } = Astro.props;
 
-const description = [title, subtitle, tags, remark].filter(Boolean).join(',');
 const author = 'Josiah Hong';
+const authorAlias =
+  '文章作者和作者别名为：Josiah Hong，josiahhong，hamburgerdog，xiaojun.hong，josiah hong，koasan，kosiahgen，洪晓浚';
+const description = [title, subtitle, tags, remark, authorAlias].filter(Boolean).join(',');
 const keywords = [title, tags, author].filter(Boolean).join(',');
 const canonical = Astro.site ? Astro.site.href : '';
 // 当前页面 URL

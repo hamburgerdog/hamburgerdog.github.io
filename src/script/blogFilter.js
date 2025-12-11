@@ -15,6 +15,7 @@ class BlogFilter {
     };
 
     this.elements = {};
+    this.currentTag = null;
   }
 
   /**
@@ -94,22 +95,68 @@ class BlogFilter {
   }
 
   /**
+   * 从 URL 参数中获取当前选中的标签
+   * @returns {string|null} 标签值，如果没有则返回 null
+   */
+  getTagFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('tag');
+  }
+
+  /**
+   * 更新 URL 参数，保存筛选状态
+   * 使用 pushState 在历史堆栈中添加新条目，支持浏览器前进/后退
+   * @param {string|null} tagValue - 标签值，null 表示清除筛选
+   */
+  updateURL(tagValue) {
+    const url = new URL(window.location.href);
+    
+    if (tagValue) {
+      url.searchParams.set('tag', tagValue);
+    } else {
+      url.searchParams.delete('tag');
+    }
+
+    // 使用 pushState 在历史堆栈中添加新条目，支持前进/后退切换筛选状态
+    window.history.pushState({ tag: tagValue }, '', url.toString());
+  }
+
+  /**
+   * 根据标签值应用筛选状态
+   * @param {string|null} tagValue - 标签值，null 表示清除筛选
+   */
+  applyFilter(tagValue) {
+    this.clearSelectedTags();
+    this.currentTag = tagValue;
+
+    if (!tagValue) {
+      this.resetFilter();
+      return;
+    }
+
+    // 找到对应的标签元素并选中
+    const tagElement = Array.from(this.elements.filterItems).find(
+      (item) => item.id === tagValue
+    );
+    
+    if (tagElement) {
+      tagElement.classList.add('selected');
+    }
+
+    this.filterByTag(tagValue);
+    this.updateSectionTitles();
+  }
+
+  /**
    * 处理标签点击事件
    * @param {HTMLElement} tagElement - 被点击的标签元素
    */
   handleTagClick(tagElement) {
     const isCancel = tagElement.classList.contains('selected');
-    this.clearSelectedTags();
+    const tagValue = isCancel ? null : tagElement.id;
 
-    if (isCancel) {
-      this.resetFilter();
-      return;
-    }
-
-    tagElement.classList.add('selected');
-    const tagValue = tagElement.id;
-    this.filterByTag(tagValue);
-    this.updateSectionTitles();
+    this.applyFilter(tagValue);
+    this.updateURL(tagValue);
   }
 
   /**
@@ -125,6 +172,25 @@ class BlogFilter {
         this.handleTagClick(tag);
       });
     });
+  }
+
+  /**
+   * 处理浏览器前进/后退事件
+   * 从 URL 中恢复筛选状态
+   */
+  handlePopState() {
+    const tagFromURL = this.getTagFromURL();
+    this.applyFilter(tagFromURL);
+  }
+
+  /**
+   * 从 URL 恢复筛选状态
+   */
+  restoreStateFromURL() {
+    const tagFromURL = this.getTagFromURL();
+    if (tagFromURL) {
+      this.applyFilter(tagFromURL);
+    }
   }
 
   /**
@@ -149,7 +215,18 @@ class BlogFilter {
    */
   init() {
     this.initElements();
+    
+    // 先从 URL 恢复状态
+    this.restoreStateFromURL();
+    
+    // 初始化标签筛选功能
     this.initTagFilter();
+    
+    // 监听浏览器前进/后退事件
+    window.addEventListener('popstate', () => {
+      this.handlePopState();
+    });
+    
     this.loadDailyQuote();
   }
 }

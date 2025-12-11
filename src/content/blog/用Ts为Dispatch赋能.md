@@ -1,7 +1,7 @@
 ---
 title: '用Ts为Dispatch赋能'
 date: 2021-09-14 23:59:00 +0800
-tags: 前端
+tags: 前端 工程基建
 remark: '使用 TypeScript 为 dva/redux 的 dispatch 方法添加类型提示，提升开发体验'
 ---
 

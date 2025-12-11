@@ -1,7 +1,7 @@
 ---
 title: 'TS 转 JS 三年后项目怎么样了？'
 date: 2025-08-06 20:00:00 +0800
-tags: 前端 精选
+tags: 前端 精选 工程基建
 remark: '分享团队将项目从 TypeScript 迁移回 JavaScript 的三年实践，探讨技术选型的权衡与思考'
 ---
 

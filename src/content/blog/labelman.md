@@ -27,54 +27,7 @@ remark: '一篇介绍如何使用 WASM + onnx-web 的文章，使用 TypeScript 
 
 架构设计清晰地分离了核心计算逻辑和接口层。这使得多目标编译和在不同平台上高效执行成为可能。
 
-```mermaid
-graph TB
-    subgraph "接口层"
-        A[React 示例应用]
-        B[ES 包]
-        C[Web Assembly 接口]
-        D[原生二进制文件]
-    end
-subgraph "核心层"
-    E[核心 C++ 库]
-    F[Labelman 模块]
-    G[OCR Label 模块]
-    H[Seq OCR 模块]
-    I[Match Template 模块]
-    J[通用工具]
-    K[加密模块]
-    L[操作模块]
-end
-
-subgraph "模型层"
-    M[ONNX 模型文件]
-    N[onnxruntime]
-end
-
-subgraph "构建层"
-    O[CMake 系统]
-    P[Emscripten]
-    Q[构建脚本]
-end
-
-A --> B
-B --> C
-B --> D
-C --> E
-D --> E
-E --> F
-E --> G
-E --> H
-E --> I
-E --> J
-E --> K
-E --> L
-E --> N
-M --> N
-O --> E
-Q --> O
-P --> O
-```
+![架构设计图](../../assets/labelman/架构设计图.svg)
 
 **核心层**：完全基于 CPP 开发，实现了以下功能
 
@@ -128,35 +81,7 @@ WASM 的多线程提案在浏览器环境下确实是基于 Web Workers 技术�
 
 在 WebAssembly 启动并发模式的构建后，可以得到 `.wasm` `.worker.js` `.js` 文件，这不代表我们需要手动引入 `.worker.js` 实现并发，其实在 `.js` 文件中已经封装了对 `.worker.js` 的引用，在应用层使用的时候，只通过 js 文件的即可实现多线程并行处理。
 
-```mermaid
-flowchart LR
-    subgraph "应用层（开发者视角）"
-        A[引入主 JS 文件<br/>（如 output.js）] -->|触发初始化| B[主 JS 逻辑]
-    end
-
-    subgraph "主 JS 自动处理"
-        B --> C[创建 SharedArrayBuffer<br/>（shared: true 的 WebAssembly.Memory）]
-        B --> D[自动创建 Web Worker<br/>（隐式加载 worker.js）]
-        C -.共享内存.-> D
-    end
-
-    subgraph "Web Worker 线程"
-        D --> E[加载 worker.js<br/>（Worker 入口）]
-        E --> F[实例化 WASM 模块<br/>（.wasm 文件）]
-        F --> G[CPP 多线程处理单元<br/>（-pthread 编译）]
-        G -.读写数据.-> C
-    end
-
-    subgraph "主线程 WASM 实例"
-        C --> H[实例化 WASM 模块<br/>（.wasm 文件）]
-        H -.读写数据.-> C
-    end
-
-    subgraph "核心同步机制"
-        I[Atomics API<br/>（原子操作/等待/通知）] -->|保障线程安全| G
-        I -->|保障线程安全| H
-    end
-```
+![WASM多线程模型图](../../assets/labelman/WASM多线程模型图.svg)
 
 ## 分割结果性能优化
 
@@ -169,18 +94,7 @@ flowchart LR
 3. 底层编辑器处理 Mat 转化成形状，这一块业务链路很多，亟需查找优化空间；
 4. 底层编辑器触发形状绘制，浏览器进行渲染，这一块也主要受限于硬件性能。
 
-```mermaid
-flowchart LR
-    A[⚡ 加载模型<br/>Load Model] --> B[🧠 运行模型推理<br/>Generate Feature Mask]
-    B --> C[🔧 底层编辑器解析 Mask<br/>Mask → Shape 转换]
-    C --> D[🎨 编辑器触发绘制<br/>Render Shape]
-
-    style A fill:#0a0f1f,stroke:#4aa3ff,color:#e0f3ff
-    style B fill:#0b132b,stroke:#5bc0ff,color:#e0f7ff
-    style C fill:#102035,stroke:#72d1ff,color:#e6faff
-    style D fill:#122b45,stroke:#8ee5ff,color:#eaffff
-
-```
+![业务链条优化图](../../assets/labelman/业务链条优化图.svg)
 
 **那么从 Mat 到形状绘制到底做了哪些事情呢？**
 
@@ -227,7 +141,7 @@ flowchart LR
    首先，Image 其实表示的是一种资源，而 Canvas 其实是 “位图缓冲区” ，这个定义描述的是一种静态资源和动态可操作的 Buffer，使用一个不可变的静态资源进行绘制从业务上看十分的靠谱，但如果 Canvas 是完全受控的且能从业务上保证不变呢？
 
     <br/>
-    
+   
    显然，在 Canvas 完全受控的情况下是符合绘制要求的，其自身就是一个 `CanvasImageSource`  可以被放在 `drawImage` 中直接使用，那么这时候优化就变成了代码梳理和重构，将任何获取 Mat Canvas 绘制上下文的入口关闭掉，就又在性能上提升了一步！
 
 3. 与后端使用 Base64 交互如何进行优化呢？

@@ -96,7 +96,7 @@ remark: '分享团队将项目从 TypeScript 迁移回 JavaScript 的三年实�
 | 通用组件/函数层 |  运行时  |  PropTypes + Zod   | 可选的类型校验提升 |
 |   应用业务层    |  开发时  | JSDoc + TS checkJs |   优秀的开发体验   |
 
-![应用全流程介绍](../../assets/ts2js.png)
+![应用全流程介绍](../../assets/ts2js.webp)
 
 
 

@@ -22,7 +22,7 @@ remark: '介绍在 Webpack 中使用 nonce、SRI 等安全机制提升前端应�
 4. webpack 将内部脚本全部插入 nonce
 5. 浏览器执行 CSP 策略进行验证
 
-![nonce 注入过程](../../assets/nonce-flow.png)
+![nonce 注入过程](../../assets/nonce-flow.webp)
 
 ### 服务器生成 nonce 
 

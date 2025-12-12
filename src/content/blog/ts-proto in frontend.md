@@ -104,7 +104,7 @@ async function TestAPI(data: Person): Promise<AddressBook> {
 | 业务功能调试（重复以上过程） | 业务功能调试（重复以上过程） |
 
 **执行全流程：**
-![执行全流程](../../assets/ts-proto/image-20231211142115103.png)
+![执行全流程](../../assets/ts-proto/image-20231211142115103.webp)
 
 <br />
 
@@ -112,23 +112,23 @@ async function TestAPI(data: Person): Promise<AddressBook> {
 
 1. TS 代码生成
 
-   ![TS 代码生成](../../assets/ts-proto/image-20231211120726855.png)
+   ![TS 代码生成](../../assets/ts-proto/image-20231211120726855.webp)
 
 2. 自动实现字段转换，将请求的首字母大写，将响应的首字母小写（可配置部分字段不转换），同时提供完善的类型提示提升工程质量；
-   ![请求数据转换](../../assets/ts-proto/image-20231211120834058.png)
-   ![响应数据转换](../../assets/ts-proto/image-20231211121235955.png)
+   ![请求数据转换](../../assets/ts-proto/image-20231211120834058.webp)
+   ![响应数据转换](../../assets/ts-proto/image-20231211121235955.webp)
 
 3. 接入 axios 实例
 
    - 通过调用时传入/修改 api 实例；
-     ![coding axios](../../assets/ts-proto/image-20231211121338916.png)
+     ![coding axios](../../assets/ts-proto/image-20231211121338916.webp)
 
    - 代码注入
 
      `import * as apiInstance from '**/*.ts'`
 
 4. 自测覆盖（覆盖业务层的常用场景，手写 protobuf + vitest 实现）
-   ![自测覆盖](../../assets/ts-proto/image-20231211121559405.png)
+   ![自测覆盖](../../assets/ts-proto/image-20231211121559405.webp)
 
 <br />
 

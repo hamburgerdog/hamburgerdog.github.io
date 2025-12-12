@@ -20,7 +20,7 @@ remark: 'Vultr 云服务器使用指南，包括优惠券获取、机型选择�
 
 2. 选最的 vCPU 云服务器（vhp-1c-1gb），1CPU + 1 内存 + 2TB 流量 
 
-   ![云服务器](../../assets/vultr.assets/image-20250906184730532.png)
+   ![云服务器](../../assets/vultr.assets/image-20250906184730532.webp)
 
 3. 酌情考虑是否使用自动备份方案，这里是 VPS 我就不使用备份的费用了。
 
@@ -100,7 +100,7 @@ sudo firewall-cmd --reload
 
 1. 安装 WireGuard 客户端
 
-   ![WireGuard 客户端操作](../../assets/vultr.assets/image-20250906190112587.png)
+   ![WireGuard 客户端操作](../../assets/vultr.assets/image-20250906190112587.webp)
 
 2. 配置隧道
 
@@ -127,4 +127,4 @@ sudo firewall-cmd --reload
    PersistentKeepalive = 25
    ```
 
-   ![WireGuard 客户端配置](../../assets/vultr.assets/image-20250906190150769.png)
+   ![WireGuard 客户端配置](../../assets/vultr.assets/image-20250906190150769.webp)

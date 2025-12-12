@@ -255,7 +255,7 @@ export async function describeProjectByName(request: DescribeProjectByNameReques
 
 这样我们就已经得到了一个 MCP 了，在 Cursor Agent 模式下使用看看，进行完善的链式调用，实现更复杂的功能。测试通过之后就可以发布到 NPM 制品仓库给团队内部使用了。
 
-![mcp-coding](../../assets/MCP/mcp.png)
+![mcp-coding](../../assets/MCP/mcp.webp)
 
 <br/>
 

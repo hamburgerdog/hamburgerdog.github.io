@@ -101,15 +101,15 @@ docker compose up -d
 
 1. 新建一个「知识库」并导入各类知识文档
 
-   ![导入数据](../../assets/dify-rag/image-20250913174509556.png)
+   ![导入数据](../../assets/dify-rag/image-20250913174509556.webp)
 
 2. 根据自己的文档内容选择对应的分块规则
 
-   ![分块规则](../../assets/dify-rag/cloud.dify.ai_datasets_create.png)
+   ![分块规则](../../assets/dify-rag/cloud.dify.ai_datasets_create.webp)
 
 3. 检索设置启用「混合检索」，并调整 Embedding 模型和 Rerank 模型的选择符合期望
 
-   ![混合检索](../../assets/dify-rag/image-20250913175108881.png)
+   ![混合检索](../../assets/dify-rag/image-20250913175108881.webp)
 
 4. 在左侧就可以进行分块的预览啦，可以根据预览的内容进行各类微调，最后，对知识库进行保存，Dify 会自动对上传的所有文件进行检索
 
@@ -119,15 +119,15 @@ docker compose up -d
 
    2. 在起始节点后新增一个「知识检索」节点用于提供知识库信息
 
-      ![知识检索](../../assets/dify-rag/image-20250913175717273.png)
+      ![知识检索](../../assets/dify-rag/image-20250913175717273.webp)
 
    3. 在 LLM 节点切换模型并提供「知识检索」的上下文信息，否则 LLM 节点无法使用知识检索的内容
 
-      ![LLM](../../assets/dify-rag/image-20250913180234683.png)
+      ![LLM](../../assets/dify-rag/image-20250913180234683.webp)
 
 6. 点击右上角「预览」并添加引用以及智能提示下一句功能来测试知识库检索效果
 
-   ![智能体检索并回答](../../assets/dify-rag/image-20250913180543338.png)
+   ![智能体检索并回答](../../assets/dify-rag/image-20250913180543338.webp)
 
 7. 可以看到智能体已经严格按照我们的要求进行了回答，并给我们提供了对应检索到的文档。
 

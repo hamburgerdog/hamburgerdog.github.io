@@ -60,7 +60,7 @@ useEffect(()=>{
 
 然而，很不幸的，在以上过程中，加载图片和查询 dom 这两个核心业务并不是同步处理的。这就会让绘制的复杂情况陡然上升。
 
-![异步导致的时序问题](../../assets/useAsyncEffect/1.png)
+![异步导致的时序问题](../../assets/useAsyncEffect/1.webp)
 
 ## 异步导致的时序问题
 
@@ -128,11 +128,11 @@ useEffect(()=>{
    
    那这时候依照上面的方法，我们是不是需要继续把控代码顺序、控制各种临时状态呢？还是开始使用 `nextTick + setTimeout + requsetIdleCallback` 等能使用到微任务的方法来执行各种细粒度的执行顺序区分呢？
    
-  ![逻辑图](../../assets/useAsyncEffect/2.png)
+  ![逻辑图](../../assets/useAsyncEffect/2.webp)
    
    时序图里面需要包含两个异步并行的场景
    
-  ![异步的复杂时序图](../../assets/useAsyncEffect/3.png)
+  ![异步的复杂时序图](../../assets/useAsyncEffect/3.webp)
 
 
 
@@ -169,8 +169,8 @@ useEffect(()=>{
 
 完全串行的代码逻辑
 
-![串行的逻辑图](../../assets/useAsyncEffect/4.png)
+![串行的逻辑图](../../assets/useAsyncEffect/4.webp)
 
 串行的时序图
 
-![串行的时序图](../../assets/useAsyncEffect/5.png)
+![串行的时序图](../../assets/useAsyncEffect/5.webp)

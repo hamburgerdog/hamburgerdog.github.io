@@ -14,7 +14,7 @@ hooks 一切都从 dispatcher 开始。
 const [value, setValue] = useState();
 
 function useState(initState){
-  const dispatcher = resloveDispatcher();
+  const dispatcher = resolveDispatcher();
   return dispatcher.useState(initState)
 }
 ```
@@ -32,6 +32,13 @@ function useState(initState){
       dispatch: null,
       // ...
     };
+    
+    // 初始化状态值
+    if (typeof initialState === 'function') {
+      hook.memoizedState = initialState();
+    } else {
+      hook.memoizedState = initialState;
+    }
     
     // 关键：绑定当前正在渲染的 Fiber
     const dispatch = (queue.dispatch = dispatchSetState.bind(
@@ -71,7 +78,7 @@ const root = enqueueConcurrentHookUpdate(fiber, queue, update, lane);
 scheduleUpdateOnFiber(root, fiber, lane);  // ← 传入同一个 fiber
 ```
 
-`scheduleUpdateOnFiber(root, fiber, lane)` 这里只是一个派发任务的入口，并没有执行任何操作，只是等待时间执行。
+`scheduleUpdateOnFiber(root, fiber, lane)` 这里只是一个派发任务的入口，并没有执行任何操作，只是等待调度执行。
 
 - root，React 的应用根节点；向上找根节点的时候，会从 Fiber 开始往父节点打上 `parent.childLane` 代表子树更新；
 - fiber，当前触发更新的 Fiber 和 dispatcher 中的为同一个；用于后续调度过程中的使用，可以先不关注
@@ -177,7 +184,7 @@ function updateEffectImpl(fiberFlags, hookFlags, create, deps) {
       // 比较依赖是否变化
       if (areHookInputsEqual(nextDeps, prevDeps)) {
         // 依赖没变，创建一个没有 HookHasEffect 标记的 effect
-        pushEffect(HookPassive, create, destroy, nextDeps);
+        hook.memoizedState = pushEffect(hookFlags, create, destroy, nextDeps);
         return;
       }
     }
@@ -237,7 +244,7 @@ fiber.updateQueue = {
   - export const Layout = 0b010;      // 010 useLayoutEffect
   - export const Passive = 0b100;     // 100 useEffect
 
-通过这些标记，可以知道 Fiber 上是有有副作用，以及这些副作用是否需要执行，是同步执行还是调度执行
+通过这些标记，可以知道 Fiber 上是否有副作用，以及这些副作用是否需要执行，是同步执行还是调度执行
 
 **`useEffect` 和 `useLayoutEffect` 对比**
 
@@ -270,8 +277,8 @@ function flushPassiveEffects() {
     let current = firstEffect;
     
     do {
-      if (current.tag & HookHasEffect) {
-        // 执行 effect
+      if (current.tag & HasEffect) {
+        // 执行 effect（只有标记了 HasEffect 的 effect 才会执行）
         const destroy = current.create();
         current.destroy = destroy;
       }
@@ -318,11 +325,12 @@ function readContext<T>(Context: ReactContext<T>): T {
   // 2. 创建 ContextItem 对象
   const contextItem = {
     context: Context,
-    memoizedValue: context._currentValue,
+    memoizedValue: Context._currentValue,
     next: null,
   };
   
-  // 3. 将当前组件添加到 Context 的消费者列表
+  // 3. 将 ContextItem 添加到当前 Fiber 的 dependencies 链表
+  // 注意：订阅关系存储在 Fiber 上，而不是 Context 对象上
   if (fiber !== null) {
     if (fiber.dependencies === null) {
       fiber.dependencies = {
@@ -337,7 +345,7 @@ function readContext<T>(Context: ReactContext<T>): T {
   }
   
   // 4. 返回当前 Context 值
-  return context._currentValue;
+  return Context._currentValue;
 }
 ```
 
@@ -352,14 +360,11 @@ function readContext<T>(Context: ReactContext<T>): T {
 **具体实现的数据结构为**
 
 ```ts
-// Context 对象维护消费者链表
+// Context 对象结构（简化版）
 interface ReactContext<T> {
-  _currentValue: any,         // 当前值
-  _currentConsumer: {         // 消费者链表
-    fiber: ComponentFiber,    // 消费者组件
-    context: ReactContext,    // 指向当前 Context
-    next: Consumer | null     // 下一个消费者
-  } | null
+  _currentValue: any,         // 当前值（由最近的 Provider 设置）
+  // 注意：React 18 中不再维护全局消费者链表
+  // 订阅关系通过 Fiber.dependencies 来追踪
 }
 
 // Context 依赖项结构
@@ -398,11 +403,9 @@ fiber.dependencies = {
     ↓
 创建 ContextItem 添加到 ComponentFiber.dependencies
     ↓
-创建 Consumer 对象添加到 MyContext._currentConsumer
+组件 Fiber 通过 dependencies.firstContext 链表记录所有依赖的 Context
     ↓
-现在 MyContext 知道有这个消费者
-    ↓
-组件也知道自己依赖了 MyContext
+组件知道自己依赖了哪些 Context
 ```
 
 **Provider 的更新过程为**
@@ -412,12 +415,13 @@ fiber.dependencies = {
     ↓
 更新 MyContext._currentValue = newValue
     ↓
-遍历 MyContext._currentConsumer 链表
+在 Provider 更新时，React 会遍历其子树中的所有 Fiber
     ↓
-对每个消费者 Fiber：
-    1. 检查是否在当前 Provider 的子树中
-    2. 检查是否有更近的 Provider
-    3. 如果应该响应这个更新：
+对每个 Fiber，检查其 dependencies.firstContext 链表：
+    1. 是否包含当前 Context 的 ContextItem
+    2. 检查是否在当前 Provider 的子树中
+    3. 检查是否有更近的 Provider（向上查找）
+    4. 如果应该响应这个更新：
         - 标记 consumerFiber.lanes
         - 向上标记 parent.childLanes
     ↓
@@ -426,7 +430,7 @@ fiber.dependencies = {
 安排重新渲染
 ```
 
-在这里 `Context` 实例是全局单例，`Context._currentConsumer` 这个消费链表也是全局的，但 `Provider` 不是全局单例：
+在这里 `Context` 实例是全局单例，但订阅关系是通过每个 Fiber 的 `dependencies` 来维护的，而不是在 Context 对象上维护全局消费者链表。`Provider` 不是全局单例：
 
 ```tsx
 // 示例：同一个 Context 可以有多个 Provider
@@ -444,7 +448,7 @@ fiber.dependencies = {
 - **向上查找**：从消费者向上找，不是从 Provider 向下
 - **精确匹配**：只影响真正依赖当前 Provider 的消费
 
-总结以上，Context 是一个全局实例，内部维护了所有订阅了它的消费者 Fiber 的链表。当这个 Context 的某个 Provider 更新时，React 会遍历这个全局链表，找到所有订阅了该 Context 的消费者 Fiber，并检查它们是否在这个特定的 Provider 子树中。如果是，就给这个 Fiber 打上更新标记。
+总结以上，Context 是一个全局实例，但订阅关系分散存储在各个消费者 Fiber 的 `dependencies` 中。当这个 Context 的某个 Provider 更新时，React 会遍历该 Provider 子树中的所有 Fiber，检查每个 Fiber 的 `dependencies.firstContext` 链表，找到所有订阅了该 Context 的消费者 Fiber，并检查它们是否应该响应这个特定的 Provider 更新。如果是，就给这个 Fiber 打上更新标记。
 
 
 ---
@@ -527,7 +531,7 @@ function updateMemo<T>(
 
 ##  所有 Hook 的执行时机
 
-所有更新触发都可以追踪到状态的改变，这些状态通过不同路径传播最终影响组件的 props 等的改变，React 是声明式的，你需要需要声明 “当状态是什么的时候，UI 长什么样子” ，最终这些更新触发都会导致 UI 的改变。
+所有更新触发都可以追踪到状态的改变，这些状态通过不同路径传播最终影响组件的 props 等的改变，React 是声明式的，你需要声明 "当状态是什么的时候，UI 长什么样子" ，最终这些更新触发都会导致 UI 的改变。
 
 | 更新表现         | 实际源头            | 触发方式                |
 | ---------------- | ------------------- | ----------------------- |
@@ -550,4 +554,4 @@ Fiber 节点
 └── updateQueue: 副作用队列
 ```
 
-通过一次更新，调度了一次 `scheduleUpdateOnFiber` 执行了各类 hook 的执行，标记出若干需要更新的子树，最终创递给 Root，在 `reconciler` 执行 render 构造双缓存树。
+通过一次更新，调度了一次 `scheduleUpdateOnFiber` 执行了各类 hook 的执行，标记出若干需要更新的子树，最终传递给 Root，在 `reconciler` 执行 render 构造双缓存树。

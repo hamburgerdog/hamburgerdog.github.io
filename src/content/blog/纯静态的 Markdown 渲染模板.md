@@ -46,16 +46,16 @@ remark: '纯静态 HTML 页面展示 Markdown 格式文档的实现方案，支�
 ```js
 //	xxx.min.js
 modules.export = (() => {
-	return sm;
+  return sm;
 })();
 //	after edited
 window.a = (() => {
-	return sm;
+  return sm;
 })();
 
 //	use it in other dep.js
 () => {
-	a.xxx();
+  a.xxx();
 };
 ```
 
@@ -65,9 +65,9 @@ window.a = (() => {
 
 ```css
 .table-of-contents {
-	position: fixed;
-	left: 0;
-	top: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 ```
 
@@ -85,14 +85,14 @@ window.a = (() => {
 ```js
 //	处理主题
 const theme = (() => {
-	if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('theme')) {
-		return sessionStorage.getItem('theme');
-	}
-	//	适配系统的主题
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		return 'dark';
-	}
-	return 'light';
+  if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('theme')) {
+    return sessionStorage.getItem('theme');
+  }
+  //	适配系统的主题
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark';
+  }
+  return 'light';
 })();
 
 //	处理点击事件
@@ -100,26 +100,26 @@ const btnID = 'modeBtn';
 const btnElement = document.getElementById(btnID);
 
 if (theme === 'light') {
-	btnElement.setAttribute('src', './assets/sun.svg');
-	document.documentElement.classList.remove('dark');
+  btnElement.setAttribute('src', './assets/sun.svg');
+  document.documentElement.classList.remove('dark');
 } else {
-	btnElement.setAttribute('src', './assets/moon.svg');
-	document.documentElement.classList.add('dark');
+  btnElement.setAttribute('src', './assets/moon.svg');
+  document.documentElement.classList.add('dark');
 }
 
 window.sessionStorage.setItem('theme', theme);
 
 const handleToggleClick = (e) => {
-	const src = e.target.src;
-	const isMoon = src.endsWith('moon.svg');
-	//	处理显示图标
-	e.target.setAttribute('src', isMoon ? './assets/sun.svg' : './assets/moon.svg');
-	//	更新css主题
-	const element = document.documentElement;
-	element.classList.toggle('dark');
-	//	切换 sessionStorage 的存储变量
-	const isDark = element.classList.contains('dark');
-	sessionStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const src = e.target.src;
+  const isMoon = src.endsWith('moon.svg');
+  //	处理显示图标
+  e.target.setAttribute('src', isMoon ? './assets/sun.svg' : './assets/moon.svg');
+  //	更新css主题
+  const element = document.documentElement;
+  element.classList.toggle('dark');
+  //	切换 sessionStorage 的存储变量
+  const isDark = element.classList.contains('dark');
+  sessionStorage.setItem('theme', isDark ? 'dark' : 'light');
 };
 
 document.getElementById('modeBtn').addEventListener('click', handleToggleClick);
@@ -131,18 +131,18 @@ document.getElementById('modeBtn').addEventListener('click', handleToggleClick);
 
 ```css
 :root {
-	--tab-width: 480px;
-	--background-color: #fff;
-	--tab-background-color: #ffffff7f;
-	--text-color: #163b66;
-	--highlight: #163b6620;
+  --tab-width: 480px;
+  --background-color: #fff;
+  --tab-background-color: #ffffff7f;
+  --text-color: #163b66;
+  --highlight: #163b6620;
 }
 
 :root.dark {
-	--background-color: #000;
-	--tab-background-color: #0000007f;
-	--text-color: #fff;
-	--highlight: #6666667f;
+  --background-color: #000;
+  --tab-background-color: #0000007f;
+  --text-color: #fff;
+  --highlight: #6666667f;
 }
 ```
 
@@ -151,23 +151,15 @@ document.getElementById('modeBtn').addEventListener('click', handleToggleClick);
 既然 HTML 本身就是一个文档，那么在 HTML 直接写 Markdown 是不是也很合理？🤔
 
 ```html
-<div id="markdown">
-
-# Hello, Markdown!
-
-这是一段写在 HTML 里面的 Markdown 语法
-
-</div>
+<div id="markdown"># Hello, Markdown! 这是一段写在 HTML 里面的 Markdown 语法</div>
 
 <main>
-	<div id="slot" />
+  <div id="slot" />
 </main>
 
 <script>
-
-const markdown = document.getElementById('markdown').textContent;
-const result = markdownit.render(markdown);
-document.getElementById('slot').innerHTML = result;
-
+  const markdown = document.getElementById('markdown').textContent;
+  const result = markdownit.render(markdown);
+  document.getElementById('slot').innerHTML = result;
 </script>
 ```

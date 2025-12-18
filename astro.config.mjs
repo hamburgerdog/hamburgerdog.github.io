@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hamburgerdog.github.io',
+  site: 'https://josiah1.com',
 
   markdown: {
     // 应用于 .md 和 .mdx 文件

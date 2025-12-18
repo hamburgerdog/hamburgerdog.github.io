@@ -5,4 +5,4 @@
 <img width="1024" height="1365" alt="image" src="https://github.com/user-attachments/assets/b009934f-6925-4068-8c79-6a9dcf94bf4d" />
 
 性能指标展示：
-<img width="1337" alt="image" src="https://github.com/hamburgerdog/hamburgerdog.github.io/assets/48848286/3ff60cbd-0969-44bf-8533-ee019aef2a76">
+<img width="1337" alt="image" src="https://github.com/hamburgerdog/josiah1.com/assets/48848286/3ff60cbd-0969-44bf-8533-ee019aef2a76">

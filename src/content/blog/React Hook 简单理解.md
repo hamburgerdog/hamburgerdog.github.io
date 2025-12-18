@@ -84,7 +84,20 @@ scheduleUpdateOnFiber(root, fiber, lane);  // ← 传入同一个 fiber
 - fiber，当前触发更新的 Fiber 和 dispatcher 中的为同一个；用于后续调度过程中的使用，可以先不关注
 - lane，优先级先忽略；
 
-调度时，从 Root 开始深度遍历子树，已经知道了哪些子树发生了变化，直接就完成了剪枝。现在介绍一下 Fiber 在这里的作用：
+调度是轻量的：`scheduleUpdateOnFiber`只是安排工作，不立即执行，特点为：多个 `setState`的更新会进入同一个队列无论调度多少次，在批处理中只执行一次渲染。
+
+**React 18 改进，以下所有场景都自动批处理，简单理解就是 scheduleUpdateOnFiber 结束了进入下一个阶段**
+
+1. 同步执行栈清空 - React 事件处理器结束
+2. 微任务边界 - React 18 中`Promise、queueMicrotask`
+3. 宏任务边界 - `setTimeout、setInterval、requestAnimationFrame`
+4. 强制同步 - `flushSync` 调用
+5. 渲染阶段开始 - 开始渲染前会先刷新所有待处理更新
+6. `LayoutEffect` 执行 - 进入`commit` 阶段时
+
+**后续调度时，从 Root 开始深度遍历子树，已经知道了哪些子树发生了变化，直接就完成了剪枝。**
+
+现在介绍一下 Fiber 在这里的作用：
 
 1. 中断当前渲染：如果正在渲染的树中包含这个 fiber，可能需要重新开始
 2. **优先级比较：比较新更新与当前渲染的优先级**

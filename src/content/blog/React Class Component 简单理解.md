@@ -311,7 +311,7 @@ function processUpdateQueue<State>(
 
 **setState 的批处理机制**
 
-![setstate 批处理](../../assets/react-class-component.assets/setstate批处理.png)
+![setstate 批处理](../../assets/react-class-component.assets/setstate批处理.webp)
 
 ---
 
@@ -478,7 +478,7 @@ function updateClassComponent(
 
 **Context 订阅关系**
 
-![context订阅关系](../../assets/react-class-component.assets/context订阅关系.png)
+![context订阅关系](../../assets/react-class-component.assets/context订阅关系.webp)
 
 | 方面           | `setState`                    | `Context` 更新                      |
 | :------------- | :---------------------------- | :---------------------------------- |

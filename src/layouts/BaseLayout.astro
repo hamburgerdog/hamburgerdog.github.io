@@ -10,9 +10,15 @@ const authorAlias =
   '文章作者和作者别名为：Josiah Hong，josiahhong，hamburgerdog，xiaojun.hong，josiah hong，koasan，kosiahgen，洪晓浚';
 const description = [title, subtitle, tags, remark, authorAlias].filter(Boolean).join(',');
 const keywords = [title, tags, author].filter(Boolean).join(',');
-const canonical = Astro.site ? Astro.site.href : '';
-// 当前页面 URL
-const url = Astro.url.toString();
+// 主域名配置：无论从哪个域名访问，都使用 josiah1.com 作为主索引域名
+const primaryDomain = 'https://josiah1.com';
+// 构建当前页面的完整 canonical URL，强制使用主域名（josiah1.com）
+// 这样无论用户从 hamburgerdog.github.io 还是 josiah1.com 访问，canonical 都指向 josiah1.com
+const canonical = new URL(Astro.url.pathname + Astro.url.search, primaryDomain).toString();
+// 当前页面 URL（用于 Open Graph），也使用主域名
+const url = canonical;
+// Open Graph 图片的绝对 URL，使用主域名
+const ogImage = new URL('/josiah.png', primaryDomain).toString();
 ---
 
 <style is:global lang="scss">
@@ -142,7 +148,7 @@ const url = Astro.url.toString();
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/josiah.png" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={url} />
     <meta property="og:site_name" content="Josiah Hong`s Blog" />
 
@@ -150,7 +156,7 @@ const url = Astro.url.toString();
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/josiah.png" />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />

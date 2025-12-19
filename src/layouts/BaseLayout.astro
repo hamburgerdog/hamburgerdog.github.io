@@ -159,7 +159,7 @@ const ogImage = new URL('/josiah.png', primaryDomain).toString();
     <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/xjosiah.ico" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="sitemap" type="application/xml" href={`${primaryDomain}/sitemap-index.xml`} />
     <link rel="alternate" hreflang="zh-CN" href={canonical} />
     <link rel="canonical" href={canonical} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

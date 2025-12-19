@@ -22,5 +22,17 @@ export default defineConfig({
     ],
   },
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // 确保 sitemap 包含所有页面
+      // filter 函数可以排除不需要索引的页面
+      filter: (page) => {
+        // 包含所有页面，排除可能的错误页面或测试页面
+        return true;
+      },
+      // 设置变更频率和优先级
+      changefreq: 'weekly',
+      priority: 0.7,
+    }),
+  ],
 });

@@ -141,26 +141,7 @@ function updateClassComponent(
 
 ### Update 队列的数据结构
 
-```mermaid
-graph TD
-    A[Component Fiber] --> B[updateQueue]
-    B --> C[firstBaseUpdate]
-    B --> D[lastBaseUpdate]
-    B --> E[shared.pending]
-    C --> F[Update1]
-    F --> G[Update2]
-    G --> H[Update3]
-    H --> I[回到 Update1]
-    D --> I
-    E --> J[Update4]
-    J --> K[Update5]
-    K --> L[回到 Update4]
-    
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style F fill:#e8f5e9
-    style J fill:#fce4ec
-```
+<img src="../../assets/react-class-component.assets/update的队列数据结构.png" alt="update的队列数据结构" style="zoom:50%;" />
 
 ```ts
 // Update 队列结构
@@ -330,31 +311,7 @@ function processUpdateQueue<State>(
 
 **setState 的批处理机制**
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant Component
-    participant setState
-    participant UpdateQueue
-    participant Scheduler
-    
-    User->>Component: 调用 setState
-    Component->>setState: this.setState({count: 1})
-    setState->>UpdateQueue: enqueueUpdate(fiber, update1)
-    UpdateQueue->>UpdateQueue: 将 update1 加入环形链表
-    
-    User->>Component: 再次调用 setState
-    Component->>setState: this.setState({count: 2})
-    setState->>UpdateQueue: enqueueUpdate(fiber, update2)
-    UpdateQueue->>UpdateQueue: update2 连接到 update1
-    
-    Note over UpdateQueue: 批处理：多个 setState 合并
-    
-    UpdateQueue->>Scheduler: scheduleUpdateOnFiber
-    Scheduler->>UpdateQueue: processUpdateQueue
-    UpdateQueue->>UpdateQueue: 合并所有更新
-    UpdateQueue->>Component: 更新 state
-```
+![setstate 批处理](../../assets/react-class-component.assets/setstate批处理.png)
 
 ---
 
@@ -435,24 +392,7 @@ function updateClassComponent(
 
 **Props 更新流程**
 
-```mermaid
-graph TD
-    A[父组件 setState] --> B[子组件 Fiber 标记更新]
-    B --> C[比较 prevProps 和 nextProps]
-    C --> D{props 是否变化?}
-    D -->|是| E[标记 Update flag]
-    D -->|否| F[跳过更新]
-    E --> G[调用 getDerivedStateFromProps]
-    G --> H[更新 instance.props]
-    H --> I[触发 shouldComponentUpdate]
-    I --> J{返回 true?}
-    J -->|是| K[重新渲染]
-    J -->|否| F
-    
-    style A fill:#e1f5ff
-    style E fill:#fff4e1
-    style K fill:#e8f5e9
-```
+<img src="../../assets/react-class-component.assets/Props更新流程.png" alt="Props更新流程" style="zoom:50%;" />
 
 | 方面           | `setState`                    | `props` 更新                        |
 | :------------- | :---------------------------- | :---------------------------------- |
@@ -538,26 +478,7 @@ function updateClassComponent(
 
 **Context 订阅关系**
 
-```mermaid
-graph TD
-    A[Class Component] --> B[Component.contextType]
-    B --> C[readContext]
-    C --> D[创建 ContextItem]
-    D --> E[添加到 Fiber.dependencies]
-    E --> F[Fiber.dependencies.firstContext]
-    
-    G[Context.Provider] --> H[更新 Context._currentValue]
-    H --> I[遍历 Provider 子树]
-    I --> J[检查每个 Fiber.dependencies]
-    J --> K{包含当前 Context?}
-    K -->|是| L[标记 Fiber.lanes]
-    K -->|否| M[跳过]
-    L --> N[调度重新渲染]
-    
-    style A fill:#e1f5ff
-    style G fill:#fff4e1
-    style L fill:#e8f5e9
-```
+![context订阅关系](../../assets/react-class-component.assets/context订阅关系.png)
 
 | 方面           | `setState`                    | `Context` 更新                      |
 | :------------- | :---------------------------- | :---------------------------------- |
@@ -665,23 +586,7 @@ function bailoutOnAlreadyFinishedWork(
 
 **缓存机制流程图**
 
-```mermaid
-graph TD
-    A[组件更新触发] --> B[比较 props 和 state]
-    B --> C{shouldComponentUpdate?}
-    C -->|存在| D{返回 true?}
-    C -->|不存在| E[默认更新]
-    D -->|true| E
-    D -->|false| F[bailoutOnAlreadyFinishedWork]
-    F --> G[复用之前的子节点]
-    G --> H[跳过渲染]
-    E --> I[重新渲染]
-    
-    style A fill:#e1f5ff
-    style F fill:#fff4e1
-    style I fill:#e8f5e9
-    style H fill:#fce4ec
-```
+<img src="../../assets/react-class-component.assets/缓存机制.png" alt="缓存机制" style="zoom:50%;" />
 
 | 方面                 | `shouldComponentUpdate`       | `React.memo`（函数组件）            |
 | :------------------- | :---------------------------- | :---------------------------------- |
@@ -827,33 +732,7 @@ function commitAttachRef(finishedWork: Fiber): void {
 
 **Ref 处理流程**
 
-```mermaid
-sequenceDiagram
-    participant Render
-    participant Commit
-    participant DOM
-    
-    Note over Render: 挂载阶段
-    Render->>Render: mountClassComponent
-    Render->>Render: 标记 flags |= Ref
-    Render->>Commit: commitMutationEffects
-    Commit->>Commit: commitAttachRef
-    Commit->>DOM: ref.current = instance
-    
-    Note over Render: 更新阶段
-    Render->>Render: updateClassComponent
-    Render->>Render: 检查 ref 是否变化
-    alt ref 变化
-        Render->>Render: 标记 flags |= Ref
-        Render->>Commit: commitMutationEffects
-        Commit->>Commit: commitDetachRef (旧 ref)
-        Commit->>DOM: ref.current = null
-        Commit->>Commit: commitAttachRef (新 ref)
-        Commit->>DOM: ref.current = instance
-    else ref 未变化
-        Render->>Render: 跳过处理
-    end
-```
+<img src="../../assets/react-class-component.assets/Ref处理流程.png" alt="Ref处理流程" style="zoom:50%;" />
 
 | 方面           | `createRef`                   | `回调 Ref`                          |
 | :------------- | :---------------------------- | :---------------------------------- |
@@ -879,36 +758,11 @@ sequenceDiagram
 
 基于这些认识，可以把 `setState、props、context、缓存、ref` 串联起来了：
 
-```mermaid
-graph TD
-    A[Class Component Fiber] --> B[updateQueue]
-    A --> C[memoizedProps]
-    A --> D[memoizedState]
-    A --> E[dependencies]
-    A --> F[ref]
-    A --> G[flags]
-    
-    B --> H[Update 队列]
-    H --> I[firstBaseUpdate]
-    H --> J[lastBaseUpdate]
-    H --> K[shared.pending]
-    
-    E --> L[ContextItem 链表]
-    L --> M[firstContext]
-    
-    G --> N[Update flag]
-    G --> O[Ref flag]
-    G --> P[其他 flags]
-    
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style E fill:#e8f5e9
-    style G fill:#fce4ec
-```
+<img src="../../assets/react-class-component.assets/class-component-fiber.png" alt="class-component-fiber" style="zoom:50%;" />
 
 **类组件的 Fiber 节点结构**
 
-```jsx
+```js
 Class Component Fiber 节点
 ├── stateNode: Component 实例
 │   ├── props: 当前 props

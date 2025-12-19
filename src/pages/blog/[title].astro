@@ -30,6 +30,76 @@ const articleData = {
   slug: blog.slug,
   tags: blog.data.tags || '',
 };
+
+// 主域名配置
+const primaryDomain = 'https://josiah1.com';
+const articleUrl = `${primaryDomain}/blog/${blog.slug}`;
+const articleDate = blog.data.date ? new Date(blog.data.date).toISOString() : new Date().toISOString();
+const author = 'Josiah Hong';
+
+// 构建博客文章的结构化数据（Article/BlogPosting）
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': articleUrl,
+  headline: articleData.title,
+  description: articleData.subtitle || articleData.remark || articleData.title,
+  url: articleUrl,
+  datePublished: articleDate,
+  dateModified: articleDate,
+  author: {
+    '@type': 'Person',
+    name: author,
+    url: primaryDomain,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: "Josiah Hong's Blog",
+    url: primaryDomain,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${primaryDomain}/josiah.png`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': articleUrl,
+  },
+  articleSection: 'Blog',
+  keywords: articleData.tags || '',
+  inLanguage: 'zh-CN',
+  isPartOf: {
+    '@type': 'Blog',
+    name: "Josiah Hong's Blog",
+    url: `${primaryDomain}/blog`,
+  },
+};
+
+// 构建面包屑导航结构化数据
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: '首页',
+      item: primaryDomain,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: '博客',
+      item: `${primaryDomain}/blog`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: articleData.title,
+      item: articleUrl,
+    },
+  ],
+};
 ---
 
 <style>
@@ -253,6 +323,7 @@ const articleData = {
   subtitle={articleData.subtitle}
   tags={articleData.tags}
   remark={articleData.remark}
+  additionalSchemas={[articleSchema, breadcrumbSchema]}
 >
   <ul id="toc" data-toc={JSON.stringify(headings)} class="toc">
     {

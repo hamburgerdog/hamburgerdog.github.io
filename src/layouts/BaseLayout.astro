@@ -3,7 +3,7 @@ import Nav from '../components/nav.astro';
 import '@fontsource-variable/space-grotesk';
 import { ClientRouter } from 'astro:transitions';
 
-const { title, subtitle, tags, remark } = Astro.props;
+const { title, subtitle, tags, remark, additionalSchemas } = Astro.props;
 
 const author = 'Josiah Hong';
 const authorAlias =
@@ -19,6 +19,53 @@ const canonical = new URL(Astro.url.pathname + Astro.url.search, primaryDomain).
 const url = canonical;
 // Open Graph 图片的绝对 URL，使用主域名
 const ogImage = new URL('/josiah.png', primaryDomain).toString();
+
+// 构建网站级别的结构化数据（Organization 和 WebSite）
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: "Josiah Hong's Blog",
+  url: primaryDomain,
+  description: '这里是 Josiah Hong 的博客空间，纪录生活与技术分享',
+  author: {
+    '@type': 'Person',
+    name: author,
+    url: `${primaryDomain}`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: "Josiah Hong's Blog",
+    url: primaryDomain,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${primaryDomain}/blog/?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+// 构建当前页面的结构化数据
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': canonical,
+  url: canonical,
+  name: title,
+  description: description,
+  inLanguage: 'zh-CN',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: "Josiah Hong's Blog",
+    url: primaryDomain,
+  },
+  author: {
+    '@type': 'Person',
+    name: author,
+  },
+};
 ---
 
 <style is:global lang="scss">
@@ -165,6 +212,13 @@ const ogImage = new URL('/josiah.png', primaryDomain).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Josiah Hong</title>
+    {/* 结构化数据：网站和页面信息 */}
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+    {/* 额外的结构化数据（如博客文章、面包屑等） */}
+    {additionalSchemas && additionalSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
     <ClientRouter />
   </head>
   <body>

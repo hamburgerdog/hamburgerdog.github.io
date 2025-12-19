@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 
-const { title, subtitle, tags, remark } = Astro.props;
+const { title, subtitle, tags, remark, additionalSchemas } = Astro.props;
 ---
 
 <style lang="scss" is:global>
@@ -148,7 +148,7 @@ const { title, subtitle, tags, remark } = Astro.props;
   }
 </style>
 
-<BaseLayout title={title} subtitle={subtitle} tags={tags} remark={remark}>
+<BaseLayout title={title} subtitle={subtitle} tags={tags} remark={remark} additionalSchemas={additionalSchemas}>
   <div class="blog">
     <slot />
   </div>

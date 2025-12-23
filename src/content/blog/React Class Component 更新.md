@@ -2,7 +2,7 @@
 title: React Class Component 更新
 subtitle: 各类更新触发方式
 date: 2025-12-17 15:00:00 +0800
-tags: 前端
+tags: 前端 源码
 remark: 'React Class Component 更新机制详解，包含 setState 主动更新、Props 被动更新、挂载和卸载流程，以及 Context 订阅更新的完整流程'
 ---
 

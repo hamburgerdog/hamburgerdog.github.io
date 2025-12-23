@@ -2,7 +2,7 @@
 title: React Hooks 简单理解
 subtitle: 四个 hook 与 dispatcher 
 date: 2025-12-18 12:00:00 +0800
-tags: 前端
+tags: 前端 源码
 remark: 'React Hooks useState 简单理解，主要介绍 useState 的实现原理，以及类比 useEffect useContext 和 useMemo 的对比，内容比较细化，可以直接看 [#所有 Hook 的执行时机](#所有 Hook 的执行时机)'
 ---
 

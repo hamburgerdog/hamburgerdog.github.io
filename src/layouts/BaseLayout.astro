@@ -136,12 +136,20 @@ const pageSchema = {
   }
 
   code {
-    font-size: 14px;
+    font-size: 12px;
     padding: 2px;
+    font-style: italic;
+    color: var(--primary-color);
     border-radius: 2px;
-    background-color: var(--highlight);
-    color: var(--code-color);
     font-weight: bold;
+
+    &::before {
+      content: '`';
+    }
+
+    &::after {
+      content: '`';
+    }
   }
 
   h1,

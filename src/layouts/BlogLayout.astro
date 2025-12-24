@@ -90,6 +90,7 @@ const { title, subtitle, tags, remark, additionalSchemas } = Astro.props;
     padding: 1em;
     border-radius: 0.2em;
     overflow-x: auto;
+    line-height: calc(1em + 4px);
   }
 
   em {
@@ -101,8 +102,12 @@ const { title, subtitle, tags, remark, additionalSchemas } = Astro.props;
     background-color: transparent;
     font-weight: normal;
 
-    span {
-      line-height: 1em;
+    &::before {
+      content: none;
+    }
+
+    &::after {
+      content: none;
     }
   }
 

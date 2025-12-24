@@ -109,7 +109,7 @@ const pageSchema = {
     margin: auto;
     cursor: default;
     word-spacing: 3px;
-    line-height: calc(1em + 8px);
+    line-height: calc(1em + 12px);
     font-size: 16px;
   }
 
@@ -125,12 +125,6 @@ const pageSchema = {
 
   p {
     margin-block: 0;
-  }
-
-  p,
-  span,
-  li {
-    line-height: calc(1em + 12px);
   }
 
   body {
@@ -157,7 +151,7 @@ const pageSchema = {
   h5,
   h6 {
     code {
-      font-size: 1em;
+      font-size: 0.8em;
     }
   }
 </style>
@@ -216,9 +210,10 @@ const pageSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
     {/* 额外的结构化数据（如博客文章、面包屑等） */}
-    {additionalSchemas && additionalSchemas.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    ))}
+    {
+      additionalSchemas &&
+        additionalSchemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)
+    }
     <ClientRouter />
   </head>
   <body>

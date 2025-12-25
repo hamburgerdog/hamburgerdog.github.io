@@ -15,6 +15,12 @@ const { title, subtitle, tags, remark, additionalSchemas } = Astro.props;
     }
   }
 
+  @media (max-width: 768px) {
+    :root {
+      --max-width: 100%;
+    }
+  }
+
   .blog {
     font-size: 1rem;
     // 保证还有半页的阅读空间
@@ -139,7 +145,6 @@ const { title, subtitle, tags, remark, additionalSchemas } = Astro.props;
   tr:hover {
     opacity: 0.9;
   }
-
 
   @media (max-width: 1000px) {
     .blog {

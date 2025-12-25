@@ -70,7 +70,7 @@ function Component() {
 
 **链表结构**：
 
-```
+```jsx
 fiber.memoizedState
   ↓
 Hook1 (useState: count)
@@ -274,7 +274,7 @@ function Component() {
 
 **执行流程**：
 
-```
+```jsx
 第一次渲染（处理 TransitionLane）
   ↓
 setCount(1) → queue.pending = Update1
@@ -472,7 +472,7 @@ function Component() {
 
 **执行流程**：
 
-```
+```jsx
 1. 事件触发阶段（收集更新）
 handleClick 执行
   ↓
@@ -539,7 +539,7 @@ function Component() {
 
 **执行流程**：
 
-```
+```jsx
 handleClick 执行
   ↓
 三个 setCount 创建三个 Update（都是函数）
@@ -704,7 +704,7 @@ function Component({ condition }) {
 
 Hooks 通过链表存储，每次渲染必须按相同顺序访问：
 
-```
+```jsx
 第一次渲染（condition = true）:
   Hook1 (count) → Hook2 (name) → Hook3 (age)
   

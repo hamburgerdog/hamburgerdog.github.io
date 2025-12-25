@@ -105,7 +105,7 @@ Suspense 内部抛出了 Promise，且 **React 认为当下已经可以展示 fa
 
 在 delay 场景下，再会考虑 JND 优化，即本来已经等待了这些时间了，就再等一会再展示 fallback 了。
 
-```
+```jsx
 T = 0ms
 用户触发 transition 更新
 

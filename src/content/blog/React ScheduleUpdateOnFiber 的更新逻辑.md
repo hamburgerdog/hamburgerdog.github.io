@@ -415,7 +415,7 @@ export function batchedUpdates(fn, a) {
 
 执行流程如下：
 
-```
+```jsx
 用户点击按钮
   ↓
 batchedUpdates 开始（设置 executionContext |= BatchedContext）

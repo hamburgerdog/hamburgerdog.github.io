@@ -71,11 +71,11 @@ const pageSchema = {
 <style is:global lang="scss">
   :root {
     --primary-color: #000;
+    --text-color: oklch(0.373 0.034 259.733);
     --sub-text-color: #666;
     --background-color: #fff;
     --nav-background-color: #ffffffa0;
     --header-color: oklch(0.21 0.034 264.665);
-    --text-color: oklch(0.373 0.034 259.733);
     --max-width: 640px;
     --highlight: #163b660a;
     --code-color: oklch(0.585 0.233 277.117);
@@ -108,7 +108,6 @@ const pageSchema = {
     color: var(--text-color);
     margin: auto;
     cursor: default;
-    word-spacing: 3px;
     line-height: calc(1em + 12px);
     font-size: 16px;
   }
@@ -132,7 +131,16 @@ const pageSchema = {
   }
 
   a {
-    color: var(--link-color);
+    color: var(--primary-color);
+    font-weight: 500;
+    text-underline-offset: 4px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--code-color);
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
   }
 
   code {

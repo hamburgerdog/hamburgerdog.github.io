@@ -1,6 +1,7 @@
 ---
 import 'dayjs/locale/zh-cn';
 import dayjs from 'dayjs';
+import RssIcon from '../assets/rss.svg';
 
 const currentDate = dayjs();
 // 格式化日期
@@ -48,6 +49,24 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
     color: var(--header-color);
   }
 
+  .date_rss {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rss_icon_x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+  }
+
+  .rss_icon {
+    color: var(--header-color);
+  }
+
   #modeBtn {
     cursor: pointer;
   }
@@ -69,7 +88,12 @@ const formattedDate = currentDate.format('MM月DD日 ddd') + ', 深圳';
 </style>
 
 <nav class="box">
-  <a href="/" class="page_title">{formattedDate}</a>
+  <div class="date_rss">
+    <a href="/" class="page_title">{formattedDate}</a>
+    <a href="/rss.xml" class="rss_icon_x">
+      <RssIcon class="rss_icon" />
+    </a>
+  </div>
   <div class="side">
     <a href="/roadmap" class="post">Roadmap</a>
     <a href="/blog" class="post">Blog</a>

@@ -1076,6 +1076,3 @@ func main() {
 ## 其他
 
 [GO 语言中文文档](https://go-zh.org/doc/)
-
-**2020 GO 开发者成长路线图参考：**
-![GO语言学习路线图](/assets/golang-developer-roadmap-zh-CN.png)

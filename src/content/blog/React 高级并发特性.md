@@ -80,7 +80,6 @@ function App() {
       setList(searchItems(value));
     });
   }
-
   return (
     <div>
       <input value={input} onChange={handleChange} />
@@ -96,7 +95,6 @@ function App() {
 function startTransition(scope: () => void): void {
   const prevTransition = ReactCurrentBatchConfig.transition;
   ReactCurrentBatchConfig.transition = {};
-
   try {
     scope();
   } finally {
@@ -159,7 +157,6 @@ function App() {
       setList(searchItems(value));
     });
   }
-
   return (
     <div>
       <input value={input} onChange={handleChange} />
@@ -192,7 +189,6 @@ function useTransition(): [boolean, (callback: () => void) => void] {
       });
     }
   }, []);
-
   return [isPending, startTransition];
 }
 ```
@@ -228,7 +224,6 @@ function App() {
 function useDeferredValue<T>(value: T): T {
   const [prevValue, setPrevValue] = useState(value);
   const prevValueRef = useRef(value);
-
   useEffect(() => {
     // 使用 Transition 优先级更新
     startTransition(() => {
@@ -236,12 +231,10 @@ function useDeferredValue<T>(value: T): T {
       prevValueRef.current = value;
     });
   }, [value]);
-
   // 如果值没变，返回旧值（延迟更新）
   if (is(value, prevValueRef.current)) {
     return prevValue;
   }
-
   return prevValueRef.current;
 }
 ```
@@ -327,7 +320,6 @@ function flushSync<R>(fn: () => R): R {
     setCurrentUpdatePriority(previousPriority);
     ReactCurrentBatchConfig.transition = prevTransition;
     executionContext = prevExecutionContext;
-
     // 立即执行同步回调
     if ((executionContext & (RenderContext | CommitContext)) === NoContext) {
       flushSyncCallbacks();
@@ -372,7 +364,6 @@ function App() {
 ```tsx
 function App() {
   const [tab, setTab] = useState('home');
-
   return (
     <div>
       <Tabs value={tab} onChange={setTab} />
@@ -449,7 +440,6 @@ function App() {
 ```
 
 **问题表现**：
-
 - 输入框无法响应
 - 动画卡顿
 - 页面假死
@@ -481,7 +471,6 @@ function App() {
 ```
 
 **效果**：
-
 - 输入框立即响应 ✅
 - 动画流畅 ✅
 - 页面不卡顿 ✅
@@ -693,7 +682,6 @@ function Tabs() {
       loadTabContent(tab);
     });
   }
-
   return (
     <div>
       <TabList activeTab={activeTab} onChange={handleTabChange} />
@@ -852,7 +840,6 @@ React 的并发特性通过以下机制提升用户体验：
 4. **API 支持**：`startTransition`、`useDeferredValue`、`Suspense` 等
 
 这些特性让 React 应用能够：
-
 - 保持流畅的用户交互
 - 处理大量数据渲染
 - 优化加载体验

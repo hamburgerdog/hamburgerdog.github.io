@@ -392,7 +392,7 @@ function TabContent({ tab }) {
 
 **执行流程**：
 
-```
+```js
 用户切换标签
   ↓
 setTab('profile')
@@ -815,7 +815,7 @@ shouldYield()
 
 1. **调度路径**：
 
-   ```jsx
+   ```bash
    setState → dispatchSetState → scheduleUpdateOnFiber
    → ensureRootIsScheduled → scheduleCallback
    → requestHostCallback → performWorkUntilDeadline
@@ -823,14 +823,14 @@ shouldYield()
 
 2. **渲染路径**:
 
-   ```jsx
+   ```bash
    performWorkUntilDeadline → flushWork → workLoop
    → performConcurrentWorkOnRoot → renderRootConcurrent
    → workLoopConcurrent → performUnitOfWork
    ```
 
 3. **工作单元路径**：
-   ```jsx
+   ```bash
    performUnitOfWork → beginWork → updateFunctionComponent
    → renderWithHooks → useState/useEffect → reconcileChildren
    → completeUnitOfWork → completeWork

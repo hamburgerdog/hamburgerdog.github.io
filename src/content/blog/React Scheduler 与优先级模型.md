@@ -1,7 +1,7 @@
 ---
 title: React Scheduler 与优先级模型
 subtitle: Lanes 优先级与时间分片
-date: 2025-12-26 12:00:00 +0800
+date: 2025-12-28 12:00:00 +0800
 tags: 前端 源码
 remark: 'React Scheduler 调度器与 Lanes 优先级模型，包括 Sync/Transition/Idle 优先级区别、优先级冲突调度、中断与恢复机制'
 ---

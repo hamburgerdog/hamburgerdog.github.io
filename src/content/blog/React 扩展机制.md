@@ -1,7 +1,7 @@
 ---
 title: React 扩展机制
 subtitle: Portals、Profiler 与 Error Boundaries
-date: 2025-12-27 12:00:00 +0800
+date: 2025-12-17 18:00:00 +0800
 tags: 前端 源码
 remark: 'React 扩展机制，包括 Portal 如何跨 DOM 位置渲染组件、Profiler 如何测量渲染性能、Error Boundary 捕获子树错误机制'
 ---

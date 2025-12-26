@@ -1,7 +1,7 @@
 ---
 title: React Suspense
 subtitle: JND 优化
-date: 2025-12-23 13:00:00 +0800
+date: 2025-12-25 13:00:00 +0800
 tags: 前端 源码
 remark: 'React Suspense，主要介绍 JND 优化，以及 RootSuspended 和 RootSuspendedWithDelay 的差异'
 ---

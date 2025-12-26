@@ -1,7 +1,7 @@
 ---
 title: React 高级并发特性
 subtitle: Concurrent Mode 与 Transitions
-date: 2025-12-26 12:00:00 +0800
+date: 2025-12-24 12:00:00 +0800
 tags: 前端 源码
 remark: 'React 高级并发特性，包括 Concurrent Mode 整体策略、startTransition/useDeferredValue/flushSync 的作用与调度区别、时间分片如何提高用户体验'
 ---

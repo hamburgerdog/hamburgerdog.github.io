@@ -1,7 +1,7 @@
 ---
 title: React Hooks 深层调度与状态队列
 subtitle: Hook 链表结构与更新队列原理
-date: 2025-12-25 12:00:00 +0800
+date: 2025-12-25 20:00:00 +0800
 tags: 前端 源码
 remark: 'React Hooks 的深层实现，包括 Hook 在 fiber.memoizedState 上的链表结构、更新队列的批处理机制、Hook 调用顺序检查、useReducer 的状态合并'
 ---

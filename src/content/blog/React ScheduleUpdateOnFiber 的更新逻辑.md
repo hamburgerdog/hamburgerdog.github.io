@@ -1,7 +1,7 @@
 ---
 title: React ScheduleUpdateOnFiber 的调度逻辑
 subtitle: 调度机制详解
-date: 2025-12-23 12:00:00 +0800
+date: 2025-12-26 12:00:00 +0800
 tags: 前端 源码
 remark: 'React ScheduleUpdateOnFiber 的更新逻辑，主要介绍事件监听与批处理机制，以及同步任务和异步任务的执行过程'
 ---

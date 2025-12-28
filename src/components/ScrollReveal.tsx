@@ -9,7 +9,6 @@ export default function ScrollReveal({
   threshold = 0.1, // 触发阈值（10%进入视野）
   rootMargin = '0px 0px -50px 0px', // 触发区域（底部提前50px触发）
 }) {
-  console.log('isVisible');
   const elementRef = useRef<HTMLDivElement>(null);
   const observerRef = useRef<IntersectionObserver>(null);
   const [isVisible, setIsVisible] = useState(false);

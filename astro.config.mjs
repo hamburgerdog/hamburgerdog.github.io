@@ -5,6 +5,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkToc from 'remark-toc';
 
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
+import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -23,6 +24,7 @@ export default defineConfig({
   },
 
   integrations: [
+    preact(),
     sitemap({
       // 确保 sitemap 包含所有页面
       // filter 函数可以排除不需要索引的页面

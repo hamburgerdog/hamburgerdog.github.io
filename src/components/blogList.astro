@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-
+import ScrollReveal from './ScrollReveal';
 // 获取集合中的所有条目。
 // 需要集合的名称作为参数。
 // 示例：检索 `src/content/blog/**`
@@ -200,7 +200,7 @@ posts.forEach((p) => {
   <div class="star_list">
     {
       starPosts.map((post) => (
-        <>
+        <ScrollReveal client:visible>
           <a href={`/blog/${post.slug}`} class="item" id={post.slug} data-tags={post.data.tags}>
             <div class="header">
               <p class="title">{post.data.title}</p>
@@ -211,7 +211,7 @@ posts.forEach((p) => {
               <p class="tags">{post.data.tags.replaceAll(' ', ' | ')}</p>
             </div>
           </a>
-        </>
+        </ScrollReveal>
       ))
     }
   </div>
@@ -219,7 +219,7 @@ posts.forEach((p) => {
     <h2 class="section-title" id="timeline-section-title">时间线 | Timeline</h2>
     {
       commonPosts.map((post) => (
-        <>
+        <ScrollReveal client:visible>
           <a href={`/blog/${post.slug}`} class="item" id={post.slug} data-tags={post.data.tags}>
             <div class="header">
               <p class="title">{post.data.title}</p>
@@ -234,7 +234,7 @@ posts.forEach((p) => {
               </p>
             </div>
           </a>
-        </>
+        </ScrollReveal>
       ))
     }
   </div>

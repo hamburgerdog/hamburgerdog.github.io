@@ -5,6 +5,7 @@ import { Content as Contact } from '../content/page/contact.md';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Experience from '../layouts/Experience.astro';
 import RecentPosts from '../components/RecentPosts.astro';
+import ScrollReveal from '../components/ScrollReveal';
 ---
 
 <style>
@@ -52,10 +53,18 @@ import RecentPosts from '../components/RecentPosts.astro';
     <p>愿我航向大海乘载你的信赖.</p>
   </div>
   <div class="blog_info">
-    <InfoMarkdowm />
-    <RecentPosts />
-    <h3>工作经历</h3>
-    <Experience />
-    <Contact />
+    <ScrollReveal client:visible>
+      <InfoMarkdowm />
+    </ScrollReveal>
+    <ScrollReveal client:visible>
+      <RecentPosts />
+    </ScrollReveal>
+    <ScrollReveal client:visible>
+      <h3>工作经历</h3>
+      <Experience />
+    </ScrollReveal>
+    <ScrollReveal client:visible>
+      <Contact />
+    </ScrollReveal>
   </div>
 </BaseLayout>

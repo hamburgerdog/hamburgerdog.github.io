@@ -1,0 +1,32 @@
+/* 在全局 CSS 文件（如 src/styles/global.css）中添加 */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* 可选的延迟效果 */
+.slide-up-delay-1 {
+  animation-delay: 0.1s;
+}
+.slide-up-delay-2 {
+  animation-delay: 0.2s;
+}
+.slide-up-delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* 初始状态隐藏 */
+.slide-up-init {
+  opacity: 0;
+  transform: translateY(40px);
+}

@@ -5,7 +5,9 @@
 
 你好，这里是 [Josiah Hong](https://github.com/hamburgerdog) 的博客空间，纪录生活与技术分享，让我们多交流！👋
 
-我是一名高级 AGENT 应用开发工程师就职于 Skywork.ai，喜欢编程、户外，热衷于骑行，目前在学电吉他。主要技术栈为 TypeScript | JavaScript | React.js，目前主要从事图像编辑领域的 AGENT 应用开发和相关工程工作
+高级 AGENT 应用开发工程师，就职于 Skywork.ai，喜欢编程、户外，热衷于骑行，目前在学电吉他
+
+主要技术栈为 TypeScript | JavaScript | React.js，目前主要从事图像编辑领域的 AGENT 应用开发和相关工程工作
 
 <br />
 

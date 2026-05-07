@@ -1,7 +1,7 @@
 ---
 company: Skywork.ai
 order: 1
-date: 2026.03 - 至今
+date: 2026.02 - 至今
 role: 高级 AGENT 应用开发工程师
 keywords: AI Agent | Image Editing | TypeScript | React.js
 ---

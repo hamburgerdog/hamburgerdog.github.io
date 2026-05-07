@@ -1,7 +1,7 @@
 ---
 company: SmartMore - 思谋科技
-order: 1
-date: 2022.02 - 至今
+order: 2
+date: 2022.02 - 2026.02
 role: 前端开发工程师
 keywords: JavaScript | React.js | wasm
 ---

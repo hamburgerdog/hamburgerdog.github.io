@@ -5,17 +5,15 @@
 
 你好，这里是 [Josiah Hong](https://github.com/hamburgerdog) 的博客空间，纪录生活与技术分享，让我们多交流！👋
 
-中级开发工程师，正在学习的人工智能行业 TPM ，喜欢编程、户外，热衷于骑行
-
-主要技术栈为 TypeScript | JavaScript | React.js， 聚焦于高性能画布领域
+我是一名高级 AGENT 应用开发工程师就职于 Skywork.ai，喜欢编程、户外，热衷于骑行，目前在学电吉他。主要技术栈为 TypeScript | JavaScript | React.js，目前主要从事图像编辑领域的 AGENT 应用开发和相关工程工作
 
 <br />
 
 Hi, I'm [Josiah Hong](https://github.com/hamburgerdog) — welcome to my blog!
 
 This space is where I record life moments and share insights on technology.
-I'm a frontend web developer working toward becoming a TPM in the AI industry.
-I love coding, outdoor activities, and traveling, and I'm especially passionate about cycling.
-My main tech stack includes TypeScript, JavaScript, and React, with a focus on high-performance canvas development.
+I'm a senior Agent application engineer at Skywork.ai, currently working on Agent applications and related engineering for image editing.
+I enjoy programming and spending time outdoors, with cycling as my favorite way to explore the world. I'm also learning electric guitar.
+My main tech stack includes TypeScript, JavaScript, and React, with a focus on Agent applications for image editing, image workflows, and high-performance interactive experiences.
 
 <br />

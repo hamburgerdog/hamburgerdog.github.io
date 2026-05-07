@@ -3,7 +3,7 @@ company: Skywork.ai
 order: 1
 date: 2026.02 - 至今
 role: 高级 AGENT 应用开发工程师
-keywords: AI Agent | Image Editing | TypeScript | React.js
+keywords: AI Agent | Image Editing | Agent CLI
 ---
 
 主要从事图像编辑领域的 AGENT 应用开发和相关工程工作，围绕图像理解、生成、编辑与多步骤任务编排，建设面向用户的 AGENT 应用体验。
